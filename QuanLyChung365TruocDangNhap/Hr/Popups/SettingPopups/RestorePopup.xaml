@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.SettingPopups.RestorePopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <Grid Height="283" Width="569" Background="#ffffff">
+        <Grid Height="98" Width="98" VerticalAlignment="Center" Margin="236,30,235,155">
+            <Path Data="{StaticResource  icon_Success}" Fill="#27AE60"/>
+        </Grid>
+        <TextBlock Text="Bạn đã khôi phục tài khoản thành công!" Height="28" Width="284" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="143,158,142,97" FontFamily="Roboto" FontSize="15" FontStyle="Normal" FontWeight="Bold"></TextBlock>
+        <Grid Height="32" Width="136" VerticalAlignment="Bottom" Margin="216,211,217,40">
+            <Border Background="#27AE60" CornerRadius="8">
+                <TextBlock Text="Đăng nhập" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

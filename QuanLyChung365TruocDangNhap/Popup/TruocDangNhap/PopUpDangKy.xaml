@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Popup.TruocDangNhap.PopUpDangKy"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Popup.TruocDangNhap"
+             mc:Ignorable="d"  >
+    <Grid>
+       
+        <Border
+            Visibility="Visible"
+                  x:Name="bodDangKy"
+                  Height="582" Width="580"
+                   VerticalAlignment="Center"
+            Background="White"
+            BorderBrush="#4C5BD4"
+                    BorderThickness="2"
+                    CornerRadius="15 15 15 15" Margin="320,-573,170,661">
+            <StackPanel Margin="0,0,0,-1" 
+         >
+                <Border
+                    BorderThickness="1"
+                    CornerRadius="0 15 0 15"
+                    BorderBrush="#4C5BD4"
+                    Background="#4C5BD4" Margin="484,0,-1,0" Height="32"
+                    >
+                    <DockPanel
+              
+                        Height="34">
+                        <Image
+                            x:Name="btnExit"
+                            MouseLeftButtonUp="btnExit_MouseLeftButtonUp"
+                            Margin="0,5,35,10"
+                            HorizontalAlignment="Right"
+                            Width="15"
+                            Height="14"
+                            Source="{StaticResource iconExitDrawingImage}" />
+                    </DockPanel>
+                </Border>
+
+                <TextBlock
+                    Text="Để tiếp tục đăng ký vui lòng chọn loại tài khoản."
+                        Margin="10,50,-14,-40"
+                        FontSize="25"
+                        
+                        Foreground="#4C5BD4"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Height="54" Width="580" />
+
+                <WrapPanel
+                    Margin="0 20 0 0"
+                    Height="63"/>
+
+                <WrapPanel
+                    x:Name="warpInOutTime"
+                    Margin="0 20 0 0"
+                    Height="63">
+                    <Grid Width="576" Height="63">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65*"/>
+                            <ColumnDefinition Width="511*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Border CornerRadius="15" Margin="49,76,68,-113"
+                            BorderThickness="2"                           
+                           BorderBrush="#4C5BD4" Grid.ColumnSpan="2">
+                            <Border.Effect>
+                                <DropShadowEffect   ShadowDepth="6"  BlurRadius="11" Opacity="0.9"></DropShadowEffect>
+                            </Border.Effect>
+
+                        </Border>
+                        <Border Background="#FFFFFF" BorderBrush="#4C5BD4" MouseLeftButtonUp="NhanVien_MouseLeftButtonUp"  Cursor="Hand" CornerRadius="15" BorderThickness="3" Margin="49,76,68,-113" Grid.ColumnSpan="2" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Width="60" Height="60" Margin="50 0 0 0" 
+                                    Source="{StaticResource User_alt_fillDrawingImage}"/>
+                                <StackPanel Margin="10 0 0 0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <TextBlock Text="Nhân viên"  LineHeight="28" FontSize="25" Foreground="#4C5BD4" ></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <Border CornerRadius="15"  Margin="49,-53,68,22" 
+                            BorderThickness="2"                           
+                           BorderBrush="#4C5BD4" Grid.ColumnSpan="2">
+                            <Border.Effect>
+                                <DropShadowEffect  ShadowDepth="6"  BlurRadius="11" Opacity="0.9"></DropShadowEffect>
+                            </Border.Effect>
+
+                        </Border>
+                        <Border Background="#FFFFFF" BorderBrush="#4C5BD4" MouseLeftButtonUp="CongTy_MouseLeftButtonUp"  Cursor="Hand" CornerRadius="15" BorderThickness="3" Margin="49,-53,68,22" Grid.ColumnSpan="2" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Width="60" Height="60" Margin="50 0 0 0" 
+                                    Source="{StaticResource Home_fillDrawingImage}"/>
+                                <StackPanel Margin="10 0 0 0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <TextBlock  Text="{DynamicResource textCongTy}"  LineHeight="28" FontSize="25" Foreground="#4C5BD4" ></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <Border CornerRadius="15"   Margin="49,213,68,-249"
+                            BorderThickness="2"                           
+                           BorderBrush="#4C5BD4" Grid.ColumnSpan="2">
+                            <Border.Effect>
+                                <DropShadowEffect   ShadowDepth="6"  BlurRadius="11" Opacity="0.9"></DropShadowEffect>
+                            </Border.Effect>
+
+                        </Border>
+                        <Border Background="#FFFFFF" BorderBrush="#4C5BD4" MouseLeftButtonUp="CaNhan_MouseLeftButtonUp" Cursor="Hand" CornerRadius="15" BorderThickness="3" Margin="49,213,68,-249" Grid.ColumnSpan="2" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Width="60" Height="60" Margin="50 0 0 0"
+                                    Source="{StaticResource User_circleDrawingImage}"/>
+                                <StackPanel Margin="10 0 0 0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <TextBlock  Text="Cá nhân"  LineHeight="28" FontSize="25" Foreground="#4C5BD4" ></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+        <Grid x:Name="pnlHienThi" Grid.RowSpan="3"/>
+    </Grid>
+</UserControl>

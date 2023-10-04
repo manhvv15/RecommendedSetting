@@ -1,0 +1,242 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.SalaryAndBenefitPages.ViolationsPages.GroupViolationsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+      x:Name="page"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="684" d:DesignWidth="1988"
+      Title="ProfilePage">
+
+    <Grid Margin="0,43,0,0">
+        <Grid VerticalAlignment="Bottom" Margin="0,0,0,50" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="btnPrev" Grid.Column="0" Height="24" Width="20">
+                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                <TextBlock Text="&lt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="PrevPage"></Grid>
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="21,0,24,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Trang " FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Text="{Binding Path=PageNow}" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="2" Text="/" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="3" Name="TotalPgae" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+
+            <Grid x:Name="btnNext" Grid.Column="2" Height="24" Width="20">
+                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                <TextBlock Text="&gt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="NextPage"></Grid>
+            </Grid>
+        </Grid>
+        <Grid>
+            <Grid Height="1" VerticalAlignment="Top" Margin="0,30,0,0" Background="{StaticResource #474747}"></Grid>
+            <Grid VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Cursor="Hand" x:Name="Personal" MouseLeftButtonDown="NavigateToPage" FontWeight="DemiBold" Grid.Column="0" Text="CÁ NHÂN" FontSize="14" Foreground="{StaticResource #474747}" Margin="35,0,35,13"></TextBlock>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock Cursor="Hand" x:Name="Group" MouseLeftButtonDown="NavigateToPage"  FontWeight="DemiBold"  Grid.Column="1" Text="TẬP THỂ " FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="35,0,35,13" ></TextBlock>
+                    <Grid Height="4" VerticalAlignment="Bottom">
+                        <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <TextBlock Cursor="Hand" x:Name="List" MouseLeftButtonDown="NavigateToPage"  FontWeight="DemiBold" Grid.Column="2" Text="DANH SÁCH VI PHẠM" FontSize="14" Foreground="{StaticResource  #474747}" Margin="35,0,35,13"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Margin="0,33,0,140.8">
+                <Grid VerticalAlignment="Top" Margin="0,58,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="ShowGroupAddViolationPopup">
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=PerAdd}" Value="true">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=PerAdd}" Value="false">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <Grid  Height="15" Width="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,3,0,0">
+                            <Ellipse Fill="{StaticResource #4C5BD4}"></Ellipse>
+                            <Path Data="{StaticResource icon_plus}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                        </Grid>
+                        <TextBlock Cursor="Hand" FontWeight="SemiBold" Text="Thêm mới" FontSize="14" Foreground="{StaticResource #4C5BD4}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,0,0,0"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" Width="400" Height="36" HorizontalAlignment="Right" >
+                        <Border CornerRadius="18" BorderBrush="#474747" BorderThickness="0.5" Background="#FFFFFF"/>
+                        <TextBox KeyUp="tbSearch_KeyUp" x:Name="tbSearch" materialDesign:HintAssist.Hint="Tìm kiếm" BorderThickness="0" FontSize="14" Padding="15,0,0,0" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"></TextBox>
+                        <Grid HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,14,0" >
+                            <Path Data="{StaticResource icon_search}" Fill="#666666" ></Path>
+                            <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ClickSearch"></Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Margin="0,124,0,51">
+                    <Border CornerRadius="8" BorderThickness="0.5" BorderBrush="{StaticResource #CCCCCC}" Margin="0,0,0,-102.8">
+                        <Grid>
+                            <Grid Height="36" VerticalAlignment="Top">
+                                <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                            </Grid>
+                            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Name="scroll">
+                                <Grid>
+                                    <Grid Height="36" VerticalAlignment="Top">
+                                        <Border CornerRadius="8,8,0,0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="92"/>
+                                                    <ColumnDefinition Width="260"/>
+                                                    <ColumnDefinition Width="260"/>
+                                                    <ColumnDefinition Width="284" />
+                                                    <ColumnDefinition Width="284"/>
+                                                    <ColumnDefinition Width="184"/>
+                                                    <ColumnDefinition Width="350"/>
+                                                    <ColumnDefinition Width="510"/>
+                                                    <ColumnDefinition Width="44"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="STT" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="1" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Lỗi vi phạm" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="2">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Căn cứ quy định" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}" ></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="3">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Số QĐ xử lý" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}" ></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="4">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Thời gian vi phạm" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="5">
+                                                    <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <TextBlock FontSize="16" FontWeight="SemiBold" Text="Người ký QĐ" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="6">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Hình thức xử lý vi phạm" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="7">
+                                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Tập thể vi phạm" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                    <Grid HorizontalAlignment="Center" Margin="0,36,0,0">
+                                        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Name="scroll1" PreviewMouseWheel="scroll1_PreviewMouseWheel">
+                                            <StackPanel Orientation="Vertical">
+                                                <ItemsControl Name="icGrouplViolationsPage">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid Height="36">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="92"/>
+                                                                    <ColumnDefinition Width="260"/>
+                                                                    <ColumnDefinition Width="260"/>
+                                                                    <ColumnDefinition Width="284" />
+                                                                    <ColumnDefinition Width="284"/>
+                                                                    <ColumnDefinition Width="184"/>
+                                                                    <ColumnDefinition Width="350"/>
+                                                                    <ColumnDefinition Width="510"/>
+                                                                    <ColumnDefinition Width="44"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid Grid.Column="0">
+                                                                    <TextBlock Text="{Binding id}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="1">
+                                                                    <TextBlock Text="{Binding infringe_name}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="2">
+                                                                    <TextBlock Text="{Binding regulatory_basis}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="3">
+                                                                    <TextBlock Text="{Binding number_violation}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="4">
+                                                                    <TextBlock Text="{Binding infringe_at}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="5">
+                                                                    <TextBlock Text="{Binding created_by}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="6">
+                                                                    <TextBlock Text="{Binding infringe_type}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="7">
+                                                                    <TextBlock Text="{Binding name_binding}" MaxWidth="500" TextWrapping="Wrap"  FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="8">
+                                                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                        <Grid.Style>
+                                                                            <Style TargetType="Grid">
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerEdit}" Value="true">
+                                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerEdit}" Value="false">
+                                                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Grid.Style>
+                                                                        <Path Data="{StaticResource icon_union}" Fill="{StaticResource #4C5BD4}" VerticalAlignment="Center" ></Path>
+                                                                        <Grid Cursor="Hand" Background="Transparent" MouseLeftButtonDown="ShowGroupUpdateViolationPopup" ></Grid>
+                                                                    </Grid>
+                                                                </Grid>
+                                                                <Rectangle Grid.ColumnSpan="9" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                                            </Grid>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Grid>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

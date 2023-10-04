@@ -1,0 +1,310 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.ManageRecruitmentPages.PerformRecruitmentPages.PerformRecruitmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Pages.SettingPages"
+      mc:Ignorable="d"
+      x:Name="page"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="1500" d:DesignWidth="988"
+      Title="ProfilePage">
+
+    <Page.Resources>
+        <DropShadowEffect x:Key="z-depth11" BlurRadius="4" ShadowDepth="2" Direction="270" Color="#CCCCCC" />
+    </Page.Resources>
+
+    <Grid Margin="0,40,0,0">
+        <Grid Margin="0,60,0,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Margin="0,0,10,0" Grid.Column="0" VerticalAlignment="Top">
+                    <Border Effect="{DynamicResource z-depth11}" CornerRadius="8" Background="#FFFFFF" BorderBrush="#CCCCCC" BorderThickness="0.5"></Border>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,19,0,0" Text="Tin đang mở" FontSize="14" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                    <Grid Height="0.5" Background="#474747" Margin="20,48,20,0" VerticalAlignment="Top"></Grid>
+                    <ScrollViewer x:Name="scroll1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,48,0,0" ScrollChanged="Scroll1Changed">
+                        <!--<ScrollViewer.Style>
+                                <Style TargetType="ScrollViewer">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="VerticalScrollBarVisibility" Value="Auto"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="VerticalScrollBarVisibility" Value="Hidden"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ScrollViewer.Style>-->
+                        <Grid Margin="0,0,0,0">
+                            <StackPanel>
+                                <ItemsControl x:Name="icListNewActive">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid Width="68" Height="68" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,20,0,0">
+                                                    <Border CornerRadius="4" BorderThickness="1" BorderBrush="#4C5BD4" ></Border>
+                                                    <TextBlock Text="{Binding sohoso}" FontSize="16" Foreground="#4C5BD4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,13,0,0"></TextBlock>
+                                                    <TextBlock Text="ứng viên" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,14" FontSize="12" Foreground="#666666"></TextBlock>
+                                                </Grid>
+
+                                                <StackPanel Margin="0,21,0,0">
+                                                    <Grid VerticalAlignment="Top" Margin="100,0,0,0">
+                                                        <TextBlock Text="{Binding title_full}" FontSize="16" FontWeight="SemiBold" Foreground="#337ab7" FontFamily="Roboto"  TextWrapping="Wrap"></TextBlock>
+                                                    </Grid>
+                                                    <WrapPanel Orientation="Horizontal" Margin="100,17,0,0">
+                                                        <Grid Margin="0,0,0,10">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Path Margin="0,0,8,0" Grid.Column="0" Data="{StaticResource icon_calandar}" Fill="#666666" VerticalAlignment="Center"></Path>
+                                                            <Grid Grid.Column="1" Margin="0,0,23,0">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <TextBlock Grid.Column="0" Text="{Binding recruitment_time}" FontSize="12" Foreground="#666666"></TextBlock>
+                                                                <TextBlock Grid.Column="1" Text=" - " FontSize="12" Foreground="#666666"></TextBlock>
+                                                                <TextBlock Grid.Column="2" Text="{Binding recruitment_time_to}" FontSize="12" Foreground="#666666"></TextBlock>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,0,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Path Margin="0,2,8,0" Grid.Column="0" Data="{StaticResource icon_view}" Fill="#666666" VerticalAlignment="Top"></Path>
+                                                            <TextBlock Grid.Column="1" Text="{Binding member_follow}" FontSize="12" Foreground="#666666"></TextBlock>
+                                                            <TextBlock Grid.Column="2" Text=" lượt xem" FontSize="12" Foreground="#666666"></TextBlock>
+                                                        </Grid>
+                                                    </WrapPanel>
+
+                                                    <WrapPanel Orientation="Horizontal" Margin="100,8,0,0">
+                                                        <Grid Margin="0,0,0,10">
+                                                            <TextBlock Text="{Binding address}" FontSize="12" Foreground="#666666" Margin="0,0,8,0" TextWrapping="Wrap"></TextBlock>
+                                                        </Grid>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Ellipse Grid.Column="0" Width="4" Height="4" Fill="#666666" VerticalAlignment="Top" Margin="0,6,8,0"></Ellipse>
+                                                            <TextBlock Grid.Column="1" Text="{Binding salary}" FontSize="12" Foreground="#666666"></TextBlock>
+                                                        </Grid>
+                                                    </WrapPanel>
+                                                    <Rectangle Margin="100,17,20,0" Grid.Column="1" Height="0.5" StrokeThickness="0.5" Stroke="{StaticResource #474747}" StrokeDashArray="4,8" Opacity="0.24"></Rectangle>
+
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Grid Grid.Column="0">
+                                                            <TextBlock Text="{Binding sohoso}" FontSize="16" Foreground="#4C5BD4" Margin="0,13,0,0"></TextBlock>
+                                                            <TextBlock Text="Hồ sơ" FontSize="12" Foreground="#474747" Margin="0,37,0,25"></TextBlock>
+                                                        </Grid>
+                                                        <Grid Grid.Column="1">
+                                                            <TextBlock Text="{Binding henphongvan}" FontSize="16" Foreground="#FFA800" Margin="0,13,0,0"></TextBlock>
+                                                            <TextBlock Text="Phỏng vấn" FontSize="12" Foreground="#474747" Margin="0,37,0,25"></TextBlock>
+                                                        </Grid>
+                                                        <Grid Grid.Column="2">
+                                                            <TextBlock Text="{Binding huyphongvan}" FontSize="16" Foreground="#EB5757" Margin="0,13,0,0"></TextBlock>
+                                                            <TextBlock Text="Bị loại" FontSize="12" Foreground="#474747" Margin="0,37,0,25"></TextBlock>
+                                                        </Grid>
+                                                        <Grid Grid.Column="3">
+                                                            <TextBlock Text="{Binding quaphongvan}" FontSize="16" Foreground="#27AE60" Margin="0,13,0,0"></TextBlock>
+                                                            <TextBlock Text="Thử việc" FontSize="12" Foreground="#474747" Margin="0,37,0,25"></TextBlock>
+                                                        </Grid>
+                                                        <Grid Margin="0,0,2,0" Height="0.5" Background="#474747" Grid.ColumnSpan="4" VerticalAlignment="Bottom"></Grid>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Grid Height="50">
+                                    <TextBlock x:Name="tbNoData1" Text="Không có dữ liệu" Foreground="{StaticResource #666666}" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+
+                <Grid Margin="10,0,0,0" Grid.Column="1">
+                    <Grid Height="144" VerticalAlignment="Top">
+                        <Border CornerRadius="8" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC" Effect="{DynamicResource z-depth11}"></Border>
+                        <TextBlock Text="Tổng số ứng viên" FontSize="14" Foreground="#474747" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,19,0,0"></TextBlock>
+                        <Grid Height="0.5" Margin="20,48,20,0" Opacity="0.24" Background="#474747" VerticalAlignment="Top"></Grid>
+                        <Grid Height="96" VerticalAlignment="Bottom">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <TextBlock x:Name="tbCandidateToday" Text="0" FontSize="24" Foreground="#4CD49B" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,14,0,0"></TextBlock>
+                                <TextBlock Text="Hôm nay" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0"></TextBlock>
+                                <Grid Margin="8,72,8,0" Height="4" VerticalAlignment="Top">
+                                    <Border CornerRadius="8,8,0,0" Background="#4CD49B"></Border>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock x:Name="tbCandidateWeek" Text="0" FontSize="24" Foreground="#4C5BD4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,14,0,0"></TextBlock>
+                                <TextBlock Text="Tuần này" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0"></TextBlock>
+                                <Grid Margin="8,72,8,0" Height="4" VerticalAlignment="Top">
+                                    <Border CornerRadius="8,8,0,0" Background="#4C5BD4"></Border>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <TextBlock x:Name="tbCandidateMonth" Text="0" FontSize="24" Foreground="#FFA800" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,14,0,0"></TextBlock>
+                                <TextBlock Text="Tháng này" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,47,0,0"></TextBlock>
+                                <Grid Margin="8,72,8,0" Height="4" VerticalAlignment="Top">
+                                    <Border CornerRadius="8,8,0,0" Background="#FFA800"></Border>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Margin="0,164,0,0" VerticalAlignment="top">
+                        <Border CornerRadius="8" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC" Effect="{DynamicResource z-depth11}"></Border>
+                        <TextBlock Text="Đến phỏng vấn" FontSize="14" FontWeight="SemiBold" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,19,0,0"></TextBlock>
+                        <Grid Height="0.5" Margin="18,48,18,0" VerticalAlignment="Top" Background="#474747" Opacity="0.24"></Grid>
+                        <ScrollViewer ScrollChanged="Scroll2Changed" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"  Margin="0,48,0,0">
+                            <!--ScrollViewer.Style>
+                                    <Style TargetType="ScrollViewer">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="VerticalScrollBarVisibility" Value="Auto"></Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="VerticalScrollBarVisibility" Value="Hidden"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ScrollViewer.Style>-->
+                            <Grid>
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListSchedule">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition MaxWidth="130" MinWidth="106"></ColumnDefinition>
+                                                        <ColumnDefinition MinWidth="250"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Grid.Column="0">
+                                                        <Grid Width="68" Height="68" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,12,0,16">
+                                                            <Border CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747">
+                                                            </Border>
+                                                            <Grid Height="20" VerticalAlignment="Top">
+                                                                <Border BorderThickness="0" CornerRadius="4,4,0,0" Background="#FFA800"></Border>
+                                                                <TextBlock Text="{Binding time}" Foreground="#FFFFFF" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                            </Grid>
+                                                            <TextBlock Text="{Binding day_of_week}" FontSize="12" Foreground="#666666" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0"></TextBlock>
+                                                            <TextBlock Text="{Binding day_month}" FontSize="12" Foreground="#666666" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"></TextBlock>
+                                                        </Grid>
+                                                        <!--<TextBlock Text="Hôm nay" Foreground="#EB5757" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,85,0,13">
+                                                            <TextBlock.Resources>
+                                                                <Style TargetType="TextBlock">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.Show}" Value="true">
+                                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.Show}" Value="false">
+                                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Resources>
+                                                        </TextBlock>-->
+                                                    </Grid>
+                                                    <Grid Grid.Column="1">
+                                                        <StackPanel>
+                                                            <TextBlock Text="{Binding name}" FontSize="16" Foreground="#337ab7" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,0,10"></TextBlock>
+                                                            <WrapPanel Orientation="Horizontal">
+                                                                <Grid Margin="0,0,7,10">
+                                                                    <TextBlock Text="{Binding title}"></TextBlock>
+                                                                </Grid>
+                                                                <Grid Margin="0,0,0,10">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition></ColumnDefinition>
+                                                                        <ColumnDefinition></ColumnDefinition>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Ellipse Margin="0,0,6,0" Grid.Column="0" Width="4" Height="4" Fill="#666666"></Ellipse>
+                                                                    <TextBlock Grid.Column="1" Text="{Binding salary}" FontSize="12" Foreground="#666666"></TextBlock>
+                                                                </Grid>
+                                                            </WrapPanel>
+                                                            <TextBlock Text="01 người phỏng vấn" FontSize="12" Foreground="#27AE60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,10"></TextBlock>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                    <!--<Grid Grid.Column="2">
+                                                        <TextBlock Text="Hôm nay" FontSize="12" Foreground="#EB5757" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,17,26,0">
+                                                            <TextBlock.Resources>
+                                                                <Style TargetType="TextBlock">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.Show}" Value="true">
+                                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.Show}" Value="false">
+                                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Resources>
+                                                        </TextBlock>
+                                                    </Grid>-->
+                                                    <Grid Margin="18,0,18,0" Grid.ColumnSpan="3" Height="0.5" Background="#474747" Opacity="0.24" VerticalAlignment="Bottom"></Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    <Grid Height="50">
+                                        <TextBlock x:Name="tbNoData2" Text="Không có dữ liệu" FontSize="16" Foreground="{StaticResource #666666}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Height="50" VerticalAlignment="Top">
+            <Grid>
+                <Grid Height="1" Background="#474747" Margin="0,30,0,0" VerticalAlignment="Top"></Grid>
+                <Grid Height="30" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Cursor="Hand" Grid.Column="0" x:Name="PerformRecruitment" MouseLeftButtonDown="navigateToPage" Margin="0">
+                        <TextBlock FontWeight="SemiBold" Text="TỔNG QUAN" Foreground="#474747" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="35,0"></TextBlock>
+                        <Grid Height="5" VerticalAlignment="Bottom">
+                            <Border CornerRadius="8,8,0,0" Background="#4C5BD4"></Border>
+                        </Grid>
+                    </Grid>
+                    <Grid Cursor="Hand" Grid.Column="1" x:Name="RecruitmentInformation" MouseLeftButtonDown="navigateToPage" Margin="0">
+                        <TextBlock FontWeight="SemiBold" Text="THÔNG TIN TUYỂN DỤNG" Foreground="#474747" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="35,0"></TextBlock>
+                    </Grid>
+                    <!--<Grid Cursor="Hand" Grid.Column="2" x:Name="RecruitmentConnection" MouseLeftButtonDown="navigateToPage" Margin="0">
+                        <TextBlock FontWeight="SemiBold" Text="KẾT NỐI TUYỂN DỤNG" Foreground="#474747" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="35,0"></TextBlock>
+                    </Grid>
+                    <Grid Cursor="Hand" Grid.Column="3" x:Name="RecruitmentFee" MouseLeftButtonDown="navigateToPage" Margin="0">
+                        <TextBlock FontWeight="SemiBold" Text="CHI PHÍ TUYỂN DỤNG" Foreground="#474747" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="35,0"></TextBlock>
+                    </Grid>-->
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

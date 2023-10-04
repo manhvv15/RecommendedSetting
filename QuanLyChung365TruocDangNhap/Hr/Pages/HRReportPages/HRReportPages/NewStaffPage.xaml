@@ -1,0 +1,784 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.HRReportPages.HRReportPages.NewStaffPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+      x:Name="Page"
+      d:DesignHeight="1000" d:DesignWidth="1108"
+      Title="ProfilePage">
+
+    <Grid Margin="0,53,0,50">
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Cursor="Hand" MouseLeftButtonDown="NavigateBack">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Path Data="{StaticResource icon_arrow_back}" VerticalAlignment="Center" Stroke="{StaticResource #474747}" StrokeThickness="2" Margin="0,0,10,0"></Path>
+            <TextBlock Grid.Column="1" Text="Báo cáo nhân sự / Danh sách tổng nhân viên mới" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+        <Grid Margin="0,40,0,60">
+            <Border CornerRadius="8" BorderThickness="0.5" BorderBrush="{StaticResource #CCCCCC}">
+                <Grid>
+                    <Grid Height="55" VerticalAlignment="Top">
+                        <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                    </Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+                        <Grid Width="2736">
+                            <Grid Margin="0,55,0,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <TextBlock Text="1 tháng" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="2" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <Path Cursor="Hand" Data="{StaticResource icon_setting}" Fill="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="3" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <Path Cursor="Hand" Data="{StaticResource icon_setting}" Fill="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="4" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <Path Cursor="Hand" Data="{StaticResource icon_setting}" Fill="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="5" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <Path Cursor="Hand" Data="{StaticResource icon_setting}" Fill="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="6" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <Path Cursor="Hand" Data="{StaticResource icon_setting}" Fill="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="78">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="78"></ColumnDefinition>
+                                                <ColumnDefinition Width="167"></ColumnDefinition>
+                                                <ColumnDefinition Width="267"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                                <ColumnDefinition Width="143"></ColumnDefinition>
+                                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                                <ColumnDefinition Width="178"></ColumnDefinition>
+                                                <ColumnDefinition Width="146"></ColumnDefinition>
+                                                <ColumnDefinition Width="191"></ColumnDefinition>
+                                                <ColumnDefinition Width="209"></ColumnDefinition>
+                                                <ColumnDefinition Width="338"></ColumnDefinition>
+                                                <ColumnDefinition Width="193"></ColumnDefinition>
+                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                <ColumnDefinition Width="218"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <TextBlock Text="7" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <TextBlock Text="123456" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Text="Nguyễn Trần Trung Quân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <TextBlock Text="Tổ 1" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="5">
+                                                <TextBlock Text="Nhóm ABC" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="6">
+                                                <TextBlock Text="Nhân viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="7">
+                                                <TextBlock Text="Nam" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="8">
+                                                <TextBlock Text="14/01/1999" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="9">
+                                                <TextBlock Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="10">
+                                                <StackPanel>
+                                                    <TextBlock Margin="0,9,0,0" Text="Nguyentrantrungquan123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Sđt: 0123 123 123" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Margin="0,6,0,0" Text="Địa chỉ: 156 Lĩnh Nam- Hoàng Mai - Hà Nội" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="11">
+                                                <TextBlock Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="12">
+                                                <TextBlock Text="12/02/2020" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Grid Width="0.5" HorizontalAlignment="Right" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="13">
+                                                <Path Cursor="Hand" Data="{StaticResource icon_setting}" Fill="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                            </Grid>
+                                            <Rectangle Grid.ColumnSpan="14" Height="0.5" StrokeDashArray="2,4" StrokeThickness="0.5" Stroke="{StaticResource #CCCCCC}" VerticalAlignment="Bottom"></Rectangle>
+                                        </Grid>
+                                        <Grid Height="30"></Grid>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Grid>
+                            <Grid Height="55" VerticalAlignment="Top">
+                                <Border CornerRadius="8,8,0,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="78"></ColumnDefinition>
+                                            <ColumnDefinition Width="167"></ColumnDefinition>
+                                            <ColumnDefinition Width="267"></ColumnDefinition>
+                                            <ColumnDefinition Width="218"></ColumnDefinition>
+                                            <ColumnDefinition Width="143"></ColumnDefinition>
+                                            <ColumnDefinition Width="180"></ColumnDefinition>
+                                            <ColumnDefinition Width="178"></ColumnDefinition>
+                                            <ColumnDefinition Width="146"></ColumnDefinition>
+                                            <ColumnDefinition Width="191"></ColumnDefinition>
+                                            <ColumnDefinition Width="209"></ColumnDefinition>
+                                            <ColumnDefinition Width="338"></ColumnDefinition>
+                                            <ColumnDefinition Width="193"></ColumnDefinition>
+                                            <ColumnDefinition Width="210"></ColumnDefinition>
+                                            <ColumnDefinition Width="218"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="STT" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock Text="ID" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <TextBlock Text="Họ và tên" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="3">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="ShowHideDepartment">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Phòng ban" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path  Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid x:Name="CbxDepartment" Height="239" Width="193"  Margin="0,40,0,-230" Visibility="Collapsed">
+                                                <Border CornerRadius="4" Background="{StaticResource #FFFFFF}" BorderThickness="0.5" BorderBrush="{StaticResource #CCCCCC}">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="36"></RowDefinition>
+                                                            <RowDefinition Height="36"></RowDefinition>
+                                                            <RowDefinition Height="36"></RowDefinition>
+                                                            <RowDefinition Height="36"></RowDefinition>
+                                                            <RowDefinition Height="36"></RowDefinition>
+                                                            <RowDefinition Height="36"></RowDefinition>
+                                                            <RowDefinition Height="*"></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid Grid.Row="0">
+                                                            <TextBlock Text="Phòng Sáng Tạo" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></TextBlock>
+                                                            <Grid Height="0.2" Background="{StaticResource #474747}" Opacity="0.48" VerticalAlignment="Bottom" Margin="8,0,8,0"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Row="1">
+                                                            <TextBlock Text="Phòng Kỹ Thuật" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></TextBlock>
+                                                            <Grid Height="0.2" Background="{StaticResource #474747}" Opacity="0.48" VerticalAlignment="Bottom" Margin="8,0,8,0"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Row="2">
+                                                            <TextBlock Text="Phòng Biên Tập" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></TextBlock>
+                                                            <Grid Height="0.2" Background="{StaticResource #474747}" Opacity="0.48" VerticalAlignment="Bottom" Margin="8,0,8,0"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Row="3">
+                                                            <TextBlock Text="Phòng Kinh Doanh" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></TextBlock>
+                                                            <Grid Height="0.2" Background="{StaticResource #474747}" Opacity="0.48" VerticalAlignment="Bottom" Margin="8,0,8,0"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Row="4">
+                                                            <TextBlock Text="Phòng Nhân Sự" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></TextBlock>
+                                                            <Grid Height="0.2" Background="{StaticResource #474747}" Opacity="0.48" VerticalAlignment="Bottom" Margin="8,0,8,0"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Row="5">
+                                                            <TextBlock Text="Phòng Đề Án" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"></TextBlock>
+                                                            <Grid Height="0.2" Background="{StaticResource #474747}" Opacity="0.48" VerticalAlignment="Bottom" Margin="8,0,8,0"></Grid>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Border>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="4">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Tổ" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="5">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Nhóm" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="6">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Chức vụ" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="7">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Giới tính" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="8">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Năm sinh" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="9">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Tình trạng hôn nhân" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="10">
+                                            <TextBlock Text="Thông tin liên hệ" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="11">
+                                            <Grid Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="Trình độ học vấn" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <Path Grid.Column="1" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" Margin="10,3,0,0"></Path>
+                                            </Grid>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="12">
+                                            <TextBlock Text="Ngày bắt đầu làm việc" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="13">
+                                            <TextBlock Text="Kinh nghiệm làm việc" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid Width="19" Margin="0,0,16,0" Cursor="Hand">
+                    <Border CornerRadius="4" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                    <TextBlock Text="&lt;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="{StaticResource #666666}" Margin="0,0,0,2"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid Width="19" Margin="0,0,0,0" Cursor="Hand">
+                    <Border CornerRadius="4" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                    <TextBlock Text="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Foreground="{StaticResource #666666}"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid Width="19" Margin="16,0,0,0" Cursor="Hand">
+                    <Border CornerRadius="4" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                    <TextBlock Text="&gt;" FontSize="13" Foreground="{StaticResource #666666}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,2"></TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

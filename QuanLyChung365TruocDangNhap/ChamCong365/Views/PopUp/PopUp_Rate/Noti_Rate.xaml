@@ -1,0 +1,37 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_Rate.Noti_Rate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_Rate"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Noti_Rate" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+    <Grid>
+        <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+            </Border.Effect>
+            <Grid>
+                <Path Margin="0 14 22 0" Data="{DynamicResource iconClose}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Viewbox Width="71" Height="71" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                        <Canvas Height="71" Width="71">
+                            <Path Data="M35.5 71C55.1061 71 71 55.1061 71 35.5C71 15.8939 55.1061 0 35.5 0C15.8939 0 0 15.8939 0 35.5C0 55.1061 15.8939 71 35.5 71Z" Fill="#FFD54F" />
+                            <Path Data="M63.7675 2.85205C62.0546 2.85205 60.4394 3.42893 59.1673 4.42293C57.8952 3.42893 56.28 2.85205 54.5671 2.85205C50.5793 2.85205 47.334 5.95238 47.334 9.76272C47.334 15.7001 56.135 22.1433 57.8952 23.374C58.2798 23.6403 58.7236 23.7734 59.1673 23.7734C59.6111 23.7734 60.0548 23.6403 60.4394 23.374C62.1996 22.1404 71.0006 15.7001 71.0006 9.76272C71.0006 5.95238 67.7554 2.85205 63.7675 2.85205Z" Fill="#E53935" />
+                            <Path Data="M16.4335 50.1851C14.7207 50.1851 13.1054 50.7619 11.8333 51.7559C10.5613 50.7619 8.946 50.1851 7.23313 50.1851C3.24529 50.1851 0 53.2854 0 57.0957C0 63.0331 8.80104 69.4763 10.5613 70.707C10.9458 70.9733 11.3896 71.1064 11.8333 71.1064C12.2771 71.1064 12.7208 70.9733 13.1054 70.707C14.8656 69.4734 23.6667 63.0331 23.6667 57.0957C23.6667 53.2854 20.4214 50.1851 16.4335 50.1851Z" Fill="#E53935" />
+                            <Path Data="M27.3639 33.2811C26.1392 33.2811 25.1452 32.2871 25.1452 31.0623C25.1452 29.4323 23.8198 28.104 22.1868 28.104C20.5538 28.104 19.2285 29.4323 19.2285 31.0623C19.2285 32.2871 18.2345 33.2811 17.0098 33.2811C15.785 33.2811 14.791 32.2871 14.791 31.0623C14.791 26.9858 18.1073 23.6665 22.1868 23.6665C26.2664 23.6665 29.5827 26.9858 29.5827 31.0623C29.5827 32.2871 28.5887 33.2811 27.3639 33.2811Z" Fill="#6D4C41" />
+                            <Path Data="M53.9889 33.2811C52.7642 33.2811 51.7702 32.2871 51.7702 31.0623C51.7702 29.4323 50.4448 28.104 48.8118 28.104C47.1788 28.104 45.8535 29.4323 45.8535 31.0623C45.8535 32.2871 44.8595 33.2811 43.6348 33.2811C42.41 33.2811 41.416 32.2871 41.416 31.0623C41.416 26.9858 44.7323 23.6665 48.8118 23.6665C52.8914 23.6665 56.2077 26.9858 56.2077 31.0623C56.2077 32.2871 55.2137 33.2811 53.9889 33.2811Z" Fill="#6D4C41" />
+                            <Path Data="M35.4993 53.2501C29.0383 53.2501 22.9678 50.7355 18.4001 46.1649C17.5333 45.2981 17.5333 43.8929 18.4001 43.0261C19.2669 42.1593 20.6721 42.1593 21.5389 43.0261C25.2664 46.7595 30.2246 48.8126 35.4993 48.8126C40.774 48.8126 45.7321 46.7595 49.4626 43.029C50.3294 42.1622 51.7346 42.1622 52.6014 43.029C53.4682 43.8958 53.4682 45.301 52.6014 46.1678C48.0308 50.7355 41.9603 53.2501 35.4993 53.2501Z" Fill="#6D4C41" />
+                        </Canvas>
+                    </Viewbox>
+                    <TextBlock Margin="0 27 0 30" Text="Cảm ơn bạn đã đánh giá về phần mềm chúng tôi!" HorizontalAlignment="Center"/>
+                    <Border CornerRadius="3" BorderThickness="0" Background="{DynamicResource #4C5BD4}" Width="387" Height="48" Cursor="Hand" MouseLeftButtonDown="ExitPopUp_MouseLeftButtonDown">
+                        <TextBlock Text="{DynamicResource textXacNhan}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="18" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

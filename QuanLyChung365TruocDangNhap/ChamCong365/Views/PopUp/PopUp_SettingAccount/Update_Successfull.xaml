@@ -1,0 +1,24 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_SettingAccount.Update_Successfull"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_SettingAccount"
+      mc:Ignorable="d" 
+      d:DesignHeight="294" d:DesignWidth="527"
+      Title="Update_Successfull">
+    <Border CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+    <Grid >
+        <Path Margin="0 14 22 0" Data="{DynamicResource iconClose}" Fill="{DynamicResource #FFFFFF}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Background="{DynamicResource #FFFFFF}">
+                <Path Data="{DynamicResource iconThanhcong}" Fill="{DynamicResource #82CE34}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <TextBlock Margin="0 13 0 17" Text="Cập nhật thông tin thành công !" FontSize="16" Foreground="{DynamicResource #363636}" HorizontalAlignment="Center"/>
+            <Border CornerRadius="3" BorderThickness="0" Background="{DynamicResource #4C5BD4}" Width="387" Height="48">
+                <TextBlock Text="{DynamicResource textXacNhan}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="18" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+    </Border>
+</Page>

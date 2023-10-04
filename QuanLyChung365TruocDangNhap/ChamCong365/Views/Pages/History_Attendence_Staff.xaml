@@ -1,0 +1,564 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.History_Attendence_Staff"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:tool="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Tools" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages"
+      xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
+      mc:Ignorable="d" x:Name="History_Atd_Staff"
+      d:DesignHeight="741" d:DesignWidth="1146"
+
+      Title="History_Attendence_Staff" SizeChanged="History_Atd_Staff_SizeChanged">
+    <Page.Resources>
+        <math:MathConvert x:Key="MathConvert"></math:MathConvert>
+    </Page.Resources>
+    <Grid Background="{DynamicResource #F7F8FC}">
+        <TabControl x:Name="tb" ItemContainerStyle="{StaticResource TabItem1}" Background="Transparent" BorderThickness="0" Margin="0 -20 0 0">
+            <TabItem Header="{DynamicResource textLichSuDiemDanhNhanVien}">
+                <StackPanel>
+                    <Border CornerRadius="15" Margin="0 20 0 0" BorderThickness="1" Background="{DynamicResource #FFFFFF}">
+                        <Grid Margin="20 10" x:Name="grid1">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                <WrapPanel Name="wplMain">
+                                    <WrapPanel x:Name="Wrap_BLong" Margin="0 15 0 0">
+
+                                        <WrapPanel.Style>
+                                            <Style TargetType="WrapPanel">
+                                                <Setter Property="Width" Value="{Binding ElementName=wplMain,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)/2}"/>
+                                                <Setter Property="Margin" Value="0 0 15 0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSmallSize}" Value="1">
+                                                        <Setter Property="Width" Value="{Binding ElementName=wplMain,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE+15)}"/>
+                                                        <Setter Property="Margin" Value="0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </WrapPanel.Style>
+                                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" Height="40">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BLong,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-30)/2}"/>
+                                                    <Setter Property="Margin" Value="0 0 15 0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid VerticalAlignment="Center" >
+                                                <ComboBox FontSize="16" x:Name="cbbCom" ItemsSource="{Binding listCom}" DisplayMemberPath="com_name" Style="{StaticResource Combobox1}" BorderThickness="0" BorderBrush="{DynamicResource #D7DCE0}" ItemContainerStyle="{StaticResource ComboboxItem1}" SelectionChanged="cbbCom_SelectionChanged"/>
+                                                <TextBlock Margin="15 0 0 0" Text="{DynamicResource textLocTheoCT}" Foreground="{DynamicResource #677684}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=cbbCom,Path=SelectedItem}" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+                                        </Border>
+                                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" Height="40">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BLong,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-30)/2}"/>
+                                                    <Setter Property="Margin" Value="0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid VerticalAlignment="Center" >
+                                                <ComboBox FontSize="16" SelectionChanged="cbbPB_SelectionChanged" x:Name="cbbPB" ItemsSource="{Binding listDep}" DisplayMemberPath="dep_name" Style="{StaticResource Combobox1}" BorderThickness="0" BorderBrush="{DynamicResource #D7DCE0}" ItemContainerStyle="{StaticResource ComboboxItem1}"/>
+                                                <TextBlock Margin="15 0 0 0" Text="{DynamicResource textLocTheoPhongBan}" Foreground="{DynamicResource #677684}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=cbbPB,Path=SelectedItem}" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+                                        </Border>
+                                    </WrapPanel>
+                                    <WrapPanel x:Name="Wrap_BShot" Grid.Column="1" Margin="0 15 0 0">
+                                        <WrapPanel.Style>
+                                            <Style TargetType="WrapPanel">
+                                                <Setter Property="Width" Value="{Binding ElementName=wplMain,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-5)/2}"/>
+                                                <Setter Property="Margin" Value="0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSmallSize}" Value="1">
+                                                        <Setter Property="Width" Value="{Binding ElementName=wplMain,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)}"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </WrapPanel.Style>
+                                        <DockPanel>
+                                            <DockPanel.Style>
+                                                <Style TargetType="DockPanel">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BShot,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-15)/2}"/>
+                                                    <Setter Property="Margin" Value="0 0 15 0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DockPanel.Style>
+                                            <TextBlock Text="{DynamicResource textTU}" Margin="0 0 15 0" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontSize="16"></TextBlock>
+                                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}"  Height="40">
+                                                <Grid>
+                                                    <tool:DatePicker x:Name="dpStart" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="14" VerticalAlignment="Center" BorderThickness="0"></tool:DatePicker>
+                                                </Grid>
+                                            </Border>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <DockPanel.Style>
+                                                <Style TargetType="DockPanel">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BShot,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-15)/2}"/>
+                                                    <Setter Property="Margin" Value="0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DockPanel.Style>
+                                            <TextBlock Text="{DynamicResource textDEN}" Margin="0 0 15 0" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontSize="16"></TextBlock>
+                                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}"  Height="40">
+                                                <Grid>
+                                                    <tool:DatePicker x:Name="dpEnd" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="14" VerticalAlignment="Center" BorderThickness="0"></tool:DatePicker>
+                                                </Grid>
+                                            </Border>
+                                        </DockPanel>
+                                    </WrapPanel>
+                                </WrapPanel>
+                                <DockPanel Margin="0 15"   Height="40">
+                                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                        <Border x:Name="btn_ApDung" Margin="0" CornerRadius="3" Background="{DynamicResource #4C5BD4}" Width="134" Cursor="Hand" MouseLeftButtonDown="btn_ApDung_MouseLeftButtonDown">
+                                            <TextBlock Text="{DynamicResource textApDung}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="SemiBold"/>
+                                        </Border>
+                                        <Border x:Name="btnEx" Margin="15 0 0 0" Grid.Column="3" Height="40" Width="134" CornerRadius="3" Cursor="Hand" Background="{DynamicResource #0b7f45}" MouseLeftButtonDown="btnEx_MouseLeftButtonDown">
+                                            <TextBlock Text="{DynamicResource textXuatEx}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <tool:Combobox x:Name="searchbarEP" FontSize="16" Foreground="#474747" PlaceHolder="Nhập tên cần tìm" Margin="0 0 15 0" ItemsSource="{Binding listEmployee,RelativeSource={RelativeSource AncestorType=Page}}" DisplayMemberPath="ep_id,ep_name" DisplayChar="-" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" VerticalAlignment="Center"></tool:Combobox>
+                                </DockPanel>
+                                <DataGrid x:Name= "tableAttStaff" ItemsSource="{Binding listStaff}" Style="{StaticResource DataGrid2}"  Background="{DynamicResource #ECF2FA}" PreviewMouseWheel="tableAttStaff_PreviewMouseWheel">
+                                    <DataGrid.ColumnHeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="{DynamicResource #ECF2FA}"></Setter>
+                                            <Setter Property="Foreground" Value="{DynamicResource #4C5BD4}"></Setter>
+                                            <Setter Property="FontWeight" Value="Medium"></Setter>
+                                            <Setter Property="FontWeight" Value="Medium"></Setter>
+                                            <Setter Property="FontSize" Value="16"></Setter>
+                                            <Setter Property="MinHeight" Value="50"></Setter>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                            <Setter Property="BorderThickness" Value="0"></Setter>
+                                            <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}"></Setter>
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding}" Margin="20 5" TextWrapping="NoWrap"/>
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DataGrid.ColumnHeaderStyle>
+                                    <DataGrid.CellStyle>
+                                        <Style TargetType="DataGridCell">
+                                            <Setter Property="Foreground" Value="Black" />
+                                            <Style.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="Background" Value="{x:Null}" />
+                                                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.CellStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="{DynamicResource textAnh}">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40" Background="Black" CornerRadius="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}">
+                                                        <Border.OpacityMask>
+                                                            <VisualBrush>
+                                                                <VisualBrush.Visual>
+                                                                    <Border Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualHeight}" CornerRadius="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualHeight}"></Border>
+                                                                </VisualBrush.Visual>
+                                                            </VisualBrush>
+                                                        </Border.OpacityMask>
+                                                        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="UniformToFill" Source="{Binding image}"></Image>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textIDnTen}" Binding="{Binding IDnTen}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textCaLamViec}" Binding="{Binding shift_name}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textThoiGianDiemDanh}" Binding="{Binding time}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textDiaDiem}" Binding="{Binding ts_location_name}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textGhiChu}" Binding="{Binding note}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTemplateColumn Header="{DynamicResource textTrangThai}">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock>
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                                <Setter Property="Text" Value=""/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                                        <Setter Property="Text" Value="Thất bại"/>
+                                                                        <Setter Property="Foreground" Value="Red"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding is_success}" Value="1">
+                                                                        <Setter Property="Text" Value="Thành công"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding is_success}" Value="2">
+                                                                        <Setter Property="Text" Value="Chờ duyệt"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <tool:Paginator x:Name="pagin" DisplayNumber="20" HorizontalAlignment="Center" Margin="20" SelectionChange="pagin_SelectionChange"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="{DynamicResource textLichSuDiemDanhQR}">
+                <StackPanel>
+                    <Border CornerRadius="15" Margin="0 20 0 0" BorderThickness="1" Background="{DynamicResource #FFFFFF}">
+                        <Grid Margin="20 10" x:Name="grid2">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                <WrapPanel Name="wplMain1">
+                                    <WrapPanel x:Name="Wrap_BLong1" Margin="0 15 0 0">
+
+                                        <WrapPanel.Style>
+                                            <Style TargetType="WrapPanel">
+                                                <Setter Property="Width" Value="{Binding ElementName=wplMain1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)/2}"/>
+                                                <Setter Property="Margin" Value="0 0 15 0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSmallSize}" Value="1">
+                                                        <Setter Property="Width" Value="{Binding ElementName=wplMain1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE+15)}"/>
+                                                        <Setter Property="Margin" Value="0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </WrapPanel.Style>
+                                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" Height="40">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BLong1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-30)/2}"/>
+                                                    <Setter Property="Margin" Value="0 0 15 0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid VerticalAlignment="Center" >
+                                                <ComboBox x:Name="cbbCom1" ItemsSource="{Binding listCom}" DisplayMemberPath="com_name" Style="{StaticResource Combobox1}" BorderThickness="0" BorderBrush="{DynamicResource #D7DCE0}" ItemContainerStyle="{StaticResource ComboboxItem1}" SelectionChanged="cbbCom1_SelectionChanged"/>
+                                                <TextBlock Margin="15 0 0 0" Text="{DynamicResource textLocTheoCT}" Foreground="{DynamicResource #677684}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=cbbCom1,Path=SelectedItem}" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+                                        </Border>
+                                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" Height="40">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BLong1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-30)/2}"/>
+                                                    <Setter Property="Margin" Value="0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid VerticalAlignment="Center" >
+                                                <ComboBox x:Name="cbbPB1" ItemsSource="{Binding listDep1,RelativeSource={RelativeSource AncestorType=Page}}" DisplayMemberPath="dep_name" Style="{StaticResource Combobox1}" BorderThickness="0" BorderBrush="{DynamicResource #D7DCE0}" ItemContainerStyle="{StaticResource ComboboxItem1}" SelectionChanged="cbbPB1_SelectionChanged"/>
+                                                <TextBlock Margin="15 0 0 0" Text="{DynamicResource textLocTheoPhongBan}" Foreground="{DynamicResource #677684}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=cbbPB1,Path=SelectedItem}" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+                                        </Border>
+                                    </WrapPanel>
+                                    <WrapPanel x:Name="Wrap_BShot1" Grid.Column="1" Margin="0 15 0 0">
+                                        <WrapPanel.Style>
+                                            <Style TargetType="WrapPanel">
+                                                <Setter Property="Width" Value="{Binding ElementName=wplMain1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-5)/2}"/>
+                                                <Setter Property="Margin" Value="0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSmallSize}" Value="1">
+                                                        <Setter Property="Width" Value="{Binding ElementName=wplMain1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)}"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </WrapPanel.Style>
+                                        <DockPanel>
+                                            <DockPanel.Style>
+                                                <Style TargetType="DockPanel">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BShot1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-15)/2}"/>
+                                                    <Setter Property="Margin" Value="0 0 15 0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DockPanel.Style>
+                                            <TextBlock Text="{DynamicResource textTU}" Margin="0 0 15 0" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontSize="16"></TextBlock>
+                                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}"  Height="40">
+                                                <Grid>
+                                                    <tool:DatePicker x:Name="dpStart1" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="14" VerticalAlignment="Center" BorderThickness="0"></tool:DatePicker>
+                                                </Grid>
+                                            </Border>
+                                        </DockPanel>
+                                        <DockPanel>
+                                            <DockPanel.Style>
+                                                <Style TargetType="DockPanel">
+                                                    <Setter Property="Width" Value="{Binding ElementName=Wrap_BShot1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-15)/2}"/>
+                                                    <Setter Property="Margin" Value="0"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsSmallSize}" Value="1"></DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DockPanel.Style>
+                                            <TextBlock Text="{DynamicResource textDEN}" Margin="0 0 15 0" VerticalAlignment="Center" Foreground="{DynamicResource #474747}" FontSize="16"></TextBlock>
+                                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}"  Height="40">
+                                                <Grid>
+                                                    <tool:DatePicker x:Name="dpEnd1" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="14" VerticalAlignment="Center" BorderThickness="0"></tool:DatePicker>
+                                                </Grid>
+                                            </Border>
+                                        </DockPanel>
+                                    </WrapPanel>
+                                </WrapPanel>
+                                <DockPanel Margin="0 15" Height="40">
+                                    <DockPanel.Style>
+                                        <Style TargetType="DockPanel">
+                                            <Setter Property="Width" Value="{Binding ElementName=wplMain1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)}"/>
+                                        </Style>
+                                    </DockPanel.Style>
+                                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                        <Border x:Name="btn_ApDung1" Margin="0" CornerRadius="3" Background="{DynamicResource #4C5BD4}" Width="134" Cursor="Hand" MouseLeftButtonDown="btn_ApDung1_MouseLeftButtonDown">
+                                            <TextBlock Text="{DynamicResource textApDung}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}" FontSize="16" FontWeight="SemiBold"/>
+                                        </Border>
+                                    </StackPanel>
+                                    <tool:SearchBar x:Name="searchbarEP1" PlaceHolder="Nhập tên cần tìm" FontSize="14" Foreground="#474747" Margin="0 0 15 0" ItemsSource="{Binding listEmployee1,RelativeSource={RelativeSource AncestorType=Page}}" DisplayMemberPath="ep_id,ep_name" DisplayChar="-" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" VerticalAlignment="Center">
+                                        <tool:SearchBar.Style>
+                                            <Style TargetType="tool:SearchBar">
+                                                <Setter Property="Width" Value="{Binding ElementName=wplMain1,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-380)}"/>
+                                            </Style>
+                                        </tool:SearchBar.Style>
+                                    </tool:SearchBar>
+                                    <ComboBox Style="{StaticResource Combobox1}" x:Name="searchbartt" Foreground="#474747" Margin="0 0 15 0" Width="200" ItemsSource="{Binding listtrangthai,RelativeSource={RelativeSource AncestorType=Page}}" SelectedIndex="0" BorderThickness="1" BorderBrush="{DynamicResource #D7DCE0}" VerticalAlignment="Center"></ComboBox>
+                                </DockPanel>
+                                <DataGrid x:Name= "tableAttStaff1" ItemsSource="{Binding listStaff1}" Style="{StaticResource DataGrid2}"  Background="{DynamicResource #ECF2FA}" PreviewMouseWheel="tableAttStaff_PreviewMouseWheel">
+                                    <DataGrid.ColumnHeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="{DynamicResource #ECF2FA}"></Setter>
+                                            <Setter Property="Foreground" Value="{DynamicResource #4C5BD4}"></Setter>
+                                            <Setter Property="FontWeight" Value="Medium"></Setter>
+                                            <Setter Property="FontWeight" Value="Medium"></Setter>
+                                            <Setter Property="FontSize" Value="16"></Setter>
+                                            <Setter Property="MinHeight" Value="50"></Setter>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                            <Setter Property="BorderThickness" Value="0"></Setter>
+                                            <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}"></Setter>
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding}" Margin="20 5" TextWrapping="NoWrap"/>
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DataGrid.ColumnHeaderStyle>
+                                    <DataGrid.CellStyle>
+                                        <Style TargetType="DataGridCell">
+                                            <Setter Property="Foreground" Value="Black" />
+                                            <Style.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="Background" Value="{x:Null}" />
+                                                    <Setter Property="BorderBrush" Value="{x:Null}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.CellStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="{DynamicResource textAnh}">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40" Background="Black" CornerRadius="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}">
+                                                        <Border.OpacityMask>
+                                                            <VisualBrush>
+                                                                <VisualBrush.Visual>
+                                                                    <Border Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualHeight}" CornerRadius="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualHeight}"></Border>
+                                                                </VisualBrush.Visual>
+                                                            </VisualBrush>
+                                                        </Border.OpacityMask>
+                                                        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="UniformToFill" Source="{Binding display_ts_image}"></Image>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textIDnTen}" Binding="{Binding display_ep_name,Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textCaLamViec}" Binding="{Binding shift_name}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textThoiGianDiemDanh}" Binding="{Binding display_at_time,Mode=OneWay}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textDiaDiem}" Binding="{Binding ts_location_name}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn Header="{DynamicResource textGhiChu}" Binding="{Binding note}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                            <Setter Property="Foreground" Value="Red"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTemplateColumn Header="{DynamicResource textTrangThai}">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock>
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock" BasedOn="{StaticResource textRowCenter}">
+                                                                <Setter Property="Text" Value="{Binding TrangThai, Mode=OneWay}"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding is_success}" Value="0">
+                                                                        <Setter Property="Foreground" Value="Red"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <tool:Paginator x:Name="pagin1" DisplayNumber="20" HorizontalAlignment="Center" Margin="20" SelectionChange="pagin1_SelectionChange"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        
+        <Grid Background="Gray" Opacity=".5" Name="loading" Visibility="Collapsed"></Grid>
+    </Grid>
+</Page>

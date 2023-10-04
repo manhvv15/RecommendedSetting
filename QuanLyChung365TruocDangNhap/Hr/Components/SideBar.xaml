@@ -1,0 +1,629 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Components.SideBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Resource"
+             mc:Ignorable="d"
+             d:DesignHeight="690" d:DesignWidth="258" >
+
+    <UserControl.Resources>
+        <DropShadowEffect x:Key="z-depth1" BlurRadius="10" ShadowDepth="3" Direction="270" Color="#CCCCCC" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Path Data="{StaticResource logo_timviec365_2}" Fill="#4C5BD4" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Width="44" HorizontalAlignment="Left" Background="#4C5BD4"></Grid>
+            <ScrollViewer x:Name="scroll_sidebar" VerticalScrollBarVisibility="Hidden">
+                <StackPanel Orientation="Vertical">
+                    <Grid  Width="Auto" VerticalAlignment="Top" Height="1" Background="#474747" Opacity="0.1"></Grid>
+
+                    <Grid x:Name="Home" MouseLeftButtonDown="navigateToPage" Cursor="Hand" Height="44" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_home}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1" >
+                            <TextBlock Text="{StaticResource home}" FontWeight="SemiBold" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Cursor="Hand" x:Name="ManageRecruitmentParent" Height="44" MouseLeftButtonDown="manage_recruitment_MouseLeftButtonDown" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_quan_ly_tuyen_dung}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock Text="{StaticResource manage_recruitment}" Foreground="#474747" FontWeight="SemiBold" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid x:Name="ManageRecruitment" Height="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="RecruitmentProcess" MouseLeftButtonDown="navigateToPageItem" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Cursor="Hand" Grid.Column="0">
+                                <Path Data="{StaticResource icon_quy_trinh_tuyen_dung}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Cursor="Hand" Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource recruitment_process}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="PerformRecruitment" Cursor="Hand" Grid.Row="1" MouseLeftButtonDown="navigateToPageItem"  MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_thuc_hien_tuyen_dung}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource perform_recruitment}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="ListOfCandidates" Cursor="Hand" Grid.Row="2" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_danh_sach_ung_vien}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource list_of_candidates}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Cursor="Hand" x:Name="salary_and_benifits" Height="44" MouseLeftButtonDown="salary_and_benifits_MouseLeftButtonDown" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_luong_thuong_phuc_loi}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource salary_and_benifits}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="salary_and_benifits_expland" Height="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Cursor="Hand" x:Name="Timekeeping" Grid.Row="0" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_cham_cong}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource timekeeping}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="Payroll" Grid.Row="1" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_tinh_luong}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource payroll}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="KPI" Grid.Row="2" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_kpi}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource kpi}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="SalaryAndBenefit" Cursor="Hand" Grid.Row="3" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_khen_thuong}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource bonus}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="Violation" Cursor="Hand" Grid.Row="4" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_ky_luat}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource violation}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="Welfare" MouseLeftButtonDown="navigateToPageItem" Grid.Row="5" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_phuc_loi}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource benifits}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid Cursor="Hand" x:Name="administration" Height="44" MouseLeftButtonDown="administration_MouseLeftButtonDown" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="21*"/>
+                                <ColumnDefinition Width="23*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Data="{StaticResource icon_quan_ly_hanh_chinh}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="-8.88,13.5,12,13.5"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF" Grid.ColumnSpan="2"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource administration}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="administration_expland" Height="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="EmployeeManager" Cursor="Hand" Grid.Row="0" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_quan_ly_nhan_vien}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource employee_manager}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="RegulationsPolicies" Cursor="Hand" Grid.Row="1" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_quy_dinh_chinh_sach}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Regulations - policies}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="Contract" MouseLeftButtonDown="navigateToPageItem" Grid.Row="2" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_hop_dong_va_ho_so}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Contracts and employee records}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="PersonalChange" Cursor="Hand" Grid.Row="3" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_bien_dong_nhan_su}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Personnel change}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="ArchivalRecords" MouseLeftButtonDown="navigateToPageItem" Grid.Row="4" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_van_thu_luu_tru}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Archives}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="Proposed" MouseLeftButtonDown="navigateToPageItem" Grid.Row="5" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_de_xuat}" StrokeThickness="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="#777777"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Propose}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="Proposed2" MouseLeftButtonDown="navigateToPageItem" Grid.Row="6" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_de_xuat}" StrokeThickness="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="#777777"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="Đề xuất cộng công" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="InternalCommunications" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="7" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_truyen_thong_noi_bo}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Internal communications}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="AssetManagement" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="8" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_quan_ly_tai_san}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Asset Management}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="InventoryManagement" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="9" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_quan_ly_kho}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Inventory management}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="FinancialManagement" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="10" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_quan_ly_tai_chinh}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Financial management}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="Translate" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="11" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_phien_dich}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Translate}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid Cursor="Hand" x:Name="training_and_developing" Height="44" MouseLeftButtonDown="training_and_developing_MouseLeftButtonDown" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_dao_tao_va_phat_trien}"  Stroke="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource training_and_developing}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="training_and_developing_expland" Height="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid x:Name="JobPosition" Cursor="Hand" Grid.Row="0" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_vi_tri_cv}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Job position}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="TrainingProcess" Cursor="Hand" Grid.Row="1" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF" MouseLeftButtonDown="navigateToPageItem">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_quy_trinh_dao_tao}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Training process}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="Evaluate" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="2" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_danh_gia_nang_luc}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Evaluate staff capacity}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid x:Name="Chart" MouseLeftButtonDown="navigateToPage" Cursor="Hand" Height="44" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_so_do_to_chuc}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource organizational_chart}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="HRReport" Cursor="Hand" Height="44" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave" MouseLeftButtonDown="navigateToPage">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_bao_cao_nhan_su}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource HR_report}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="Setting" Cursor="Hand" Height="44" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave" MouseLeftButtonDown="navigateToPage">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_cai_dat}" Stroke="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid x:Name="setting" Grid.Column="1" >
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource setting}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Cursor="Hand" x:Name="digital_conversion" Height="44" MouseLeftButtonDown="digital_conversion_MouseLeftButtonDown" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_chuyen_doi_so}" Stroke="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource digital_conversion}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="digital_conversion_expland" Height="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid x:Name="Timekeeping2" MouseLeftButtonDown="navigateToPageItem" Cursor="Hand" Grid.Row="0" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_cham_cong_2}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource timekeeping}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="Payroll2" Cursor="Hand" MouseLeftButtonDown="navigateToPageItem" Grid.Row="1" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_tinh_luong_2}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource payroll}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="ArchivalRecords2" MouseLeftButtonDown="navigateToPageItem" Grid.Row="2" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_van_thu_2}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Archives}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Cursor="Hand" x:Name="CulturalCommunication" MouseLeftButtonDown="navigateToPageItem" Grid.Row="3" MouseMove="item_exta_MouseMove" MouseLeave="item_exta_MouseLeave" Background="#FFFFFF">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="44"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Path Data="{StaticResource icon_truyen_thong_van_hoa}" Fill="#777777" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource Cultural communication}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" ></TextBlock>
+                                <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #FC9797}" Visibility="Collapsed"></Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="RecentDeletedData"  MouseLeftButtonDown="navigateToPage" Cursor="Hand" Height="44" MouseMove="item_main_MouseMove" MouseLeave="item_main_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="#4C5BD4">
+                            <Path Data="{StaticResource icon_xoa_gan_day}" Fill="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                            <Line X1="4" Y1="44" X2="40" Y2="44" Stroke="#FFFFFF"></Line>
+                        </Grid>
+                        <Grid Grid.Column="1" >
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource recently_deleted_data}" Foreground="#474747" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0"></TextBlock>
+                            <Grid Width="4" HorizontalAlignment="Right" Background="{StaticResource #4C5BD4}" Visibility="Collapsed"></Grid>
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

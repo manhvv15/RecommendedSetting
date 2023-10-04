@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.RecruitmentManagementPopups.RecruitmentProcessPopups.ProcessEditingPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                 mc:Ignorable="d" 
+                 d:DesignHeight="768" d:DesignWidth="1366">
+        <Grid Height="490" Width="736" VerticalAlignment="Top">
+            <Border CornerRadius="8" Background="{StaticResource #FFFFFF}"></Border>
+            <Grid Height="36" VerticalAlignment="Top">
+                <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                <TextBlock Text="CHỈNH SỬA GIAI ĐOẠN TUYỂN DỤNG" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Grid Height="36" Width="624" Margin="56,88,56,0" VerticalAlignment="Top">
+            <Grid Height="16" HorizontalAlignment="Left" Margin="0,11,0,9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Tên giai đoạn" FontSize="14" Foreground="#474747" FontFamily="Roboto" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Text="*" Grid.Column="1" Foreground="red" Margin="5,-3,0,0"></TextBlock>
+            </Grid>
+            <Grid Width="404" HorizontalAlignment="Right" Grid.Column="1">
+                <Border CornerRadius="4" BorderBrush="{StaticResource #474747}" BorderThickness="1">
+                    <Grid>
+                        <TextBox FontSize="14" Padding="10,0,0,0" VerticalAlignment="Center" x:Name="tbName" Foreground="{StaticResource #474747}" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                        <Grid Visibility="Collapsed" Height="16" Width="16" HorizontalAlignment="Right" Margin="0,0,10,0">
+                            <Path Data="{StaticResource icon_Warning1}" Fill="Red"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        
+        <Grid Height="36" VerticalAlignment="Top">
+            <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+            <TextBlock Text="CHỈNH SỬA GIAI ĐOẠN TUYỂN DỤNG" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Grid Height="36" Width="624" Margin="56,144,56,0" VerticalAlignment="Top">
+            <Grid Height="16" HorizontalAlignment="Left" Margin="0,11,0,9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="*" Grid.Column="1" Foreground="red" Margin="5,-3,0,0"></TextBlock>
+                <TextBlock Text="Bộ phận đảm nhận công việc" FontSize="14" Foreground="#474747" FontFamily="Roboto"  HorizontalAlignment="Left"></TextBlock>
+            </Grid>
+            <Grid Width="404" HorizontalAlignment="Right" Grid.Column="1">
+                <Border CornerRadius="4" BorderBrush="{StaticResource #474747}" BorderThickness="1">
+                    <Grid>
+                        <TextBox FontSize="14" Padding="10,0,0,0" VerticalAlignment="Center" x:Name="tbJob" Foreground="{StaticResource #474747}" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                        <Grid Visibility="Collapsed" Height="16" Width="16" HorizontalAlignment="Right" Margin="0,0,10,0">
+                            <Path Data="{StaticResource icon_Warning1}" Fill="Red"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Height="36" Width="624" Margin="56,200,56,0" VerticalAlignment="Top">
+            <Grid Height="16" HorizontalAlignment="Left" Margin="0,11,0,9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="*" Grid.Column="1" Foreground="red" Margin="5,-3,0,0"></TextBlock>
+                <TextBlock Text="Mục tiêu" FontSize="14" Foreground="#474747" FontFamily="Roboto" HorizontalAlignment="Left"></TextBlock>
+            </Grid>
+            <Grid Width="404" HorizontalAlignment="Right">
+                <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                    <TextBox x:Name="tbTarget" Padding="10,0,0,0" FontSize="14" VerticalAlignment="Center" Foreground="{StaticResource #474747}" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Height="36" Width="624" Margin="56,256,56,0" VerticalAlignment="Top">
+            <Grid Height="16" HorizontalAlignment="Left" Margin="0,11,423,9">
+                <TextBlock Text="Thời gian định lượng" Foreground="#474747" FontSize="14" FontFamily="Roboto" Width="201" HorizontalAlignment="Left"></TextBlock>
+            </Grid>
+            <Grid Width="404" HorizontalAlignment="Right">
+                <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                    <TextBox x:Name="tbTime" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid  Width="624" Margin="56,312,56,0" VerticalAlignment="Top">
+            <TextBlock Text="Mô tả công việc" FontSize="14"></TextBlock>
+            <Grid Width="404" HorizontalAlignment="Right">
+                <!--<Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                    <TextBox x:Name="tbDescription" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>-->
+                <Border CornerRadius="4" Height="97" BorderBrush="#474747" BorderThickness="1">
+                    <RichTextBox x:Name="rtbDescription"  Padding="10" Block.LineHeight="2" FontSize="14" Height="97" Foreground="{StaticResource #474747}" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"></RichTextBox>
+                </Border>
+            </Grid>
+        </Grid>
+        <Border Height="36" Width="100" CornerRadius="8"  Background="#BDBDBD" Margin="464,0,172,30" VerticalAlignment="Bottom">
+            <Grid>
+                <TextBlock Text="Hủy" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="CancelPopup"></Grid>
+            </Grid>
+        </Border>
+        <Border Height="36" Width="100" CornerRadius="8" Background="#27AE60" Margin="580,0,56,30" VerticalAlignment="Bottom">
+            <Grid>
+                <TextBlock Text="Cập nhật" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+                <Grid Cursor="Hand" Background="Transparent" MouseLeftButtonDown="UpdateStage"></Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

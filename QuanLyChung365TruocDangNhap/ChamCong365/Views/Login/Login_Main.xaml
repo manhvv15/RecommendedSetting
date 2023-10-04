@@ -1,0 +1,69 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Login.Login_Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Login"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="650" d:DesignWidth="683"
+      Title="Login_Main">
+
+    <Grid>
+        <StackPanel Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Path  Data="{DynamicResource logoTimViec}" HorizontalAlignment="Center" VerticalAlignment="top" Fill="{DynamicResource #4C5BD4}" Width="400" Height="80" Stretch="Uniform"></Path>
+            <TextBlock Margin="0 68 0 10"  Text="{DynamicResource textDangNhap}" FontSize="24" LineHeight="28" FontWeight="Bold" Foreground="{DynamicResource #474747}"></TextBlock>
+            <TextBlock Text="{DynamicResource textHayChonLoaiTaiKhoanBanDangSuDung}" FontSize="16" LineHeight="28" VerticalAlignment="top" Foreground="{DynamicResource #474747}"></TextBlock>
+            <Grid Margin="0 25" Width="455px" Height="108px" Cursor="Hand" MouseLeftButtonDown="LoginCompany" HorizontalAlignment="Center">
+                <Border CornerRadius="15" Background="{DynamicResource #FFFFFF}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity=".2"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Border BorderBrush="#4C5BD4" Background="{DynamicResource #FFFFFF}"  CornerRadius="15" BorderThickness="1" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Margin="20" Data="{DynamicResource iconCongTy}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Left"></Path>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <TextBlock  Text="{DynamicResource textCongTy}" FontSize="16" LineHeight="28" FontWeight="Bold"  Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock  Text="{DynamicResource textTaiKhoanCongTy}" FontSize="16" LineHeight="28"  Foreground="{DynamicResource #474747}"></TextBlock>
+                        </StackPanel>
+                        <Path Margin="0 0 20 0" Grid.Column="2" Data="{DynamicResource iconClick}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Right"></Path>
+                    </Grid>
+                </Border>
+
+            </Grid>
+            <Grid Margin="0 25" Width="455px" Height="108px" MouseLeftButtonDown="LoginStaff" Cursor="Hand" HorizontalAlignment="Center">
+                <Border CornerRadius="15" Background="{DynamicResource #FFFFFF}">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity=".2"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Border CornerRadius="10" BorderThickness="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Path Margin="20" Data="{DynamicResource iconNhanVien}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Left"></Path>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <TextBlock  Text="{DynamicResource textNhanVien}" FontSize="16" LineHeight="28" FontWeight="Bold"  Foreground="{DynamicResource #474747}"></TextBlock>
+                            <TextBlock  Text="{DynamicResource textTaiKhoanNhanVien}" FontSize="16" LineHeight="28"  Foreground="{DynamicResource #474747}"></TextBlock>
+                        </StackPanel>
+                        <Path Margin="0 0 20 0" Grid.Column="2" Data="{DynamicResource iconClick}" Fill="{DynamicResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Right"></Path>
+                    </Grid>
+                </Border>
+
+            </Grid>
+            <StackPanel Margin="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="{DynamicResource textBanChuaCoTk}" FontSize="15" LineHeight="17" Foreground="{DynamicResource #494949}"/>
+                <TextBlock Margin="5 0" Text="{DynamicResource textDangKyNgay}" FontSize="15" LineHeight="17"  Foreground="{DynamicResource #FFA800}" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="Register_MouseLeftButtonDown"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

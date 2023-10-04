@@ -1,0 +1,416 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.HRReportPages.HRReportPages.RecruitmentReport"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Pages.HRReportPages.HRReportPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="2200" d:DesignWidth="2000"
+      Title="RecruitmentReport">
+    <Page.Resources>
+        <DropShadowEffect x:Key="z-depth1" BlurRadius="5" ShadowDepth="1" Color="#CCCCCC" />
+    </Page.Resources>
+    <Grid Margin="0,43,0,0" Background="#FAFAFA">
+        <Grid>
+            <Grid Height="1" VerticalAlignment="Top" Margin="0,30,0,0" Background="{StaticResource #474747}"></Grid>
+            <Grid VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock FontWeight="SemiBold" Cursor="Hand" Grid.Column="0" Text="BÁO CÁO NHÂN SỰ" FontSize="14" Foreground="{StaticResource  #474747}" Margin="35,0,35,13" MouseLeftButtonDown="NavigateToHRReportPage"></TextBlock>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock FontWeight="SemiBold" Cursor="Hand" Grid.Column="1" Text="BÁO CÁO TUYỂN DỤNG" FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="35,0,35,13" ></TextBlock>
+                    <Grid Height="4" VerticalAlignment="Bottom">
+                        <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,50,0,0">
+                <Grid Margin="0,80,0,0" VerticalAlignment="Top">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Grid  x:Name="sizeH"  SizeChanged="Grid_SizeChanged">
+                                <Grid VerticalAlignment="Top">
+                                    <Grid Height="100"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,2,0">
+                                        <Border Background="#ffffff" Effect="{DynamicResource z-depth1}" CornerRadius="0,8,8,0">
+                                            <Border.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="false">
+                                                            <Setter Property="Width" Value="301"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="true">
+                                                            <Setter Property="Width" Value="229"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Resources>
+                                        </Border>
+                                        <Grid>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Height="74" Margin="15,0,0,0">
+                                                <TextBlock Text="Tổng số ứng viên cần tuyển" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Foreground="{StaticResource #666666}" FontSize="16" FontFamily="Roboto"></TextBlock>
+                                                <TextBlock x:Name="tbCandidateNumber" Text="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" FontSize="30" Foreground="{StaticResource #D44C4C}"></TextBlock>
+                                            </Grid>
+                                            <Grid Width="5" Background="{StaticResource #D44C4C}" HorizontalAlignment="Left"></Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                        <Border Background="#ffffff" Effect="{DynamicResource z-depth1}" CornerRadius="8">
+                                            <Border.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="false">
+                                                            <Setter Property="Width" Value="301"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="true">
+                                                            <Setter Property="Width" Value="229"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Resources>
+                                        </Border>
+                                        <Grid>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Height="74" Margin="15,0,0,0">
+                                                <TextBlock Text="Tổng số hồ sơ nhận được" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Foreground="{StaticResource #666666}" FontSize="16" FontFamily="Roboto"></TextBlock>
+                                                <TextBlock x:Name="tbCandidate" Text="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" FontSize="30" Foreground="{StaticResource #4CD4B4}"></TextBlock>
+                                            </Grid>
+                                            <Grid Width="5" Background="{StaticResource #4CD4B4}" HorizontalAlignment="Left"></Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Height="100"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2,0,0,0">
+                                        <Border Cursor="Hand" Background="#ffffff" Effect="{DynamicResource z-depth1}" CornerRadius="8">
+                                            <Border.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="false">
+                                                            <Setter Property="Width" Value="301"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="true">
+                                                            <Setter Property="Width" Value="229"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Resources>
+                                        </Border>
+                                        <Grid>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Height="74" Margin="15,0,0,0">
+                                                <TextBlock Text="Tổng số tin tuyển dụng" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Foreground="{StaticResource #666666}" FontSize="16" FontFamily="Roboto"></TextBlock>
+                                                <TextBlock x:Name="tbNew" Text="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" FontSize="30" Foreground="{StaticResource #4C5BD4}"></TextBlock>
+                                            </Grid>
+                                            <Grid Width="5" Background="{StaticResource #4C5BD4}" HorizontalAlignment="Left"></Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid VerticalAlignment="Top" Margin="0,144,0,0">
+                                    <Grid Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,2,0">
+                                        <Border Background="#ffffff" Effect="{DynamicResource z-depth1}"   CornerRadius="0,8,8,0" >
+                                            <Border.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="false">
+                                                            <Setter Property="Width" Value="301"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="true">
+                                                            <Setter Property="Width" Value="229"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Resources>
+                                        </Border>
+                                        <Grid>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Height="74" Margin="15,0,0,0">
+                                                <TextBlock Text="Số ứng viên hủy" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Foreground="{StaticResource #666666}" FontSize="16" FontFamily="Roboto"></TextBlock>
+                                                <TextBlock x:Name="tbCancel" Text="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" FontSize="30" Foreground="{StaticResource #D44C4C}"></TextBlock>
+                                            </Grid>
+                                            <Grid Width="5" Background="{StaticResource #D44C4C}" HorizontalAlignment="Left"></Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid  Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                        <Border Background="#ffffff" Effect="{DynamicResource z-depth1}" CornerRadius="8" >
+                                            <Border.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="false">
+                                                            <Setter Property="Width" Value="301"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="true">
+                                                            <Setter Property="Width" Value="229"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Resources>
+                                        </Border>
+                                        <Grid>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Height="74" Margin="15,0,0,0">
+                                                <TextBlock Text="Số ứng viên qua phỏng vấn" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Foreground="{StaticResource #666666}" FontSize="16" FontFamily="Roboto"></TextBlock>
+                                                <TextBlock x:Name="tbInterviewPass" Text="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" FontSize="30" Foreground="{StaticResource #4CD4B4}"></TextBlock>
+                                            </Grid>
+                                            <Grid Width="5" Background="{StaticResource #4CD4B4}" HorizontalAlignment="Left"></Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Height="100"  VerticalAlignment="Bottom" Margin="2,0,0,0" HorizontalAlignment="Left">
+                                        <Border Cursor="Hand" Background="#ffffff" Effect="{DynamicResource z-depth1}" CornerRadius="8" >
+                                            <Border.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="false">
+                                                            <Setter Property="Width" Value="301"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Flag}" Value="true">
+                                                            <Setter Property="Width" Value="229"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Resources>
+                                        </Border>
+                                        <Grid>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Height="74" Margin="15,0,0,0">
+                                                <TextBlock Text="Số ứng viên đến phỏng vấn" HorizontalAlignment="Right" Height="19" VerticalAlignment="Top" Foreground="{StaticResource #666666}" FontSize="16" FontFamily="Roboto"></TextBlock>
+                                                <TextBlock x:Name="tbInterview" Text="0" HorizontalAlignment="Left"  VerticalAlignment="Bottom" FontSize="30" Foreground="{StaticResource #4C5BD4}"></TextBlock>
+                                            </Grid>
+                                            <Grid Width="5" Background="{StaticResource #4C5BD4}" HorizontalAlignment="Left"></Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Margin="0,355,0,0">
+                        <Grid Margin="2,0,2,0" VerticalAlignment="Top">
+                            <Border CornerRadius="0,8,8,0" Background="{StaticResource #FFFFFF}" Effect="{DynamicResource z-depth1}"></Border>
+                            <Grid Height="50" VerticalAlignment="Top" Margin="20,10,20,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <TextBlock Text="Mã tin tuyển dụng" TextWrapping="Wrap" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <TextBlock Text="Tổng số ứng viên" TextWrapping="Wrap" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <TextBlock Text="Số ứng viên đến phỏng vấn" FontSize="16" TextWrapping="Wrap" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="3">
+                                    <TextBlock Text="Số ứng viên nhận việc" TextWrapping="Wrap" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="4">
+                                    <TextBlock Text="Số ứng viên hủy" TextWrapping="Wrap" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Grid Margin="20,70,20,0">
+                                <ItemsControl x:Name="icListNewReportActive">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Height="50">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Opacity="0.47" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="1" Background="{StaticResource #666666}"></Grid>
+                                                <TextBlock Grid.Column="0" Text="{Binding id2}" Foreground="{StaticResource #474747}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                <TextBlock Grid.Column="1" Text="{Binding sohoso}" Foreground="{StaticResource #474747}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                <TextBlock Grid.Column="2" Text="{Binding henphongvan}" Foreground="{StaticResource #474747}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                <TextBlock Grid.Column="3" Text="{Binding quaphongvan}" Foreground="{StaticResource #474747}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                <TextBlock Grid.Column="4" Text="{Binding huyphongvan}" Foreground="{StaticResource #474747}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </Grid>
+                        <Grid HorizontalAlignment="Center" Margin="0,20,0,20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="btnPrev1" Grid.Column="0" Height="24" Width="20">
+                                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                <TextBlock Text="&lt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="PrevPage1"></Grid>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Margin="21,0,24,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Trang " FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{Binding Path=PageNow1}" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="2" Text="/" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="3" x:Name="TotalPage1" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+
+                            <Grid x:Name="btnNext1" Grid.Column="2" Height="24" Width="20">
+                                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                <TextBlock Text="&gt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="NextPage1"></Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="2,42,2,0" VerticalAlignment="Top">
+                            <Grid>
+                                <Border CornerRadius="0,8,8,0" Background="{StaticResource #FFFFFF}" Effect="{DynamicResource z-depth1}"></Border>
+                                <Grid Height="50" VerticalAlignment="Top" Margin="20,10,20,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="63"></ColumnDefinition>
+                                        <ColumnDefinition Width="158"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="STT" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="Tên nhân viên" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <TextBlock Text="Số tin tuyển dụng đang theo dõi" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="3">
+                                        <TextBlock Text="Số hồ sơ nhận được" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                                <Grid Margin="20,70,20,0">
+                                    <ItemsControl x:Name="icListRecruitmentStaff">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="50">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="63"></ColumnDefinition>
+                                                        <ColumnDefinition Width="158"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Opacity="0.47" VerticalAlignment="Top" Grid.ColumnSpan="4" Height="1" Background="{StaticResource #666666}"></Grid>
+                                                    <TextBlock Grid.Column="0" Text="{Binding STT}" Foreground="{StaticResource #474747}" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="{Binding Hr_name}" Foreground="{StaticResource #474747}" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Grid.Column="2" Text="{Binding sotintheodoi}" Foreground="{StaticResource #474747}" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Grid.Column="3" Text="{Binding sotintheodoi}" Foreground="{StaticResource #474747}" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid HorizontalAlignment="Center" Margin="0,20,0,20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="btnPrev2" Grid.Column="0" Height="24" Width="20">
+                                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                <TextBlock Text="&lt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="PrevPage2"></Grid>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Margin="21,0,24,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Trang " FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{Binding Path=PageNow2}" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="2" Text="/" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="3" Name="TotalPage2" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+
+                            <Grid x:Name="btnNext2" Grid.Column="2" Height="24" Width="20">
+                                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                <TextBlock Text="&gt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="NextPage2"></Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="2,42,2,0" VerticalAlignment="Top">
+                            <Grid>
+                                <Border CornerRadius="0,8,8,0" Background="{StaticResource #FFFFFF}" Effect="{DynamicResource z-depth1}"></Border>
+                                <Grid Height="50" VerticalAlignment="Top" Margin="20,10,20,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="Mã nhân viên" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Text="Tên nhân viên" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <TextBlock Text="Số ứng viên giới thiệu" FontSize="16" Foreground="{StaticResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid Margin="20,70,20,0">
+                                <ItemsControl x:Name="icListCandidateRcm">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Height="50">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="150"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Opacity="0.47" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="1" Background="{StaticResource #666666}"></Grid>
+                                                <TextBlock FontSize="16" Text="{Binding id_full}" Grid.Column="0" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock FontSize="16" Text="{Binding name}" Grid.Column="1" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock FontSize="16" Text="{Binding soungvien}" Grid.Column="2" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </Grid>
+                        <Grid HorizontalAlignment="Center" Margin="0,20,0,20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="btnPrev3" Grid.Column="0" Height="24" Width="20">
+                                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                <TextBlock Text="&lt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="PrevPage3"></Grid>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Margin="21,0,24,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Trang " FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{Binding Path=PageNow3}" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="2" Text="/" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock Grid.Column="3" x:Name="TotalPage3" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+
+                            <Grid x:Name="btnNext3" Grid.Column="2" Height="24" Width="20">
+                                <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                <TextBlock Text="&gt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="NextPage3"></Grid>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

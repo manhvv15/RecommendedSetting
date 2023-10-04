@@ -1,0 +1,226 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.TrainingAndDevelopingPages.JobPositionPages.JobPositionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+      x:Name="page"
+      d:DesignHeight="1000" d:DesignWidth="1988"
+      Title="ProfilePage">
+    <Page.Resources>
+        <DropShadowEffect x:Key="z-depth11" BlurRadius="10" ShadowDepth="3" Direction="270" Color="#000000" Opacity="0.2"/>
+    </Page.Resources>
+    <Grid Margin="0,43,0,50">
+        <Grid>
+            <Grid Height="1" VerticalAlignment="Top" Margin="0,30,0,0" Background="{StaticResource #474747}"></Grid>
+            <Grid Height="30" VerticalAlignment="Top">
+                <Grid HorizontalAlignment="Left">
+                    <TextBlock Text="VỊ TRÍ CÔNG VIỆC" FontWeight="SemiBold" FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="18,0,18,0"></TextBlock>
+                    <Grid Height="4" VerticalAlignment="Bottom">
+                        <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Margin="0,30,0,0">
+                <Grid Cursor="Hand" MouseLeftButtonDown="ShowAddNewLocationPopUp" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,50,0,0">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=PerAdd}" Value="true">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=PerAdd}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="0,0,9,0">
+                        <Ellipse Width="15" Height="15" Fill="{StaticResource #4C5BD4}" HorizontalAlignment="Center" VerticalAlignment="Center"></Ellipse>
+                        <Path Data="{StaticResource icon_plus}" Fill="{StaticResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                    </Grid>
+                    <TextBlock Grid.Column="1" Text="Thêm mới" FontWeight="SemiBold" FontSize="14" Foreground="{StaticResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                </Grid>
+                <Grid Margin="0,108,0,30">
+                    <Border Effect="{DynamicResource z-depth11}" CornerRadius="8" BorderThickness="0.5" BorderBrush="{StaticResource #CCCCCC}" Background="{StaticResource #FFFFFF}">
+                        <Grid Margin="0,0,0,0">
+                            <Grid Height="55" VerticalAlignment="Top">
+                                <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                            </Grid>
+                            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Name="scroll">
+                                <ScrollViewer.Style>
+                                    <Style TargetType="ScrollViewer"  BasedOn="{StaticResource aaa}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="HorizontalScrollBarVisibility" Value="Auto"></Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ScrollViewer.Style>
+                                <Grid Width="Auto">
+                                    <Grid Height="55" VerticalAlignment="Top">
+                                        <Border CornerRadius="8,8,0,0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="108"></ColumnDefinition>
+                                                    <ColumnDefinition Width="240"></ColumnDefinition>
+                                                    <ColumnDefinition Width="264"></ColumnDefinition>
+                                                    <ColumnDefinition Width="600"></ColumnDefinition>
+                                                    <ColumnDefinition Width="600"></ColumnDefinition>
+                                                    <ColumnDefinition Width="216"></ColumnDefinition>
+                                                    <ColumnDefinition Width="44"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <TextBlock Text="STT" FontWeight="DemiBold" FontSize="16" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="1">
+                                                    <TextBlock Text="Vị trí" FontWeight="DemiBold" FontSize="16" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="2">
+                                                    <TextBlock Text="Phòng ban" FontWeight="DemiBold" FontSize="16" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="3">
+                                                    <TextBlock Margin="0" Text="Mô tả công việc" FontWeight="DemiBold" FontSize="16" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="4">
+                                                    <TextBlock Text="Yêu cầu công việc" FontSize="16" FontWeight="DemiBold" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="5">
+                                                    <TextBlock Text="Lộ trình thăng tiến" FontSize="16" FontWeight="DemiBold" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                    <Grid Width="0.5" HorizontalAlignment="Right" Background="{StaticResource #FFFFFF}"></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                    <Grid Margin="0,55,0,0">
+                                        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Name="scroll1" PreviewMouseWheel="scroll1_PreviewMouseWheel">
+                                            <StackPanel Orientation="Vertical">
+                                                <ItemsControl Name="icListJobPositons">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid Height="Auto">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="108"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="240"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="264"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="600"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="600"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="216"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="44"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid Grid.Column="0">
+                                                                    <TextBlock Text="{Binding id}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <TextBlock Text="Dữ liệu trống" x:Name="txtNoData" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
+                                                                    <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}" HorizontalAlignment="Right"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="1">
+                                                                    <TextBlock Text="{Binding name}" FontSize="14" Foreground="{StaticResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}" HorizontalAlignment="Right"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="2">
+                                                                    <TextBlock Text="{Binding department_name}" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"></TextBlock>
+                                                                    <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}" HorizontalAlignment="Right"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="3">
+                                                                    <TextBlock Text="{Binding description}" Padding="5" TextWrapping="Wrap" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}" HorizontalAlignment="Right"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="4">
+                                                                    <TextBlock Text="{Binding job_require}" Padding="5" TextWrapping="Wrap" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}" HorizontalAlignment="Right"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="5">
+                                                                    <TextBlock Cursor="Hand" TextDecorations="Underline" Text="{Binding road_map}"  MouseLeftButtonDown="ToDownload"  FontSize="14" Foreground="{StaticResource #27AE60}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    <TextBlock Text="Chưa tải file" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding isFile}" Value="True">
+                                                                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding isFile}" Value="False">
+                                                                                        <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                    <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #CCCCCC}" HorizontalAlignment="Right"></Grid>
+                                                                </Grid>
+                                                                <Grid Grid.Column="6">
+                                                                    <Grid.Style>
+                                                                        <Style TargetType="Grid">
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerDel}" Value="true">
+                                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                                </DataTrigger>
+                                                                                <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerDel}" Value="false">
+                                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </Grid.Style>
+                                                                    <Path Data="{StaticResource icon_garbage_can}" Fill="{StaticResource #EB5757}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                                                    <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowPopupDeleteJob"></Grid>
+                                                                </Grid>
+                                                                <Rectangle VerticalAlignment="Bottom" Grid.ColumnSpan="12" Height="1" Stroke="{StaticResource #CCCCCC}" StrokeDashArray="2,4"></Rectangle>
+                                                            </Grid>
+                                                            <!--<Grid Height="50"></Grid>-->
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Grid>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid VerticalAlignment="Bottom" Margin="0,0,0,-20" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="btnPrev" Grid.Column="0" Height="24" Width="20">
+                        <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                        <TextBlock Text="&lt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                        <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="PrevPage"></Grid>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Margin="21,0,24,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Trang " FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Path=PageNow}" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="2" Text="/" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="3" Name="TotalPage" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="btnNext" Grid.Column="2" Height="24" Width="20">
+                        <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                        <TextBlock Text="&gt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                        <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="NextPage"></Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

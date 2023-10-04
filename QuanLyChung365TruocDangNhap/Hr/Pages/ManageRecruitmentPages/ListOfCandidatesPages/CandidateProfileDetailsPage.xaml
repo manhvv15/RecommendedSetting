@@ -1,0 +1,941 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.ManageRecruitmentPages.ListOfCandidatesPages.CandidateProfileDetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+      SizeChanged="Page_SizeChanged"
+      x:Name="Page"
+      d:DesignHeight="4000" d:DesignWidth="988"
+      Title="ProfilePage">
+
+    <Grid Margin="0,42,0,0">
+        <Grid Height="1" Background="{StaticResource #474747}" Margin="0,30,0,0" VerticalAlignment="Top"></Grid>
+        <Grid Height="30" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock Cursor="Hand" Margin="30,0,30,0" FontWeight="SemiBold" Text="DANH SÁCH ỨNG VIÊN" FontSize="14" Foreground="{StaticResource #4C5BD4}"/>
+                <Grid Height="4" VerticalAlignment="Bottom">
+                    <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Cursor="Hand" FontWeight="SemiBold" Margin="30,0,30,0" Text="KHO ỨNG VIÊN" FontSize="14" Foreground="{StaticResource #474747}"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="0,30,0,0">
+            <Grid Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,24,0,0" MouseLeftButtonDown="NavigateBack">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Path Margin="0,0,10,0" Data="{StaticResource icon_arrow_back}" Stroke="{StaticResource #474747}" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                <TextBlock Grid.Column="1" Text="Danh sách ứng viên" FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+            <Grid Margin="0,64,0,0">
+                <ScrollViewer x:Name="scrollviewerContainer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel x:Name="stackPanelContainer" Margin="0,0,0,50" Orientation="Horizontal">
+                        <Grid x:Name="gridLeft" MinWidth="569" Margin="0,0,20,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="44"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.RowSpan="2">
+                                <Border CornerRadius="4" BorderBrush="{StaticResource #474747}" BorderThickness="1" Opacity="0.24"></Border>
+                            </Grid>
+                            <Grid Grid.Row="0">
+                                <Border CornerRadius="4,4,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Margin="15,0,0,0" Grid.Column="0" Text="Chi tiết hồ sơ ứng viên " FontSize="14" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Grid.Column="1" Text="Nguyễn Khánh Tú" FontSize="14" Foreground="{StaticResource #FFFFFF}" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <Path Data="{StaticResource icon_edit}" Fill="{StaticResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,35,0"></Path>
+                            </Grid>
+                            <Grid x:Name="content" Grid.Row="1">
+                                <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+                                    <Grid Margin="0,0,0,50" VerticalAlignment="Top">
+                                        <StackPanel>
+                                            <StackPanel>
+                                                <TextBlock Text="Thông tin ứng viên" FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="15,20,0,0"></TextBlock>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mã ứng viên: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="UV001" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Tên ứng viên: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Phạm Thu Hà" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Email: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="thuha123@gmail.com" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Số điện thoại: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="0123456789" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giới tính: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nữ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ngày tháng năm sinh: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="19/05/1992" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Quê quán: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Quỳnh Phụ, Thái Bình" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Trình độ học vấn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Đại học" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Trường học: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Margin="37,0,0,0" Grid.Column="1" Text="Trường Đại học Kinh tế Quốc Dân" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Kinh nghiệm làm việc: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Chưa có kinh nghiệm" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Tình trạng hôn nhân: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Độc thân" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Địa chỉ: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Số 43 Trường Chinh, Thanh Xuân, Hà Nội" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="0,15,0,0" Height="1" Background="{StaticResource #474747}" Opacity="0.24"></Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <TextBlock Text="Thông tin tuyển dụng" FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="15,15,0,0"></TextBlock>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Nguồn ứng viên: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Website" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Vị trí ứng tuyển: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nhân viên kinh doanh" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,15,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Nhân viên tuyển dụng: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nguyễn Thị Mai" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="0,15,0,0" Height="1" Background="{StaticResource #474747}" Opacity="0.24"></Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <TextBlock Text="Quá trình tuyển dụng" FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="15,15,0,0"></TextBlock>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Giai đoạn nhận hồ sơ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian nhận hồ sơ: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="25/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Đánh giá hồ sơ: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <Grid Grid.Column="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Margin="5,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_large}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <StackPanel Margin="122,0,0,0">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng giao tiếp: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng chuyên môn: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Ngoại ngữ: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng khác: Photoshop: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" Fill="{StaticResource #FDBE1E}"></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Người tham gia: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nguyễn Thị Mai" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ghi chú: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Top"></TextBlock>
+                                                    <TextBlock Margin="0,0,15,0" TextWrapping="Wrap" Grid.Column="1" Text="Đây là ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,15,0">
+                                                    <Rectangle HorizontalAlignment="Stretch" Height="0.5" StrokeDashArray="2,4" StrokeThickness="1" Stroke="{StaticResource #474747}"></Rectangle>
+                                                </Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Giai đoạn phỏng vấn" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian chuyển giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 26/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Đánh giá phỏng vấn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <Grid Grid.Column="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Margin="5,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_large}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <StackPanel Margin="122,0,0,0">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng giao tiếp: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng chuyên môn " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Ngoại ngữ: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng khác: Photoshop: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" Fill="{StaticResource #FDBE1E}"></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương mong muốn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.500.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương thực: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.000.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian hẹn phỏng vấn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 28/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Người tham gia: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nguyễn Thị Mai" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ghi chú: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Top"></TextBlock>
+                                                    <TextBlock Margin="0,0,15,0" TextWrapping="Wrap" Grid.Column="1" Text="Đây là ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,15,0">
+                                                    <Rectangle HorizontalAlignment="Stretch" Height="0.5" StrokeDashArray="2,4" StrokeThickness="1" Stroke="{StaticResource #474747}"></Rectangle>
+                                                </Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giai đoạn chuyển: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nhận việc" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian chuyển giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 26/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Đánh giá phỏng vấn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <Grid Grid.Column="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Margin="5,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_large}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <StackPanel Margin="122,0,0,0">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng giao tiếp: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng chuyên môn: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Ngoại ngữ: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng khác: Photoshop: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" Fill="{StaticResource #FDBE1E}"></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương mong muốn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.500.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương thực: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.000.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian hẹn phỏng vấn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 28/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Người tham gia: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nguyễn Thị Mai" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ghi chú: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Top"></TextBlock>
+                                                    <TextBlock Margin="0,0,15,0" TextWrapping="Wrap" Grid.Column="1" Text="Đây là ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,15,0">
+                                                    <Rectangle HorizontalAlignment="Stretch" Height="0.5" StrokeDashArray="2,4" StrokeThickness="1" Stroke="{StaticResource #474747}"></Rectangle>
+                                                </Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giai đoạn chuyển: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Trượt phỏng vấn" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian chuyển giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 26/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ghi chú: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Top"></TextBlock>
+                                                    <TextBlock Margin="0,0,15,0" TextWrapping="Wrap" Grid.Column="1" Text="Đây là ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,15,0">
+                                                    <Rectangle HorizontalAlignment="Stretch" Height="0.5" StrokeDashArray="2,4" StrokeThickness="1" Stroke="{StaticResource #474747}"></Rectangle>
+                                                </Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giai đoạn chuyển: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Hủy phỏng vấn" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian chuyển giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 26/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương mong muốn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.500.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương thực: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.000.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ghi chú: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Top"></TextBlock>
+                                                    <TextBlock Margin="0,0,15,0" TextWrapping="Wrap" Grid.Column="1" Text="Đây là ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,15,0">
+                                                    <Rectangle HorizontalAlignment="Stretch" Height="0.5" StrokeDashArray="2,4" StrokeThickness="1" Stroke="{StaticResource #474747}"></Rectangle>
+                                                </Grid>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Giai đoạn chuyển: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Ký hợp đồng" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian chuyển giai đoạn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 26/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Đánh giá giai đoạn ký hợp đồng: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <Grid Grid.Column="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Margin="5,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_large}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                        <Path Margin="5,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_large}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <StackPanel Margin="122,0,0,0">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng giao tiếp: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng chuyên môn: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Ngoại ngữ: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" ></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Grid Margin="0,20,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="210"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Kỹ năng khác: Photoshop: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Center"></TextBlock>
+                                                            <Grid Grid.Column="1">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                </Grid.ColumnDefinitions>
+                                                                <Path Margin="9,0,0,0" Grid.Column="0" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="1" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="2" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="3" Data="{StaticResource icon_star_medium}" Fill="{StaticResource #FDBE1E}" Stroke="{StaticResource #FDBE1E}"></Path>
+                                                                <Path Margin="9,0,0,0" Grid.Column="4" Data="{StaticResource icon_star_medium}" Stroke="{StaticResource #FDBE1E}" Fill="{StaticResource #FDBE1E}"></Path>
+                                                            </Grid>
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương mong muốn: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.500.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Mức lương thực: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="7.000.000 VNĐ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Thời gian ký hợp đồng: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="9:00, 28/08/2021" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Người tham gia: " FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="Nguyễn Thị Mai" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,0,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Ghi chú: " FontSize="14" Foreground="{StaticResource #474747}" VerticalAlignment="Top"></TextBlock>
+                                                    <TextBlock Margin="0,0,15,0" TextWrapping="Wrap" Grid.Column="1" Text="Đây là ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                                                </Grid>
+                                                <Grid Margin="15,20,15,0">
+                                                    <Rectangle HorizontalAlignment="Stretch" Height="0.5" StrokeDashArray="2,4" StrokeThickness="1" Stroke="{StaticResource #474747}"></Rectangle>
+                                                </Grid>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </ScrollViewer>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="gridRight" Height="696" MinWidth="390" VerticalAlignment="Top">
+                            <Border CornerRadius="8" BorderBrush="{StaticResource #474747}" BorderThickness="1" Opacity="0.24"></Border>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                                <Grid Height="696"></Grid>
+                            </ScrollViewer>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

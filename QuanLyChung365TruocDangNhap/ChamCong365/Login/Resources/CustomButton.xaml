@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <PathGeometry x:Key="iconRightArrow1" Figures="M1.44998 0.760009L6.69998 6.01001L1.44998 11.26"/>
+    <ControlTemplate TargetType="ContentControl" x:Key="btnBack">
+        <DockPanel Background="Transparent" Cursor="Hand">
+            <Path Data="{StaticResource iconRightArrow1}" Stroke="{StaticResource #4C5BD4}" StrokeThickness="1" VerticalAlignment="Center">
+                <Path.LayoutTransform>
+                    <RotateTransform Angle="180"></RotateTransform>
+                </Path.LayoutTransform>
+            </Path>
+            <TextBlock Text="Quay lại" VerticalAlignment="Center" Margin="5 0 0 0" Foreground="{DynamicResource #4C5BD4}" FontSize="14"></TextBlock>
+        </DockPanel>
+    </ControlTemplate>
+</ResourceDictionary>

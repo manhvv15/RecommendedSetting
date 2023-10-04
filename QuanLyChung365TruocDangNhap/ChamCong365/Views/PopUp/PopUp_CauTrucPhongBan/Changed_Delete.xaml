@@ -1,0 +1,21 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_CauTrucPhongBan.Changed_Delete"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_CauTrucPhongBan"
+      mc:Ignorable="d" 
+      d:DesignHeight="71" d:DesignWidth="320"
+      Title="Changed_Delete">
+
+    <Grid>
+        <Border CornerRadius="15" Background="{DynamicResource #4C5BD4}" BorderThickness="0" BorderBrush="Transparent">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Data="{DynamicResource iconPen}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                <TextBlock Margin="10 0 30 0" Text="{DynamicResource textSua}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}"/>
+                <Path Margin="0 0 7 0" Data="{DynamicResource iconDelete}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                <TextBlock Text="{DynamicResource textXoa}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

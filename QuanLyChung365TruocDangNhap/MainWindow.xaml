@@ -1,0 +1,2002 @@
+﻿<Window
+    x:Class="QuanLyChung365TruocDangNhap.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Popup.TruocDangNhap"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="1935.2" Width="1906" 
+    Background="White"
+   
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible" >
+
+        <Grid x:Name="grShowPopup" Height="2000">
+            <DockPanel>
+                <Grid MaxWidth="450" Background="#4C5BD4" HorizontalAlignment="Left" Name="SideBar" Width="412">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Width" Value="auto"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding sideBarStatus, RelativeSource={RelativeSource AncestorType=Window}}" Value="1">
+                                    <Setter Property="Width" Value="60"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+
+                    <Border MouseLeftButtonDown="Border_MouseLeftButtonDown" Height="50" Width="50" CornerRadius="30" Background="#616FE0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 -20 0">
+                        <Path Data="{DynamicResource iconArrowLeft}"  Fill="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+
+                </Grid>
+
+            </DockPanel>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+
+                </Grid.RowDefinitions>
+
+                <Border
+                    Margin="450,36,0,0"
+                    BorderBrush="#FFFFFF"
+                    BorderThickness="1"
+                    CornerRadius="10">
+                    <DockPanel>
+                        <TextBlock
+                            Margin="10,18,0,17"
+                            FontSize="16"
+                            Foreground="#4C5BD4"><Run Foreground="#474747" Text="Ứng dụng " /><Run Text="/ Tất cả" /></TextBlock>
+                    </DockPanel>
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="5"
+                            Opacity="0.3"
+                            ShadowDepth="0.3" />
+                    </Border.Effect>
+
+                </Border>
+                <Grid HorizontalAlignment="Right">
+                    <DockPanel
+                        x:Name="LinkText"
+                        Width="281"
+                        Height="39"
+                        Margin="-300,0,0,0"
+                        HorizontalAlignment="Left">
+                        <Border
+                            x:Name="Introduce"
+                            Width="74"
+                            Height="39"
+                            Cursor="Hand">
+                            <TextBlock
+                                Height="25"
+                                Margin="3,28,0,-14"
+                                Foreground="#474747"
+                                Style="{StaticResource TextBlockMenuHeader}"
+                                Text="Giới thiệu" />
+                        </Border>
+                        <Border
+                            x:Name="xxx"
+                            Width="74"
+                            Height="39"
+                            Cursor="Hand">
+                            <TextBlock
+                                Width="92"
+                                Height="27"
+                                Margin="0,28,-60,-16"
+                                HorizontalAlignment="Right"
+                                Foreground="#474747"
+                                Style="{StaticResource TextBlockMenuHeader}"
+                                Text="Hướng dẫn" />
+                        </Border>
+                        <Border
+                            x:Name="Review"
+                            Width="40"
+                            Height="39"
+                            Cursor="Hand">
+                            <TextBlock
+                                Width="66"
+                                Height="29"
+                                Margin="39,29,-65,-19"
+                                Foreground="#474747"
+                                Style="{StaticResource TextBlockMenuHeader}"
+                                Text="Tin tức" />
+                        </Border>
+
+
+                    </DockPanel>
+                    <DockPanel
+                        Width="100"
+                        Height="28"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" />
+
+                    <DockPanel
+                        x:Name="Search"
+                        Width="337"
+                        Margin="0,20,0,0" />
+                </Grid>
+                <Border
+                    Width="138"
+                    Margin="0,44,199,11"
+                    HorizontalAlignment="Right"
+                    Background="#FF9052"
+                    CornerRadius="6"
+                    Cursor="Hand"
+                    MouseLeftButtonUp="btnAddDangKy_MouseLeftButtonUp">
+                    <TextBlock
+                        Width="89"
+                        Height="25"
+                        Margin="31,9,18,12"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="DemiBold"
+                        Foreground="#FFFFFF"
+                        Text="Đăng ký" />
+                </Border>
+                <Border
+                    Width="139"
+                    Margin="0,44,39,11"
+                    HorizontalAlignment="Right"
+                    Background="#4C5BD4"
+                    CornerRadius="6"
+                    Cursor="Hand"
+                    MouseLeftButtonUp="btnAddDangNhap_MouseLeftButtonUp">
+                    <TextBlock
+                        Width="104"
+                        Height="28"
+                        Margin="26,10,10,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="DemiBold"
+                        Foreground="#FFFFFF"
+                        Text="Đăng nhập" />
+                </Border>
+                <DockPanel Margin="90,90,-90,-90">
+                    <Border 
+                                  Height="39">
+                        <TextBlock 
+                                            FontSize="20"
+                                             Foreground="#333333"
+                    FontWeight="Bold"
+                                            Text="HỆ THỐNG PHẦN MỀM CHUYỂN ĐỔI SỐ 365 " 
+                                         Style="{StaticResource TextBlockMenuHeader}" Margin="315,10,1082,2"/>
+                    </Border>
+                </DockPanel>
+
+                <Grid
+                    x:Name="GridMenu"                 
+                    Margin="90,101,0,-20"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+
+                    <Border
+                        Margin="625,101,-582,-101"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1"
+                        MouseLeftButtonUp="btnAddTatCa_MouseLeftButtonUp">
+                        <TextBlock
+                            Width="102"
+                            Height="28"
+                            Margin="26,-8,-27,-1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#474747"
+                            Text="TẤT CẢ" />
+                    </Border>
+                    <Border
+                        Margin="715,101,-703,-101"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1"
+                        MouseLeftButtonUp="btnAddNhanSu_MouseLeftButtonUp">
+                        <TextBlock
+                            Width="90"
+                            Height="27"
+                            Margin="33,-9,21,1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#474747"
+                            Text="NHÂN SỰ" />
+                    </Border>
+                    <Border
+                        Margin="837,101,-882,-101"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1"
+                        MouseLeftButtonUp="btnAddQuanLyCongViec_MouseLeftButtonUp">
+                        <TextBlock
+                            Width="141"
+                            Height="34"
+                            Margin="0,-10,35,-5"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#474747"
+                            Text="QUẢN LÝ CÔNG VIỆC" />
+                    </Border>
+                    <Border
+                        Margin="1038,101,-1084,-101"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1"
+                        MouseLeftButtonUp="btnAddQuanLyNoiBo_MouseLeftButtonUp">
+                        <TextBlock
+                            Width="163"
+                            Height="34"
+                            Margin="0,-10,0,-5"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#474747"
+                            Text="QUẢN LÝ NỘI BỘ" />
+                    </Border>
+                    <Border
+                        Margin="1214,101,-1270,-101"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1"
+                        MouseLeftButtonUp="btnAddQuanLyBanHang_MouseLeftButtonUp">
+                        <TextBlock
+                            Width="145"
+                            Height="34"
+                            Margin="0,-10,33,-5"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#474747"
+                            Text="QUẢN LÝ BÁN HÀNG" />
+                    </Border>
+
+                </Grid>
+                <WrapPanel Margin="450,249,-451,-205">
+                    <Border 
+                    BorderBrush="#ff9d00"
+                    BorderThickness="30" Width="8" Height="38"  
+                    />
+                    <TextBlock 
+                    Margin="10 0 0 0"
+                                            FontSize="20"
+                                             Foreground="#333333"
+                    FontWeight="DemiBold"
+                                            Text="Danh sách các phần mềm chuyển đổi số " 
+                                         Style="{StaticResource TextBlockMenuHeader}"  Grid.Row="1" Height="28" Width="368"/>
+                </WrapPanel>
+
+                <!--Hưng Hà-->
+                <Grid x:Name="tb" >
+                    <Border   
+                        HorizontalAlignment="Left" Margin="150,51,0,-55"
+                 >
+                        <DockPanel>
+                            <Image
+                                    Width="45" Height="41.4" Margin="10 0 0 0" HorizontalAlignment="Center"
+                                    Source="{StaticResource HungHaDrawingImage}"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Ứng dụng-->
+                    <Border       
+                   
+                Background="#FFFFFF"
+                            Cursor="Hand"                                                
+                        Height="59"                        
+                       HorizontalAlignment="Left"
+                        Margin="10,193,0,-151"
+                     CornerRadius="8"
+                        Style="{StaticResource BorderSelected}" Width="390">
+
+                        <DockPanel>
+
+                            <Image
+                         
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource UngdungDrawingImage}"/>
+                            <TextBlock 
+                                 x:Name="HH"
+                        FontWeight="DemiBold"
+                                    FontSize="16"
+                                        Margin="-100 15 0 0"
+                                         Foreground="#4C5BD4"                                                                    
+                                     Text="Ứng dụng"
+                                    Width="222"/>
+
+                        </DockPanel>
+
+                    </Border>
+                    <!--Lịch làm việc / ca làm việc-->
+
+                    <Border       
+                        Margin="10,266,0,-219"
+               HorizontalAlignment="Left" Width="390">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource LichLamViecDrawingImage}"/>
+
+                            <TextBlock 
+                         x:Name="Ungdung"
+                                    FontSize="16"
+                                        Margin="-90 15 0 0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Lịch làm việc/ca làm việc "
+                                    Width="224"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Nhân lịch làm việc-->
+                    <Border       
+                        HorizontalAlignment="Left"
+               Margin="10,333,0,-284" Width="355">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource NhanLichLamViecDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-50 15 0 0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Nhân lịch làm việc "
+                                    Width="248"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Thiết lập công ty-->
+                    <Border        
+                         HorizontalAlignment="Left"
+                 Margin="10,433,0,-405" Width="284">
+
+                        <DockPanel Margin="0,14,0,0">
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource ThietLapCongTyDrawingImage}"/>
+                            <Image
+                                    Width="14" Height="14" Margin="220 0 0 0"
+                                    Source="{StaticResource dropdowntrangDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-280,22,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Thiết lập công ty "
+                                    Width="166"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Cài đặt vị trí wifi-->
+                    <Border    
+                        HorizontalAlignment="Left"
+                 Margin="10,385,0,-332" Width="284">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource ThietLapWifiDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-50 15 0 0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Cài đặt vị trí và wifi "
+                                    Width="173"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--chế độ phê duyệt chấm công -->
+                    <Border     
+                        HorizontalAlignment="Left"
+               Margin="10,520,0,-477">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource PheDuyetChamCongDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="20 15 0 0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Chế độ phê duyệt chấm công "
+                                    Width="274"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Cài đặt lương cơ bản-->
+                    <Border               
+                  HorizontalAlignment="Left"
+               Margin="10,578,0,-533">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource CaiDatLuongCoBanDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="20,18,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Cài đặt lương cơ bản "
+                                    Width="273"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Giới hạn IP-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,634,0,-579">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource GioihanIPDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="20,9,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Giới hạn IP "
+                                    Width="269"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Quyền truy cập phần mềm-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,680,0,-633" Width="332">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource QuyenTruyCapPhanMemDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,13,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Quyền truy cập phần mềm "
+                                    Width="268"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Đổi loại tài khoản-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,734,0,-691" Width="310">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource DoiLoaiTaiKhoanDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,20,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Đổi loại tài khoản "
+                                    Width="238"/>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Thêm người dùng vào phần quản trị hệ thống-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,792,0,-758" Width="332">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource ThemNguoiDungDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,15,0,-6"
+                                         Foreground="#FFFFFF"
+                                    Width="266"><Run Text="Thêm người dùng vào "/><Run Text="phần"/><LineBreak/><Run Text="quản trị hệ thống "/></TextBlock>
+
+                        </DockPanel>
+                    </Border>
+                    <!--thêm dự án-->
+                    <Border               
+               HorizontalAlignment="Left"
+               Margin="10,859,0,-799" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource ThemDuAnDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,10,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Thêm dự án "
+                                    Width="263"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Tách dòng chấm công-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,900,0,-865" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource TachDongChamCongDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,15,0,-6"
+                                         Foreground="#FFFFFF"
+                                    Width="259"><Run Text="Tách dòng chấm công của "/><LineBreak/><Run Text=" nhân sự"/></TextBlock>
+                        </DockPanel>
+                    </Border>
+                    <!--Hệ số làm tròn-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,966,0,-908" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource HeSoLamTronDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,10,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Hệ số làm tròn"
+                                    Width="255"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Ứng trước ngày công-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,1009,0,-959" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource UngTruocNgayCongDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,17,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Ứng trước ngày công"
+                                    Width="254"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Chốt đơn từ-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,1060,0,-1015" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource ChotDonTuDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,15,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Chốt đơn từ"
+                                    Width="250"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Thời gian duyệt đề xuất của lãnh đạo-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,1116,0,-1081" Width="332">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Margin="10,15,0,10"
+                                    Source="{StaticResource TimeDuyetDeXuatDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,15,0,-6"
+                                         Foreground="#FFFFFF"
+                                    Width="249"><Run Text="Thời gian duyệt đề xuất "/><LineBreak/><Run Text="của lãnh đạo "/></TextBlock>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Cài đặt ngày bắt đầu nhận lương cho nhân viên-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,1182,0,-1149" Width="332">
+
+                        <DockPanel>
+
+                            <Image
+                                    Width="28" Margin="10,15,0,10"
+                                    Source="{StaticResource CaiDatNgayBatDauNhanLuongDrawingImage}"/>
+                            <TextBlock 
+                        
+                                    FontSize="16"
+                                        Margin="-20,15,0,-6"
+                                         Foreground="#FFFFFF"
+                                    Width="255"><Run Text="Cài đặt ngày bắt đầu nhận  "/><LineBreak/><Run Text="lương cho nhân viên "/></TextBlock>
+
+                        </DockPanel>
+                    </Border>
+                    <!--Khuyến mại và mua hàng-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,1250,0,-1199" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource KhuyenMaiVaMuaHangDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20 15 0 0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Khuyến mại và mua hàng"
+                                    Width="251"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Quản lý phòng ban-->
+                    <Border               
+               HorizontalAlignment="Left"
+               Margin="10,1300,0,-1245" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource QuanLyPhongBanDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,10,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Quản lý phòng ban"
+                                    Width="248"/>
+                        </DockPanel>
+                    </Border>
+                    <!--quản lý nhân viên-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,1346,0,-1294" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource QuanLyNhanVienDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,13,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Quản lý nhân viên"
+                                    Width="246"/>
+                        </DockPanel>
+                    </Border>
+                    <!--quản lý công ty con-->
+
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,1395,0,-1349" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource QuanLyCongTyConDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,13,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Quản lý công ty con"
+                                    Width="246"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Sơ đồ cơ cấu tổ chức-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,1450,0,-1398" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource SoDoToChucDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,11,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Sơ đồ cơ cấu tổ chức"
+                                    Width="246"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Thông tin tài khoản-->
+                    <Border               
+                 HorizontalAlignment="Left"
+               Margin="10,1499,0,-1449" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource ThongTinTaiKhoanDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,16,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Thông tin tài khoản"
+                                    Width="247"/>
+                        </DockPanel>
+                    </Border>
+                    <!--Báo lỗi-->
+                    <Border               
+                HorizontalAlignment="Left"
+               Margin="10,1550,0,-1492" Width="332">
+                        <DockPanel>
+                            <Image
+                                    Width="28" Height="28" Margin="10 0 0 0"
+                                    Source="{StaticResource baoloiDrawingImage}"/>
+                            <TextBlock                       
+                                    FontSize="16"
+                                        Margin="-20,14,0,0"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Báo lỗi"
+                                    Width="244"/>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+            <WrapPanel x:Name="DS" Margin="451,342,-282,527" >
+
+                <Border
+                        Width="336"
+                        Height="120"
+                        Background="#F8F9FE"
+                        CornerRadius="12"
+                        Cursor="Hand"
+                        MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp">
+                    <Grid>
+                        <StackPanel Margin="20,0,20,0" Orientation="Horizontal">
+                            <Image
+                                    Width="52"
+                                    Height="52"
+                                    HorizontalAlignment="Left"
+                                    Source="{StaticResource Group_632586DrawingImage}" />
+                            <Grid Height="52" Margin="10,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                        Grid.Row="0"
+                                        VerticalAlignment="Center"
+                                        FontSize="18"
+                                        FontWeight="DemiBold"
+                                        Text="Chấm công" />
+                                <DockPanel Grid.Row="1">
+                                    <Image
+                                            Width="7.69"
+                                            Height="10"
+                                            HorizontalAlignment="Left"
+                                            Source="{StaticResource VectorDrawingImage}" />
+                                    <TextBlock
+                                            Width="86"
+                                            Height="22"
+                                            Margin="5,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="16"
+                                            Foreground="#666666"
+                                            Text="Xem chi tiết" />
+                                </DockPanel>
+                            </Grid>
+
+
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="30 0 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                       
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="{StaticResource IconChatDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 30 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                       Margin="-300 45 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                      Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Chat365"
+                                    Width="238" Height="51"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                             Margin="30 0 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="{StaticResource IconTinhLuongDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 30 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 45 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-350 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Tính lương"
+                                    Width="138" Height="56"/>
+                <Border 
+                MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="30 0 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE"/>
+                <Image
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="{StaticResource iconQuanTriNhanSuDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 30 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 45 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-340,0,0,0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Quản trị nhân sự"
+                                    Width="149" Height="56"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="0 30 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52"  Margin="-570 30 0 0" 
+                                    Source="{StaticResource iconQuanTriNhanSuDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="33"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-270 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Phần mềm giao việc"
+                                    Width="219" Height="30"/>
+
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                          Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource iconVanThuDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-270 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Văn thư lưu trữ"
+                                    Width="220" Height="29"/>
+
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="32 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource CRMDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                       Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-290,44,0,51"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Phần mềm CRM"
+                                    Width="204" Height="23"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                              Margin="32 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource IconQuanLyTaiSanDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-290,44,0,51"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Quản lý tài sản"
+                                    Width="200" Height="28"/>
+
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="0 30 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource IconDanhGiaDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Đánh giá năng lực nhân viên" Height="38" Width="236"
+                                   />
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource IconQuanLyDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                       Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Quản lý KPI" Width="236" Height="32"
+                                   />
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                          Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource Sohoatailieu_DrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                          Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                       Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Số hóa tài liệu" Width="242" Height="32"
+                                   />
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="30 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource DMSDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-290,44,0,51"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Phần mềm DMS"
+                                    Width="204" Height="30"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                             Margin="0 30 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource DMSDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                       Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="SmartID 365" Width="237" Height="32"
+                                   />
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource VanbanthanhgiongnoiDrawingImage}"/>
+                <Image
+                                    Width="8" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="28"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                           Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="403" Height="46"
+                                   ><Run Text="Chuyển văn bản thành giọng "/><LineBreak/><Run Text="nói"/></TextBlock>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="-120 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource GaraOtoDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                      Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Phần mềm quản lý Gara ô tô" Width="445" Height="32"
+                                   />
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                             Margin="-165 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0"  
+                                    Source="{StaticResource PhiendichDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="156" Height="36"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                      Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Text="Phần mềm phiên dịch" Width="242" Height="32"
+                                   />
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="0 30 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource VatTuXayDungDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="154" Height="28"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                          Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="244" Height="52"
+                                   ><Run Text="Phần mềm quản lý kho vật "/><LineBreak/><Run Text="tư xây dựng"/></TextBlock>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource LoyaltyDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                    Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="160" Height="34"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="240" Height="38"
+                                  Text="Phần mềm Loyalty"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                             Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource TaiChinhCongTrinhDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10"  Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                       Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="152" Height="29"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                          Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="239" Height="52"
+                                   ><Run Text="Phần mềm quản lý tài chính "/><LineBreak/><Run Text="công trình"/></TextBlock>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                             Margin="30 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource TaiChinhCongTrinhDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                           Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="164" Height="29"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260,44,-200,45"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="433" Height="52"
+                                   ><Run Text="Phần mềm quản lý đầu tư "/><LineBreak/><Run Text="xây dựng"/></TextBlock>
+
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="0 30 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource TaiChinhCongTrinhDrawingImage}"/>
+                <Image
+                                    Width="8" Margin="-480 65 0 0" 
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                      Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="32"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                          Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="242" Height="52"
+                                  ><Run Text="Phần mềm quản lý công "/><LineBreak/><Run Text="trình"/></TextBlock>
+
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource TaiChinhCongTrinhDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="160" Height="30"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="238" Height="52"
+                                   ><Run Text="Phần mềm quản lý quy trình  "/><LineBreak/><Run Text="sản xuất"/></TextBlock>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                           Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0"  
+                                    Source="{StaticResource TaiChinhCongTrinhDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="34"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="240" Height="38"
+                                  Text="Phần mềm quản lý vận tải"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                          Margin="30 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52"  Margin="-570 30 0 0" 
+                                    Source="{StaticResource LoyaltyDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                         Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="164" Height="32"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260,44,-200,45"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="431" Height="31"
+                                  Text="Phần mềm quản lý cung ứng"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="0 30 0 0"
+                          Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource QuanLyLichBieuDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                        Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="154" Height="34"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                      Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="240" Height="34"
+                                  Text="Phần mềm quản lý lịch biểu"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                             Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE"/>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource VatTuXayDungDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                      Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="148" Height="34"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="241" Height="26"
+                                  Text="Phần mềm quản lý kho 365"/>
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="{StaticResource TruyenThongVanHoaDrawingImage}"/>
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="34"/>
+
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-250 0 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="238" Height="27"
+                                  Text="Truyền thông văn hóa"/>
+
+                <Border                
+                            Cursor="Hand"
+                            Background="#4C5BD4"
+                          
+                        Height="63"
+                        MaxWidth="300"
+                        Margin="650,24,0,-93"
+                      
+                     CornerRadius="30"
+                        Style="{StaticResource BorderSelected}" Width="164" >
+
+                    <DockPanel>
+                        <TextBlock 
+                                    FontSize="20"
+                                FontWeight="DemiBold"
+                                    HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                         Foreground="#FFFFFF"                                                                    
+                                     Text="Xem thêm"
+                                     />
+
+                    </DockPanel>
+
+                </Border>
+            </WrapPanel>
+            <WrapPanel Margin="451,1425,-451,-1425" >
+                <Border 
+                    BorderBrush="#ff9d00"
+                    BorderThickness="30" Width="8" Height="36"  
+                    />
+                <TextBlock 
+                    Margin="10 0 0 0"
+                                            FontSize="20"
+                                             Foreground="#333333"
+                    FontWeight="DemiBold"
+                                            Text="Hệ sinh thái 365 " 
+                                         Style="{StaticResource TextBlockMenuHeader}"  Height="28" Width="368"/>
+            </WrapPanel>
+
+            <WrapPanel Margin="451,1478,-142,-101">
+                <!--Việc làm tự do-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <Image
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="/Resource/image/qlc_vltd.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-290 0 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="213" Height="42"><Run Text="Cập nhật hàng triệu việc làm tự do "/><LineBreak/><Run Text="với mức lương hấp dẫn"/></TextBlock>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="34"/>
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-260 -70 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="236" Height="34"
+                                  Text="Việc làm tự do"/>
+                <!--Việc làm theo giờ-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 0 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+
+                <Image
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="/Resource/image/qlc_vltg.png" />
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-280 0 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="216" Height="42"><Run Text="Việc làm theo giờ với kho tin tuyển "/><LineBreak/><Run Text="dụng đa dạng, mức lương hấp dẫn"/></TextBlock>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="34"/>
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-260 -70 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="236" Height="34"
+                                  Text="Việc làm theo giờ"/>
+                <!--Gia sư-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 0 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+
+                <Image
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="/Resource/image/qlc_gs.png" />
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-260 0 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="236" Height="42"><Run Text="Kết nối với gia sư đa môn học,ở "/><LineBreak/><Run Text="mọi tỉnh thành, dễ dàng, nhanh chóng"/></TextBlock>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="34"/>
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-260 -70 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="236" Height="34"
+                                  Text="Gia sư"/>
+                <!--Tìm nhà trọ-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 0 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+
+                <Image
+                                    Width="52" Height="52" Margin="-570 0 0 0" 
+                                    Source="/Resource/image/qlc_gs.png" />
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 65 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-260 0 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="229" Height="42"><Run Text="Giải pháp tìm phòng trọ, người thuê "/><LineBreak/><Run Text="trọ nhanh chóng, miễn phí"/></TextBlock>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 75 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="34"/>
+                <TextBlock 
+                                    FontSize="18"
+                                         Margin="-260 -70 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="236" Height="34"
+                                  Text="Tìm nhà trọ"/>
+                <!--Khóa học-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="0 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-280 30 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="211" Height="42"><Run Text="Cập nhật liên tục các khóa học đa "/><LineBreak/><Run Text="dạng môn học từ offline và online"/></TextBlock>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="/Resource/image/qlc_vltd.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 85 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 85 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="22"/>
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260 -40 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="230" Height="34"
+                                  Text="Khóa học"/>
+                <!--Trang vàng miễn phí-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-290 30 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="200" Height="42"><Run Text="Cung cấp danh bạ của tất cả các "/><LineBreak/><Run Text="công ty lớn nhỏ trên toàn quốc"/></TextBlock>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="/Resource/image/qlc_trangvang.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 85 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 85 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="22"/>
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260 -40 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="234" Height="34"
+                                  Text="Trang vàng miễn phí"/>
+                <!--Tra cứu lương-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-280 30 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="211" Height="42"><Run Text="Tra cứu thông tin theo lương vị trí "/><LineBreak/><Run Text="công việc chính xác, nhanh chóng"/></TextBlock>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="/Resource/image/qlc_tracuuluong.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 85 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 85 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="22"/>
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260 -40 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="228" Height="34"
+                                  Text="Tra cứu lương"/>
+                <!--Rao vặt-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-270 30 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="220" Height="42"><Run Text="Đăng tải thông tin rao vặt miễn phí, "/><LineBreak/><Run Text="cập nhật liên tục mỗi ngày"/></TextBlock>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="/Resource/image/qlc_raovat.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 85 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 85 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="22"/>
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260 -40 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="230" Height="34"
+                                  Text="Rao vặt"/>
+                <!--Vé máy bay-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="0 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-280 30 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="214" Height="42"><Run Text="Thỏa sức vi vu với kho vé máy bay "/><LineBreak/><Run Text="nội địa, quốc tế với giá rẻ bất ngờ"/></TextBlock>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="/Resource/image/qlc_vemaybay.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 85 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 85 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="22"/>
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260 -40 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="233" Height="34"
+                                  Text="Vé máy bay"/>
+                <!--Thẻ cào điện thoại-->
+                <Border 
+                 MouseLeftButtonUp="btnAddAll_MouseLeftButtonUp"
+                             Cursor="Hand"
+                            Margin="35 30 0 0"
+                        Width="329"
+                        Height="120"
+                            CornerRadius="12" 
+                           Background="#F8F9FE" />
+                <TextBlock 
+                                    FontSize="14"
+                                     Margin="-280 30 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                    Width="211" Height="42"><Run Text="Thẻ điện thoại đa dạng mệnh giá,"/><LineBreak/><Run Text="an toàn, bảo mật cao"/></TextBlock>
+                <Image
+                                    Width="52" Height="52" Margin="-570 30 0 0" 
+                                    Source="/Resource/image/qlc_thedt.png" />
+
+                <Image
+                                    Width="7.69" Height="10" Margin="-480 85 0 0"
+                                    Source="{StaticResource VectorDrawingImage}"/>
+                <TextBlock 
+                                    FontSize="16"
+                                     Margin="-300 85 0 0"
+                                      Foreground="#666666"
+                                  VerticalAlignment="Center"
+                                     Text="Xem chi tiết"
+                                    Width="150" Height="22"/>
+                <TextBlock 
+                                    FontSize="18"
+                                        Margin="-260 -40 0 0"
+                                        FontWeight="DemiBold"
+                                  VerticalAlignment="Center"
+                                     Width="232" Height="34"
+                                  Text="Thẻ cào điện thoại"/>
+            </WrapPanel>
+
+            <Grid x:Name="pnlHienThi"  />
+        </Grid>
+
+    </ScrollViewer>
+
+</Window>

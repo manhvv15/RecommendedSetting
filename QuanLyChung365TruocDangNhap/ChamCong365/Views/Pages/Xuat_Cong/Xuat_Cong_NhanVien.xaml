@@ -1,0 +1,133 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.Xuat_Cong.Xuat_Cong_NhanVien"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:tool="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Tools" 
+      xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.Xuat_Cong"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Xuat_Cong_NhanVien" SizeChanged="Page_SizeChanged">
+    <Page.Resources>
+        <math:MathConvert x:Key="MathConvert"></math:MathConvert>
+        <Style x:Key="Style_WrapPanel" TargetType="{x:Type Grid}">
+            <Setter Property="Width" Value="{Binding ElementName=wrap_Main,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)/2}"/>
+            <Setter Property="Margin" Value="0 15 0 0"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSmallSize}" Value="1">
+                    <Setter Property="Width" Value="{Binding ElementName=wrap_Main,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Style_DockPanel" TargetType="{x:Type DockPanel}">
+            <Setter Property="Width" Value="{Binding ElementName=wrap_StackPanel,Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE)/2}"/>
+            <Setter Property="Margin" Value="0 0 0 0"/>
+        </Style>
+        
+    </Page.Resources>
+    <Grid>
+        <Grid Background="{DynamicResource #F7F8FC}">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                <TextBlock Text="{DynamicResource textBangCong}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource #162A56}" HorizontalAlignment="Left"/>
+                <Border  Margin="0 15 0 0" CornerRadius="15" BorderThickness="0" Background="{DynamicResource #FFFFFF}">
+                    <StackPanel Orientation="Vertical" Margin="15 20" VerticalAlignment="Top">
+                        <WrapPanel x:Name="wrap_Main">
+                            <Grid x:Name="Wrap_StackPanel" Style="{StaticResource Style_WrapPanel}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DockPanel Style="{StaticResource Style_DockPanel}">
+                                    <TextBlock DockPanel.Dock="Left" Text="{DynamicResource textTU}" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource #474747}"></TextBlock>
+                                    <Border Margin="5 0 0 0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Background="{DynamicResource #FFFFFF}" Height="40">
+                                        <tool:DatePicker x:Name="dpStart" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="18" VerticalAlignment="Center" BorderThickness="0"></tool:DatePicker>
+                                    </Border>
+                                </DockPanel>
+                                <DockPanel Grid.Column="1" Style="{StaticResource Style_DockPanel}">
+                                    <TextBlock Margin="10 0 0 0" Text="{DynamicResource textDEN}" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource #474747}"></TextBlock>
+                                    <Border Margin="5 0 0 0" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Background="{DynamicResource #FFFFFF}" Height="40">
+                                        <tool:DatePicker x:Name="dpEnd" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="18" VerticalAlignment="Center" BorderThickness="0"></tool:DatePicker>
+                                    </Border>
+                                </DockPanel>
+                            </Grid>
+                            <Grid x:Name="Wrap_Border" Style="{StaticResource Style_WrapPanel}">
+                                <StackPanel Margin="0 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Border  x:Name="btnGet" Width="{Binding ElementName=btnEx,Path=ActualWidth}" Height="40" CornerRadius="3" Background="{DynamicResource #4C5BD4}" HorizontalAlignment="Right" Cursor="Hand" MouseLeftButtonDown="btnGet_MouseLeftButtonDown">
+                                        <TextBlock Text="{DynamicResource textLOC}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Border Margin="20 0 0 0" x:Name="btnEx" Width="130" Height="40" CornerRadius="3" Background="{DynamicResource #0b7f45}" HorizontalAlignment="Right" Cursor="Hand" MouseLeftButtonDown="btnEx_MouseLeftButtonDown">
+                                        <TextBlock Text="{DynamicResource textXuatEx}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </WrapPanel>
+                        <DataGrid x:Name="table" Style="{StaticResource DataGrid2}" ItemsSource="{Binding listCongShow}" Margin="0,25,0,0" Background="{DynamicResource #ECF2FA}" Grid.ColumnSpan="5" PreviewMouseWheel="table_PreviewMouseWheel">
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="{DynamicResource #ECF2FA}"></Setter>
+                                    <Setter Property="Foreground" Value="{DynamicResource #4C5BD4}"></Setter>
+                                    <Setter Property="FontWeight" Value="Medium"></Setter>
+                                    <Setter Property="FontWeight" Value="Medium"></Setter>
+                                    <Setter Property="FontSize" Value="16"></Setter>
+                                    <Setter Property="MinHeight" Value="50"></Setter>
+                                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                    <Setter Property="BorderThickness" Value="0"></Setter>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}"></Setter>
+                                    <Setter Property="ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" Margin="20 5" TextWrapping="NoWrap"/>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
+                            <DataGrid.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="Foreground" Value="Black" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="{x:Null}" />
+                                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.CellStyle>
+                            <DataGrid.OpacityMask>
+                                <VisualBrush>
+                                    <VisualBrush.Visual>
+                                        <Border Background="White" CornerRadius="0" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualHeight}"></Border>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </DataGrid.OpacityMask>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="{DynamicResource textAnh}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}" Background="Black" CornerRadius="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}">
+                                                <Border.OpacityMask>
+                                                    <VisualBrush>
+                                                        <VisualBrush.Visual>
+                                                            <Border Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualHeight}" CornerRadius="{Binding RelativeSource={RelativeSource AncestorType=Border},Path=ActualHeight}"></Border>
+                                                        </VisualBrush.Visual>
+                                                    </VisualBrush>
+                                                </Border.OpacityMask>
+                                                <Image  Stretch="UniformToFill" Source="{Binding image}"></Image>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="{DynamicResource textIDnTen}" Binding="{Binding IDnTen}" ElementStyle="{StaticResource textRowCenter}"/>
+                                <DataGridTextColumn Header="{DynamicResource textNgayThang}" Binding="{Binding ts_date}" ElementStyle="{StaticResource textRowCenter}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <tool:Paginator x:Name="pagin" DisplayNumber="20" HorizontalAlignment="Center" Margin="0 15 0 0" SelectionChange="pagin_SelectionChange"></tool:Paginator>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+        <tool:LoadingSpinner x:Name="loading" Visibility="Collapsed"/>
+    </Grid>
+</Page>

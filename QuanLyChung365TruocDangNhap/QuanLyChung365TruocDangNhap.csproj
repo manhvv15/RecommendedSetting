@@ -1,0 +1,3068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{964F31B1-95FE-4590-86A3-50AA1FB23165}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyChung365TruocDangNhap</RootNamespace>
+    <AssemblyName>QuanLyChung365TruocDangNhap</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\HungHa\publish\wwwroot\Download\QuanLyChung365\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://app.TimViec365.vn/Download/QuanLyChung365/</InstallUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>QuanLyChung365</ProductName>
+    <PublisherName>CÔNG TY CỔ PHẦN THANH TOÁN HƯNG HÀ</PublisherName>
+    <SuiteName>QuanLyChung365</SuiteName>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IconQuanLyChung.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=23.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.23.9.0\lib\net461\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words.Pdf2Word, Version=23.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.23.9.0\lib\net461\Aspose.Words.Pdf2Word.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Platform.NetStandard, Version=4.5.5.4823, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\Emgu.CV.4.5.5.4823\lib\netstandard2.0\Emgu.CV.Platform.NetStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.0.6.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.0.6\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.0.0\lib\net452\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.0.0\lib\net452\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.1.6.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Core.2.1.6\lib\net48\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=2.1.6.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinPresentation.2.1.6\lib\net48\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.4.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.4\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.3.0.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.3.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.19.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.19.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.19.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.19.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.19.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.19.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.19.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.19.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=108.0.3.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.108.0.3\lib\netstandard2.0\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.PdfFocus, Version=6.6.9.7, Culture=neutral, PublicKeyToken=0b79b934109b3e9e, processorArchitecture=MSIL">
+      <HintPath>..\packages\sautinsoft.pdffocus.6.6.9.7\lib\net461\SautinSoft.PdfFocus.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOClient, Version=3.0.6.0, Culture=neutral, PublicKeyToken=c9a3629195a82104, processorArchitecture=MSIL">
+      <HintPath>..\packages\SocketIOClient.3.0.6\lib\netstandard2.0\SocketIOClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOClient.Windows7, Version=3.0.6.0, Culture=neutral, PublicKeyToken=a862d966b2991c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SocketIOClient.Windows7.3.0.6\lib\netstandard2.0\SocketIOClient.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=20.1460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.20.1.0.50\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.1460.0.50, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.20.1.0.50\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=20.1460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.Wpf.20.1.0.50\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PdfViewer.WPF, Version=20.1460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.PdfViewer.WPF.20.1.0.50\lib\net46\Syncfusion.PdfViewer.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=20.1460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.WPF.20.1.0.50\lib\net46\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.19.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.19.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client.Managed, Version=1.0.1.0, Culture=neutral, PublicKeyToken=ece522f44f965998, processorArchitecture=MSIL">
+      <HintPath>..\packages\matthid-System.Net.WebSockets.Client.Managed.1.0.1\lib\net45\System.Net.WebSockets.Client.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.5.0.0\lib\net472\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CaNhan.xaml.cs">
+      <DependentUpon>CaNhan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\ConnectToserver\ConnectSocket.cs" />
+    <Compile Include="ChamCong365\Core\Extention.cs" />
+    <Compile Include="ChamCong365\Entities\APIShift.cs" />
+    <Compile Include="ChamCong365\Entities\API_BangCong_List.cs" />
+    <Compile Include="ChamCong365\Entities\API_Company_List.cs" />
+    <Compile Include="ChamCong365\Entities\API_DiemDanh_Respon.cs" />
+    <Compile Include="ChamCong365\Entities\API_DSCaLamViec.cs" />
+    <Compile Include="ChamCong365\Entities\API_Employee_List.cs" />
+    <Compile Include="ChamCong365\Entities\API_EPNotInCycle_List.cs" />
+    <Compile Include="ChamCong365\Entities\API_IP_List.cs" />
+    <Compile Include="ChamCong365\Entities\API_LichLamViec_ChiTiet.cs" />
+    <Compile Include="ChamCong365\Entities\API_NotifyCom.cs" />
+    <Compile Include="ChamCong365\Entities\API_QuyenNguoiDung.cs" />
+    <Compile Include="ChamCong365\Entities\API_QuyenTruyCap_List.cs" />
+    <Compile Include="ChamCong365\Entities\API_Respon.cs" />
+    <Compile Include="ChamCong365\Entities\API_ThongKeDeXuatNghi.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_Com_Child_Manage.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_Com_ChiTiet.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_CongCong_List.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_Detail_De_Xuat.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_List_De_Xuat.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_List_PhongBan.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_Login_Company.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_LSChamCongQR.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_QR_List.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_QuyenTruyCap_Manage.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_ThietBiChoDuyet.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_ToaDo_List.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_Wifi_List.cs" />
+    <Compile Include="ChamCong365\Entities\Company\API_XuatCong_List.cs" />
+    <Compile Include="ChamCong365\Entities\Error.cs" />
+    <Compile Include="ChamCong365\Entities\Forgot_Password\API_Porgot_Password.cs" />
+    <Compile Include="ChamCong365\Entities\History_Attenden_Staff\API_Htr_Att_Staff.cs" />
+    <Compile Include="ChamCong365\Entities\History_Attenden_Staff\API_List_Staff_All.cs" />
+    <Compile Include="ChamCong365\Entities\History_Attenden_Staff\API_Shift_Manage.cs" />
+    <Compile Include="ChamCong365\Entities\Staff\API_LichSuDiemDanh_List.cs" />
+    <Compile Include="ChamCong365\Entities\Staff\API_Login_Staff.cs" />
+    <Compile Include="ChamCong365\LoginMain.xaml.cs">
+      <DependentUpon>LoginMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Entities\API_ComLogin.cs" />
+    <Compile Include="ChamCong365\Login\Entities\API_EpLogin.cs" />
+    <Compile Include="ChamCong365\Login\Entities\API_Response.cs" />
+    <Compile Include="ChamCong365\Login\Entities\Data.cs" />
+    <Compile Include="ChamCong365\Login\Entities\Error.cs" />
+    <Compile Include="ChamCong365\Login\ForgotPasswordWindow.xaml.cs">
+      <DependentUpon>ForgotPasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\ForgotPassword_Email.xaml.cs">
+      <DependentUpon>ForgotPassword_Email.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\ForgotPassword_NewPass.xaml.cs">
+      <DependentUpon>ForgotPassword_NewPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\ForgotPassword_OTP.xaml.cs">
+      <DependentUpon>ForgotPassword_OTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\ForgotPassword_Success.xaml.cs">
+      <DependentUpon>ForgotPassword_Success.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\LoginCom.xaml.cs">
+      <DependentUpon>LoginCom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\LoginEP.xaml.cs">
+      <DependentUpon>LoginEP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\LoginWithPhone.xaml.cs">
+      <DependentUpon>LoginWithPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Login\PageGuideQRCode.xaml.cs">
+      <DependentUpon>PageGuideQRCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Login\Views\Notify.xaml.cs">
+      <DependentUpon>Notify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Resouces\MathConvert.cs" />
+    <Compile Include="ChamCong365\Tools\Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\Combobox.xaml.cs">
+      <DependentUpon>Combobox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\LoadingSpinner.xaml.cs">
+      <DependentUpon>LoadingSpinner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\NumericTextBox.xaml.cs">
+      <DependentUpon>NumericTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\Paginator.xaml.cs">
+      <DependentUpon>Paginator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\SearchBar.xaml.cs">
+      <DependentUpon>SearchBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Tools\SelectTimeCombobox.xaml.cs">
+      <DependentUpon>SelectTimeCombobox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\Login_Company.xaml.cs">
+      <DependentUpon>Login_Company.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\Login_Main.xaml.cs">
+      <DependentUpon>Login_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\Login_Staff.xaml.cs">
+      <DependentUpon>Login_Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\PasswordChangedSucces.xaml.cs">
+      <DependentUpon>PasswordChangedSucces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\RecoveryPassWord.xaml.cs">
+      <DependentUpon>RecoveryPassWord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Login\Verify_OTP.xaml.cs">
+      <DependentUpon>Verify_OTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Cap_Nhap_Lai_Khuon_Mat.xaml.cs">
+      <DependentUpon>Cap_Nhap_Lai_Khuon_Mat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_IP_EditPopup.xaml.cs">
+      <DependentUpon>CauHinhChamCong_IP_EditPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_Main.xaml.cs">
+      <DependentUpon>CauHinhChamCong_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_QR_Popup.xaml.cs">
+      <DependentUpon>CauHinhChamCong_QR_Popup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_ViTri_EditPopup.xaml.cs">
+      <DependentUpon>CauHinhChamCong_ViTri_EditPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_Wifi_EditPopup - Copy.xaml.cs">
+      <DependentUpon>CauHinhChamCong_Wifi_EditPopup - Copy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Cau_Truc_Phong_Ban.xaml.cs">
+      <DependentUpon>Cau_Truc_Phong_Ban.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\ChamCong\ChamCong_Main.xaml.cs">
+      <DependentUpon>ChamCong_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\ChamCong\ChamCong_Start.xaml.cs">
+      <DependentUpon>ChamCong_Start.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Company_Child_Manage.xaml.cs">
+      <DependentUpon>Company_Child_Manage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Cong_Cong.xaml.cs">
+      <DependentUpon>Cong_Cong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\History_Attendence_Staff.xaml.cs">
+      <DependentUpon>History_Attendence_Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\INotifyPropertychanged.cs" />
+    <Compile Include="ChamCong365\Views\Pages\List_Stuff_All.xaml.cs">
+      <DependentUpon>List_Stuff_All.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Phan_Quyen_Nguoi_Dung.xaml.cs">
+      <DependentUpon>Phan_Quyen_Nguoi_Dung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\QL_Nhan_Vien\Home_Stuff.xaml.cs">
+      <DependentUpon>Home_Stuff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\QL_Nhan_Vien\Timekeeping_Manage.xaml.cs">
+      <DependentUpon>Timekeeping_Manage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Quan_Ly_Quyen_Truy_Cap.xaml.cs">
+      <DependentUpon>Quan_Ly_Quyen_Truy_Cap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Rate.xaml.cs">
+      <DependentUpon>Rate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Send_Error.xaml.cs">
+      <DependentUpon>Send_Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Setting_Account.xaml.cs">
+      <DependentUpon>Setting_Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Shift_Manage.xaml.cs">
+      <DependentUpon>Shift_Manage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Thong_Ke_De_Xuat_Nghi.xaml.cs">
+      <DependentUpon>Thong_Ke_De_Xuat_Nghi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Xuat_Cong\ExcelData.cs" />
+    <Compile Include="ChamCong365\Views\Pages\Xuat_Cong\Xuat_Cong_CongTy.xaml.cs">
+      <DependentUpon>Xuat_Cong_CongTy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\Pages\Xuat_Cong\Xuat_Cong_NhanVien.xaml.cs">
+      <DependentUpon>Xuat_Cong_NhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\ConfirmBox.xaml.cs">
+      <DependentUpon>ConfirmBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\NoTiFy.xaml.cs">
+      <DependentUpon>NoTiFy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\Notify1.xaml.cs">
+      <DependentUpon>Notify1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\Noti_Delete.xaml.cs">
+      <DependentUpon>Noti_Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\Popup_CauHinhChamCong\TuyChonDuyetTB.xaml.cs">
+      <DependentUpon>TuyChonDuyetTB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_CauTrucPhongBan\Add_More_PB.xaml.cs">
+      <DependentUpon>Add_More_PB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_CauTrucPhongBan\Changed_Delete.xaml.cs">
+      <DependentUpon>Changed_Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_CauTrucPhongBan\Chi_Tiet_PB.xaml.cs">
+      <DependentUpon>Chi_Tiet_PB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Attenden_Fail.xaml.cs">
+      <DependentUpon>Attenden_Fail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Error_NhanDien.xaml.cs">
+      <DependentUpon>Error_NhanDien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Info_ChamCong.xaml.cs">
+      <DependentUpon>Info_ChamCong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Register_Face_Success.xaml.cs">
+      <DependentUpon>Register_Face_Success.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_ChamCong\ShowStaff.xaml.cs">
+      <DependentUpon>ShowStaff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_Company_Child\Add_More_Company.xaml.cs">
+      <DependentUpon>Add_More_Company.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\popUp_MainWindow\dropDown.xaml.cs">
+      <DependentUpon>dropDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\popUp_QuanLyNV\Add_Staff.xaml.cs">
+      <DependentUpon>Add_Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\popUp_QuanLyNV\Edit_Staff.xaml.cs">
+      <DependentUpon>Edit_Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_Rate\Noti_Rate.xaml.cs">
+      <DependentUpon>Noti_Rate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_SendError\Noti_Error.xaml.cs">
+      <DependentUpon>Noti_Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_SettingAccount\Add_Image.xaml.cs">
+      <DependentUpon>Add_Image.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_SettingAccount\Update_Successfull.xaml.cs">
+      <DependentUpon>Update_Successfull.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_Shift_manage\Add_Shift.xaml.cs">
+      <DependentUpon>Add_Shift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong365\Views\PopUp\PopUp_Shift_manage\Changed_Delete.xaml.cs">
+      <DependentUpon>Changed_Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChonLoaiTaiKhoan.xaml.cs">
+      <DependentUpon>ChonLoaiTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChonLoaiTaiKhoanDangNhap.xaml.cs">
+      <DependentUpon>ChonLoaiTaiKhoanDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CongTy.xaml.cs">
+      <DependentUpon>CongTy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\OOP\ClassChucVu.cs" />
+    <Compile Include="Popup\OOP\ClassGioiTinh.cs" />
+    <Compile Include="Popup\OOP\ClassKinhNghiemLamViec.cs" />
+    <Compile Include="Popup\OOP\ClassTinhTrangHonNhan.cs" />
+    <Compile Include="Popup\OOP\ClassTrinhDoHocVan.cs" />
+    <Compile Include="Popup\TruocDangNhap\DangKyTaiKhoanNhanVien.xaml.cs">
+      <DependentUpon>DangKyTaiKhoanNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhapDangKy.xaml.cs">
+      <DependentUpon>DangNhapDangKy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTest.xaml.cs">
+      <DependentUpon>HomeTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\APIs\API.cs" />
+    <Compile Include="Hr\Components\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Components\SideBar.xaml.cs">
+      <DependentUpon>SideBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Components\ToggleSwitch.xaml.cs">
+      <DependentUpon>ToggleSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\ConnectToserver\ConnectSocket.cs" />
+    <Compile Include="Hr\Core\Extention.cs" />
+    <Compile Include="Hr\Core\MathConvert.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\AddEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\DeleteEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\getImageEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\getListEmployee.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\GroupEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\NestEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\EmployeeManager\ResultEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\DownsizingaEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\EntitySuccessMessage.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\getListEmployee.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\listCompany.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\listDepartment.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\ListJobRotation.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\listShift.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\MessNofiChat.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\PlanningAppointmentList.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\SuccessDelete.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PersonnelChangeEntity\UpDownSalaryEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PolicyRegulations\DetailPolicyEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PolicyRegulations\DetailProvisionEntity.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PolicyRegulations\ListEmployeePolicy.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PolicyRegulations\ListWorkingRegulationContent.cs" />
+    <Compile Include="Hr\Entities\AdministrationEntity\PolicyRegulations\listWorkingRegulations.cs" />
+    <Compile Include="Hr\Entities\HomeEntity\AccountEmployeeEntity.cs" />
+    <Compile Include="Hr\Entities\HomeEntity\AllEmployeeEntity.cs" />
+    <Compile Include="Hr\Entities\HomeEntity\TotalEmployeeEntity.cs" />
+    <Compile Include="Hr\Entities\HomeEntity\WeatherEntity.cs" />
+    <Compile Include="Hr\Entities\HRReportEntity\ListRecruitmentStaffEntity.cs" />
+    <Compile Include="Hr\Entities\HRReportEntity\ListReportCandidateRcm.cs" />
+    <Compile Include="Hr\Entities\HRReportEntity\TotalReportEntity.cs" />
+    <Compile Include="Hr\Entities\ListItemCombobox\ListItemCombobox.cs" />
+    <Compile Include="Hr\Entities\LoginEntity\ForgotPassCompanyEntity.cs" />
+    <Compile Include="Hr\Entities\LoginEntity\LoginCompanyEntity.cs" />
+    <Compile Include="Hr\Entities\LoginEntity\LoginEmployeeEntity.cs" />
+    <Compile Include="Hr\Entities\LoginEntity\verifyOtp.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\ListCandidateEntities\CandidateDetailEntity.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\ListCandidateEntities\ListCandidateEntity.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\ListCandidateEntities\ListProcessInterviewEntity.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\ListCandidateEntities\ProcessEntity.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\PerformRecuitmentEntities\ListNewActive.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\PerformRecuitmentEntities\ListSchedule.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\PerformRecuitmentEntities\PerformDetail.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\PerformRecuitmentEntities\TotalCandidateBy.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\RecuitmentProcessEntities\ListRecruitmentStageEntity.cs" />
+    <Compile Include="Hr\Entities\ManageRecuitmentEntities\RecuitmentProcessEntities\RecruitmentProcessEntity.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\DetailCycle.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\DetailOrganization.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\detailShiftEntities.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\getInfoByNestEntity.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\listChildEntities.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\listPossition.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\ListTeam.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\ProposeEntities.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\updateDep.cs" />
+    <Compile Include="Hr\Entities\OrganizationalChartEntities\updateNest.cs" />
+    <Compile Include="Hr\Entities\RecentDeletedData\RecentDeletedDataEntity.cs" />
+    <Compile Include="Hr\Entities\SalaryAndBenefits\AcgievementEntity.cs" />
+    <Compile Include="Hr\Entities\SalaryAndBenefits\ListAchievementEntity.cs" />
+    <Compile Include="Hr\Entities\SalaryAndBenefits\ListInfringesEntity.cs" />
+    <Compile Include="Hr\Entities\SettingEntities\CompanyInfoEntity.cs" />
+    <Compile Include="Hr\Entities\SettingEntities\InformationLoginEntity.cs" />
+    <Compile Include="Hr\Entities\SettingEntities\PermissionEntity.cs" />
+    <Compile Include="Hr\Entities\TrainingAndDeveloping\JobPosition\ListJobPositions.cs" />
+    <Compile Include="Hr\Entities\TrainingAndDeveloping\ListTrainingProcessEntity.cs" />
+    <Compile Include="Hr\Entities\TrainingAndDeveloping\StageList.cs" />
+    <Compile Include="Hr\Login\Entities\API_ComLogin.cs" />
+    <Compile Include="Hr\Login\Entities\API_EpLogin.cs" />
+    <Compile Include="Hr\Login\Entities\API_Response.cs" />
+    <Compile Include="Hr\Login\Entities\Data.cs" />
+    <Compile Include="Hr\Login\Entities\Error.cs" />
+    <Compile Include="Hr\Login\ForgotPasswordWindow.xaml.cs">
+      <DependentUpon>ForgotPasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\ForgotPassword_Email.xaml.cs">
+      <DependentUpon>ForgotPassword_Email.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\ForgotPassword_NewPass.xaml.cs">
+      <DependentUpon>ForgotPassword_NewPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\ForgotPassword_OTP.xaml.cs">
+      <DependentUpon>ForgotPassword_OTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\ForgotPassword_Success.xaml.cs">
+      <DependentUpon>ForgotPassword_Success.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\LoginCom.xaml.cs">
+      <DependentUpon>LoginCom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\LoginEP.xaml.cs">
+      <DependentUpon>LoginEP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\LoginWithPhone.xaml.cs">
+      <DependentUpon>LoginWithPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Login\PageGuideQRCode.xaml.cs">
+      <DependentUpon>PageGuideQRCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Login\Views\Notify.xaml.cs">
+      <DependentUpon>Notify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\EmployeeManagerPages\EmployeeNotEnoughInformationPage.xaml.cs">
+      <DependentUpon>EmployeeNotEnoughInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\EmployeeManagerPages\ListOfEmployeePage.xaml.cs">
+      <DependentUpon>ListOfEmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\PersonalChangePages\AppointmentPage.xaml.cs">
+      <DependentUpon>AppointmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\PersonalChangePages\BreakTheRules.xaml.cs">
+      <DependentUpon>BreakTheRules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\PersonalChangePages\ChartPage.xaml.cs">
+      <DependentUpon>ChartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\PersonalChangePages\DownsizingPage.xaml.cs">
+      <DependentUpon>DownsizingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\PersonalChangePages\UpDownSalaryPage.xaml.cs">
+      <DependentUpon>UpDownSalaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\PersonalChangePages\WorkingRotationPage.xaml.cs">
+      <DependentUpon>WorkingRotationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\RegulationsPoliciesPages\EmployeePolicyPage.xaml.cs">
+      <DependentUpon>EmployeePolicyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\AdministrationPages\RegulationsPoliciesPages\WorkingRegulationsPage.xaml.cs">
+      <DependentUpon>WorkingRegulationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HomePages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HomePages\NotAuthorizedPage.xaml.cs">
+      <DependentUpon>NotAuthorizedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\AcademiLevelChart.xaml.cs">
+      <DependentUpon>AcademiLevelChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\AgeChart.xaml.cs">
+      <DependentUpon>AgeChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\AppointmentChart.xaml.cs">
+      <DependentUpon>AppointmentChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\NewStaffChart.xaml.cs">
+      <DependentUpon>NewStaffChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\QuitJobChart.xaml.cs">
+      <DependentUpon>QuitJobChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\RotationChart.xaml.cs">
+      <DependentUpon>RotationChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\StackColumnChart.xaml.cs">
+      <DependentUpon>StackColumnChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\UpDownSalaryChart.xaml.cs">
+      <DependentUpon>UpDownSalaryChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\Charts\WorkingSeniorityChart.xaml.cs">
+      <DependentUpon>WorkingSeniorityChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\HRReportPage.xaml.cs">
+      <DependentUpon>HRReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\NewStaffPage.xaml.cs">
+      <DependentUpon>NewStaffPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\HRReportPages\HRReportPages\RecruitmentReport.xaml.cs">
+      <DependentUpon>RecruitmentReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\LoginCompanyPage.xaml.cs">
+      <DependentUpon>LoginCompanyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\LoginEmployeePage.xaml.cs">
+      <DependentUpon>LoginEmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\OtpAuthentication.xaml.cs">
+      <DependentUpon>OtpAuthentication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\RestorePasswordPage.xaml.cs">
+      <DependentUpon>RestorePasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\RestorePasswordSuccessPage.xaml.cs">
+      <DependentUpon>RestorePasswordSuccessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\LoginPages\SelectAccountPage.xaml.cs">
+      <DependentUpon>SelectAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailApplicationStage.xaml.cs">
+      <DependentUpon>CandidateDetailApplicationStage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailCancelJobPage.xaml.cs">
+      <DependentUpon>CandidateDetailCancelJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailContractJobPage.xaml.cs">
+      <DependentUpon>CandidateDetailContractJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailFailJobPage.xaml.cs">
+      <DependentUpon>CandidateDetailFailJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailGetJobPage.xaml.cs">
+      <DependentUpon>CandidateDetailGetJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailPage.xaml.cs">
+      <DependentUpon>CandidateDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailProcessInterviewPage.xaml.cs">
+      <DependentUpon>CandidateDetailProcessInterviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateProfileDetailsPage.xaml.cs">
+      <DependentUpon>CandidateProfileDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateWarehouseDetailPage.xaml.cs">
+      <DependentUpon>CandidateWarehouseDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateWarehousePage.xaml.cs">
+      <DependentUpon>CandidateWarehousePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\ListOfCandidatesPage.xaml.cs">
+      <DependentUpon>ListOfCandidatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\PerformRecruitmentPage.xaml.cs">
+      <DependentUpon>PerformRecruitmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentConnectionPage.xaml.cs">
+      <DependentUpon>RecruitmentConnectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentFeePage.xaml.cs">
+      <DependentUpon>RecruitmentFeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentInformationDetailPage.xaml.cs">
+      <DependentUpon>RecruitmentInformationDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentInformationPage.xaml.cs">
+      <DependentUpon>RecruitmentInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\RecruitmentProcessPages\RecruitmentProcessDetailPage.xaml.cs">
+      <DependentUpon>RecruitmentProcessDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\ManageRecruitmentPages\RecruitmentProcessPages\RecruitmentProcessPage.xaml.cs">
+      <DependentUpon>RecruitmentProcessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\LeadershipBiography.xaml.cs">
+      <DependentUpon>LeadershipBiography.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListDepPage\ListDepNoTimeKeep.xaml.cs">
+      <DependentUpon>ListDepNoTimeKeep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListDepPage\ListDepTimeKeep.xaml.cs">
+      <DependentUpon>ListDepTimeKeep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListDepPage\ListEmpDep.xaml.cs">
+      <DependentUpon>ListEmpDep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListDep\ListEmpDep.xaml.cs">
+      <DependentUpon>ListEmpDep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListDep\SumListTimeKeep.xaml.cs">
+      <DependentUpon>SumListTimeKeep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListNestPage\ListEmpNest.xaml.cs">
+      <DependentUpon>ListEmpNest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListNestPage\ListNestNoTimeKeep.xaml.cs">
+      <DependentUpon>ListNestNoTimeKeep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\ListNestPage\ListNestTimeKeep.xaml.cs">
+      <DependentUpon>ListNestTimeKeep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagram.xaml.cs">
+      <DependentUpon>OrganisationalStructureDiagram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagramListEmployee.xaml.cs">
+      <DependentUpon>OrganisationalStructureDiagramListEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagramListEmployeeNoTimekeeping.xaml.cs">
+      <DependentUpon>OrganisationalStructureDiagramListEmployeeNoTimekeeping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagramListEmployeeTimekeeping.xaml.cs">
+      <DependentUpon>OrganisationalStructureDiagramListEmployeeTimekeeping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\PositionChart.xaml.cs">
+      <DependentUpon>PositionChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\OrganizationalChart\RightToUse.xaml.cs">
+      <DependentUpon>RightToUse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\RecentDeletedData\DeleteData3Page.xaml.cs">
+      <DependentUpon>DeleteData3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SalaryAndBenefitPages\BonusPages\GroupBonusPage.xaml.cs">
+      <DependentUpon>GroupBonusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SalaryAndBenefitPages\BonusPages\ListAchievementsPage.xaml.cs">
+      <DependentUpon>ListAchievementsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SalaryAndBenefitPages\BonusPages\PersonalBonusPage.xaml.cs">
+      <DependentUpon>PersonalBonusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SalaryAndBenefitPages\ViolationsPages\GroupViolationsPage.xaml.cs">
+      <DependentUpon>GroupViolationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SalaryAndBenefitPages\ViolationsPages\ListViolationsPage.xaml.cs">
+      <DependentUpon>ListViolationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SalaryAndBenefitPages\ViolationsPages\PersonalViolationsPage.xaml.cs">
+      <DependentUpon>PersonalViolationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SettingPages\ActivityLogPage.xaml.cs">
+      <DependentUpon>ActivityLogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SettingPages\ListMemberPage.xaml.cs">
+      <DependentUpon>ListMemberPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SettingPages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SettingPages\SecurityInformationPage.xaml.cs">
+      <DependentUpon>SecurityInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SettingPages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\SettingPages\UserRightsPage.xaml.cs">
+      <DependentUpon>UserRightsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\TrainingAndDevelopingPages\JobPositionPages\JobPositionPage.xaml.cs">
+      <DependentUpon>JobPositionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\TrainingAndDevelopingPages\TrainingProcessPages\TrainingProcessDetailPage.xaml.cs">
+      <DependentUpon>TrainingProcessDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Pages\TrainingAndDevelopingPages\TrainingProcessPages\TrainingProcessPage.xaml.cs">
+      <DependentUpon>TrainingProcessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\AddNew.xaml.cs">
+      <DependentUpon>AddNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\AddNewPoint.xaml.cs">
+      <DependentUpon>AddNewPoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\Delete.xaml.cs">
+      <DependentUpon>Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\DeleteAppointmentPlanning.xaml.cs">
+      <DependentUpon>DeleteAppointmentPlanning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\Detail-Edit.xaml.cs">
+      <DependentUpon>Detail-Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Appointment-Planning\EditPoint.xaml.cs">
+      <DependentUpon>EditPoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BreakTheRules\AddNewPopup.xaml.cs">
+      <DependentUpon>AddNewPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BreakTheRules\DeletePopup.xaml.cs">
+      <DependentUpon>DeletePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BreakTheRules\UpdatePopup.xaml.cs">
+      <DependentUpon>UpdatePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BusinessTransfers\AddNew.xaml.cs">
+      <DependentUpon>AddNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Delete.xaml.cs">
+      <DependentUpon>Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Detail-Edit.xaml.cs">
+      <DependentUpon>Detail-Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Downzing\AddNewDown.xaml.cs">
+      <DependentUpon>AddNewDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Downzing\UpdateDown.xaml.cs">
+      <DependentUpon>UpdateDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\AddEmployeePolicy.xaml.cs">
+      <DependentUpon>AddEmployeePolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\AddEmployeePolicyGroup.xaml.cs">
+      <DependentUpon>AddEmployeePolicyGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DeleteEmployeePolicy.xaml.cs">
+      <DependentUpon>DeleteEmployeePolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DeleteEmployeePolicyGroup.xaml.cs">
+      <DependentUpon>DeleteEmployeePolicyGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DetailEmployeePolicy.xaml.cs">
+      <DependentUpon>DetailEmployeePolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DetailEmployeePolicyGroup.xaml.cs">
+      <DependentUpon>DetailEmployeePolicyGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\EditEmployeePolicy.xaml.cs">
+      <DependentUpon>EditEmployeePolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\EmployeePolicy\EditEmployeePolicyGroup.xaml.cs">
+      <DependentUpon>EditEmployeePolicyGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\ListEmployee\Delete.xaml.cs">
+      <DependentUpon>Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\ListEmployee\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\ListEmployee\Detail2.xaml.cs">
+      <DependentUpon>Detail2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\PayRoll\AddNew.xaml.cs">
+      <DependentUpon>AddNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\PayRoll\Delete.xaml.cs">
+      <DependentUpon>Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\PayRoll\DeleteDown.xaml.cs">
+      <DependentUpon>DeleteDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\PayRoll\Detail-Edit.xaml.cs">
+      <DependentUpon>Detail-Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\PayRoll\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\AddRegulation.xaml.cs">
+      <DependentUpon>AddRegulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\DeleteGroupRegulation.xaml.cs">
+      <DependentUpon>DeleteGroupRegulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\DeleteRegulation.xaml.cs">
+      <DependentUpon>DeleteRegulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\DetailRegulation.xaml.cs">
+      <DependentUpon>DetailRegulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\EditRegulation.xaml.cs">
+      <DependentUpon>EditRegulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\Policy\AddPolicy.xaml.cs">
+      <DependentUpon>AddPolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\Policy\DetailPolicy.xaml.cs">
+      <DependentUpon>DetailPolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\Regulation\Policy\EditPolicy.xaml.cs">
+      <DependentUpon>EditPolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\AddNew.xaml.cs">
+      <DependentUpon>AddNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\AddNewDown.xaml.cs">
+      <DependentUpon>AddNewDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\AddNewUp.xaml.cs">
+      <DependentUpon>AddNewUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\Delete.xaml.cs">
+      <DependentUpon>Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\Detail-Edit.xaml.cs">
+      <DependentUpon>Detail-Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\WorkingRotation\AddNewWorkingRotation.xaml.cs">
+      <DependentUpon>AddNewWorkingRotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\WorkingRotation\DeleteJWorkingRotation.xaml.cs">
+      <DependentUpon>DeleteJWorkingRotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\AdministrationPopups\WorkingRotation\EditWorkingRotation.xaml.cs">
+      <DependentUpon>EditWorkingRotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\CancellationPhasePopup.xaml.cs">
+      <DependentUpon>CancellationPhasePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\ContractSigningStagePopup.xaml.cs">
+      <DependentUpon>ContractSigningStagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\DeleteProfilePopup.xaml.cs">
+      <DependentUpon>DeleteProfilePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\GetProfilePopup.xaml.cs">
+      <DependentUpon>GetProfilePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\InterviewStagePopup.xaml.cs">
+      <DependentUpon>InterviewStagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\JobAcceptancePeriodPopup.xaml.cs">
+      <DependentUpon>JobAcceptancePeriodPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\CandidateWarehousePopups\SlidingStagePopup.xaml.cs">
+      <DependentUpon>SlidingStagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\ConfirmBox.xaml.cs">
+      <DependentUpon>ConfirmBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\LoadingSpinner.xaml.cs">
+      <DependentUpon>LoadingSpinner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\DetailDep.xaml.cs">
+      <DependentUpon>DetailDep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\Paginator.xaml.cs">
+      <DependentUpon>Paginator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\RightToUse\AddNewRightToUse.xaml.cs">
+      <DependentUpon>AddNewRightToUse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\RightToUse\DeleteRightToUse.xaml.cs">
+      <DependentUpon>DeleteRightToUse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\SeeMorePopup.xaml.cs">
+      <DependentUpon>SeeMorePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\UpdateDetailDep.xaml.cs">
+      <DependentUpon>UpdateDetailDep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OrganizationalChartPopup\UpdateDetailNest.xaml.cs">
+      <DependentUpon>UpdateDetailNest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OverviewPopups\MenuPopups.xaml.cs">
+      <DependentUpon>MenuPopups.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OverviewPopups\MessengerPopup.xaml.cs">
+      <DependentUpon>MessengerPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OverviewPopups\NotifyPopup.xaml.cs">
+      <DependentUpon>NotifyPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OverviewPopups\PhoneBookPopup.xaml.cs">
+      <DependentUpon>PhoneBookPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OverviewPopups\RegisterPopup.xaml.cs">
+      <DependentUpon>RegisterPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\OverviewPopups\RemindPopup.xaml.cs">
+      <DependentUpon>RemindPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecentDeletedDataPopups\DeleteItemPopup.xaml.cs">
+      <DependentUpon>DeleteItemPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecentDeletedDataPopups\DeleteNoDataPopup.xaml.cs">
+      <DependentUpon>DeleteNoDataPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecentDeletedDataPopups\RestoreInventoryPopup.xaml.cs">
+      <DependentUpon>RestoreInventoryPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecentDeletedDataPopups\RestoreNoDataPopup.xaml.cs">
+      <DependentUpon>RestoreNoDataPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateCancelJobPopup.xaml.cs">
+      <DependentUpon>EditCandidateCancelJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateFailJobPopup.xaml.cs">
+      <DependentUpon>EditCandidateFailJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateGetJobPopup.xaml.cs">
+      <DependentUpon>EditCandidateGetJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateProfilePopup2.xaml.cs">
+      <DependentUpon>EditCandidateProfilePopup2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditContractPopup.xaml.cs">
+      <DependentUpon>EditContractPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditYourResumePopup.xaml.cs">
+      <DependentUpon>EditYourResumePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidatePofilePopup.xaml.cs">
+      <DependentUpon>CandidatePofilePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CvCandidatePopup.xaml.cs">
+      <DependentUpon>CvCandidatePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\DeleteCandidatePopup.xaml.cs">
+      <DependentUpon>DeleteCandidatePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\DeleteLocationPopup.xaml.cs">
+      <DependentUpon>DeleteLocationPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\EditCandidatePopup.xaml.cs">
+      <DependentUpon>EditCandidatePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\ExporFileExcelPopup.xaml.cs">
+      <DependentUpon>ExporFileExcelPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\MoreCandidatePopup.xaml.cs">
+      <DependentUpon>MoreCandidatePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\CancelJobPopup.xaml.cs">
+      <DependentUpon>CancelJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\ChooseTransportProcess.xaml.cs">
+      <DependentUpon>ChooseTransportProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\ContractJobPopup.xaml.cs">
+      <DependentUpon>ContractJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\FailJobPopup.xaml.cs">
+      <DependentUpon>FailJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\GetJobPopup.xaml.cs">
+      <DependentUpon>GetJobPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\InterviewPopup.xaml.cs">
+      <DependentUpon>InterviewPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\AddNewCostPopup.xaml.cs">
+      <DependentUpon>AddNewCostPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\ConnectWebsitePopup.xaml.cs">
+      <DependentUpon>ConnectWebsitePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\CostEditingPopup.xaml.cs">
+      <DependentUpon>CostEditingPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\EditMessagePopup.xaml.cs">
+      <DependentUpon>EditMessagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\MoreNewsPopup.xaml.cs">
+      <DependentUpon>MoreNewsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\RemoveExpensePopup.xaml.cs">
+      <DependentUpon>RemoveExpensePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\RemoveJobPostingPopup.xaml.cs">
+      <DependentUpon>RemoveJobPostingPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\SetupTemplatePopup.xaml.cs">
+      <DependentUpon>SetupTemplatePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\AddProcessPopup.xaml.cs">
+      <DependentUpon>AddProcessPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\DeleteProcessPopup.xaml.cs">
+      <DependentUpon>DeleteProcessPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\DeleteStagePopup.xaml.cs">
+      <DependentUpon>DeleteStagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\EditProcessPopup.xaml.cs">
+      <DependentUpon>EditProcessPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\MoreStagePopup.xaml.cs">
+      <DependentUpon>MoreStagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\ProcessEditingPopup.xaml.cs">
+      <DependentUpon>ProcessEditingPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\AddAchievementsPopup.xaml.cs">
+      <DependentUpon>AddAchievementsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\AddListAchievementsPopup.xaml.cs">
+      <DependentUpon>AddListAchievementsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\EditAchievementsPopup.xaml.cs">
+      <DependentUpon>EditAchievementsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\EditGroup.xaml.cs">
+      <DependentUpon>EditGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\EditIndividualAchievementsPopup.xaml.cs">
+      <DependentUpon>EditIndividualAchievementsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\DetailPopup.xaml.cs">
+      <DependentUpon>DetailPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\EditGroupVio.xaml.cs">
+      <DependentUpon>EditGroupVio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\GroupAddViolationPopup.xaml.cs">
+      <DependentUpon>GroupAddViolationPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\GroupEditViolationPopup.xaml.cs">
+      <DependentUpon>GroupEditViolationPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\PersonalAddViolationPopup.xaml.cs">
+      <DependentUpon>PersonalAddViolationPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\PersonalEditViolationPopup.xaml.cs">
+      <DependentUpon>PersonalEditViolationPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SettingPopups\OTPPopup.xaml.cs">
+      <DependentUpon>OTPPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SettingPopups\ResetPasswordPopup.xaml.cs">
+      <DependentUpon>ResetPasswordPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\SettingPopups\RestorePopup.xaml.cs">
+      <DependentUpon>RestorePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\AddNewLocattion.xaml.cs">
+      <DependentUpon>AddNewLocattion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\AddProcedure.xaml.cs">
+      <DependentUpon>AddProcedure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\AddTrainingPhase.xaml.cs">
+      <DependentUpon>AddTrainingPhase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\DeleteLocation.xaml.cs">
+      <DependentUpon>DeleteLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\DeletePhase.xaml.cs">
+      <DependentUpon>DeletePhase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\DeleteProcess.xaml.cs">
+      <DependentUpon>DeleteProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Popups\TranningAndDeveloper\UpdatePhase.xaml.cs">
+      <DependentUpon>UpdatePhase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\Resource\BackgroundLogin.xaml.cs">
+      <DependentUpon>BackgroundLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hr\View\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\DangKyCaNhan.xaml.cs">
+      <DependentUpon>DangKyCaNhan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\DangKyCongTy.xaml.cs">
+      <DependentUpon>DangKyCongTy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\IDCongTy.xaml.cs">
+      <DependentUpon>IDCongTy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\NhanSu.xaml.cs">
+      <DependentUpon>NhanSu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\QR.xaml.cs">
+      <DependentUpon>QR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecommendSetting\ucRecommended.xaml.cs">
+      <DependentUpon>ucRecommended.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SauDangNhap.xaml.cs">
+      <DependentUpon>SauDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CaNhan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\LoginMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\ForgotPasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\CustomButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\DefaultColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\Icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\MainDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\Scroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\VI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Resources\ViewBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\ForgotPassword_Email.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\ForgotPassword_NewPass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\ForgotPassword_OTP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\ForgotPassword_Success.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\LoginCom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\LoginEP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\LoginWithPhone.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Login\PageGuideQRCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Login\Views\Notify.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\Border.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\Combobox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\DefaultColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\Icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\ScrollViewerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\Subtract.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\Subtract1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\Textbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Resouces\VI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\Combobox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\LoadingSpinner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\NumericTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\Paginator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\SearchBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Tools\SelectTimeCombobox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\ForgotPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\Login_Company.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\Login_Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\Login_Staff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\PasswordChangedSucces.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\RecoveryPassWord.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Login\Verify_OTP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Cap_Nhap_Lai_Khuon_Mat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_IP_EditPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_QR_Popup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_ViTri_EditPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\CauHinhChamCong\CauHinhChamCong_Wifi_EditPopup - Copy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Cau_Truc_Phong_Ban.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\ChamCong\ChamCong_Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\ChamCong\ChamCong_Start.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Company_Child_Manage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Cong_Cong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\History_Attendence_Staff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\List_Stuff_All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Phan_Quyen_Nguoi_Dung.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\QL_Nhan_Vien\Home_Stuff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\QL_Nhan_Vien\Timekeeping_Manage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Quan_Ly_Quyen_Truy_Cap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Rate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Send_Error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Setting_Account.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Shift_Manage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Thong_Ke_De_Xuat_Nghi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Xuat_Cong\Xuat_Cong_CongTy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\Pages\Xuat_Cong\Xuat_Cong_NhanVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\ConfirmBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\NoTiFy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\Notify1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\Noti_Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\Popup_CauHinhChamCong\TuyChonDuyetTB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_CauTrucPhongBan\Add_More_PB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_CauTrucPhongBan\Changed_Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_CauTrucPhongBan\Chi_Tiet_PB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Attenden_Fail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Error_NhanDien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Info_ChamCong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_ChamCong\Register_Face_Success.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_ChamCong\ShowStaff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_Company_Child\Add_More_Company.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\popUp_MainWindow\dropDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\popUp_QuanLyNV\Add_Staff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\popUp_QuanLyNV\Edit_Staff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_Rate\Noti_Rate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_SendError\Noti_Error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_SettingAccount\Add_Image.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_SettingAccount\Update_Successfull.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_Shift_manage\Add_Shift.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChamCong365\Views\PopUp\PopUp_Shift_manage\Changed_Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChonLoaiTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChonLoaiTaiKhoanDangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CongTy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\DangKyTaiKhoanNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DangNhapDangKy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HomeTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hr\Components\Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Components\SideBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Components\ToggleSwitch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\ForgotPasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\CustomButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\DefaultColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\Icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\MainDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\Scroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\VI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Resources\ViewBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\ForgotPassword_Email.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\ForgotPassword_NewPass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\ForgotPassword_OTP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\ForgotPassword_Success.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\LoginCom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\LoginEP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\LoginWithPhone.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Login\PageGuideQRCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Login\Views\Notify.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\EmployeeManagerPages\EmployeeNotEnoughInformationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\EmployeeManagerPages\ListOfEmployeePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\PersonalChangePages\AppointmentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\PersonalChangePages\BreakTheRules.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\PersonalChangePages\ChartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\PersonalChangePages\DownsizingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\PersonalChangePages\UpDownSalaryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\PersonalChangePages\WorkingRotationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\RegulationsPoliciesPages\EmployeePolicyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\AdministrationPages\RegulationsPoliciesPages\WorkingRegulationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HomePages\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HomePages\NotAuthorizedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\AcademiLevelChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\AgeChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\AppointmentChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\NewStaffChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\QuitJobChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\RotationChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\StackColumnChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\UpDownSalaryChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\Charts\WorkingSeniorityChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\HRReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\NewStaffPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\HRReportPages\HRReportPages\RecruitmentReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\ForgotPasswordPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\LoginCompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\LoginEmployeePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\OtpAuthentication.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\RestorePasswordPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\RestorePasswordSuccessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\LoginPages\SelectAccountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailApplicationStage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailCancelJobPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailContractJobPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailFailJobPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailGetJobPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateDetailProcessInterviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateProfileDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateWarehouseDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\CandidateWarehousePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\ListOfCandidatesPages\ListOfCandidatesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\PerformRecruitmentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentConnectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentFeePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentInformationDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\PerformRecruitmentPages\RecruitmentInformationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\RecruitmentProcessPages\RecruitmentProcessDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\ManageRecruitmentPages\RecruitmentProcessPages\RecruitmentProcessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\LeadershipBiography.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListDepPage\ListDepNoTimeKeep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListDepPage\ListDepTimeKeep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListDepPage\ListEmpDep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListDep\ListEmpDep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListDep\SumListTimeKeep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListNestPage\ListEmpNest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListNestPage\ListNestNoTimeKeep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\ListNestPage\ListNestTimeKeep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagram.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagramListEmployee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagramListEmployeeNoTimekeeping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\OrganisationalStructureDiagramListEmployeeTimekeeping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\PositionChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\OrganizationalChart\RightToUse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\RecentDeletedData\DeleteData3Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SalaryAndBenefitPages\BonusPages\GroupBonusPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SalaryAndBenefitPages\BonusPages\ListAchievementsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SalaryAndBenefitPages\BonusPages\PersonalBonusPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SalaryAndBenefitPages\ViolationsPages\GroupViolationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SalaryAndBenefitPages\ViolationsPages\ListViolationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SalaryAndBenefitPages\ViolationsPages\PersonalViolationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SettingPages\ActivityLogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SettingPages\ListMemberPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SettingPages\ProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SettingPages\SecurityInformationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SettingPages\SettingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\SettingPages\UserRightsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\TrainingAndDevelopingPages\JobPositionPages\JobPositionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\TrainingAndDevelopingPages\TrainingProcessPages\TrainingProcessDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Pages\TrainingAndDevelopingPages\TrainingProcessPages\TrainingProcessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\AddNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\AddNewPoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\DeleteAppointmentPlanning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\Detail-Edit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Appointment-Planning\EditPoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BreakTheRules\AddNewPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BreakTheRules\DeletePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BreakTheRules\UpdatePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BusinessTransfers\AddNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Detail-Edit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\BusinessTransfers\Edit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Downzing\AddNewDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Downzing\UpdateDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\AddEmployeePolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\AddEmployeePolicyGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DeleteEmployeePolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DeleteEmployeePolicyGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DetailEmployeePolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\DetailEmployeePolicyGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\EditEmployeePolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\EmployeePolicy\EditEmployeePolicyGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\ListEmployee\Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\ListEmployee\Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\ListEmployee\Detail2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\PayRoll\AddNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\PayRoll\Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\PayRoll\DeleteDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\PayRoll\Detail-Edit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\PayRoll\Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\AddRegulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\DeleteGroupRegulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\DeleteRegulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\DetailRegulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\EditRegulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\Policy\AddPolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\Policy\DetailPolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\Regulation\Policy\EditPolicy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\AddNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\AddNewDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\AddNewUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\Delete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\Detail-Edit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\SalaryIncrease-Decrease\Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\WorkingRotation\AddNewWorkingRotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\WorkingRotation\DeleteJWorkingRotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\AdministrationPopups\WorkingRotation\EditWorkingRotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\CancellationPhasePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\ContractSigningStagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\DeleteProfilePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\GetProfilePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\InterviewStagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\JobAcceptancePeriodPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\CandidateWarehousePopups\SlidingStagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\ConfirmBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\LoadingSpinner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\DetailDep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\Paginator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\RightToUse\AddNewRightToUse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\RightToUse\DeleteRightToUse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\SeeMorePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\UpdateDetailDep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OrganizationalChartPopup\UpdateDetailNest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OverviewPopups\MenuPopups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OverviewPopups\MessengerPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OverviewPopups\NotifyPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OverviewPopups\PhoneBookPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OverviewPopups\RegisterPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\OverviewPopups\RemindPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecentDeletedDataPopups\DeleteItemPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecentDeletedDataPopups\DeleteNoDataPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecentDeletedDataPopups\RestoreInventoryPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecentDeletedDataPopups\RestoreNoDataPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateCancelJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateFailJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateGetJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditCandidateProfilePopup2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditContractPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidateDetailPopups\EditYourResumePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CandidatePofilePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\CvCandidatePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\DeleteCandidatePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\DeleteLocationPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\EditCandidatePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\ExporFileExcelPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\MoreCandidatePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\CancelJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\ChooseTransportProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\ContractJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\FailJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\GetJobPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\ListOfCandidatesPopups\TransportPopups\InterviewPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\AddNewCostPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\ConnectWebsitePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\CostEditingPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\EditMessagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\MoreNewsPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\RemoveExpensePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\RemoveJobPostingPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\PerformRecruitmentPopup\SetupTemplatePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\AddProcessPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\DeleteProcessPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\DeleteStagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\EditProcessPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\MoreStagePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\RecruitmentManagementPopups\RecruitmentProcessPopups\ProcessEditingPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\AddAchievementsPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\AddListAchievementsPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\EditAchievementsPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\EditGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\BonusPopups\EditIndividualAchievementsPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\DetailPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\EditGroupVio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\GroupAddViolationPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\GroupEditViolationPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\PersonalAddViolationPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SarlaryAndBenefitPopups\ViolationsPopups\PersonalEditViolationPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SettingPopups\OTPPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SettingPopups\ResetPasswordPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\SettingPopups\RestorePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\AddNewLocattion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\AddProcedure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\AddTrainingPhase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\DeleteLocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\DeletePhase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\DeleteProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Popups\TranningAndDeveloper\UpdatePhase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Resource\BackgroundLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Resource\Color\ColorResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Resource\Icon\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Resource\Language\LanguageVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\Style\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\View\HomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hr\View\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\QuanLyChungSauDangNhap\DatePicker\ucCalendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\QuanLyChungSauDangNhap\PopUpDangXuat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\QuanLyChungSauDangNhap\PopUpDoiMatKhau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\DangKyCaNhan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\DangKyCongTy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\IDCongTy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\NhanMaOTP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\NhanSu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\PopupDangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\PopUpDangKy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\PopupNhanSu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\QR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\TruocDangNhap\XacThucOTP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecommendSetting\Resoucess\iconRecommend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecommendSetting\ucRecommended.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\PathXAML\DefaultColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\PathXAML\iconChamCong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\PathXAML\iconQuanLyCongTy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\PathXAML\Scroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\PathXAML\SetStyleDefault.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SauDangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Popup\QuanLyChungSauDangNhap\DatePicker\ucCalendar.xaml.cs">
+      <DependentUpon>ucCalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\QuanLyChungSauDangNhap\PopUpDangXuat.xaml.cs">
+      <DependentUpon>PopUpDangXuat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\QuanLyChungSauDangNhap\PopUpDoiMatKhau.xaml.cs">
+      <DependentUpon>PopUpDoiMatKhau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\NhanMaOTP.xaml.cs">
+      <DependentUpon>NhanMaOTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\PopupDangNhap.xaml.cs">
+      <DependentUpon>PopupDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\PopUpDangKy.xaml.cs">
+      <DependentUpon>PopUpDangKy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\PopupNhanSu.xaml.cs">
+      <DependentUpon>PopupNhanSu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\TruocDangNhap\XacThucOTP.xaml.cs">
+      <DependentUpon>XacThucOTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Hr\Pages\OrganizationalChart\OrganizationalChart.rar" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\image\BackgroundCalendar.png" />
+    <Resource Include="Resource\image\check-circle.png" />
+    <Resource Include="Resource\image\CompanyLogo.png" />
+    <Resource Include="Resource\image\Ellipse 1125.png" />
+    <Resource Include="Resource\image\Ellipse 209.png" />
+    <Resource Include="Resource\image\Giờ.png" />
+    <Resource Include="Resource\image\icons8_clock_2 1.png" />
+    <Resource Include="Resource\image\icons8_Plus 1.jpg" />
+    <Resource Include="Resource\image\icons8_Plus.png" />
+    <Resource Include="Resource\image\KyTo.jpg" />
+    <Resource Include="Resource\image\llll.jpg" />
+    <Resource Include="Resource\image\switch 2.png" />
+    <Resource Include="Resource\image\VectorDown.png" />
+    <Resource Include="Resource\image\Word.png" />
+    <Resource Include="Resource\image\WorkShift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\image\danhgia.png" />
+    <Resource Include="Resource\image\error_report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Hr\Login\Resources\ChamCong.ico" />
+    <Resource Include="Hr\Login\Resources\Images\bg.png" />
+    <Resource Include="Hr\Login\Resources\Images\bg1.png" />
+    <Resource Include="Hr\Login\Resources\Images\bgr_nentang.png" />
+    <Resource Include="Hr\Login\Resources\Images\BG_LOGIN.png" />
+    <Resource Include="Hr\Login\Resources\Images\BG_LOGIN_1.png" />
+    <Resource Include="Hr\Login\Resources\Images\BG_LOGIN_2.png" />
+    <Resource Include="Hr\Login\Resources\Images\BG_LOGIN_3.png" />
+    <Resource Include="Hr\Login\Resources\Images\da_dang_ky_bo_cong_thuong.png" />
+    <Resource Include="Hr\Login\Resources\Images\DMCA.png" />
+    <Resource Include="Hr\Login\Resources\Images\footer_phone.png" />
+    <Resource Include="Hr\Login\Resources\Images\QR_AppChamCong.png" />
+    <Resource Include="Hr\Login\Resources\Images\QR_CV365.png" />
+    <Resource Include="Hr\Login\Resources\Images\QR_guide.png" />
+    <Resource Include="Hr\Login\Resources\Images\QR_timviec_ntd.png" />
+    <Resource Include="Hr\Login\Resources\Images\QR_timviec_uv.png" />
+    <Resource Include="Hr\Images\avatar_default.png" />
+    <Resource Include="Hr\Images\Image.Jpeg" />
+    <Resource Include="Hr\Images\logo_com.png" />
+    <Resource Include="Resource\image\qlc_gs.png" />
+    <Resource Include="Resource\image\qlc_raovat.png" />
+    <Resource Include="Resource\image\qlc_thedt.png" />
+    <Resource Include="Resource\image\qlc_tracuuluong.png" />
+    <Resource Include="Resource\image\qlc_trangvang.png" />
+    <Resource Include="Resource\image\qlc_vemaybay.png" />
+    <Resource Include="Resource\image\qlc_vltd.png" />
+    <Resource Include="Resource\image\qlc_vltg.png" />
+    <Resource Include="IconQuanLyChung.ico" />
+    <Resource Include="ChamCong365\Images\Asset 2.png" />
+    <Resource Include="ChamCong365\Images\avt.png" />
+    <Resource Include="ChamCong365\Images\DiemDanhKhongHopLe.png" />
+    <Resource Include="ChamCong365\Images\error.png" />
+    <Resource Include="ChamCong365\Images\Group_30792.png" />
+    <Resource Include="ChamCong365\Images\Group_631257.png" />
+    <Resource Include="ChamCong365\Images\image_3.png" />
+    <Resource Include="ChamCong365\Images\Image_An_Sinh.png" />
+    <Resource Include="ChamCong365\Images\Img_CauTrucPhongBan.png" />
+    <Resource Include="ChamCong365\Images\QRCode.png" />
+    <Resource Include="ChamCong365\Images\rate.png" />
+    <Resource Include="ChamCong365\Images\So_Lan_Di_Muon.png" />
+    <Resource Include="ChamCong365\Images\Star.png" />
+    <Resource Include="ChamCong365\Images\step1.png" />
+    <Resource Include="ChamCong365\Images\step2-1.png" />
+    <Resource Include="ChamCong365\Images\step2-2.png" />
+    <Resource Include="ChamCong365\Images\step2-3.png" />
+    <Resource Include="ChamCong365\Images\step2.png" />
+    <Resource Include="ChamCong365\Images\step3.png" />
+    <Resource Include="ChamCong365\Images\step4.png" />
+    <Resource Include="ChamCong365\Images\XuatCong.png" />
+    <Resource Include="ChamCong365\Login\Resources\ChamCong.ico" />
+    <Resource Include="ChamCong365\Login\Resources\Images\bg.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\bg1.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\bgr_nentang.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\BG_LOGIN.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\BG_LOGIN_1.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\BG_LOGIN_2.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\BG_LOGIN_3.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\da_dang_ky_bo_cong_thuong.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\DMCA.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\footer_phone.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\QR_AppChamCong.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\QR_CV365.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\QR_guide.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\QR_timviec_ntd.png" />
+    <Resource Include="ChamCong365\Login\Resources\Images\QR_timviec_uv.png" />
+    <Resource Include="ChamCong365\Resouces\Images\hd_cc.png" />
+    <Resource Include="Resource\image\bgr_nua.png" />
+    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RecommendSetting\Form\" />
+    <Folder Include="RecommendSetting\Primary\" />
+    <Folder Include="RecommendSetting\Time\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

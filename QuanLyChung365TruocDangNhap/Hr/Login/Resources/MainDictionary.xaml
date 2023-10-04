@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="Login/Resources/Icon.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/DefaultColor.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/Scroll.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/VI.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/ViewBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/CustomButton.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/CheckBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Login/Resources/TextBlock.xaml"></ResourceDictionary>-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

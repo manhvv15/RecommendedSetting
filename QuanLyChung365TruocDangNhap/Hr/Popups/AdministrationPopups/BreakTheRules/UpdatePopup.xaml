@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.AdministrationPopups.BreakTheRules.UpdatePopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups.AdministrationPopups.BreakTheRules"
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:Popup="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="900">
+    <Grid Width="736" Height="550" VerticalAlignment="Top">
+        <Border CornerRadius="8,8,0,0" Height="36" VerticalAlignment="Top" Background="#4C5BD4">
+            <TextBlock Text="CHỈNH SỬA NGHỈ VIỆC SAI QUY ĐỊNH" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Border>
+        <Border Height="514" VerticalAlignment="Bottom" Background="{StaticResource #FFFFFF}" CornerRadius="0,0,4,4">
+            <StackPanel Orientation="Vertical">
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="110" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Tên nhân viên" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" Background="#d9d7d2" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <TextBlock  x:Name="txtName"  Text=""  Padding="10,10,0,0" Height="36" ></TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="110" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Chức vụ hiện tại" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" Background="#d9d7d2" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <TextBlock  x:Name="txtPosition"  Text=""  Padding="10,10,0,0" Height="36"></TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Phòng ban hiện tại" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" Background="#d9d7d2" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <TextBlock x:Name="txtDep" Text="" Padding="10,10,0,0" Height="36" ></TextBlock>
+                    </Border>
+                </Grid>
+              
+              
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Thời gian bắt đầu nghỉ" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" FontSize="14" HorizontalAlignment="Right" Foreground="{StaticResource #FF3333}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <Grid>
+                            <!--<DatePicker x:Name="DTdate" FirstDayOfWeek="Monday" SelectedDateFormat="Short" Height="36" Padding="10,0,12,0" materialDesign:HintAssist.Hint="dd/mm/yy" VerticalAlignment="Center" Background="{x:Null}" Foreground="{StaticResource #474747}">
+                                <DatePicker.Resources>
+                                    <ResourceDictionary>
+                                        <ResourceDictionary.MergedDictionaries>
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                                        </ResourceDictionary.MergedDictionaries>
+                                    </ResourceDictionary>
+                                </DatePicker.Resources>
+                            </DatePicker>-->
+                            <Popup:DatePicker x:Name="DTdate" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Background="{StaticResource #FFFFFF}" ></Popup:DatePicker>
+                            <Grid Margin="1,0,1,1" Height="10" VerticalAlignment="Bottom">
+                                <Border CornerRadius="0,0,4,4" Background="{StaticResource #FFFFFF}"></Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,28,0,0" Width="624" Height="80" HorizontalAlignment="Center">
+                    <Grid Width="186" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <TextBlock Text="Ghi chú" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <RichTextBox x:Name="rtbGhiChu" materialDesign:HintAssist.Hint="Ghi chú" Foreground="{StaticResource #474747}" Block.LineHeight="2" Padding="15,10,10,10" BorderBrush="{x:Null}"></RichTextBox>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,37,56,0" Width="216" Height="36" HorizontalAlignment="Right">
+                    <Border Width="100" Background="#BDBDBD" HorizontalAlignment="Left" CornerRadius="8" Cursor="Hand" MouseLeftButtonDown="CancelPopup">
+                        <TextBlock Text="Hủy"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource  #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="100" Background="{StaticResource #27AE60}" HorizontalAlignment="Right" CornerRadius="8" Cursor="Hand" MouseLeftButtonDown="ClickUpdate">
+                        <TextBlock Text="Cập nhật"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource  #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

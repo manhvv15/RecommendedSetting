@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.TranningAndDeveloper.AddTrainingPhase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups.TranningAndDeveloper" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="900">
+    <Grid Width="736" Height="424" VerticalAlignment="Top">
+        <Border CornerRadius="8" Background="{StaticResource #FFFFFF}"></Border>
+        <Grid Height="36" VerticalAlignment="Top" >
+            <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+            <TextBlock Text="THÊM GIAI ĐOẠN ĐÀO TẠO" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Grid Height="424" VerticalAlignment="Top" Margin="0,84,0,0">
+            <StackPanel Orientation="Vertical">
+                <Grid  Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="90" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Tên giai đoạn" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" FontSize="14" HorizontalAlignment="Right" Foreground="{StaticResource #FF3333}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}"  HorizontalAlignment="Right">
+                        <TextBox x:Name="tbTenGD" materialDesign:HintAssist.Hint="Nhập tên giai đoạn" VerticalAlignment="Center" Foreground="{StaticResource #474747}" FontSize="14" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" ></TextBox>
+                    </Border>
+                </Grid>
+                <Grid  Width="624" Height="36" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Grid Width="122" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Đối tượng đào tạo" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" FontSize="14" HorizontalAlignment="Right" Foreground="{StaticResource #FF3333}"></TextBlock>
+                    </Grid>
+                    <Border Width="404" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <TextBox x:Name="tbDoiTuongDT" materialDesign:HintAssist.Hint="Nhập tên đối tượng đào tạo" VerticalAlignment="Center" Foreground="{StaticResource #474747}" FontSize="14" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" ></TextBox>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,28,0,0" Width="624" Height="130" HorizontalAlignment="Center">
+                    <Grid Width="125" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <TextBlock Text="Nội dung giai đoạn" FontSize="14" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" FontSize="14" HorizontalAlignment="Right" Foreground="{StaticResource #FF3333}"></TextBlock>
+                    </Grid>
+                    <Border Height="97" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}"  VerticalAlignment="Bottom">
+                        <RichTextBox x:Name="tbMoTaNgan" materialDesign:HintAssist.Hint="Mô tả" Padding="15,10" Foreground="{StaticResource #474747}" Block.LineHeight="2" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"></RichTextBox>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,37,56,0" Width="216" Height="36" HorizontalAlignment="Right">
+                    <Border Width="100" Background="#BDBDBD" Cursor="Hand" MouseLeftButtonDown="CanCelPopup" HorizontalAlignment="Left" CornerRadius="8">
+                        <TextBlock Text="Hủy"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource  #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="100" Background="{StaticResource #27AE60}" Cursor="Hand" MouseLeftButtonDown="AddNewTrainPhase" HorizontalAlignment="Right" CornerRadius="8">
+                        <TextBlock Text="Đồng ý"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource  #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
