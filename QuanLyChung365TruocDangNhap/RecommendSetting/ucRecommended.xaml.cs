@@ -32,8 +32,8 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
 
         private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            //SetDefaultMenuColor();
-            //ChangeBorderColor((Border)sender);
+            SetDefaultMenuColor();
+            ChangeBorderColor((Border)sender);
         }
 
         private void TextBlock_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
