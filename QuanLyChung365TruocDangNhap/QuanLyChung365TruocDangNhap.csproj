@@ -1386,6 +1386,9 @@
     <Compile Include="SauDangNhap.xaml.cs">
       <DependentUpon>SauDangNhap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="te.xaml.cs">
+      <DependentUpon>te.xaml</DependentUpon>
+    </Compile>
     <Page Include="CaNhan.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -2846,6 +2849,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RecommendSetting\Resoucess\styleRecommend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RecommendSetting\ucRecommended.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -2893,6 +2900,10 @@
     <Page Include="Style.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="te.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
