@@ -27,20 +27,11 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
 
         private void Border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
-        }
-
-        private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
             SetDefaultMenuColor();
             ChangeBorderColor((Border)sender);
         }
 
-        private void TextBlock_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
-        {
-            //SetDefaultMenuColor();
-            //ChangeBorderColor((Border)sender);
-        }
+
         public void ChangeBorderColor(Border border)
         {
             border.BorderThickness = new Thickness(0, 0, 0, 5);
@@ -64,6 +55,18 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
 
                 }
             }
+        }
+
+        private void Border_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            SetDefaultMenuColor();
+            ChangeBorderColor((Border)sender);
+        }
+
+        private void Border_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
+        {
+            SetDefaultMenuColor();
+            ChangeBorderColor((Border)sender);
         }
     }
 }
