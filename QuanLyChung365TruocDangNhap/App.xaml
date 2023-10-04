@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="Hr/Login/Resources/VI.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Hr/Login/Resources/ViewBox.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="RecommendSetting/Resoucess/iconRecommend.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="RecommendSetting/Resoucess/styleRecommend.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Hr/Login/Resources/CustomButton.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Hr/Login/Resources/CheckBox.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resource/CheckBox.xaml"></ResourceDictionary>
@@ -46,7 +47,7 @@
                 <ResourceDictionary Source="ChamCong365/Resouces/Combobox.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                
+
             </ResourceDictionary.MergedDictionaries>
             <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
             <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
@@ -87,7 +88,86 @@
                     </GradientStopCollection>
                 </GradientBrush.GradientStops>
             </LinearGradientBrush>
+            <Style x:Key="DataGrid1rere" TargetType="DataGrid">
+                <!-- Border properties -->
+                <Setter Property="BorderThickness" Value="1,0,1,0" />
+                <Setter Property="BorderBrush" Value="#CCCCCC" />
 
+                <!-- Background properties -->
+                <Setter Property="Background" Value=" #FFFFFF" />
+                <Setter Property="HorizontalGridLinesBrush" Value=" #CCCCCC" />
+                <Setter Property="VerticalGridLinesBrush" Value="#ffffff" />
+                <Setter Property="RowHeight" Value="50" />
+                <Setter Property="MinHeight" Value="0" />
+                <Setter Property="RowHeaderWidth" Value="0" />
+
+                <!-- Read-only and auto-generate columns -->
+                <Setter Property="IsReadOnly" Value="True" />
+                <Setter Property="AutoGenerateColumns" Value="False" />
+
+                <!-- ScrollViewer properties -->
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+                <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+
+                <!-- AlternationCount based on ItemsSource count -->
+                <Setter Property="AlternationCount" Value="{Binding RelativeSource={RelativeSource Mode=Self}, Path=ItemsSource.Count}" />
+
+                <!-- Column Header Style -->
+                <Setter Property="ColumnHeaderStyle">
+                    <Setter.Value>
+                        <Style TargetType="DataGridColumnHeader">
+                            <!-- Header background, foreground, and font properties -->
+                            <Setter Property="Background" Value="#4c5bd4" />
+                            <Setter Property="Foreground" Value="#FFFFFF" />
+                            <Setter Property="FontWeight" Value="Medium" />
+                            <Setter Property="FontSize" Value="56" />
+                            <Setter Property="MinHeight" Value="50" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+
+                            <!-- Header border properties -->
+                            <Setter Property="BorderThickness" Value="0,0,1,0" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}" />
+
+                            <!-- Header content template (TextBlock) -->
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <TextBlock
+                                Margin="20,5"
+                                Text="{Binding}"
+                                TextWrapping="NoWrap" />
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+
+                <!-- Cell Style -->
+                <Setter Property="CellStyle">
+                    <Setter.Value>
+                        <Style TargetType="DataGridCell">
+                            <!-- Cell foreground color -->
+                            <Setter Property="Foreground" Value="Black" />
+
+                            <!-- Cell triggers for selection state -->
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter Property="Background" Value="{x:Null}" />
+                                    <Setter Property="BorderBrush" Value="#ebebeb" />
+                                    <Setter Property="BorderThickness" Value="1,0,1,0" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{x:Null}" />
+                                    <Setter Property="BorderBrush" Value="#ebebeb" />
+                                    <Setter Property="BorderThickness" Value="1,0,1,0" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+            </Style>
             <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
                 <Setter Property="Visibility" Value="Hidden"/>
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
