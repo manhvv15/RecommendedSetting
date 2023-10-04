@@ -22,11 +22,11 @@
                             <Border Width="136" BorderThickness="0 0 0 5" BorderBrush="#4C5BD4" HorizontalAlignment="Left" MouseLeftButtonUp="Border_MouseLeftButtonUp">
                                 <TextBlock Margin="10 7 0 0" Text="Số cấp duyệt" FontSize="20" FontWeight="DemiBold" Foreground="#4C5BD4"/>
                             </Border>
-                            <Border Width="162" HorizontalAlignment="Left">
-                                <TextBlock Margin="10 7 0 0" Text="Hình thức duyệt" FontSize="20" FontWeight="DemiBold" Foreground="#666666" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
+                            <Border Width="162" HorizontalAlignment="Left" MouseLeftButtonUp="Border_MouseLeftButtonUp_1">
+                                <TextBlock Margin="10 7 0 0" Text="Hình thức duyệt" FontSize="20" FontWeight="DemiBold" Foreground="#666666" />
                             </Border>
-                            <Border Width="158" HorizontalAlignment="Left">
-                                <TextBlock Margin="10 7 0 0" Text="Thời gian duyệt" FontSize="20" FontWeight="DemiBold" Foreground="#666666" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_1"/>
+                            <Border Width="158" HorizontalAlignment="Left" MouseLeftButtonUp="Border_MouseLeftButtonUp_2">
+                                <TextBlock Margin="10 7 0 0" Text="Thời gian duyệt" FontSize="20" FontWeight="DemiBold" Foreground="#666666" />
                             </Border>
                         </DockPanel>
                         <Border Height="44" CornerRadius="5" Background="#1677FF" Width="154" HorizontalAlignment="Left" Margin="0 20 0 0">
