@@ -1377,6 +1377,9 @@
     <Compile Include="RecommendSetting\ucRecommended.xaml.cs">
       <DependentUpon>ucRecommended.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecommendSetting\ucTimeRecommend.xaml.cs">
+      <DependentUpon>ucTimeRecommend.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resource\DatePicker.xaml.cs">
       <DependentUpon>DatePicker.xaml</DependentUpon>
     </Compile>
@@ -2844,6 +2847,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RecommendSetting\ucRecommended.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecommendSetting\ucTimeRecommend.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
