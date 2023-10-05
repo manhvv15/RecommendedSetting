@@ -29,6 +29,10 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
         {
             SetDefaultMenuColor();
             ChangeBorderColor((Border)sender);
+            stackTime.Visibility = Visibility.Collapsed;
+            hinhthucduyet.Visibility = Visibility.Collapsed;
+            //stackKeHoach.Visibility = Visibility.Collapsed;
+            stackSoCapVaHinhThuc.Visibility = Visibility.Visible;
         }
 
 
@@ -61,12 +65,44 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
         {
             SetDefaultMenuColor();
             ChangeBorderColor((Border)sender);
+            stackTime.Visibility = Visibility.Collapsed;
+            hinhthucduyet.Visibility = Visibility.Visible;
+            stackSoCapVaHinhThuc.Visibility = Visibility.Visible;
         }
 
         private void Border_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
         {
             SetDefaultMenuColor();
             ChangeBorderColor((Border)sender);
+            stackTime.Visibility = Visibility.Visible;
+           // stackKeHoach.Visibility = Visibility.Visible;
+            stackSoCapVaHinhThuc.Visibility = Visibility.Collapsed;
+        }
+
+        private void Border_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
+        {
+            borKeHoach.BorderThickness = new Thickness(0, 0, 0, 5);
+            borKeHoach.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4C5BD4"));
+            txtKeHoach.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4C5BD4"));
+            borDotXuat.BorderThickness = new Thickness(0, 0, 0, 0);
+            //borKeHoach.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4C5BD4"));
+            txtDotXuat.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#666666"));
+            stackKeHoach.Visibility = Visibility.Visible;   
+            stackDotXuat.Visibility = Visibility.Collapsed;
+        }
+
+        private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            borDotXuat.BorderThickness = new Thickness(0, 0, 0, 5); 
+            borDotXuat.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4C5BD4"));
+            txtDotXuat.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4C5BD4"));
+
+            borKeHoach.BorderThickness = new Thickness(0, 0, 0, 0);
+            //borKeHoach.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4C5BD4"));
+            txtKeHoach.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#666666"));
+
+            stackDotXuat.Visibility = Visibility.Visible;
+            stackKeHoach.Visibility =Visibility.Collapsed;
         }
     }
 }
