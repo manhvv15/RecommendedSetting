@@ -24,5 +24,10 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
         {
             InitializeComponent();
         }
+
+        private void Image_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+
+        }
     }
 }

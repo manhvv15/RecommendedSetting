@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap"
              xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
-             StartupUri="RecommendSetting/ucRecommended.xaml">
+             StartupUri="RecommendSetting/ucTimeRecommend.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <!--<math:MathConvert x:Key="MathConvert"/>-->
