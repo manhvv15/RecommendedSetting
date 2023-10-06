@@ -1,0 +1,66 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.Company_Child_Manage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="741" d:DesignWidth="1146"
+      Title="Company_Child_Manage">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+            <Grid VerticalAlignment="Top">
+                <TextBlock Text="{DynamicResource textQuanLyCongTyCon}" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Border CornerRadius="20" Background="{DynamicResource #34C38F}" Width="160" Height="40" HorizontalAlignment="Right" VerticalAlignment="Top" MouseLeftButtonDown="Add_Com_MouseLeftButtonDown" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Path Margin="21 0 0 0" Data="{DynamicResource iconCount}" Fill="{DynamicResource #FFFFFF}" Width="14" Height="14" />
+                        <TextBlock Margin="5 0 0 0" Text="{DynamicResource textThemCongTy}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource #FFFFFF}" FontSize="14" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <DataGrid Margin="0,15,0,0" x:Name="table" ItemsSource="{Binding List_ComChild}" Background="{DynamicResource #ECF2FA}" PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+                <DataGrid.Style>
+                    <Style TargetType="DataGrid" BasedOn="{StaticResource DataGrid4}">
+                        <Setter Property="RowHeight" Value="100"></Setter>
+                    </Style>
+                </DataGrid.Style>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{DynamicResource textID}" Binding="{Binding com_id}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTemplateColumn Header="{DynamicResource textLogoCongTyHead}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid  VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" Margin="5">
+                                    <Border Background="White">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity=".3"></DropShadowEffect>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border>
+                                        <Image Stretch="Uniform" Source="{Binding image}"></Image>
+                                    </Border>
+                                </Grid>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{DynamicResource textCompanyName}" Binding="{Binding com_name}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textCompany}" Binding="{Binding type_com}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textDiaChi}" Binding="{Binding com_address}" MaxWidth="400" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textSDTCoDinh}" Binding="{Binding com_phone}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTemplateColumn Header="{DynamicResource textChinhSua}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                    <Border MouseLeftButtonDown="EditComChild_MouseLeftButtonDown" Background="Transparent" Cursor="Hand">
+                                        <Path Data="{DynamicResource iconPenChinhSua}" Fill="{DynamicResource #5D73E8}"/>
+                                    </Border>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

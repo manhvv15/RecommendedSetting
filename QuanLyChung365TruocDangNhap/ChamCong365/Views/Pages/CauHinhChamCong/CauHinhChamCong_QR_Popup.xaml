@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.CauHinhChamCong.CauHinhChamCong_QR_Popup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.CauHinhChamCong"
+             xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" MinWidth="200" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <math:MathConvert x:Key="MathConvert"></math:MathConvert>
+    </UserControl.Resources>
+    <Grid>
+        <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" ShadowDepth="0" Opacity=".3" BlurRadius="10"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <Border x:Name="bd" CornerRadius="10">
+            <Border.OpacityMask>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Border Background="White" Width="{Binding ElementName=bd,Path=ActualWidth}" Height="{Binding ElementName=bd,Path=ActualHeight}" CornerRadius="10"></Border>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Border.OpacityMask>
+            <StackPanel Margin="0">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="Foreground" Value="{DynamicResource #474747}"></Setter>
+                        <Setter Property="Margin" Value="0 0 10 0"></Setter>
+                        <Setter Property="FontSize" Value="14"></Setter>
+                    </Style>
+                    <Style TargetType="Path">
+                        <Setter Property="Margin" Value="10"></Setter>
+                        <Setter Property="Stretch" Value="Uniform"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style TargetType="Grid" x:Key="item">
+                        <Setter Property="Background" Value="Transparent"></Setter>
+                        <Setter Property="Cursor" Value="Hand"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{DynamicResource #EEEEEE}"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style TargetType="Grid" BasedOn="{StaticResource item}"/>
+                </StackPanel.Resources>
+                <Grid MouseLeftButtonDown="InfoQR">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=@VALUE*1/5}"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions> 
+                    <Path Data="{StaticResource iconBaoLoi}" Fill="{DynamicResource #474747}"></Path>
+                    <TextBlock Grid.Column="1" Text="{DynamicResource textTTQR}"></TextBlock>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=@VALUE*1/5}"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Path Data="{StaticResource iconBaoLoi}" Fill="{DynamicResource #474747}"></Path>
+                    <TextBlock Grid.Column="1" Text="{DynamicResource textDownLoadQR}"></TextBlock>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=@VALUE*1/5}"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Path Data="{StaticResource iconBaoLoi}" Fill="{DynamicResource #474747}"></Path>
+                    <TextBlock Grid.Column="1" Text="{DynamicResource textPrintQR}"></TextBlock>
+                </Grid>
+                <Grid MouseLeftButtonDown="DeleteQR">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=@VALUE*1/5}"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Path Data="{StaticResource iconBaoLoi}" Fill="{DynamicResource #474747}"></Path>
+                    <TextBlock Grid.Column="1" Text="{DynamicResource textXoa}"></TextBlock>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

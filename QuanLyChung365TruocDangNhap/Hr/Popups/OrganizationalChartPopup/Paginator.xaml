@@ -1,0 +1,232 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.OrganizationalChartPopup.Paginator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups.OrganizationalChartPopup"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="#FFFFFF" Color="#FFFFFF"></SolidColorBrush>
+        <SolidColorBrush x:Key="#666666" Color="#666666"></SolidColorBrush>
+        <SolidColorBrush x:Key="#4C5BD4" Color="#4C5BD4"></SolidColorBrush>
+        <SolidColorBrush x:Key="#CCCCCC" Color="#CCCCCC"></SolidColorBrush>
+        <SolidColorBrush x:Key="#EEEEEE" Color="#EEEEEE"></SolidColorBrush>
+        <PathGeometry x:Key="iconDownArrow" Figures="M7.07947 6.923L12.7602 1.37319C13.0799 1.0595 13.0799 0.549572 12.7602 0.235875C12.4404 -0.0786249 11.9209 -0.0786249 11.6011 0.235875L6.5 5.21946L1.39885 0.235874C1.07906 -0.0786254 0.559635 -0.0786254 0.239843 0.235874C-0.0799475 0.550374 -0.0799475 1.0595 0.239843 1.37319L5.92053 6.9222C6.22804 7.2254 6.77101 7.2262 7.07947 6.923Z"/>
+        <Style TargetType="Border" x:Key="ShadowBorder1">
+            <Setter Property="Background" Value="{DynamicResource #FFFFFF}"></Setter>
+            <Setter Property="CornerRadius" Value="10"></Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity=".06" RenderingBias="Quality"></DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ComboBoxTextBox1" TargetType="{x:Type TextBox}">
+            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}"/>
+        </ControlTemplate>
+        <Style x:Key="Combobox1" TargetType="{x:Type ComboBox}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="Foreground" Value="{DynamicResource #474747}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource #CCCCCC}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <Border Style="{StaticResource ShadowBorder1}"/>
+                            <ToggleButton Name="ToggleButton" Grid.Column="2" Focusable="false" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Border BorderThickness="1" Opacity="0.5"  BorderBrush="{StaticResource #4C5BD4}" CornerRadius="10">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition Width="20" />
+                                                </Grid.ColumnDefinitions>
+                                                <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="10" Background="{DynamicResource #FFFFFF}" BorderThickness="0"/>
+                                                <Path Grid.Column="1" Data="{StaticResource iconDownArrow}" Fill="{DynamicResource #666666}" VerticalAlignment="Center"></Path>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="15,3,54,3" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBox x:Name="PART_EditableTextBox" Style="{x:Null}" Template="{StaticResource ComboBoxTextBox1}" FontSize="15" Foreground="{DynamicResource #474747}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}"></TextBox>
+                            <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                <Grid>
+                                    <Grid Name="DropDown" Margin="0 8" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                        <Border x:Name="DropDownBorder" Style="{StaticResource ShadowBorder1}" />
+                                        <ScrollViewer SnapsToDevicePixels="True" VerticalScrollBarVisibility="Hidden">
+                                            <ScrollViewer.Style>
+                                                <Style TargetType="ScrollViewer"  BasedOn="{StaticResource aaa}">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True" >
+                                                            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"></Setter>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"></Setter>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ScrollViewer.Style>
+                                            <Grid>
+                                                <Grid.OpacityMask>
+                                                    <VisualBrush>
+                                                        <VisualBrush.Visual>
+                                                            <Border Width="{Binding RelativeSource={RelativeSource AncestorType=Grid,Mode=FindAncestor},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType=Grid,Mode=FindAncestor},Path=ActualHeight}" Background="White" CornerRadius="10"/>
+                                                        </VisualBrush.Visual>
+                                                    </VisualBrush>
+                                                </Grid.OpacityMask>
+                                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                            </Grid>
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource #666666}"/>
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="10"/>
+                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEditable"  Value="true">
+                                <Setter Property="IsTabStop" Value="false"/>
+                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ComboboxItem1" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Foreground"  Value="{DynamicResource #474747}"/>
+            <Setter Property="FontWeight"  Value="DemiBold"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="MinWidth" Value="138"/>
+            <Setter Property="MinHeight" Value="36"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border Name="Border" Padding="15,7,0,7" SnapsToDevicePixels="true">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource #4C5BD4}"/>
+                                <Setter  Property="Foreground" Value="{DynamicResource #FFFFFF}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="Transparent" Cursor="Hand">
+        <Grid VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <!--<TextBlock Text="Hiển thị: " FontSize="15" Foreground="#666666" VerticalAlignment="Center"></TextBlock>-->
+                <Grid >
+                    <Border Style="{StaticResource ShadowBorder1}"/>
+                    <ComboBox Name="cboRecords" ItemsSource="{Binding Records}" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" Height="30" MinWidth="60" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+            <StackPanel Name="stplPages" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Border Name="btnPreview" VerticalAlignment="Center" CornerRadius="4" Margin="5 4" Cursor="Hand" BorderBrush="#666666" BorderThickness="1" Background="#ffffff" Width="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}" MouseLeftButtonDown="btnPreview_MouseLeftButtonDown">
+                    <Path Data="{StaticResource iconDownArrow}" Fill="#666666" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
+                        <Path.LayoutTransform>
+                            <RotateTransform Angle="90"></RotateTransform>
+                        </Path.LayoutTransform>
+                    </Path>
+                </Border>
+                <ListView x:Name="lv" Visibility="Collapsed" ItemsSource="{Binding Items}" SelectedIndex="{Binding SelectedPage,UpdateSourceTrigger=PropertyChanged}" SelectionChanged="lv_SelectionChanged"/>
+                <Grid x:Name="gridPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <ControlTemplate TargetType="ContentControl" x:Key="page">
+                            <ControlTemplate.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="FontSize" Value="13"/>
+                                    <Setter Property="Margin" Value="1 0"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource #666666}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="Tag" Value="1">
+                                            <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ControlTemplate.Resources>
+                            <Border Name="border" Background="{DynamicResource #FFFFFF}" BorderBrush="{DynamicResource #666666}" BorderThickness="1" CornerRadius="4" Margin="5 4" Cursor="Hand" MinWidth="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}">
+                                <ContentPresenter/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="-1">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Trigger>
+                                <Trigger Property="Tag" Value="">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </Trigger>
+                                <Trigger Property="Tag" Value="1">
+                                    <Setter Property="Background" TargetName="border" Value="{DynamicResource #4C5BD4}"></Setter>
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource #4C5BD4}"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Grid.Resources>
+                    <ContentControl Template="{StaticResource page}" Tag="1" MouseLeftButtonDown="Slot_MouseLelfButtonDown">
+                        <TextBlock Text="{Binding Slot[0]}" Tag="{Binding RelativeSource={RelativeSource AncestorType=ContentControl},Path=Tag}"/>
+                    </ContentControl>
+                    <ContentControl Grid.Column="1" Template="{StaticResource page}" MouseLeftButtonDown="Slot_MouseLelfButtonDown">
+                        <TextBlock Text="{Binding Slot[1]}" Tag="{Binding RelativeSource={RelativeSource AncestorType=ContentControl},Path=Tag}"/>
+                    </ContentControl>
+                    <ContentControl Grid.Column="2" Template="{StaticResource page}" MouseLeftButtonDown="Slot_MouseLelfButtonDown">
+                        <TextBlock Text="{Binding Slot[2]}" Tag="{Binding RelativeSource={RelativeSource AncestorType=ContentControl},Path=Tag}"/>
+                    </ContentControl>
+                    <ContentControl Grid.Column="3" Template="{StaticResource page}" MouseLeftButtonDown="Slot_MouseLelfButtonDown">
+                        <TextBlock Text="{Binding Slot[3]}" Tag="{Binding RelativeSource={RelativeSource AncestorType=ContentControl},Path=Tag}"/>
+                    </ContentControl>
+                    <ContentControl Grid.Column="4" Template="{StaticResource page}" MouseLeftButtonDown="Slot_MouseLelfButtonDown">
+                        <TextBlock Text="{Binding Slot[4]}" Tag="{Binding RelativeSource={RelativeSource AncestorType=ContentControl},Path=Tag}"/>
+                    </ContentControl>
+                </Grid>
+                <Border x:Name="btnNext" VerticalAlignment="Center" CornerRadius="4" Margin="5 4" Cursor="Hand" BorderBrush="#666666" BorderThickness="1" Background="#ffffff" Width="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualHeight}" MouseLeftButtonDown="btnNext_MouseLeftButtonDown">
+                    <Path Data="{StaticResource iconDownArrow}" Fill="#666666" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
+                        <Path.LayoutTransform>
+                            <RotateTransform Angle="-90"></RotateTransform>
+                        </Path.LayoutTransform>
+                    </Path>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

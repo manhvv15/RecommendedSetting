@@ -1,0 +1,144 @@
+﻿<Window x:Class="QuanLyChung365TruocDangNhap.Hr.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:myToolTip="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Resource"
+        mc:Ignorable="d"
+        x:Name="Screen"
+        MinWidth="800"
+        MinHeight="667"
+        SizeChanged="upload_size"
+        Title="Login" Height="690" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" IsTabStop="True">
+    <Window.Resources>
+        <DropShadowEffect x:Key="z-depth1" BlurRadius="10" ShadowDepth="3" Direction="270" Color="#CCCCCC" />
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <Grid Margin="0,0,0,0.2">
+                <Grid x:Name="background_gradien_color">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFBADBFF" Offset="0"/>
+                            <GradientStop Color="#FF5CAAFF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" Background="#F2F6FF"></Grid>
+            </Grid>
+            <Grid x:Name="window">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" x:Name="left_background"/>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border Grid.Column="0" CornerRadius="0,0,80,0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFBADBFF" Offset="0"/>
+                                <GradientStop Color="#FF5CAAFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <Border Padding="0,40,0,0">
+                                <Grid x:Name="background_image" Height="556" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid RenderTransformOrigin="0.5,0.5">
+                                        <Grid.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="{Binding Path=X_image}" ScaleY="{Binding Path=Y_image}"/>
+                                                <SkewTransform/>
+                                                <RotateTransform/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </Grid.RenderTransform>
+                                        <Grid Height="49" VerticalAlignment="Top">
+                                            <Path Data="{StaticResource iconLogoTimviec365}" Fill="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                                <Path.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                                                        <SkewTransform/>
+                                                        <RotateTransform/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </Path.RenderTransform>
+                                            </Path>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid x:Name="image" Height="497" VerticalAlignment="Bottom" Width="389" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Panel.ZIndex="100">
+                                        <myToolTip:BackgroundLogin RenderTransformOrigin="0.5,0.5" >
+                                            <myToolTip:BackgroundLogin.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleX="{Binding Path=X_image}" ScaleY="{Binding Path=Y_image}"/>
+                                                    <SkewTransform/>
+                                                    <RotateTransform/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </myToolTip:BackgroundLogin.RenderTransform>
+                                        </myToolTip:BackgroundLogin>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border CornerRadius="100,0,0,0" Background="#F2F6FF" RenderTransformOrigin="0.5,0.5">
+                        <Grid>
+                            <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"></Frame>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid x:Name="pageTitle" Margin="0,0,0,0" Height="40" VerticalAlignment="Top" MouseLeftButtonDown="pageTitle_MouseDown" Background="White">
+            <Grid  x:Name="logoInTitle" HorizontalAlignment="Left">
+                <Grid Width="34" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,3,0,0" Background="#4C5BD4">
+                    <Path Data="{StaticResource logoHR}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#FFFFFF">
+                    </Path>
+                </Grid>
+                <TextBlock VerticalAlignment="Top" Text="Phần mềm quản trị nhân sự" Margin="54,5,0,0" Foreground="#4C5BD4" FontWeight="Bold" Height="19" FontSize="16" HorizontalAlignment="Left" LineHeight="19"/>
+                <TextBlock VerticalAlignment="Top" Text="Timviec365" HorizontalAlignment="Left" Margin="54,24,0,0" FontSize="11" Foreground="#FF4C5BD4" Width="58" Height="13
+                           "></TextBlock>
+            </Grid>
+            <Grid x:Name="Minimimize" Cursor="Hand"  Margin="0,0,85,0" HorizontalAlignment="Right" Width="15" Height="14" VerticalAlignment="Center" MouseLeftButtonDown="Minimimize_MouseLeftButtonDown" Background="#FFFFFF" >
+                <Line  X1="0" Y1="7" X2="14" Y2="7"  StrokeThickness="2" Stroke="Black" Fill="#00A52323" Height="15" Width="15" />
+            </Grid>
+            <Grid Cursor="Hand" x:Name="NomarlSize"  Margin="0,0,53,0" Visibility="Collapsed" MouseLeftButtonDown="NomarlSize_MouseLeftButtonDown" Background="#02FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right" Height="14" Width="14"  >
+                <Path  Data="{StaticResource NomarlSize}"  Fill="#02FFFFFF" Margin="0" Stretch="Fill" Stroke="#FF121212" Width="15" Height="15" StrokeThickness="1.5" />
+            </Grid>
+            <Grid  Cursor="Hand" x:Name="Maximimize" Margin="0,0,53,0" Visibility="Visible"  MouseLeftButtonDown="Maximimize_MouseLeftButtonDown" Background="#02FFFFFF" HorizontalAlignment="Right" Height="14" Width="14" VerticalAlignment="Center"  >
+                <Path  Data="{StaticResource maximinze}"  Fill="#02FFFFFF" Margin="0" Stretch="Fill" Stroke="#FF121212" Width="15" Height="15" StrokeThickness="1.5"/>
+            </Grid>
+            <Grid x:Name="CloseWindow" Cursor="Hand" Width="15" MouseLeftButtonDown="CloseWindow_MouseLeftButtonDown" Background="#FFFFFF" VerticalAlignment="Center" Height="15" HorizontalAlignment="Right" Margin="0,0,18,0" >
+                <Path Data="M2.0794078,0.86137286 L0.86137286,2.0794078 6.2819654,7.5 0.86137286,12.920592 2.0794078,14.138627 7.5,8.7180346 12.920592,14.138627 14.138627,12.920592 8.7180346,7.5 14.138627,2.0794078 12.920592,0.86137286 7.5,6.2819654 2.0794078,0.86137286 z" Fill="Black" Stroke="Black" StrokeThickness="0" Stretch="Fill" Height="15" Margin="0" Width="15" />
+            </Grid>
+        </Grid>
+        <Grid x:Name="pageTitle_Copy" Margin="0,0,0,0" Height="40" VerticalAlignment="Top" MouseDown="pageTitle_MouseDown" Background="White" HorizontalAlignment="Left" Width="792">
+            <Grid  x:Name="logoInTitle1" HorizontalAlignment="Left">
+                <Grid Width="34" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,3,0,0" Background="#4C5BD4">
+                    <Path Data="{StaticResource logoHR}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#FFFFFF"/>
+                </Grid>
+                <TextBlock VerticalAlignment="Top" Text="Phần mềm quản trị nhân sự" Margin="54,5,0,0" Foreground="#4C5BD4" FontWeight="Bold" Height="19" FontSize="16" HorizontalAlignment="Left" LineHeight="19"/>
+                <TextBlock VerticalAlignment="Top" Text="Timviec365" HorizontalAlignment="Left" Margin="54,24,0,0" FontSize="11" Foreground="#FF4C5BD4" Width="58" Height="13                            "/>
+            </Grid>
+            <Grid x:Name="Minimimize1" Cursor="Hand"  Margin="0,0,85,0" HorizontalAlignment="Right" Width="15" Height="14" VerticalAlignment="Center" MouseLeftButtonDown="Minimimize_MouseLeftButtonDown" Background="#FFFFFF" >
+                <Line  X1="0" Y1="7" X2="14" Y2="7"  StrokeThickness="2" Stroke="Black" Fill="#00A52323" Height="15" Width="15" />
+            </Grid>
+            <Grid Cursor="Hand" x:Name="NomarlSize1"  Margin="0,0,53,0" Visibility="Collapsed" MouseLeftButtonDown="NomarlSize_MouseLeftButtonDown" Background="#02FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right" Height="14" Width="14"  >
+                <Path  Data="{StaticResource NomarlSize}"  Fill="#02FFFFFF" Margin="0" Stretch="Fill" Stroke="#FF121212" Width="15" Height="15" StrokeThickness="1.5" />
+            </Grid>
+            <Grid  Cursor="Hand" x:Name="Maximimize1" Margin="0,0,53,0" Visibility="Visible"  MouseLeftButtonDown="Maximimize_MouseLeftButtonDown" Background="#02FFFFFF" HorizontalAlignment="Right" Height="14" Width="14" VerticalAlignment="Center"  >
+                <Path  Data="{StaticResource maximinze}"  Fill="#02FFFFFF" Margin="0" Stretch="Fill" Stroke="#FF121212" Width="15" Height="15" StrokeThickness="1.5"/>
+            </Grid>
+            <Grid x:Name="CloseWindow1" Cursor="Hand" Width="15" MouseLeftButtonDown="CloseWindow_MouseLeftButtonDown" Background="#FFFFFF" VerticalAlignment="Center" Height="15" HorizontalAlignment="Right" Margin="0,0,18,0" >
+                <Path Data="M2.0794078,0.86137286 L0.86137286,2.0794078 6.2819654,7.5 0.86137286,12.920592 2.0794078,14.138627 7.5,8.7180346 12.920592,14.138627 14.138627,12.920592 8.7180346,7.5 14.138627,2.0794078 12.920592,0.86137286 7.5,6.2819654 2.0794078,0.86137286 z" Fill="Black" Stroke="Black" StrokeThickness="0" Stretch="Fill" Height="15" Margin="0" Width="15" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

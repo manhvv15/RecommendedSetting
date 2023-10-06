@@ -1,0 +1,378 @@
+﻿<Page
+    x:Class="QuanLyChung365TruocDangNhap.GioiHanIpVaPhanMem.Pages.PageDanhSachNhanVien"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.GioiHanIpVaPhanMem.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="PageDanhSachNhanVien"
+    d:DesignHeight="3000"
+    d:DesignWidth="2000"
+    mc:Ignorable="d">
+
+    <Grid x:Name="body">
+        <StackPanel Margin="20" Background="White">
+            <Border
+                Width="140"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#1677ff"
+                CornerRadius="8"
+                Cursor="Hand"
+                MouseUp="BtnSetUp_MouseUp">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Roboto"
+                    FontSize="16"
+                    Foreground="White">
+                    Cài đặt
+                </TextBlock>
+
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="responsiveComboBox" MinWidth="265" />
+            </Grid>
+            <WrapPanel Margin="0,20,0,0">
+                <Grid Width="{Binding Path=ActualWidth, ElementName=responsiveComboBox}" Margin="0,0,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Foreground="#333333">
+                        Tên tổ chức
+                    </TextBlock>
+                    <Border
+                        Grid.Row="1"
+                        Padding="1"
+                        BorderBrush="#d9d9d9"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <ComboBox Style="{StaticResource Combobox1}" />
+                    </Border>
+
+                </Grid>
+                <Grid Width="{Binding Path=ActualWidth, ElementName=responsiveComboBox}" Margin="0,0,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Foreground="#333333"
+                        Text="Vị trí" />
+                    <Border
+                        Grid.Row="1"
+                        Padding="1"
+                        BorderBrush="#d9d9d9"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <ComboBox Style="{StaticResource Combobox1}" />
+                    </Border>
+
+                </Grid>
+                <Grid Width="{Binding Path=ActualWidth, ElementName=responsiveComboBox}" Margin="0,0,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Foreground="#333333"
+                        Text="Họ và tên" />
+                    <Border
+                        Grid.Row="1"
+                        Padding="1"
+                        BorderBrush="#d9d9d9"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <ComboBox Style="{StaticResource Combobox1}" />
+                    </Border>
+
+                </Grid>
+                <Grid Width="{Binding Path=ActualWidth, ElementName=responsiveComboBox}" Margin="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+
+                    <Border
+                        Grid.Row="2"
+                        Width="152"
+                        Height="40"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="#1677ff"
+                        CornerRadius="8"
+                        Cursor="Hand">
+                        <DockPanel HorizontalAlignment="Center">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{StaticResource iconSearchWhiteDrawingImage}" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontFamily="Roboto"
+                                FontSize="16"
+                                Foreground="White">
+                                Tìm kiếm
+                            </TextBlock>
+                        </DockPanel>
+
+                    </Border>
+
+                </Grid>
+
+            </WrapPanel>
+            <DataGrid
+                x:Name="dsGioiHanIpVaUngDung"
+                Margin="0,26,0,0"
+                Background="{DynamicResource #ECF2FA}"
+                Style="{StaticResource DataGrid1}">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="{DynamicResource #4C5BD4}" />
+                        <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}" />
+                        <Setter Property="FontWeight" Value="Medium" />
+                        <Setter Property="FontWeight" Value="Medium" />
+                        <Setter Property="FontSize" Value="16" />
+                        <Setter Property="MinHeight" Value="50" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="BorderThickness" Value="0,0,0,0" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}" />
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock
+                                            Margin="20,5"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Text="{Binding}"
+                                            TextWrapping="NoWrap" />
+                                        <Border
+                                            Height="20"
+                                            HorizontalAlignment="left"
+                                            VerticalAlignment="Center"
+                                            BorderBrush="White"
+                                            BorderThickness="0.5" />
+                                    </Grid>
+
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Foreground" Value="Black" />
+
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="{x:Null}" />
+                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border
+                                Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=ActualHeight}"
+                                Background="White"
+                                CornerRadius="10" />
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DataGrid.OpacityMask>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="100*" Header="STT">
+                        <DataGridColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="{DynamicResource #4C5BD4}" />
+                                <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}" />
+                                <Setter Property="FontWeight" Value="Medium" />
+                                <Setter Property="FontWeight" Value="Medium" />
+                                <Setter Property="FontSize" Value="16" />
+                                <Setter Property="MinHeight" Value="50" />
+                                <Setter Property="VerticalContentAlignment" Value="Center" />
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}" />
+                                <Setter Property="ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <DockPanel HorizontalAlignment="Left">
+                                                <Border
+                                                    Margin="10,0,0,0"
+                                                    VerticalAlignment="Center"
+                                                    Background="White"
+                                                    CornerRadius="2">
+                                                    <CheckBox Margin="0" Background="#1677ff" />
+                                                </Border>
+                                                <TextBlock
+                                                    Margin="40,0,10,0"
+                                                    Text="{Binding}"
+                                                    TextWrapping="NoWrap" />
+                                            </DockPanel>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGridColumn.HeaderStyle>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DockPanel HorizontalAlignment="Left">
+                                    <Border Margin="10,10,0,10" CornerRadius="2">
+                                        <CheckBox
+                                            Margin="-2"
+                                            Background="#1677ff"
+                                            BorderThickness="0" />
+                                    </Border>
+                                    <TextBlock
+                                        Margin="50,0,0,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        Text="{Binding STT}"
+                                        TextWrapping="NoWrap" />
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="180*" Header="Thời gian áp dụng">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #474747}"
+                                        Text="{Binding start_date}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #474747}"
+                                        Text="-" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #474747}"
+                                        Text="{Binding end_date}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="286*" Header="Họ và tên (ID)">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #1677ff}"
+                                        Text="{Binding userName}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #1677ff}"
+                                        Text="{Binding ep_id}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn
+                        Width="215*"
+                        Binding="{Binding organizeDetailName}"
+                        ElementStyle="{StaticResource textRowCenter}"
+                        Header="Cơ cấu" />
+                    <DataGridTextColumn
+                        Width="214*"
+                        Binding="{Binding positionName}"
+                        ElementStyle="{StaticResource textRowCenter}"
+                        Header="Vị trí" />
+                    <DataGridTemplateColumn Width="242*" Header="IP">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ListView HorizontalAlignment="Center" ItemsSource="{Binding listIPs}">
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock
+                                                FontSize="14"
+                                                Foreground="{StaticResource #1677ff}"
+                                                Text="{Binding}" />
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="205*" Header="Số lượng phần mềm">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #474747}"
+                                        Text="{Binding app_num}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{StaticResource #1677ff}"
+                                        Text="Xem chi tiết" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="123*" Header="Hành động">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <Border Background="Transparent" Cursor="Hand">
+                                        <Image MouseUp="Edit_MouseUp" Source="{StaticResource edit_2DrawingImage}" />
+                                    </Border>
+                                    <Border Background="Transparent" Cursor="Hand">
+                                        <Image MouseUp="Delelte_MouseUp" Source="{StaticResource fluent_delete_16_filledDrawingImage}" />
+                                    </Border>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

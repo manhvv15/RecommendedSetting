@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Popup.QuanLyChungSauDangNhap.Popup.ucCalendar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Popup.QuanLyChungSauDangNhap"
+             mc:Ignorable="d" >
+    <Grid >
+        <Rectangle Fill="White" Opacity="0" MouseDown="Grid_MouseDown" />
+        <!---->
+        <Border
+                x:Name="bodCalendarDay"
+                Visibility="Visible"
+                Margin="320 293 0 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                MaxWidth="250" 
+                Height="300">
+            <Calendar x:Name="dapDays" SelectedDatesChanged="dapDays_SelectedDatesChanged"  DisplayMode="Month"></Calendar>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,533 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.Setting_Account"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages"
+      xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1146"
+      Title="Setting_Account" SizeChanged="Page_SizeChanged">
+    <Page.Resources>
+        <math:MathConvert x:Key="math"/>
+        <Style x:Key="StyleBorder" TargetType="StackPanel">
+            <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource AncestorType=WrapPanel},Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-30)/2}"></Setter>
+            <Setter Property="Margin" Value="0 0 15 0"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSmallSizeInfoEP}" Value="1">
+                    <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource AncestorType=WrapPanel},Path=ActualWidth,Converter={StaticResource MathConvert},ConverterParameter=(@VALUE-15)}"></Setter>
+                    <Setter Property="Margin" Value="0"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="StyleBorderLong1" TargetType="Border">
+            <Setter Property="Width" Value="513"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSmallSize}" Value="2">
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, ElementName=Border1, Converter={StaticResource math}, ConverterParameter=(@VALUE)}"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="StyleBorderLong2" TargetType="Border">
+            <Setter Property="Width" Value="{Binding ElementName=Border1,Path=ActualWidth,Converter={StaticResource math},ConverterParameter=(@VALUE)-543}"/>
+            <Setter Property="Margin" Value="30 0 0 0"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSmallSize}" Value="1">
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, ElementName=Border1, Converter={StaticResource math}, ConverterParameter=(@VALUE)-343}"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsSmallSize}" Value="2">
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, ElementName=Border1, Converter={StaticResource math}, ConverterParameter=(@VALUE)}"></Setter>
+                    <Setter Property="Margin"  Value="0 30 0 0"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <StackPanel Background="{DynamicResource #F7F8FC}">
+        <TextBlock Text="{DynamicResource textCaiDatTaiKhoan}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource #162A56}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Grid x:Name="Border1" VerticalAlignment="Top" Margin="0,30">
+            <WrapPanel HorizontalAlignment="Stretch">
+                <Border CornerRadius="15" Height="auto" Style="{StaticResource StyleBorderLong1}" Background="{DynamicResource #FFFFFF}" BorderThickness="0">
+                    <Grid Margin="0 30">
+                        <StackPanel Visibility="Collapsed" x:Name="stackCom" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Grid  x:Name="gridImgCom" VerticalAlignment="Center" HorizontalAlignment="Center" Width="96" Height="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualWidth}">
+                                <Border Background="White" Height="{Binding ElementName=gridImgCom,Path=ActualWidth}" CornerRadius="{Binding ElementName=gridImgCom,Path=ActualWidth}">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" ShadowDepth="0" Opacity=".3" BlurRadius="10"></DropShadowEffect>
+                                    </Border.Effect>
+                                </Border>
+                                <Border>
+                                    <Border.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Border Background="White" Width="{Binding ElementName=gridImgCom,Path=ActualHeight}" Height="{Binding ElementName=gridImgCom,Path=ActualHeight}" CornerRadius="{Binding ElementName=gridImgCom,Path=ActualHeight}"></Border>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Border.OpacityMask>
+                                    <Image x:Name="imgCom" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                                </Border>
+                            </Grid>
+                            <TextBlock Margin="0 15 0 0" x:Name="tblComName" TextWrapping="WrapWithOverflow" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #4C5BD4}"/>
+                            <StackPanel Margin="0 30 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Path Data="{DynamicResource iconPhone}" Fill="{DynamicResource #4C5BD4}"></Path>
+                                <TextBlock Margin="7 0 0 0" x:Name="tblComPhone" FontSize="14" Foreground="{DynamicResource #495057}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="0 20 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Path Data="{DynamicResource iconEmailCircle}" Fill="{DynamicResource #4C5BD4}"></Path>
+                                <TextBlock Margin="7 0 0 0" x:Name="tblComEmail" FontSize="14" Foreground="{DynamicResource #495057}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <Border Margin="0 30 0 0" CornerRadius="5" BorderThickness="0" Background="{DynamicResource #F0F6FE}" Width="242" Height="33">
+                                <TextBlock x:Name="tblID" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource #4C5BD4}"/>
+                            </Border>
+                            <!--<Image Margin="0 30 0 0" Source="/Images/QRCode.png" Width="143" Height="135"></Image>-->
+                        </StackPanel>
+                        <StackPanel x:Name="stackEp" Orientation="Vertical" HorizontalAlignment="Center" Visibility="Visible">
+                            <Grid x:Name="gridImgEp" VerticalAlignment="Center" HorizontalAlignment="Center" Width="96" Height="{Binding RelativeSource={RelativeSource Mode=Self},Path=ActualWidth}">
+                                <Border Background="White" Height="{Binding ElementName=gridImgEp,Path=ActualWidth}" CornerRadius="{Binding ElementName=gridImgEp,Path=ActualWidth}">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" ShadowDepth="0" Opacity=".3" BlurRadius="10"></DropShadowEffect>
+                                    </Border.Effect>
+                                </Border>
+                                <Border>
+                                    <Border.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Border Background="White" Width="{Binding ElementName=gridImgEp,Path=ActualHeight}" Height="{Binding ElementName=gridImgEp,Path=ActualHeight}" CornerRadius="{Binding ElementName=gridImgEp,Path=ActualHeight}"></Border>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Border.OpacityMask>
+                                    <Image x:Name="imgEp" Stretch="UniformToFill" VerticalAlignment="Center"></Image>
+                                </Border>
+                            </Grid>
+                            <TextBlock x:Name="tblEpName" Margin="0 15 0 0" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #4C5BD4}" HorizontalAlignment="Center"/>
+                            <Border Margin="0 20 0 0" CornerRadius="5" BorderThickness="0" Background="{DynamicResource #F0F6FE}" Width="242" Height="33">
+                                <TextBlock x:Name="tblEpID" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource #4C5BD4}"/>
+                            </Border>
+                            <!--<Image Margin="0 30 0 0" Source="/Images/QRCode.png" Width="143" Height="135"></Image>-->
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource StyleBorderLong2}" CornerRadius="15" BorderThickness="0" Height="auto" Background="{DynamicResource #FFFFFF}">
+                    <TabControl Margin="23 0 0 0" BorderThickness="0 0 0 0">
+                        <TabItem Header="{DynamicResource textThongTin}" Style="{StaticResource TabItem1}">
+                            <Grid>
+                                <Grid x:Name="infoCom" Margin="0 39 0 0" Visibility="Collapsed">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width=".2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{DynamicResource textTenCongTy}" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                                    <Border Grid.Row="1" Margin="0 11 0 0" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Width="auto" Height="40">
+                                        <TextBox x:Name="tbNameCom" Margin="12 8" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center" BorderThickness="0"/>
+                                    </Border>
+                                    <TextBlock Grid.Row="2" Margin="0 29 0 0" Text="Địa chỉ:" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                                    <Border Grid.Row="3" Margin="0 11 0 0" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Width="auto" Height="40">
+                                        <TextBox x:Name="tbAddressCom" Margin="12 8" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center" BorderThickness="0"/>
+                                    </Border>
+                                    <TextBlock Grid.Row="4" Margin="0 29 0 0" Text="Số điện thoại:" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                                    <Border Grid.Row="5" Margin="0 11 0 0" CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Width="auto" Height="40">
+                                        <TextBox Margin="12 8" x:Name="tbPhoneCom" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Grid.Row="6" Margin="0 35 0 0" CornerRadius="3" BorderThickness="0" Width="auto" Height="43" Background="{DynamicResource #4C5BD4}" MouseLeftButtonDown="Changed_Info_MouseLeftButtonDown" Cursor="Hand">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Path Data="{DynamicResource iconSend}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="10 0 0 0" Text="{DynamicResource textCapNhapThongTin}" Foreground="{DynamicResource #FFFFFF}" FontWeight="SemiBold" FontSize="16"/>
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                                <Grid x:Name="infoEp" Margin="0 39 0 0" Visibility="Visible" SizeChanged="infoEp_SizeChanged">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <WrapPanel Grid.Row="0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="ID" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}">
+                                                <TextBlock x:Name="tblID1" Margin="10" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textTenCongTy}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Grid.Row="1" Margin="0 11 0 0" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <TextBlock x:Name="tblComName1" Margin="10" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="1"  Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textHoVaTen:}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Grid.Row="1" Margin="0 11 0 0"  Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}">
+                                                <Grid>
+                                                    <TextBox x:Name="txtNameStaff" Margin="10" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center" BorderThickness="0"/>
+                                                </Grid>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textEmail:}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}">
+                                                <TextBlock x:Name="tblEmail" Margin="10" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="2" Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textSoDienThoai:}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <TextBox x:Name="txtSDT" Margin="10" BorderThickness="0" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textDiaChi}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <TextBox x:Name="txtDiaChi" Margin="10"  FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center" BorderThickness="0"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="3"  Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textGioiTinh}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboGioiTinh" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" Foreground="{DynamicResource #474747}" FontSize="16" ItemsSource="{Binding listGioiTinh}"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textNgaySinh}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <DatePicker Name="dpNgaySinh" Margin="10 0" VerticalAlignment="Center" Foreground="{DynamicResource #474747}"></DatePicker>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="4"  Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textTrinhDoHocVan}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboHocVan" VerticalAlignment="Center" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" FontSize="16" Margin="10" ItemsSource="{Binding listHocVan}"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textTinhTrangHonNhan}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboHonNhan" VerticalAlignment="Center" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" FontSize="16" Margin="10" ItemsSource="{Binding listHonNhan}"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="5"  Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textKinhNghiemLamViec1}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboKinhNghiem" VerticalAlignment="Center" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" FontSize="16" Margin="10" ItemsSource="{Binding listKinhNghiem}"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textNgayBatDauLamViec1}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}">
+                                                <TextBlock x:Name="tblStartDate" Text="dd/mm/yyyy" Margin="10" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="6"  Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textPhongBan}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboPhongBan" ItemsSource="{Binding listDep}" DisplayMemberPath="dep_name" VerticalAlignment="Center" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" FontSize="16" Margin="10"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textChucVu}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <TextBlock x:Name="tblChucVu" Margin="10" FontSize="16" Foreground="{DynamicResource #677684}" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel Grid.Row="7"  Margin="0 15 0 0">
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textTo}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboTo" VerticalAlignment="Center" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" FontSize="16" Margin="10"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Style="{StaticResource StyleBorder}">
+                                            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textNhom}" FontSize="16" Foreground="{DynamicResource #495057}" VerticalAlignment="Top"/>
+                                            <Border Margin="0 11 0 0" Grid.Row="1" Width="auto" Height="44" CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Background="{DynamicResource #FFFFFF}" Grid.ColumnSpan="2">
+                                                <ComboBox Name="cboNhom" VerticalAlignment="Center" Style="{StaticResource Combobox1}" ItemContainerStyle="{StaticResource ComboboxItem1}" FontSize="16" Margin="10"></ComboBox>
+                                            </Border>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <Border Margin="0 30 25 40" Grid.Row="10"  CornerRadius="3" BorderThickness="0" Width="auto" Height="43" Background="{DynamicResource #4C5BD4}" Grid.RowSpan="2" Cursor="Hand" MouseLeftButtonDown="Changed_InfoEp_MouseLeftButtonDown">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Path Data="{DynamicResource iconSend}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="10 0 0 0" Text="{DynamicResource textCapNhapThongTin}" Foreground="{DynamicResource #FFFFFF}" FontWeight="SemiBold" FontSize="16"/>
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="{DynamicResource textDoiMatKhau}" Style="{StaticResource TabItem1}">
+                            <Grid Margin="0 39 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{DynamicResource textMatKhauCu}" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                                <StackPanel Grid.Row="1" Margin="0 11 0 0" Orientation="Vertical">
+                                    <Border CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Width="auto" Height="40" VerticalAlignment="Center">
+                                        <Grid Margin="10 0 0 0">
+                                            <TextBox Name="txtPassWordCu" BorderThickness="0" Text="{Binding Password,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontSize="16">
+                                                <TextBox.Style>
+                                                    <Style TargetType="TextBox">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ShowPass}" Value="true">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBox.Style>
+                                            </TextBox>
+                                            <PasswordBox  x:Name="passboxPassWordCu" BorderThickness="0" PasswordChanged="InputPasswordCu" VerticalAlignment="Center" FontSize="16">
+                                                <PasswordBox.Style>
+                                                    <Style TargetType="PasswordBox">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ShowPass}" Value="true">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </PasswordBox.Style>
+                                            </PasswordBox>
+                                            <TextBlock IsHitTestVisible="False" Text="Nhập mật khẩu cũ" FontSize="16" LineHeight="18" Foreground="{DynamicResource #666666}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Password}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <Grid Margin="0 0 0 0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                                <Border Margin="0 0 5 0" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowPassword">
+                                                    <Path Data="{DynamicResource iconEyes}" Stroke="{DynamicResource #495057}" VerticalAlignment="Center">
+                                                        <Path.Style>
+                                                            <Style TargetType="Path">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding ShowPass}" Value="true">
+                                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Path.Style>
+                                                    </Path>
+                                                </Border>
+                                                <Border  Margin="0 0 5 0" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowPassword">
+                                                    <Path Data="{DynamicResource iconHiddenPassWord}" Stroke="{DynamicResource #495057}" VerticalAlignment="Center">
+                                                        <Path.Style>
+                                                            <Style TargetType="Path">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding ShowPass}" Value="true">
+                                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Path.Style>
+                                                    </Path>
+                                                </Border>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                    <TextBlock x:Name="tblPassCuValidate" Style="{StaticResource tblValidate}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Row="2" Margin="0 29 0 0" Text="{DynamicResource textMatKhauMoi}" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                                <StackPanel Grid.Row="3" Margin="0 11 0 0" Orientation="Vertical">
+                                    <Border CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Height="40">
+                                        <Grid Margin="10 0 0 0">
+                                            <TextBox Name="txtNewPassWord" BorderThickness="0" Text="{Binding NewPassword,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontSize="16">
+                                                <TextBox.Style>
+                                                    <Style TargetType="TextBox">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ShowNewPass}" Value="true">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBox.Style>
+                                            </TextBox>
+                                            <PasswordBox  x:Name="passboxNewPassWord" BorderThickness="0" PasswordChanged="InputNewPassword" VerticalAlignment="Center" FontSize="16">
+                                                <PasswordBox.Style>
+                                                    <Style TargetType="PasswordBox">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ShowNewPass}" Value="true">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </PasswordBox.Style>
+                                            </PasswordBox>
+                                            <TextBlock IsHitTestVisible="False" Text="Nhập mật khẩu Mới" FontSize="16" LineHeight="18" Foreground="{DynamicResource #666666}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding NewPassword}" Value="">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <Grid Margin="0 0 0 0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                                <Border Margin="0 0 5 0" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowNewPassword">
+                                                    <Path Data="{DynamicResource iconEyes}" Stroke="{DynamicResource #495057}" VerticalAlignment="Center">
+                                                        <Path.Style>
+                                                            <Style TargetType="Path">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding ShowNewPass}" Value="true">
+                                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Path.Style>
+                                                    </Path>
+                                                </Border>
+                                                <Border  Margin="0 0 5 0" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowNewPassword">
+                                                    <Path Data="{DynamicResource iconHiddenPassWord}" Stroke="{DynamicResource #495057}" VerticalAlignment="Center">
+                                                        <Path.Style>
+                                                            <Style TargetType="Path">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding ShowNewPass}" Value="true">
+                                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Path.Style>
+                                                    </Path>
+                                                </Border>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                    <TextBlock x:Name="tblPassMoiValidate" Style="{StaticResource tblValidate}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Row="4" Margin="0 29 0 0" Text="{DynamicResource textNhapLaiMatKhau}" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                                <StackPanel Grid.Row="5" Margin="0 11 0 0" Orientation="Vertical">
+                                <Border CornerRadius="4" BorderThickness="1" BorderBrush="{DynamicResource #E8E8E8}" Height="40">
+                                    <Grid Margin="10 0 0 0">
+                                        <TextBox Name="txtRePassWord" BorderThickness="0" Text="{Binding RePassword,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontSize="16">
+                                            <TextBox.Style>
+                                                <Style TargetType="TextBox">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ShowRePass}" Value="true">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBox.Style>
+                                        </TextBox>
+                                        <PasswordBox  x:Name="passboxRePassWord" BorderThickness="0" PasswordChanged="InputRePassword" VerticalAlignment="Center" FontSize="16">
+                                            <PasswordBox.Style>
+                                                <Style TargetType="PasswordBox">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ShowRePass}" Value="true">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </PasswordBox.Style>
+                                        </PasswordBox>
+                                        <TextBlock IsHitTestVisible="False" Text="Nhập lại mật khẩu" FontSize="16" LineHeight="18" Foreground="{DynamicResource #666666}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RePassword}" Value="">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <Grid Margin="0 0 0 0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                            <Border Margin="0 0 5 0" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowRePassword">
+                                                <Path Data="{DynamicResource iconEyes}" Stroke="{DynamicResource #495057}" VerticalAlignment="Center">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ShowRePass}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                            </Border>
+                                            <Border  Margin="0 0 5 0" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ShowRePassword">
+                                                <Path Data="{DynamicResource iconHiddenPassWord}" Stroke="{DynamicResource #495057}" VerticalAlignment="Center">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ShowRePass}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                                    <TextBlock x:Name="tblRePassValidate" Style="{StaticResource tblValidate}"/>
+                                </StackPanel>
+                                <Border Grid.Row="6" Margin="0 35 0 0" CornerRadius="3" BorderThickness="0" Height="43" Background="{DynamicResource #4C5BD4}" Cursor="Hand" MouseLeftButtonDown="Changed_Pass_MouseLeftButtonDown">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Path Data="{DynamicResource iconSend}" Fill="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                                        <TextBlock Margin="10 0 0 0" Text="{DynamicResource textCapNhapThongTin}" Foreground="{DynamicResource #FFFFFF}" FontWeight="SemiBold" FontSize="16"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Border>
+            </WrapPanel>
+        </Grid>
+    </StackPanel>
+</Page>

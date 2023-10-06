@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.OverviewPopups.NotifyPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366" >
+    <Grid Visibility="Visible" Height="299" Width="448" Background="#ffffff">
+        <Border CornerRadius="8"  BorderThickness="1"></Border>
+        <StackPanel>
+            <Border Visibility="Visible" CornerRadius="5" Background="#F1F9FC"  BorderBrush="#F1F9FC" BorderThickness="1">
+                <Grid>
+                    <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="18,25,0,18" Grid.ColumnSpan="2">
+                        <Ellipse Grid.Column="1" Fill="#666666" />
+                    </Grid>
+                    <Grid Margin="81,24,83,15.58" Height="51.42" Width="284">
+                        <Grid Height="32" Width="284">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="81*"/>
+                                <ColumnDefinition Width="203*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Chấm công 365" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2"></TextBlock>
+                            <TextBlock Text="Mọi người đi làm nên đeo" HorizontalAlignment="Center" FontSize="12" Margin="16,0,0,0" Width="187" Grid.Column="1"></TextBlock>
+                            <TextBlock Text="khẩu trang để phòng ngừa Virus Corona" HorizontalAlignment="Center" FontSize="12" Margin="0,15,6,0" Width="278" Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="14.42" Width="59" Margin="81,61,308,0">
+                        <TextBlock Text="3 giờ trước" FontSize="10"></TextBlock>
+                    </Grid>
+                    <Grid Background="#fff" Height="20" Width="20" Margin="0,23,26,0" VerticalAlignment="top" HorizontalAlignment="Right">
+                        <Border CornerRadius="10" Background="#F46A6A" BorderBrush="#F46A6A" BorderThickness="1" Margin="0,10,0,-9">
+                            <Path Data="{StaticResource icon_x}" Fill="#FFFFFF"></Path>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid Visibility="Visible">
+                <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="18,25,0,18" Grid.ColumnSpan="2">
+                    <Ellipse Grid.Column="1" Fill="#666666" />
+                </Grid>
+                <Grid Margin="81,24,83,15.58" Height="51.42" Width="284">
+                    <Grid Height="32" Width="284">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="81*"/>
+                            <ColumnDefinition Width="203*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Chấm công 365" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2"></TextBlock>
+                        <TextBlock Text="Tuần này bạn được thưởng" HorizontalAlignment="Center" FontSize="12" Margin="16,0,0,0" Width="187" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="500.000 đ" HorizontalAlignment="Center" FontSize="12" Margin="0,15,6,0" Width="278" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </Grid>
+                <Grid Height="14.42" Width="59" Margin="81,61,308,0">
+                    <TextBlock Text="3 giờ trước" FontSize="10"></TextBlock>
+                </Grid>
+                <Grid Background="#fff" Height="20" Width="20" Margin="0,23,26,0" VerticalAlignment="top" HorizontalAlignment="Right">
+                    <Border CornerRadius="10" Background="#F46A6A" BorderBrush="#F46A6A" BorderThickness="1" Margin="0,10,0,-9">
+                        <Path Data="{StaticResource icon_x}" Fill="#FFFFFF"></Path>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Height="92">
+                <Grid Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="18,25,0,18" Grid.ColumnSpan="2">
+                    <Ellipse Grid.Column="1" Fill="#666666" />
+                </Grid>
+                <Grid Margin="81,24,83,15.58" Height="51.42" Width="284">
+                    <Grid Height="32" Width="284">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="81*"/>
+                            <ColumnDefinition Width="203*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Nguyễn Thu Trung Hiếu" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2"></TextBlock>
+                        <TextBlock Text="chấm công muộn" HorizontalAlignment="Center" FontSize="12" Margin="60,0,0,0" Width="143" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="3 giờ trước" FontSize="10" HorizontalAlignment="Center"  Margin="0,15,6,0" Width="278" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </Grid>
+                <Grid Background="#fff" Height="20" Width="20" Margin="0,23,26,0" VerticalAlignment="top" HorizontalAlignment="Right">
+                    <Border CornerRadius="10" Background="#F46A6A" BorderBrush="#F46A6A" BorderThickness="1" Margin="0,10,0,-9">
+                        <Path Data="{StaticResource icon_x}" Fill="#FFFFFF"></Path>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid>
+                <TextBlock Text="Xóa tất cả thông báo" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,90 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_ChamCong.Attenden_Fail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_ChamCong"
+      mc:Ignorable="d" 
+      Height="auto" Width="Auto"
+      Title="Attenden_Fail" Margin="20">
+
+    <Grid HorizontalAlignment="Center">
+        <Border Background="White" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" ShadowDepth="0" Opacity=".5" BlurRadius="10"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <Border CornerRadius="10" Background="{DynamicResource #FFFFFF}">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Border Width="200" Height="200" Margin="20" CornerRadius="999">
+                    <Border.Background>
+                        <ImageBrush ImageSource="{Binding Avatar}" Stretch="UniformToFill"></ImageBrush>
+                    </Border.Background>
+                </Border>
+                <TextBlock Margin="0 0 0 20" Text="{Binding Day}" HorizontalAlignment="Center" FontSize="16" Foreground="{DynamicResource #495057}"/>
+                <Grid>
+                    <Canvas Height="69" Width="69">
+                        <Canvas.Style>
+                            <Style TargetType="Canvas">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Type}" Value="False">
+                                        <Setter Property="Visibility" Value="Visible"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Canvas.Style>
+                        <Path Data="M34.5 0C15.4759 0 0 15.4759 0 34.5C0 53.5241 15.4759 69 34.5 69C53.5241 69 69 53.5241 69 34.5C69 15.4759 53.5241 0 34.5 0Z" Fill="#F44336" />
+                        <Path Data="M47.2057 43.1391C48.3296 44.2636 48.3296 46.0803 47.2057 47.2047C46.6451 47.7654 45.9091 48.047 45.1726 48.047C44.4367 48.047 43.7008 47.7654 43.1401 47.2047L34.5009 38.565L25.8617 47.2047C25.301 47.7654 24.5651 48.047 23.8291 48.047C23.0927 48.047 22.3567 47.7654 21.7961 47.2047C20.6721 46.0803 20.6721 44.2636 21.7961 43.1391L30.4358 34.4999L21.7961 25.8607C20.6721 24.7362 20.6721 22.9195 21.7961 21.7951C22.9205 20.6712 24.7372 20.6712 25.8617 21.7951L34.5009 30.4348L43.1401 21.7951C44.2646 20.6712 46.0813 20.6712 47.2057 21.7951C48.3296 22.9195 48.3296 24.7362 47.2057 25.8607L38.566 34.4999L47.2057 43.1391Z" Fill="#FAFAFA" />
+                    </Canvas>
+                    <Path Data="{DynamicResource iconThanhcong}" Fill="{DynamicResource #4C5BD4}" HorizontalAlignment="Center">
+                        <Path.Style>
+                            <Style TargetType="Path">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Type}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+                    </Path>
+                </Grid>
+                <TextBlock Margin="0 10 0 5" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="{DynamicResource #FF0E0E}"></Setter>
+                            <Setter Property="Text" Value="{DynamicResource textDiemDanhThatBai}"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Type}" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource #4C5BD4}"></Setter>
+                                    <Setter Property="Text" Value="{DynamicResource textDiemDanhThanhCong}"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Margin="0 10 0 5" Text="{Binding Message}" Foreground="{DynamicResource #FF0E0E}"  HorizontalAlignment="Center" FontSize="18" FontWeight="Bold">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Type}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <StackPanel Margin="30 10 30 30" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Border BorderThickness="1" Background="{DynamicResource #4C5BD4}" BorderBrush="{DynamicResource #4C5BD4}" Width="170" CornerRadius="5" Height="35" Cursor="Hand" MouseLeftButtonDown="TrangChu_MouseLeftButtonDown">
+                        <TextBlock Text="{DynamicResource textTrangChu}" HorizontalAlignment="Center" FontSize="16" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="30 0 0 0 " BorderThickness="0" Background="{DynamicResource #FFA800}" BorderBrush="{DynamicResource #FFA800}" Width="170" CornerRadius="5" Height="35" Cursor="Hand" MouseLeftButtonDown="Attendence_MouseLeftButtonDown">
+                        <TextBlock Text="{DynamicResource textTiepTucDiemDanh}" HorizontalAlignment="Center" FontSize="16" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center">
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

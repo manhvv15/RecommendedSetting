@@ -1,0 +1,183 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.ThietLapCongTy.Them_Xoa_NhanVien.ucNhanVienChoDuyet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ThietLapCongTy.Them_Xoa_NhanVien"
+              xmlns:comon="clr-namespace:QuanLyChung365TruocDangNhap.ThietLapCongTy.Comons"
+             mc:Ignorable="d">
+    <Grid MaxWidth="1920">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0 20 0 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="0.7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel Cursor="Hand" Background="Transparent">
+                    <TextBlock Text="Tên tổ chức" FontSize="16" FontWeight="Regular" Foreground="#474747"/>
+                    <!--SearchIsNull="cboEP_SearchIsNull" ScrollToEnd="cboEP_ScrollToEnd"-->
+                    <comon:ucComboboxSearch  Height="34"  FontSize="16"  ItemsSource="{Binding list, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"  x:Name="cboTenToChuc"   Grid.Row="1"   DisplayMemberPath="ep_id,ep_name" DisplayChar="-" BorderBrush="#474747" Foreground="{DynamicResource #474747}" Background="Transparent" CornerRadius="5" BorderThickness="1"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Margin="20 0 10 0">
+                <StackPanel>
+                    <TextBlock Text="Họ và tên" FontSize="16" FontWeight="Regular" Foreground="#474747"/>
+                    <Border Style="{DynamicResource BorderSelectedNV}" Height="34">
+                        <DockPanel>
+                            <Path  Data="{DynamicResource iconSearchNV}" Fill="#474747" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 5 0" />
+                            <TextBox x:Name="tb_TimKiemNhanVien" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="100"/>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Border x:Name="bod_TimKiem" MouseEnter="bod_TimKiem_MouseEnter" MouseLeave="bod_TimKiem_MouseLeave" Style="{DynamicResource BorderButonNV}" Height="39" Margin="0 20 0 0" Background="#4C5DB4">
+                    <DockPanel Margin="20 5 20 5">
+                        <Path Data="{DynamicResource iconSearchNV}" Fill="#FFFFFF" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="Tìm Kiếm" Style="{DynamicResource TextBlockButonNV}" Foreground="#FFFFFF" Margin="10 0 0 0"/>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <WrapPanel Visibility="Collapsed" Margin="0 0 0 20">
+                <Border x:Name="bod_XoaNhanVienChoDuyet" MouseEnter="bod_XoaNhanVienChoDuyet_MouseEnter" MouseLeave="bod_XoaNhanVienChoDuyet_MouseLeave" Style="{DynamicResource BorderButonNV}" Background="#FFFFFF" BorderBrush="#4C5BD4" MinWidth="130" >
+                    <TextBlock x:Name="tb_XoaNhanVienChoDuyet" Text="Xóa" Style="{DynamicResource TextBlockButonNV}"  />
+                </Border>
+                <Border x:Name="bod_Duyet" MouseEnter="bod_Duyet_MouseEnter" MouseLeave="bod_Duyet_MouseLeave" Style="{DynamicResource BorderButonNV}" Background="#4C5BD4" BorderBrush="#4C5BD4" MinWidth="130" Margin="20 0 20 0">
+                    <TextBlock Text="Duyệt" Style="{DynamicResource TextBlockButonNV}" Foreground="#FFFFFF" />
+                </Border>
+                <Border x:Name="bod_DuyetTatCa" MouseEnter="bod_DuyetTatCa_MouseEnter" MouseLeave="bod_DuyetTatCa_MouseLeave" Style="{DynamicResource BorderButonNV}" Background="#4C5BD4" BorderBrush="#4C5BD4" MinWidth="130">
+                    <TextBlock Text="Duyệt tất cả" Style="{DynamicResource TextBlockButonNV}" Foreground="#FFFFFF" />
+                </Border>
+            </WrapPanel>
+            <DataGrid  RowHeight="86" Style="{DynamicResource DataGridNV}" Name="dgvDanhSachNhanVien" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Visible" >
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="{DynamicResource #4C5BD4}"></Setter>
+                        <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="FontSize" Value="16"></Setter>
+                        <Setter Property="MinHeight" Value="50"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="BorderThickness" Value="0,0,1,0" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}" />
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Margin="20 5" TextWrapping="NoWrap"/>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Foreground" Value="#474747" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="{x:Null}" />
+                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border Background="#FFFFFF" CornerRadius="15" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualHeight}"></Border>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DataGrid.OpacityMask>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="0.5*" >
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <DockPanel Cursor="Hand" Background="Transparent">
+                                    <CheckBox x:Name="DuyetTatCaNhanVien"  VerticalAlignment="Center" HorizontalAlignment="Right">
+                                        <CheckBox.Style>
+                                            <Style TargetType="CheckBox" BasedOn="{StaticResource checkbox2}">
+                                                <Setter Property="IsChecked" Value="False"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsCheckAll}" Value="1">
+                                                        <Setter Property="IsChecked" Value="True"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </CheckBox.Style>
+                                    </CheckBox>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Cursor="Hand" x:Name="DuyetNhanVien"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <CheckBox.Style>
+                                        <Style TargetType="CheckBox" BasedOn="{StaticResource checkbox2}">
+                                            <Setter Property="IsChecked" Value="False"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding allow_update_face}" Value="1">
+                                                    <Setter Property="IsChecked" Value="True"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </CheckBox.Style>
+                                </CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="STT" Width="0.5*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding stt}" TextWrapping="Wrap" TextAlignment="Center" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Họ và tên" Width="1.2*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding name}" TextWrapping="Wrap" TextAlignment="Center" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="ID" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding id}" TextWrapping="Wrap" TextAlignment="Center" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Tên tổ chức" Width="1.2*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding tochuc}" TextWrapping="Wrap" TextAlignment="Center" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Vị Trí" Width="1.5*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding vitri}" TextWrapping="Wrap" TextAlignment="Center" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="SĐT" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding sdt}" TextWrapping="Wrap" TextAlignment="Center" FontSize="16"  HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>

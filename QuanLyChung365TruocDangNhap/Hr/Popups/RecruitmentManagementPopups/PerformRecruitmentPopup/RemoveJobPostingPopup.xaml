@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.RecruitmentManagementPopups.PerformRecruitmentPopup.RemoveJobPostingPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <Grid Height="224" Width="736" VerticalAlignment="Top">
+        <Border CornerRadius="8" Background="{StaticResource #FFFFFF}"></Border>
+        <Grid Height="36" VerticalAlignment="Top">
+            <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+            <TextBlock Text="GỠ TIN TUYỂN DỤNG" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Grid Height="72" Width="674" VerticalAlignment="Center" Margin="36,59,86,93">
+            <TextBlock FontWeight="SemiBold" Text="Bạn có chắc muốn gỡ tin tuyển dụng này?" FontSize="14" Foreground="#474747" FontStyle="Normal"></TextBlock>
+            <TextBlock FontWeight="SemiBold" Text='Bạn tin tuyển dụng sẽ được lưu tại "Dữ liệu đã xóa gần đây"trong 5 ngày sau khi bị xóa vĩnh viễn và'  Margin="0,20,0,0" FontSize="14" Foreground="#474747" FontStyle="Normal"></TextBlock>
+            <TextBlock FontWeight="SemiBold" Text="sẽ tự động đóng tin trên timviec365.vn" Margin="0,42,0,0" FontSize="14" Foreground="#474747" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Border Height="36" Width="100" CornerRadius="8" VerticalAlignment="Top" Background="#BDBDBD" Margin="484,156,152,0">
+            <Grid>
+                <TextBlock Text="Hủy" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="CancelPopup"></Grid>
+            </Grid>
+        </Border>
+        <Border Height="36" Width="100" CornerRadius="8" Background="#EB5757" VerticalAlignment="Top" Margin="600,156,36,0">
+            <Grid>
+                <TextBlock Text="Gỡ" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+                <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ClickDelete"></Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

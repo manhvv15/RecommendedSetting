@@ -1,0 +1,238 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:tool="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Tools" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages"
+      xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
+      mc:Ignorable="d" x:Name="PageHome"
+      d:DesignHeight="675" d:DesignWidth="1146"
+      Title="Home" SizeChanged="Page_SizeChanged">
+    <Page.Resources>
+        <math:MathConvert  x:Key="math"></math:MathConvert>
+        <Style x:Key="StyleGrid" TargetType="{x:Type Grid}">
+            <Setter Property="Width" Value="{Binding Path=ActualWidth, ElementName=PageHome, Converter={StaticResource math}, ConverterParameter=(@VALUE -50)/5}"></Setter>
+            <Setter Property="Margin" Value="0,0,10,10"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSmallPage}" Value="1">
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, ElementName=PageHome, Converter={StaticResource math}, ConverterParameter=(@VALUE -30)/2}"></Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsSmallPage}" Value="2">
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, ElementName=PageHome, Converter={StaticResource math}, ConverterParameter=(@VALUE -30)}"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid >
+        <StackPanel>
+            <TextBlock Margin="0 0 0 0" Text="{DynamicResource textTaiKhoanCongTy}" HorizontalAlignment="Left" FontSize="18" LineHeight="24px" FontWeight="SemiBold" Foreground="{DynamicResource  #162A56}"/>
+            <WrapPanel Margin="0 21 0 0">
+                <Grid Style="{StaticResource StyleGrid}" SnapsToDevicePixels="True" Background="Transparent" Height="140">
+                    <Border Background="White" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.3"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border CornerRadius="15">
+                        <StackPanel VerticalAlignment="Center" Margin="10 0 10 0">
+                            <Path Data="{DynamicResource iconQR1}" HorizontalAlignment="Center" Stroke="{DynamicResource #FF8147}"/>
+                            <TextBlock Text="{DynamicResource textCaiDatChamCongQR}" Foreground="{DynamicResource #F72B50}" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap"></TextBlock>
+                            <Grid MouseLeftButtonDown="ChamCongQR_MouseLeftButtonDown" Cursor="Hand" Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width=".1*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{DynamicResource textChamCongQR}" Foreground="#666C7C" HorizontalAlignment="Left" FontSize="16" TextWrapping="Wrap"/>
+                                <TextBlock Grid.Column="1" Text=">" Foreground="#666C7C" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid MouseLeftButtonDown="ThietBiChoDuyet_MouseLeftButtonDown" Cursor="Hand" Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width=".1*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{DynamicResource textThietBiChoDuyet}" Foreground="#666C7C" HorizontalAlignment="Left" FontSize="16" TextWrapping="Wrap"></TextBlock>
+                                <TextBlock Grid.Column="1" Text=">" Foreground="#666C7C" HorizontalAlignment="Right" FontSize="16" VerticalAlignment="Center"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Style="{StaticResource StyleGrid}" SnapsToDevicePixels="True" Background="Transparent" Height="140" Cursor="Hand" MouseLeftButtonDown="Htr_Att_Staff_MouseLeftButtonDown">
+                    <Border Background="White" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.3"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border CornerRadius="15" Background="{DynamicResource #FFFFFF}">
+                        <StackPanel VerticalAlignment="Center" Margin="10 15 10 0">
+                            <Path  Data="{DynamicResource iconLichSu}" HorizontalAlignment="Center" Fill="{DynamicResource #F72B50}"/>
+                            <TextBlock Text="{DynamicResource textLichSu}" Foreground="{DynamicResource #F72B50}" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold"></TextBlock>
+                            <TextBlock Text="{DynamicResource textDiemDanhToanBoNhanVien}" Foreground="#666C7C" HorizontalAlignment="Center" FontSize="16" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Style="{StaticResource StyleGrid}" SnapsToDevicePixels="True" Background="Transparent" Height="140">
+                    <Border Background="White" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.3"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border CornerRadius="15" Background="{DynamicResource #FFFFFF}">
+                        <StackPanel VerticalAlignment="Center" Margin="10 15 10 0">
+                            <Path  Data="{DynamicResource iconHoTroTrucTuyen}" HorizontalAlignment="Center" Fill="{DynamicResource #27AE60}"/>
+                            <TextBlock Text="{DynamicResource textHoTroTrucTuyen}" Foreground="{DynamicResource #27AE60}" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold"></TextBlock>
+                            <TextBlock Text="{DynamicResource textHayChatVoiChungToi}" Foreground="#666C7C" HorizontalAlignment="Center" FontSize="16" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Style="{StaticResource StyleGrid}" SnapsToDevicePixels="True" Height="140"  Background="Transparent" MouseLeftButtonDown="Child_Company_MouseLeftButtonDown" Cursor="Hand">
+                    <Border Background="White" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.3"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border CornerRadius="15" Background="{DynamicResource #FFFFFF}">
+                        <StackPanel VerticalAlignment="Center" Margin="10 15 10 0">
+                            <Path  Data="{DynamicResource iconThemCongTyCon}" HorizontalAlignment="Center" Stroke="{DynamicResource #2781D5}"/>
+                            <TextBlock Text="{DynamicResource textThemCongTyCon}" Foreground="{DynamicResource #2781D5}" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold"></TextBlock>
+                            <TextBlock Text="{DynamicResource textQuanLyCacCongTyCon}" Foreground="#666C7C" HorizontalAlignment="Center" FontSize="16" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Style="{StaticResource StyleGrid}" SnapsToDevicePixels="True" Background="Transparent" Height="140" MouseLeftButtonDown="shift_Manage_MouseLeftButtonDown" Cursor="Hand">
+                    <Border Background="White" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.3"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                    <Border CornerRadius="15" Background="{DynamicResource #FFFFFF}">
+                        <StackPanel VerticalAlignment="Center" Margin="10 15 10 0">
+                            <Path  Data="{DynamicResource iconQuanLyCaLamVien}" HorizontalAlignment="Center" Fill="{DynamicResource #744883}"/>
+                            <TextBlock Text="{DynamicResource textQuanLyCaLamViec}" Foreground="{DynamicResource #744883}" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold"></TextBlock>
+                            <TextBlock Text="{DynamicResource textQuanLyCaLamViecNhanVien}" Foreground="{DynamicResource #666c7c}" HorizontalAlignment="Center" FontSize="16" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </WrapPanel>
+            <TextBlock  Text="{DynamicResource textDanhSachNhanVienChuaThietLapLichLV}" HorizontalAlignment="Left" FontSize="18" Margin="0 40 0 20" FontWeight="SemiBold" LineHeight="24" Foreground="{DynamicResource #162A56}"/>
+            <DataGrid x:Name="table" Style="{StaticResource DataGrid1}" ItemsSource="{Binding listEmployee}" Background="{DynamicResource #ECF2FA}" PreviewMouseWheel="table_PreviewMouseWheel">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="{DynamicResource #4C5BD4}"></Setter>
+                        <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="FontSize" Value="16"></Setter>
+                        <Setter Property="MinHeight" Value="50"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="BorderThickness" Value="0"></Setter>
+                        <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}"></Setter>
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Margin="20 5" TextWrapping="NoWrap"/>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="{x:Null}" />
+                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border Background="White" CornerRadius="10" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualHeight}"></Border>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DataGrid.OpacityMask>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="{DynamicResource textAnh}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40" CornerRadius="40" Background="Black">
+                                    <Border.OpacityMask>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <Border Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType=Border,Mode=FindAncestor},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType=Border,Mode=FindAncestor},Path=ActualWidth}" CornerRadius="{Binding RelativeSource={RelativeSource AncestorType=Border,Mode=FindAncestor},Path=ActualWidth}"></Border>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Border.OpacityMask>
+                                    <Image Stretch="UniformToFill" Source="{Binding image}"></Image>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{DynamicResource textIDnTen}" Binding="{Binding IDnTen}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textPhongBan}" Binding="{Binding dep_name}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textEmail}" Binding="{Binding ep_email}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textSoDienThoai}" Binding="{Binding ep_phone}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textTenCongTy}" Binding="{Binding com_name}" ElementStyle="{StaticResource textRowCenter}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <tool:Paginator x:Name="paginLichLamViec" Margin="0 20" DisplayNumber="10" SelectionChange="paginLichLamViec_SelectionChange"/>
+            <TextBlock  Text="{DynamicResource textDanhSachDiemDanhGanDay}" HorizontalAlignment="Left" FontSize="18" Margin="0 10 0 20" FontWeight="SemiBold" LineHeight="24" Foreground="{DynamicResource #162A56}"/>
+            <DataGrid x:Name="table2" Style="{StaticResource DataGrid1}" ItemsSource="{Binding ListAttStaffNearly}" Background="{DynamicResource #ECF2FA}" PreviewMouseWheel="table_PreviewMouseWheel">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="{DynamicResource #4C5BD4}"></Setter>
+                        <Setter Property="Foreground" Value="{DynamicResource #FFFFFF}"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="FontSize" Value="16"></Setter>
+                        <Setter Property="MinHeight" Value="50"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="BorderThickness" Value="0"></Setter>
+                        <Setter Property="BorderBrush" Value="{DynamicResource #FFFFFF}"></Setter>
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Margin="20 5" TextWrapping="NoWrap"/>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="{x:Null}" />
+                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border Background="White" CornerRadius="10" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=ActualHeight}"></Border>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DataGrid.OpacityMask>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{DynamicResource textID}" Binding="{Binding ep_id}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textHoVaTen}" Binding="{Binding ep_name}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textCa}" Binding="{Binding shift_name}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textThoiGian}" Binding="{Binding time_shift}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textNgayThang}" Binding="{Binding date_shift}" ElementStyle="{StaticResource textRowCenter}"/>
+                    <DataGridTextColumn Header="{DynamicResource textGhiChu}" Binding="{Binding note}" ElementStyle="{StaticResource textRowCenter}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <tool:Paginator x:Name="paginDiemDanh" Margin="0 20" DisplayNumber="10" SelectionChange="paginDiemDanh_SelectionChange"/>
+        </StackPanel>
+        <tool:LoadingSpinner x:Name="loading" Visibility="Collapsed"/>
+    </Grid>
+</Page>
+    

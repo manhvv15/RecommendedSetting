@@ -1,0 +1,252 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.RecruitmentManagementPopups.PerformRecruitmentPopup.EditMessagePopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:Popup="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups"
+             mc:Ignorable="d" 
+             d:DesignHeight="3000" d:DesignWidth="1000">
+
+    <Grid Width="736" VerticalAlignment="Top">
+        <Border CornerRadius="8" Background="{StaticResource #FFFFFF}"></Border>
+        <Grid Height="36" VerticalAlignment="Top">
+            <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+            <TextBlock Text="CHỈNH SỬA TIN" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <StackPanel>
+            <Grid Width="736">
+                <Grid Height="69" Width="624" Margin="0,95,0,0" VerticalAlignment="Top">
+                    <TextBlock Text="Tiêu đề tin tuyển dụng" FontSize="14" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="145,0,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Width="624" Height="36" HorizontalAlignment="Center" VerticalAlignment="Bottom" CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                        <TextBox x:Name="tbTitle" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập tiêu đề tin tuyển dụng" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Left" Margin="56,179,392,0" VerticalAlignment="Top">
+                    <TextBlock Text="Cấp bậc" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="55,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxPosition"  Cursor="Hand" Padding="10,0,10,0" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Cấp bậc - Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Right" Margin="392,179,56,0" VerticalAlignment="Top">
+                    <TextBlock Text="Địa điểm làm việc" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="115,5,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxCit" Cursor="Hand" PreviewTextInput="cbxCit_PreviewTextInput" KeyUp="cbxCit_KeyUp" Padding="10,0,10,0" DisplayMemberPath="value" SelectedValuePath="ID" IsTextSearchEnabled="False" IsEditable="True" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="624" Height="69" Margin="0,263,0,0" VerticalAlignment="Top">
+                    <TextBlock Text="Địa chỉ tuyển dụng" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="123,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Width="624" Height="36" HorizontalAlignment="Center" VerticalAlignment="Bottom" CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                        <TextBox x:Name="tbAddress" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập địa chỉ tuyển dụng" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+                <Grid Width="624" Height="69" VerticalAlignment="Top" Margin="0,347,0,0">
+                    <TextBlock Text="Ngành nghề" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <Border Width="624" Height="36" HorizontalAlignment="Center" VerticalAlignment="Bottom" CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxCate" Padding="10,0,10,0" Cursor="Hand" PreviewTextInput="cbxCate_PreviewTextInput" IsEditable="True" IsTextSearchEnabled="False" KeyUp="cbxCate_KeyUp" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="624" Height="69" VerticalAlignment="Top" Margin="0,431,0,0">
+                    <TextBlock Text="Chi tiết công việc" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="110,6,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Width="624" Height="36" HorizontalAlignment="Center" VerticalAlignment="Bottom" CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                        <TextBox x:Name="tbJobDetail" AcceptsReturn="True" VerticalScrollBarVisibility="Hidden" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Mô tả chi tiết công việc" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+
+                <Grid Width="288" Height="69" HorizontalAlignment="Left" Margin="56,515,392,0" VerticalAlignment="Top">
+                    <TextBlock Text="Hình thức làm việc" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="118,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxMethodWork"  Cursor="Hand" Padding="10,0,10,0" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Right" Margin="392,515,56,0" VerticalAlignment="Top">
+                    <TextBlock Text="Mức lương" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="70,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxSalary" IsEditable="True" IsTextSearchEnabled="False" PreviewTextInput="cbxSalary_PreviewTextInput" KeyUp="cbxSalary_KeyUp" Cursor="Hand" Padding="10,0,10,0" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+
+                <Grid Width="288" Height="69" HorizontalAlignment="Left" Margin="56,599,392,0" VerticalAlignment="Top">
+                    <TextBlock Text="Hoa hồng (nếu có)" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <TextBox x:Name="tbMoneyTip" AcceptsReturn="True" VerticalScrollBarVisibility="Hidden" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập hoa hồng nhận được nếu có" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Right" Margin="392,599,56,0" VerticalAlignment="Top">
+                    <TextBlock Text="Thời gian thử việc" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <TextBox x:Name="tbProbationaryTime" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập thời gian thử việc" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+
+                <Grid Width="180" Height="69" HorizontalAlignment="Left" Margin="56,683,0,0" VerticalAlignment="Top">
+                    <TextBlock Text="Số lượng tuyển"  FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text=" *" Foreground="red" Margin="95,8,0,0" Width="8"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <TextBox x:Name="tbNumber" PreviewTextInput="NumberValidationTextBox" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập số lượng cần tuyển" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+                <Grid Width="400" Height="69" Margin="280,683,56,0" VerticalAlignment="Top">
+                    <TextBlock Text="Thời hạn tuyển" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="95,8,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="152" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0" HorizontalAlignment="Left">
+                        <Grid>
+                            <!--<DatePicker x:Name="dp1" FirstDayOfWeek="Monday" SelectedDateFormat="Short" Margin="1,0,1,0" Padding="10,0,10,0" materialDesign:HintAssist.Hint="dd/mm/yyyy" Height="24" VerticalAlignment="Center" Background="{x:Null}" Foreground="{StaticResource #474747}">
+                                <DatePicker.Resources>
+                                    <ResourceDictionary>
+                                        <ResourceDictionary.MergedDictionaries>
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                                        </ResourceDictionary.MergedDictionaries>
+                                    </ResourceDictionary>
+                                </DatePicker.Resources>
+                            </DatePicker>-->
+                            <Popup:DatePicker x:Name="dp1" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Background="{StaticResource #FFFFFF}" ></Popup:DatePicker>
+                            <Grid Margin="1,0,1,2" Height="8" VerticalAlignment="Bottom">
+                                <Border CornerRadius="0,0,4,4" Background="{StaticResource #FFFFFF}"></Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <TextBlock Text="đến" Margin="186,0,0,11" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Foreground="#474747"></TextBlock>
+                    <Border Height="36" Width="152" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="248,33,0,0" HorizontalAlignment="Left">
+                        <Grid>
+                            <!--<DatePicker x:Name="dp2" SelectedDateFormat="Short" FirstDayOfWeek="Monday" Margin="1,0,1,0" Padding="10,0,10,0" materialDesign:HintAssist.Hint="dd/mm/yyyy" Height="24" VerticalAlignment="Center" Background="{x:Null}" Foreground="{StaticResource #474747}">
+                                <DatePicker.Resources>
+                                    <ResourceDictionary>
+                                        <ResourceDictionary.MergedDictionaries>
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                                        </ResourceDictionary.MergedDictionaries>
+                                    </ResourceDictionary>
+                                </DatePicker.Resources>
+                            </DatePicker>-->
+                            <Popup:DatePicker x:Name="dp2" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Background="{StaticResource #FFFFFF}" ></Popup:DatePicker>
+                            <Grid Margin="1,0,1,2" Height="8" VerticalAlignment="Bottom">
+                                <Border CornerRadius="0,0,4,4" Background="{StaticResource #FFFFFF}"></Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="624" Height="70" VerticalAlignment="Top" Margin="0,767,0,0">
+                    <TextBlock Text="Mô tả công việc"  FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text=" *" Foreground="red" Margin="100,10,0,0" Width="8"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="624" CornerRadius="4" BorderBrush="#474747" BorderThickness="1"  HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <TextBox x:Name="tbDescription" AcceptsReturn="True" VerticalScrollBarVisibility="Hidden" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Mô tả công việc" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+
+                <Grid Width="624" Height="70" VerticalAlignment="Top" Margin="0,849,0,0">
+                    <TextBlock Text="Quyền lợi"  FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text=" *" Foreground="red" Margin="60,8,0,0" Width="8"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="624" CornerRadius="4" BorderBrush="#474747" BorderThickness="1"  HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <TextBox x:Name="tbBenefit" AcceptsReturn="True" VerticalScrollBarVisibility="Hidden" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Quyền lợi ứng viên" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+
+                <Grid Width="624" Height="59" VerticalAlignment="Top" Margin="0,949,0,0">
+                    <TextBlock Text="Mã quy trình tuyển dụng áp dụng" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto"></TextBlock>
+                    <Border Width="624" Height="36" HorizontalAlignment="Center" VerticalAlignment="Bottom" CornerRadius="4" BorderBrush="#474747" BorderThickness="1">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxRecruitment" Cursor="Hand" IsEditable="True" IsTextSearchEnabled="False" PreviewTextInput="cbxRecruitment_PreviewTextInput" KeyUp="cbxRecruitment_KeyUp" Padding="10,0,10,0" DisplayMemberPath="Value" SelectedValuePath="Key" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                    <Grid Margin="597,49,14,8">
+                        <Path Data="{StaticResource dropdown}"  Fill="#eeeeee"/>
+                    </Grid>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Left" Margin="56,1023,392,0" VerticalAlignment="Top">
+                    <TextBlock Text="Kinh nghiệm" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="82,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxExp"  Cursor="Hand" Padding="10,0,0,0" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Right" Margin="392,1023,56,0" VerticalAlignment="Top">
+                    <TextBlock Text="Yêu cầu bằng cấp" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="110,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxDegree" Cursor="Hand" Padding="10,0,10,0" IsEditable="True" IsTextSearchEnabled="False" PreviewTextInput="cbxDegree_PreviewTextInput" KeyUp="cbxDegree_KeyUp" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="288" Height="69" HorizontalAlignment="Left" Margin="56,1108,392,0" VerticalAlignment="Top">
+                    <TextBlock Text="Yêu cầu giới tính" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto" Margin="0,10,0,0"></TextBlock>
+                    <TextBlock Text="*" Foreground="red" Margin="105,7,0,0" Width="5"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Margin="0,33,0,0">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxGender"  Cursor="Hand" Padding="10,0,10,0" DisplayMemberPath="value" SelectedValuePath="ID" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Width="624" Height="60" Margin="0,1210,0,0" VerticalAlignment="Top">
+                    <TextBlock Text="Yêu cầu công việc"  FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto"></TextBlock>
+                    <TextBlock Text=" *" Foreground="red" Margin="110,-3,0,0" Width="8"  HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                    <Border Height="36" Width="624" CornerRadius="4" BorderBrush="#474747" BorderThickness="1"  HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <TextBox x:Name="tbJobRequired" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Yêu cầu công việc" AcceptsReturn="True" VerticalScrollBarVisibility="Hidden" FontSize="14" BorderThickness="0" Foreground="{StaticResource #666666}" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="Center"></TextBox>
+                    </Border>
+                </Grid>
+                <TextBlock Text="Thành viên theo dõi" Margin="56,1301,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Foreground=" #474747" FontStyle="Normal" FontFamily="Roboto"></TextBlock>
+                <Border Height="36" Width="288" Margin="56,1333,0,0" CornerRadius="4" BorderBrush="#474747" BorderThickness="1"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid>
+                        <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                        <ComboBox x:Name="cbxMemberFolow" Cursor="Hand" IsEditable="True" IsTextSearchEnabled="False" PreviewTextInput="cbxMemberFolow_PreviewTextInput" KeyUp="cbxMemberFolow_KeyUp" Padding="10,0,10,0" DisplayMemberPath="Value" SelectedValuePath="Key" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Chọn nhân viên" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                    </Grid>
+                </Border>
+                <Grid Width="288" Height="69" HorizontalAlignment="Right" Margin="392,1301,56,0" VerticalAlignment="Top">
+                    <TextBlock Text="Tên nhân viên phụ trách tuyển dụng" FontSize="14" Foreground=" #474747" FontStyle="Normal"></TextBlock>
+                    <Border Height="36" Width="288" CornerRadius="4" BorderBrush="#474747" BorderThickness="1" VerticalAlignment="Bottom" Margin="0,0,0,1">
+                        <Grid>
+                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                            <ComboBox x:Name="cbxHrName" Cursor="Hand" IsEditable="True" IsTextSearchEnabled="False" PreviewTextInput="cbxHrName_PreviewTextInput" KeyUp="cbxHrName_KeyUp" Padding="10,0,10,0" DisplayMemberPath="Value" SelectedValuePath="Key" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Chọn nhân viên" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Border Height="36" Width="100" CornerRadius="8"  Background="#BDBDBD" Margin="464,1410,172,50" VerticalAlignment="Top">
+                    <Grid>
+                        <TextBlock Text="Hủy" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff"  FontSize="14" FontStyle="Normal"></TextBlock>
+                        <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="CancelPopup"></Grid>
+                    </Grid>
+                </Border>
+                <Border Height="36" Width="100" CornerRadius="8" Background="#27AE60" Margin="580,1410,56,50" VerticalAlignment="Top">
+                    <Grid>
+                        <TextBlock Text="Cập nhật" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontSize="14" FontStyle="Normal"></TextBlock>
+                        <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ClickEditNew"></Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.Notify1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp"
+             xmlns:math="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Resouces"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" VerticalAlignment="Center" HorizontalAlignment="Center"
+             >
+    <UserControl.Resources>
+        <math:MathConvert x:Key="MathConvert"></math:MathConvert>
+        <system:String x:Key="textClose">Xác nhận</system:String>
+        <PathGeometry x:Key="iconSuccess1" Figures="M49 0C21.9406 0 0 21.9406 0 49C0 76.0594 21.9406 98 49 98C76.0594 98 98 76.0594 98 49C98 21.9406 76.0594 0 49 0ZM70.1641 32.9984L47.1297 64.9359C46.8077 65.3853 46.3833 65.7514 45.8916 66.004C45.3999 66.2566 44.8551 66.3884 44.3023 66.3884C43.7496 66.3884 43.2047 66.2566 42.7131 66.004C42.2214 65.7514 41.7969 65.3853 41.475 64.9359L27.8359 46.0359C27.4203 45.4562 27.8359 44.6469 28.5469 44.6469H33.6766C34.7922 44.6469 35.8531 45.1828 36.5094 46.1016L44.2969 56.9078L61.4906 33.0641C62.1469 32.1562 63.1969 31.6094 64.3234 31.6094H69.4531C70.1641 31.6094 70.5797 32.4188 70.1641 32.9984Z"/>
+        <GeometryGroup x:Key="iconError">
+            <PathGeometry Figures="M49 98C76.062 98 98 76.062 98 49C98 21.938 76.062 0 49 0C21.938 0 0 21.938 0 49C0 76.062 21.938 98 49 98Z"/>
+            <PathGeometry Figures="M71.356 71.356C69.5186 73.1934 66.4559 73.1934 64.6185 71.356L48.9999 55.7374L33.3812 71.356C31.5438 73.1934 28.4811 73.1934 26.6437 71.356C24.8063 69.5186 24.8063 66.4559 26.6437 64.6185L42.2623 48.9999L26.6437 33.3812C24.8063 31.5438 24.8063 28.4811 26.6437 26.6437C28.4811 24.8063 31.5438 24.8063 33.3812 26.6437L48.9999 42.2623L64.6185 26.6437C66.4559 24.8063 69.5186 24.8063 71.356 26.6437C73.1934 28.4811 73.1934 31.5438 71.356 33.3812L55.7374 48.9999L71.356 64.6185C73.1934 66.4559 73.1934 69.5184 71.356 71.356Z"/>
+        </GeometryGroup>
+    </UserControl.Resources>
+    <Grid>
+        <Border Background="{DynamicResource #FFFFFF}" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0"  BlurRadius="10" Opacity="0.4"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40">
+            <Grid>
+                <Path Data="{StaticResource iconSuccess1}" Fill="{DynamicResource #34B632}" Width="98" Height="98">
+                    <Path.Style>
+                        <Style TargetType="Path">
+                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Type}" Value="Success">
+                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Path.Style>
+                </Path>
+                <Path Data="{StaticResource iconError}" Fill="{DynamicResource #E24C4B}" Width="98" Height="98">
+                    <Path.Style>
+                        <Style TargetType="Path">
+                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Type}" Value="Error">
+                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Path.Style>
+                </Path>
+            </Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 30 0 0">
+                <TextBlock Text="{Binding Message}" Foreground="{DynamicResource #474747}" FontSize="16" TextWrapping="Wrap" TextAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=content1,Path=Content}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <ContentControl x:Name="content1" Content="{Binding ContentNoti}"></ContentControl>
+            </Grid>
+            <Border Background="{DynamicResource #4C5BD4}" CornerRadius="6" Margin="0 30 0 0" Cursor="Hand" MouseDown="CloseNotify">
+                <TextBlock Text="{DynamicResource textClose}" Foreground="{DynamicResource #FFFFFF}" FontSize="15" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"></TextBlock>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

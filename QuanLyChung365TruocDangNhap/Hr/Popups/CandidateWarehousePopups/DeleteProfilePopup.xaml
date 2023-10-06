@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.CandidateWarehousePopups.DeleteProfilePopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <Grid Height="220" Width="736" Background="#ffffff">
+        <Grid Height="36" VerticalAlignment="Top" Background="#4C5BD4">
+            <TextBlock Text="XÓA HỒ SƠ" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Grid Height="72" Width="660" HorizontalAlignment="Center" Margin="36,55,40,93">
+            <TextBlock Text="Bạn có muốn xóa hồ sơ" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747"></TextBlock>
+            <TextBlock Text=' HỒ SƠ CỦA ĐỖ KHÁNH TÚ?' Margin="145,0,0,0" FontSize="14" FontFamily="Roboto" FontStyle="Normal" FontWeight="DemiBold"></TextBlock>
+            <TextBlock Text="Tất cả nội dung quy định sẽ được lưu trữ ở " Margin="0,20,0,0"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747"></TextBlock>
+            <TextBlock Text='"DỮ LIỆU ĐÃ XÓA GẦN ĐÂY"' Margin="265,20,0,0" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" FontWeight="DemiBold"></TextBlock>
+            <TextBlock Text="trong thời gian 5 ngày " Margin="455,20,0,0" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747"></TextBlock>
+            <TextBlock Text="trước khi xóa vĩnh viễn." Margin="0,40,0,0" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747"></TextBlock>
+        </Grid>
+        <Border Height="36" Width="100" CornerRadius="8"  Background="#BDBDBD" Margin="484,148,152,36">
+            <TextBlock Text="Hủy" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+        </Border>
+        <Border Height="36" Width="100" CornerRadius="8" Background="#EB5757" Margin="600,148,36,36">
+            <TextBlock Text="Xóa" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+        </Border>
+    </Grid>
+</UserControl>

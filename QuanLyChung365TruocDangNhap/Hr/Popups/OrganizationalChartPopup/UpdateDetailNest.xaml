@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.OrganizationalChartPopup.UpdateDetailNest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups.OrganizationalChartPopup"
+                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="768">
+    <Grid  Height="450" VerticalAlignment="Top" Width="768">
+        <Border Background="{StaticResource #4C5BD4}" Height="50" VerticalAlignment="Top" CornerRadius="8,8,0,0">
+            <TextBlock Text="CHỈNH SỬA CHI TIẾT TỔ" FontSize="14" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+        </Border>
+        <Border Height="400" Background="{StaticResource #FFFFFF}" VerticalAlignment="Bottom" CornerRadius="0,0,8,8">
+            <StackPanel>
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="110" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Tên phòng ban" FontSize="14" FontWeight="DemiBold" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" HorizontalAlignment="Right" FontWeight="DemiBold" FontSize="14" Foreground="Red" Margin="0,0,5,0"></TextBlock>
+                    </Grid>
+                    <Border Width="404" Background="#d9d7d2" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <TextBlock Text="" x:Name="txtNameDep" Foreground="#474747" FontSize="14" FontWeight="Bold" materialDesign:HintAssist.Hint="Chọn phòng ban hiện tại"   Padding="10,10,0,0" Height="36" ></TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="110" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Tên tổ" FontSize="14" FontWeight="DemiBold" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" HorizontalAlignment="Right" FontWeight="DemiBold" FontSize="14" Foreground="Red" Margin="0,0,65,0"></TextBlock>
+                    </Grid>
+                    <Border Width="404" Background="#d9d7d2" BorderThickness="0.5" CornerRadius="4" BorderBrush="{StaticResource #474747}" HorizontalAlignment="Right">
+                        <TextBlock  materialDesign:HintAssist.Hint="Chọn phòng ban hiện tại"  Text="" x:Name="txtNameNest" Foreground="#474747" FontSize="14" FontWeight="Bold"  Padding="10,10,0,0" Height="36"></TextBlock>
+                    </Border>
+                </Grid>
+             
+                <Grid Margin="0,28,0,0" Width="624" Height="36" HorizontalAlignment="Center">
+                    <Grid Width="45" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Mô tả" FontSize="14" FontWeight="DemiBold" Foreground="{StaticResource #474747}"></TextBlock>
+                        <TextBlock Text="*" HorizontalAlignment="Right" FontWeight="DemiBold" FontSize="14" Foreground="Red" ></TextBlock>
+                    </Grid>
+                </Grid>
+                <Grid Margin="0,0,0,0" Width="624"  HorizontalAlignment="Center">
+                    <Border BorderThickness="1" BorderBrush="#474747" Opacity="0.8" CornerRadius="8">
+                        <RichTextBox Height="80" x:Name="rtbDescription"></RichTextBox>
+                    </Border>
+                </Grid>
+                <Grid Margin="0,37,56,0" Width="216" Height="36" HorizontalAlignment="Right">
+                    <Border Width="100" Background="#BDBDBD" HorizontalAlignment="Left" CornerRadius="8" Cursor="Hand" MouseLeftButtonDown="CancelPopup">
+                        <TextBlock Text="Hủy"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource  #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="100" Background="{StaticResource #27AE60}" HorizontalAlignment="Right" CornerRadius="8" Cursor="Hand" MouseLeftButtonDown="Update">
+                        <TextBlock Text="Cập nhật"  FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource  #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

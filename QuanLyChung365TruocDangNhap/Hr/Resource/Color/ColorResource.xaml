@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Brush x:Key="#000000">#000000</Brush>
+    <Brush x:Key="#474747">#474747</Brush>
+    <Brush x:Key="#666666">#666666</Brush>
+    <Brush x:Key="#FFFFFF">#FFFFFF</Brush>
+    <Brush x:Key="#4C5BD4">#4C5BD4</Brush>
+    <Brush x:Key="#20744A">#20744A</Brush>
+    <Brush x:Key="#FFF6E5">#FFF6E5</Brush>
+    <Brush x:Key="#CCCCCC">#CCCCCC</Brush>
+    <Brush x:Key="#F1F9FC">#F1F9FC</Brush>
+    <Brush x:Key="#FDBE1E">#FDBE1E</Brush>
+    <Brush x:Key="#FF3333">#FF3333</Brush>
+    <Brush x:Key="#27AE60">#27AE60</Brush>
+    <Brush x:Key="#EB5757">#EB5757</Brush>
+    <Brush x:Key="#FFA800">#FFA800</Brush>
+    <Brush x:Key="#D6D9F5">#D6D9F5</Brush>
+    <Brush x:Key="#FBFBFB">#FBFBFB</Brush>
+    <Brush x:Key="#3B3C3E">#3B3C3E</Brush>
+    <Brush x:Key="#4CD4B4">#4CD4B4</Brush>
+    <Brush x:Key="#D44C4C">#D44C4C</Brush>
+    <Brush x:Key="#3F964F">#3F964F</Brush>
+    <Brush x:Key="#FFCCB5">#FFCCB5</Brush>
+    <Brush x:Key="#31BFFE">#31BFFE</Brush>
+    <Brush x:Key="#DDDDDD">#DDDDDD</Brush>
+    <Brush x:Key="#BDBDBD">#BDBDBD</Brush>
+    <Brush x:Key="#FC9797">#FC9797</Brush>
+    <Brush x:Key="#929292">#929292</Brush>
+    <Brush x:Key="#A7A7A7">#A7A7A7</Brush>
+    
+</ResourceDictionary>

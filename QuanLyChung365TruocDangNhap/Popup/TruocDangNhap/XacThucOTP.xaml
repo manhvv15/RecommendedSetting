@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Popup.TruocDangNhap.XacThucOTP"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Popup.TruocDangNhap"
+             mc:Ignorable="d" 
+             Width="1942"
+    Height="2500"
+    MinWidth="768" >
+
+    <Grid>
+      
+        <Border
+            Visibility="Visible"
+                  x:Name="bodXacThucOTP"
+                  Height="281"
+            HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+            Background="White"
+            BorderBrush="#4C5BD4"
+                    BorderThickness="2"
+            Margin="0 200 0 0"
+                    CornerRadius="15 15 15 15" >
+            
+            <StackPanel Margin="0,0,0,-1" 
+         >
+                <TextBlock Text="Xác thực mã OTP" FontSize="28" FontWeight="Bold" Foreground="#4C5BD4" HorizontalAlignment="Center" Height="119" Margin="209,50,194,-40" Width="235"/>
+                <StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Margin="0 -20 0 0" Orientation="Horizontal">
+                        <Path Data="{StaticResource iconUserz}" Fill="#4C5BD4"/>
+                        <Line X2="68" Stroke="#CCCCCC" VerticalAlignment="Center" StrokeThickness="2"/>
+                        <Path Data="{StaticResource iconEdit}" Fill="#4C5BD4"/>
+                        <Line X2="68" Stroke="#CCCCCC" VerticalAlignment="Center" StrokeThickness="2"/>
+                        <Path Data="{StaticResource iconOtp}" Fill="#4C5BD4"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 25 0 0">
+                        <TextBlock Text="Vui lòng bấm''Nhận mã'' để nhận mã xác thực về điện thoại " HorizontalAlignment="Center" FontSize="16"  Foreground="#474747" Margin="118,0,90,0" Width="430"/>
+                        <TextBlock x:Name="tblValidateEmail" />
+                    </StackPanel>
+                    <Border MouseLeftButtonUp="NhanMa_MouseLeftButtonUp" Background="#4C5BD4" Cursor="Hand" Margin="99,5,80,0" CornerRadius="20" >
+                        <TextBlock Text="Nhận mã" FontSize="16" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 10" Foreground="#FFFFFF"/>
+                    </Border>
+
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+        <Grid x:Name="pnlHienThi" Grid.RowSpan="3"/>
+
+    </Grid>
+
+</UserControl>

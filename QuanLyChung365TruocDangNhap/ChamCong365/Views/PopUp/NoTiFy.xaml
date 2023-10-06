@@ -1,0 +1,56 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.NoTiFy"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp"
+      mc:Ignorable="d" 
+      d:DesignHeight="299" d:DesignWidth="448"
+      Title="NoTiFy" VerticalAlignment="Top" HorizontalAlignment="Right" Loaded="Page_Loaded">
+    <Grid Background="{DynamicResource #FFFFFF}" Height="300">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="5"  BorderThickness="0" VerticalAlignment="Top">
+            <ListView ItemsSource="{Binding ShowNoti}" ScrollViewer.ScrollChanged="ListView_ScrollChanged">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" >
+                        
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Margin="18 15 0 0" CornerRadius="999" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="{Binding logo}" Stretch="UniformToFill"></ImageBrush>
+                                            </Border.Background>
+                                        </Border>
+                                        <Border Margin="27 25 25 0" Width="284" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource #E9ECEF}">
+                                            <StackPanel Orientation="Vertical">
+                                                <ContentControl Content="{Binding ContentNoti}"></ContentControl>
+                                                <TextBlock Margin="0 5 0 16" Text="{Binding time}" FontSize="12" FontWeight="SemiBold" Foreground="{DynamicResource #B2B0B0}"/>
+                                            </StackPanel>
+                                        </Border>
+                                        <!--<Canvas Margin="0 15 0 0" Height="22" Width="20" VerticalAlignment="Top">
+                                            <Ellipse Canvas.Left="0" Canvas.Top="0.44480000000000075" Width="20" Height="20.5934" Fill="#F6F6F6" />
+                                            <Path Data="M11.2984 11.2836L14.5774 14.6601C14.7908 14.8797 14.7908 15.2348 14.5774 15.4544C14.3641 15.674 14.0192 15.674 13.8059 15.4544L10.5269 12.078L7.24789 15.4544C7.0345 15.674 6.68974 15.674 6.47645 15.4544C6.26306 15.2348 6.26306 14.8797 6.47645 14.6601L9.75543 11.2836L6.47645 7.90717C6.26306 7.68755 6.26306 7.33245 6.47645 7.11282C6.58274 7.00327 6.72251 6.94823 6.86217 6.94823C7.00183 6.94823 7.1415 7.00327 7.24789 7.11282L10.5269 10.4893L13.8059 7.11282C13.9123 7.00327 14.052 6.94823 14.1917 6.94823C14.3313 6.94823 14.471 7.00327 14.5774 7.11282C14.7908 7.33245 14.7908 7.68755 14.5774 7.90717L11.2984 11.2836Z" Fill="#817E9F" />
+                                        </Canvas>-->
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </Border>
+        <!--<Border Grid.Row="1" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource #E9ECEF}" Height="48" VerticalAlignment="Bottom">
+            <TextBlock  Text="{DynamicResource textXoaTatCaTb}" FontWeight="SemiBold" FontSize="14" Foreground="{DynamicResource #5E5E5E}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>-->
+    </Grid>
+</Page>

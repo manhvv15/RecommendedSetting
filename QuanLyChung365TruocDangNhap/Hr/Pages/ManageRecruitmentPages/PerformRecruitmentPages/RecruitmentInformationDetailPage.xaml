@@ -1,0 +1,339 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.ManageRecruitmentPages.PerformRecruitmentPages.RecruitmentInformationDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Pages.SettingPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1500" d:DesignWidth="988"
+      Title="ProfilePage">
+    <Page.Resources>
+        <DropShadowEffect x:Key="z-depth1" BlurRadius="10" ShadowDepth="3" Direction="270" Color="#CCCCCC" />
+    </Page.Resources>
+
+    <Grid Margin="0,54,0,0">
+        <Grid VerticalAlignment="Top">
+            <Path MouseLeftButtonDown="NavigateBack" Cursor="Hand" Data="{StaticResource icon_arrow_back}" StrokeThickness="2" Stroke="#474747" VerticalAlignment="Center"></Path>
+            <TextBlock FontWeight="SemiBold" Cursor="Hand" MouseLeftButtonDown="NavigateBack" Text="Xem chỉ tiêu" FontSize="14" Foreground="#474747" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25,0,0,0"></TextBlock>
+        </Grid>
+        <Grid Margin="0,55,0,0" VerticalAlignment="Top">
+            <StackPanel>
+                <Grid>
+                    <TextBlock x:Name="tbTitle" FontSize="14" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                </Grid>
+                <Grid Margin="0,14,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Nhân viên phụ trách tuyển dụng: " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="tbHR" FontSize="12" Foreground="#666666"></TextBlock>
+                </Grid>
+                <Grid Margin="0,14,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Số lượng tuyển dụng: " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock  Grid.Column="1" x:Name="tbNumber" FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Margin="45,0,0,0" Grid.Column="2" Text="Mức lương: " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="3" x:Name="tbSalary" FontSize="12" Foreground="#666666"></TextBlock>
+                </Grid>
+                <Grid Margin="0,14,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Thời gian tuyển dụng: " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="1" Text="từ " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="2" x:Name="tbRecruitmentTime" FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="3" Text=" đến " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="4" x:Name="tbRecruitmentTimeTo" FontSize="12" Foreground="#666666"></TextBlock>
+                </Grid>
+                <Grid Margin="0,14,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Người tạo tin: " FontSize="12" Foreground="#666666"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="tbCreatedBy" FontSize="12" Foreground="#666666"></TextBlock>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="0,220,0,70">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <WrapPanel Orientation="Horizontal">
+                    <Grid Height="292" Width="316" Margin="0,20,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Border CornerRadius="4,4,0,0" Background="#4C5BD4"></Border>
+                            <TextBlock Text="Ứng viên" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="4,0,4,4">
+                            <Grid x:Name="tbNoData1">
+                                <Border CornerRadius="0,0,8,8" Opacity="0.47" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                                <TextBlock Text="Không có dữ liệu" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{StaticResource #474747}"></TextBlock>
+                            </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListCandidate">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="80" Margin="0,4,0,0">
+                                                    <Border CornerRadius="4" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC"></Border>
+                                                    <Grid Width="8"  HorizontalAlignment="Left" >
+                                                        <Border CornerRadius="4,0,0,4" Background="#4C5BD4"></Border>
+                                                    </Grid>
+                                                    <Grid Margin="24,10,0,10">
+                                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                                                        <TextBlock Text="{Binding phone}" FontSize="12" Foreground="#474747" VerticalAlignment="Center"></TextBlock>
+                                                        <Grid VerticalAlignment="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Email: " FontSize="12" Foreground="#474747"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="{Binding email}" FontSize="12" Foreground="#474747"></TextBlock>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="292" Width="316" Margin="0,20,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Border CornerRadius="4,4,0,0" Background="#FFA800"></Border>
+                            <TextBlock Text="Ứng viên đủ tiêu chuẩn" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="4,0,4,4">
+                            <Grid x:Name="tbNoData2">
+                                <Border CornerRadius="0,0,8,8" Opacity="0.47" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                                <TextBlock Text="Không có dữ liệu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="{StaticResource #474747}"></TextBlock>
+                            </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListCandidate2">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="80" Margin="0,4,0,0">
+                                                    <Border CornerRadius="4" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC"></Border>
+                                                    <Grid Width="8"  HorizontalAlignment="Left" >
+                                                        <Border CornerRadius="4,0,0,4" Background="#FFA800"></Border>
+                                                    </Grid>
+                                                    <Grid Margin="24,10,0,10">
+                                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                                                        <TextBlock Text="{Binding phone}" FontSize="12" Foreground="#474747" VerticalAlignment="Center"></TextBlock>
+                                                        <Grid VerticalAlignment="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Email: " FontSize="12" Foreground="#474747"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="{Binding email}" FontSize="12" Foreground="#474747"></TextBlock>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="292" Width="316" Margin="0,20,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Border CornerRadius="4,4,0,0" Background="#F2C94C"></Border>
+                            <TextBlock Text="Ứng viên đến phỏng vấn" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="4,0,4,4">
+                            <Grid x:Name="tbNoData3">
+                                <Border CornerRadius="0,0,8,8" Opacity="0.47" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                                <TextBlock Text="Không có dữ liệu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="{StaticResource #474747}"></TextBlock>
+                            </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListInterview">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="80" Margin="0,4,0,0">
+                                                    <Border CornerRadius="4" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC"></Border>
+                                                    <Grid Width="8"  HorizontalAlignment="Left" >
+                                                        <Border CornerRadius="4,0,0,4" Background="#F2C94C"></Border>
+                                                    </Grid>
+                                                    <Grid Margin="24,10,0,10">
+                                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                                                        <TextBlock Text="{Binding phone}" FontSize="12" Foreground="#474747" VerticalAlignment="Center"></TextBlock>
+                                                        <Grid VerticalAlignment="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Email: " FontSize="12" Foreground="#474747"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="{Binding email}" FontSize="12" Foreground="#474747"></TextBlock>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="292" Width="316" Margin="0,20,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Border CornerRadius="4,4,0,0" Background="#2F80ED"></Border>
+                            <TextBlock Text="Ứng viên qua phỏng vấn" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="4,0,4,4">
+                            <Grid x:Name="tbNoData4">
+                                <Border CornerRadius="0,0,8,8" Opacity="0.47" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                                <TextBlock Text="Không có dữ liệu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="{StaticResource #474747}"></TextBlock>
+                            </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListInterviewPass">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="80" Margin="0,4,0,0">
+                                                    <Border CornerRadius="4" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC"></Border>
+                                                    <Grid Width="8"  HorizontalAlignment="Left" >
+                                                        <Border CornerRadius="4,0,0,4" Background="#2F80ED"></Border>
+                                                    </Grid>
+                                                    <Grid Margin="24,10,0,10">
+                                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                                                        <TextBlock Text="{Binding phone}" FontSize="12" Foreground="#474747" VerticalAlignment="Center"></TextBlock>
+                                                        <Grid VerticalAlignment="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Email: " FontSize="12" Foreground="#474747"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="{Binding email}" FontSize="12" Foreground="#474747"></TextBlock>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="292" Width="316" Margin="0,20,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Border CornerRadius="4,4,0,0" Background="#EB5757"></Border>
+                            <TextBlock Text="Ứng viên trượt phỏng vấn" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="4,0,4,4">
+                            <Grid x:Name="tbNoData5">
+                                <Border CornerRadius="0,0,8,8" Opacity="0.47" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                                <TextBlock Text="Không có dữ liệu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="{StaticResource #474747}"></TextBlock>
+                            </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListInterviewFail">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="80" Margin="0,4,0,0">
+                                                    <Border CornerRadius="4" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC"></Border>
+                                                    <Grid Width="8"  HorizontalAlignment="Left" >
+                                                        <Border CornerRadius="4,0,0,4" Background="#EB5757"></Border>
+                                                    </Grid>
+                                                    <Grid Margin="24,10,0,10">
+                                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                                                        <TextBlock Text="{Binding phone}" FontSize="12" Foreground="#474747" VerticalAlignment="Center"></TextBlock>
+                                                        <Grid VerticalAlignment="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Email: " FontSize="12" Foreground="#474747"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="{Binding email}" FontSize="12" Foreground="#474747"></TextBlock>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                    <Grid Height="292" Width="316" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="36"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Border CornerRadius="4,4,0,0" Background="#27AE60"></Border>
+                            <TextBlock Text="Ứng viên hẹn đi làm" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1" Margin="4,0,4,4">
+                            <Grid x:Name="tbNoData6">
+                                <Border CornerRadius="0,0,8,8" Opacity="0.47" BorderThickness="1" BorderBrush="{StaticResource #666666}"></Border>
+                                <TextBlock Text="Không có dữ liệu" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="{StaticResource #474747}"></TextBlock>
+                            </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <ItemsControl x:Name="icListOfferJob">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Height="80" Margin="0,4,0,0">
+                                                    <Border CornerRadius="4" Background="#FFFFFF" BorderThickness="0.5" BorderBrush="#CCCCCC"></Border>
+                                                    <Grid Width="8"  HorizontalAlignment="Left" >
+                                                        <Border CornerRadius="4,0,0,4" Background="#27AE60"></Border>
+                                                    </Grid>
+                                                    <Grid Margin="24,10,0,10">
+                                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="#474747" FontWeight="SemiBold"></TextBlock>
+                                                        <TextBlock Text="{Binding phone}" FontSize="12" Foreground="#474747" VerticalAlignment="Center"></TextBlock>
+                                                        <Grid VerticalAlignment="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Email: " FontSize="12" Foreground="#474747"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="{Binding email}" FontSize="12" Foreground="#474747"></TextBlock>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

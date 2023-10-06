@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.RecruitmentManagementPopups.PerformRecruitmentPopup.AddNewCostPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <Grid Height="432" Width="736" Background="#ffffff">
+        <Grid Height="36" VerticalAlignment="Top" Background="#4C5BD4">
+            <TextBlock Text="THÊM MỚI CHI PHÍ" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <Grid Width="624" Height="36" VerticalAlignment="Center" Margin="0,84,0,312">
+            <TextBlock Text="Loại chi phí" Width="81" VerticalAlignment="Center" FontSize="14" Foreground="#474747" FontFamily="Roboto" FontStyle="Normal" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Text="*" Foreground="red" Margin="75,0,0,0" VerticalAlignment="Center" Width="5"  FontSize="14" HorizontalAlignment="Left"></TextBlock>
+            <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="1" Width="404" Height="36" HorizontalAlignment="Right"></Border>
+        </Grid>
+        <TextBlock Text="Thời gian áp dụng" Margin="56,151,559,265" FontSize="14" Foreground="#474747" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        <TextBlock Text="*" Foreground="red" Margin="170,151,559,265" VerticalAlignment="Center" Width="5"  FontSize="14" HorizontalAlignment="Left"></TextBlock>
+        <Grid Margin="276,140,290,256">
+            <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1"  Width="170" Height="36"/>
+            <Grid Margin="139,10,10,10" Height="16" Width="16">
+                <Path Data="{StaticResource calendar}"  Fill="#474747"/>
+            </Grid>
+        </Grid>
+        <TextBlock Text="Đến" Margin="466,151,245,265" FontSize="14" Foreground="#474747"></TextBlock>
+        <Grid  Margin="511,140,55,256">
+            <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1"  Width="170" Height="36"/>
+            <Grid Margin="139,10,10,10" Height="16" Width="16">
+                <Path Data="{StaticResource calendar}"  Fill="#474747"/>
+            </Grid>
+        </Grid>
+        <Grid Width="624" Height="36" VerticalAlignment="Center" Margin="0,196,0,200">
+            <TextBlock Text="Chi phí dự kiến" Width="102" VerticalAlignment="Center" FontSize="14" Foreground="#474747" FontFamily="Roboto" FontStyle="Normal" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Text="*" Foreground="red" Margin="95,0,0,0" VerticalAlignment="Center" Width="5"  FontSize="14" HorizontalAlignment="Left"></TextBlock>
+            <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Width="404" Height="36" HorizontalAlignment="Right"></Border>
+        </Grid>
+        <Grid Width="624" Height="36" VerticalAlignment="Center" Margin="0,252,0,144">
+            <TextBlock Text="Chi phí thực tế" Width="100" VerticalAlignment="Center" FontSize="14" Foreground="#474747" FontFamily="Roboto" FontStyle="Normal" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Text="*" Foreground="red" Margin="95,0,0,0" VerticalAlignment="Center" Width="5"  FontSize="14" HorizontalAlignment="Left"></TextBlock>
+            <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1" Width="404" Height="36" HorizontalAlignment="Right"></Border>
+        </Grid>
+        <Border Height="36" Width="100" CornerRadius="8"  Background="#BDBDBD" Margin="464,336,172,60">
+            <TextBlock Text="Hủy" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+        </Border>
+        <Border Height="36" Width="100" CornerRadius="8" Background="#27AE60" Margin="580,336,56,60">
+            <TextBlock Text="Tạo" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Popup.TruocDangNhap.PopUpThongBaoCanDangNhap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Popup.TruocDangNhap"
+             mc:Ignorable="d" >
+    <Grid>
+        <Rectangle Fill="#000000" Opacity="0.5" MouseLeftButtonUp="Rectangle_MouseLeftButtonUp"/>
+        <Border 
+            HorizontalAlignment="Center"
+            x:Name="bodDeleteInsuranceSaffYestSettings"
+            Width="520"
+            Background="White"
+            Height="200"
+            CornerRadius="10"
+            BorderThickness="1"
+            BorderBrush="Blue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28*"></RowDefinition>
+                    <RowDefinition Height="38*"></RowDefinition>
+                    <RowDefinition Height="33*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border x:Name="btnClose" Grid.Row="0" Width="80" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" CornerRadius="0,10,0,10" Background="#4c5bd4" MouseLeftButtonUp="btnClose_MouseLeftButtonUp">
+                    <Path Data="{DynamicResource iconClose}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#ffffff"></Path>
+                </Border>
+                <Border Margin="0 0 0 0" Grid.Row="1">
+                    <TextBlock 
+                       HorizontalAlignment="Center"
+                        TextWrapping="Wrap"
+                        TextAlignment="Center"
+                        FontSize="18"
+                        Foreground="#474747" Margin="10,0,10,0"
+                        Text="Bạn cần đăng nhập để tiếp tục sử dụng các tiện ích Nếu chưa có tài khoản, hãy đăng ký tài khoản mới"/>
+                </Border>
+                <DockPanel Margin="64,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Height="47" Width="390">
+                    <Border x:Name="btnDangKy" MouseLeftButtonUp="btnDangKy_MouseLeftButtonUp"
+                        Cursor="Hand"
+                        Margin="0 5 30 0"
+                        Width="180"
+                        Height="42"
+                        CornerRadius="10"
+                        BorderThickness="1"
+                        BorderBrush="#4C5BD4"
+                        Background="#4C5BD4">
+                        <TextBlock 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="18"
+                            Foreground="White"
+                            FontWeight="Medium"
+                            Text="Đăng ký" />
+                    </Border>
+                    <Border x:Name="btnDangNhap" MouseLeftButtonUp="btnDangNhap_MouseLeftButtonUp"
+                        Cursor="Hand"
+                        Margin="0 5 0 0"
+                        Width="180"
+                        Height="42"
+                        CornerRadius="10"
+                        BorderThickness="1"
+                        BorderBrush="#4C5BD4"
+                        Background="#4C5BD4">
+                        <TextBlock 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="18"
+                            Foreground="White"
+                            FontWeight="Medium"
+                            Text="Đăng nhập" />
+                    </Border>
+                </DockPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

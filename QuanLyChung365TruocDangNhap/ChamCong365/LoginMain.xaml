@@ -1,0 +1,55 @@
+﻿<Window x:Class="QuanLyChung365TruocDangNhap.ChamCong365.LoginMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tool="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Tools"
+        mc:Ignorable="d"
+        Title="LoginMain" Height="690" Width="1366" MinWidth="540"  WindowStyle="None" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="1 0" x:Key="base">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.35" Color="#ffa800" />
+                <GradientStop Offset="1" Color="#e09400" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid Name="gridMain">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,0" Height="40" Grid.ColumnSpan="3" 
+              VerticalAlignment="Top"  
+              Background="#00000000" 
+              MouseLeftButtonDown="Grid_MouseDown">
+            <Path VerticalAlignment="Top" Data="{StaticResource LogoChamCong365}" Stretch="Fill" Height="26" Margin="11,7,0,0" HorizontalAlignment="Left" Width="24">
+                <Path.Fill>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,1">
+                        <GradientStop Color="#4250C2"/>
+                        <GradientStop Color="#00A1FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <TextBlock VerticalAlignment="Top" Text="{DynamicResource textChamCong365}" HorizontalAlignment="Left" Margin="46,10,0,0" FontSize="18" Foreground="#FF4C5BD4" FontWeight="Bold"></TextBlock>
+            <!--<TextBlock VerticalAlignment="Top" Text="Timviec365" HorizontalAlignment="Left" Margin="50,23,0,0" FontSize="11" Foreground="#FF4C5BD4" Width="58" Height="13"></TextBlock>-->
+            <Grid x:Name="Minimimize" Cursor="Hand"  Margin="0,14,94,0" HorizontalAlignment="Right" Width="15" Height="15" VerticalAlignment="Top" MouseLeftButtonDown="Minimimize_MouseLeftButtonDown" Background="Transparent" >
+                <Line Cursor="Hand" X1="0" Y1="7" X2="15" Y2="7"  StrokeThickness="1.2" Stroke="Black" Fill="#00A52323" />
+            </Grid>
+            <Border Background="Transparent" Cursor="Hand" Margin="0,13,55,0" HorizontalAlignment="Right" VerticalAlignment="Top" MouseLeftButtonDown="Maximize"> 
+                <Path  x:Name="Maximimize" Data="{StaticResource iconMaximinze}" Cursor="Hand" Fill="#02FFFFFF"  Stretch="Fill" Stroke="Black" Width="15" Height="15" StrokeThickness="1"></Path>
+            </Border>
+            <Grid x:Name="CloseWindow" Cursor="Hand" Width="15" Height="15" Margin="0,13,16,0" HorizontalAlignment="Right" VerticalAlignment="Top" MouseLeftButtonDown="CloseWindow_MouseLeftButtonDown" Background="Transparent" >
+                <Path Data="{DynamicResource iconClose}" Fill="Black" StrokeThickness="1.2" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Fill" Height="15" Margin="0" Width="15" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1"  Background="{DynamicResource #4C5BD4}">
+            <Image Source="/Images/Group_631257.png" ></Image>
+        </Grid>
+        <Frame x:Name="LoginSlectionPage"  Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>

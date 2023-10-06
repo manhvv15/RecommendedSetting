@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.SarlaryAndBenefitPopups.ViolationsPopups.DetailPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+               d:DesignHeight="744" d:DesignWidth="736" Background="AliceBlue">
+    <Grid>
+        <Grid Height="36" VerticalAlignment="Top" Background="#4C5BD4">
+            <TextBlock Text="THÊM MỚI ĐỐI TƯỢNG VI PHẠM" Foreground="#FFFFFF" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Margin="271,12,250,3"/>
+        </Grid>
+
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,95,0,613">
+            <TextBlock Text="Tên lỗi" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="Vi phạm đồng phục" HorizontalAlignment="Left" Margin="218,9,0,2" Width="259"/>
+        </Grid>
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,167,0,541">
+            <TextBlock Text="Số quyết định xử phạt" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="150520/QĐ-XLVP" HorizontalAlignment="Left" Margin="218,9,0,2" Width="259"/>
+        </Grid>
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,131,0,577">
+            <TextBlock Text="Căn cứ quy định" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="QDD001.3" HorizontalAlignment="Left" Margin="218,9,0,4" Width="259"/>
+        </Grid>
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,275,0,433">
+            <TextBlock Text="Người giám sát" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="Nguyễn Thành Long" HorizontalAlignment="Left" Margin="218,9,0,9" Width="259"/>
+        </Grid>
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,238,0,470">
+            <TextBlock Text="Thời gian vi phạm" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="15/08/2020" HorizontalAlignment="Left" Margin="218,9,0,9" Width="259"/>
+        </Grid>
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,203,0,505">
+            <TextBlock Text="Đối tượng vi phạm" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="Lê Minh Tâm" HorizontalAlignment="Left" Margin="218,9,0,9" Width="259"/>
+        </Grid>
+
+        <Grid Width="624" Height="36" HorizontalAlignment="Left" Margin="56,311,0,397">
+            <TextBlock Text="Hình thức xử lý sai phạm" FontSize="14"  Foreground="{StaticResource #474747}" FontStyle="Normal"  HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="14"  Foreground="{StaticResource #474747}" Text="Nhắc nhở lần 1" HorizontalAlignment="Left" Margin="218,9,0,9" Width="259"/>
+        </Grid>
+
+        <Rectangle Width="624" Stroke="{StaticResource #474747}" StrokeDashArray="4,4" Opacity="0.24" StrokeThickness="0.5" RadiusX="10" RadiusY="10" Margin="56,364,56,112"/>
+
+        <Grid Width="568" Height="36" HorizontalAlignment="Left" Margin="75,384,0,324">
+            <TextBlock Text="Gửi tin nhắc nhở" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <Border  Opacity="24" Height="36" Width="404" BorderBrush="#474747" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Right">
+                <TextBox Padding="20,0,0,0" BorderThickness="0" Foreground="{StaticResource #666666}" FontSize="14" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"></TextBox>
+
+            </Border>
+        </Grid>
+
+        <Grid Width="568" Height="36" HorizontalAlignment="Left" Margin="75,451,0,257">
+            <TextBlock Text="Gửi tin nhắc nhở" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+
+        <Grid  Height="72" Width="584" Margin="75,484,77,188">
+            <Border Opacity="24"  Height="72" Width="584" BorderBrush="#474747" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Right">
+
+            </Border>
+        </Grid>
+
+
+        <Border Height="36" Width="100" CornerRadius="8" Background="#27AE60" Margin="560,576,76,132">
+            <TextBlock Text="Gửi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+        </Border>
+
+        <Border Height="36" Width="100" CornerRadius="8"  Background="#BDBDBD" Margin="580,652,56,56">
+            <TextBlock Text="Đóng" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Roboto" FontSize="14" FontStyle="Normal"></TextBlock>
+        </Border>
+
+    </Grid>
+</UserControl>

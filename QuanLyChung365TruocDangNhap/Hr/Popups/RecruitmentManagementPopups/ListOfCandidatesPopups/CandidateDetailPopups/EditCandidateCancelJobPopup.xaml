@@ -1,0 +1,553 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.Hr.Popups.RecruitmentManagementPopups.ListOfCandidatesPopups.CandidateDetailPopups.EditCandidateCancelJobPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            mc:Ignorable="d" 
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:Popup="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Popups"
+             d:DesignHeight="1740" d:DesignWidth="768">
+    <Grid Width="736" VerticalAlignment="Top">
+        <Border CornerRadius="8" Background="{StaticResource #FFFFFF}"></Border>
+        <Grid Height="36" VerticalAlignment="Top">
+            <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+            <TextBlock Text="CHỈNH SỬA HỒ SƠ ỨNG VIÊN GIAI ĐOẠN HỦY" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontSize="14" FontFamily="Roboto" FontStyle="Normal"></TextBlock>
+        </Grid>
+        <StackPanel>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,92,0,0">
+                <TextBlock Text="Tên ứng viên" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="75,0,538,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox IsEnabled="False" x:Name="tbName" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="E-mail" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,540,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox IsEnabled="False" x:Name="tbEmail" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Số điện thoại" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" Margin="0,9,0,10" Width="102"/>
+                <TextBlock Text=" *" Width="10" Margin="81,4,533,13" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox IsEnabled="False" PreviewTextInput="NumberValidationTextBox" x:Name="tbPhone" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Giới tính" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" * " Width="10" Margin="50,5,564,12" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxGender" IsEnabled="False" DisplayMemberPath="value" SelectedValuePath="ID" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Giới tính" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Ngày tháng năm sinh" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,345,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <!--<DatePicker x:Name="dpDateOfBirth" IsEnabled="False" Margin="1,0,1,0" Padding="10,0,10,0" Height="24" VerticalAlignment="Center" Background="{x:Null}" Foreground="{StaticResource #474747}">
+                            <DatePicker.Resources>
+                                <ResourceDictionary>
+                                    <ResourceDictionary.MergedDictionaries>
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                                    </ResourceDictionary.MergedDictionaries>
+                                </ResourceDictionary>
+                            </DatePicker.Resources>
+                        </DatePicker>-->
+                        <Popup:DatePicker x:Name="dpDateOfBirth" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Background="{StaticResource #FFFFFF}" ></Popup:DatePicker>
+                        <Grid Margin="1,0,1,2" Height="8" VerticalAlignment="Bottom">
+                            <Border CornerRadius="0,0,4,4" Background="{StaticResource #FFFFFF}"></Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Quê quán" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,490,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbHomeTown" IsEnabled="False" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}"  Margin="2.2,7.2,-1.8,7.2"></TextBox>
+                </Border>
+            </Grid>
+
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Trình độ học vấn" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,415,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxEducation" IsEnabled="False" DisplayMemberPath="value" SelectedValuePath="ID" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747"></ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Trường học" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center">
+                </TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbSchool" IsEnabled="False" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Kinh nghiệm làm việc" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,350,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxExp" IsEnabled="False" DisplayMemberPath="value" SelectedValuePath="ID" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Tình trạng hôn nhân" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,360,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxMarried" IsEnabled="False" DisplayMemberPath="value" SelectedValuePath="ID" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Địa chỉ" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,535,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbAddress" IsEnabled="False" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Nguồn ứng viên" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,420,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbCVFrom" IsEnabled="False" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Vị trí ứng tuyển" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,425,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxPosition" IsEnabled="False" DisplayMemberPath="Value" SelectedValuePath="Key" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Nhân viên tuyển dụng" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="0,0,338,0" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxRecruitment" IsEnabled="False" DisplayMemberPath="Value" SelectedValuePath="Key" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Nhân viên giới thiệu" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxRecommend" IsEnabled="False" DisplayMemberPath="Value" SelectedValuePath="Key" Padding="10,0,10,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+
+
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Giai đoạn nhận hồ sơ" FontSize="15" FontWeight="Bold" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource #4C5BD4}" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Thời gian nhận hồ sơ " FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text=" *" Width="10" Margin="131,7,483,10" Foreground="Red" FontSize="14" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <!--<DatePicker x:Name="dpTimeSendCV" IsEnabled="False" Margin="1,0,1,0" Padding="10,0,10,0" Height="24" VerticalAlignment="Center" Background="{x:Null}" Foreground="{StaticResource #474747}">
+                            <DatePicker.Resources>
+                                <ResourceDictionary>
+                                    <ResourceDictionary.MergedDictionaries>
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                                    </ResourceDictionary.MergedDictionaries>
+                                </ResourceDictionary>
+                            </DatePicker.Resources>
+                        </DatePicker>-->
+                        <Popup:DatePicker x:Name="dpTimeSendCV" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Background="{StaticResource #FFFFFF}" ></Popup:DatePicker>
+                        <Grid Margin="1,0,1,2" Height="8" VerticalAlignment="Bottom">
+                            <Border CornerRadius="0,0,4,4" Background="{StaticResource #FFFFFF}"></Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Width="624" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Đánh giá hồ sơ" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                <Grid Width="180" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="214,0,230,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Path x:Name="star1" Cursor="Hand"  Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                        <Grid x:Name="gstar1" Cursor="Hand" Background="Transparent" ></Grid>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Path x:Name="star2" Cursor="Hand" Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                        <Grid x:Name="gstar2" Cursor="Hand" Background="Transparent" ></Grid>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Path x:Name="star3" Cursor="Hand" Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                        <Grid x:Name="gstar3" Cursor="Hand" Background="Transparent" ></Grid>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Path x:Name="star4" Cursor="Hand" Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                        <Grid x:Name="gstar4" Cursor="Hand" Background="Transparent" ></Grid>
+                    </Grid>
+                    <Grid Grid.Column="4">
+                        <Path x:Name="star5" Cursor="Hand" Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                        <Grid x:Name="gstar5" Cursor="Hand" Background="Transparent" ></Grid>
+                    </Grid>
+                </Grid>
+                <StackPanel Margin="0,30,0,0">
+                    <ItemsControl x:Name="icListSkill">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="220,10,0,0" Width="404" Height="30">
+                                    <Grid Width="150" HorizontalAlignment="Left">
+                                        <Border CornerRadius="4" BorderBrush="#474747" BorderThickness="1"></Border>
+                                        <TextBox IsEnabled="False" Text="{Binding skill_name}" Foreground="#474747" materialDesign:HintAssist.Hint="Nhập kĩ năng khác" VerticalAlignment="Center" FontSize="14" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}"  ></TextBox>
+                                    </Grid>
+                                    <Grid Width="205" HorizontalAlignment="Right"  Margin="0,0,0,0">
+                                        <Grid Width="175" HorizontalAlignment="Left">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding star1}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding star1}" Value="false">
+                                                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                                <Grid x:Name="gsstar1" Background="Transparent" Cursor="Hand"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding star2}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding star2}" Value="false">
+                                                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                                <Grid x:Name="gsstar2" Background="Transparent" Cursor="Hand"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="2">
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding star3}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding star3}" Value="false">
+                                                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                                <Grid x:Name="gsstar3" Background="Transparent" Cursor="Hand" ></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="3">
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding star4}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding star4}" Value="false">
+                                                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                                <Grid x:Name="gsstar4" Background="Transparent" Cursor="Hand"></Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="4">
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                                <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                                    <Path.Style>
+                                                        <Style TargetType="Path">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding star5}" Value="true">
+                                                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding star5}" Value="false">
+                                                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Path.Style>
+                                                </Path>
+                                                <Grid x:Name="gsstar5" Background="Transparent" Cursor="Hand"></Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Phỏng vấn" FontSize="15" FontWeight="Bold" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource #4C5BD4}" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+            <!--Lặp giai đoạn-->
+
+
+            <ItemsControl x:Name="icGiaiDoanChuyen" >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,28,0,0" >
+                            <Grid Width="624" Height="36" VerticalAlignment="Top" >
+                                <TextBlock Text="{Binding process_interview_id}"  FontSize="15" FontWeight="Bold" FontFamily="Roboto" FontStyle="Normal" Foreground="{StaticResource #4C5BD4}" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                                <TextBlock Text="Thời gian phỏng vấn" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                                    <Grid>
+                                        <TextBlock Text="{Binding interview_time}" Padding="10,0,0,0" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                        <Grid Margin="1,0,1,2" Height="8" VerticalAlignment="Bottom">
+                                            <Border CornerRadius="0,0,4,4" Background="{StaticResource #FFFFFF}"></Border>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                                <TextBlock Text="Ghi chú" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                                    <TextBlock Text="{Binding note}"   Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}"  ></TextBlock>
+                                </Border>
+                            </Grid>
+
+                            <Grid Width="624" HorizontalAlignment="Center" Margin="0,28,0,0">
+                                <TextBlock Text="Đánh giá hồ sơ" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+                                <TextBlock Text=" *" Width="10" Margin="0,0,420,0" Foreground="Red" FontSize="14" VerticalAlignment="Top"></TextBlock>
+                                <Grid Width="180" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="214,0,230,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                            <Path.Style>
+                                                <Style TargetType="Path">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding star1}" Value="true">
+                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding star1}" Value="false">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Path.Style>
+                                        </Path>
+                                        <Grid x:Name="gsstar1" Background="Transparent" Cursor="Hand"></Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                            <Path.Style>
+                                                <Style TargetType="Path">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding star2}" Value="true">
+                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding star2}" Value="false">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Path.Style>
+                                        </Path>
+                                        <Grid x:Name="gsstar2" Background="Transparent" Cursor="Hand"></Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                            <Path.Style>
+                                                <Style TargetType="Path">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding star3}" Value="true">
+                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding star3}" Value="false">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Path.Style>
+                                        </Path>
+                                        <Grid x:Name="gsstar3" Background="Transparent" Cursor="Hand" ></Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="3">
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                            <Path.Style>
+                                                <Style TargetType="Path">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding star4}" Value="true">
+                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding star4}" Value="false">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Path.Style>
+                                        </Path>
+                                        <Grid x:Name="gsstar4" Background="Transparent" Cursor="Hand"></Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="4">
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E"></Path>
+                                        <Path Data="{StaticResource star_yellow}" Stroke="#FDBE1E" Fill="#FDBE1E">
+                                            <Path.Style>
+                                                <Style TargetType="Path">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding star5}" Value="true">
+                                                            <Setter Property="Visibility" Value="Visible"></Setter>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding star5}" Value="false">
+                                                            <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Path.Style>
+                                        </Path>
+                                        <Grid x:Name="gsstar5" Background="Transparent" Cursor="Hand"></Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!--End-->
+
+
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Giai đoạn chuyển" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="*" Width="10" Margin="114,5,0,0" HorizontalAlignment="Left" Foreground="Red" FontSize="14"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <Grid>
+                        <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"></Path>
+                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" >
+                            <ComboBox x:Name="cbxStatus" DisplayMemberPath="Value" SelectedValuePath="Key" Padding="10,0,0,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="-- Vui lòng chọn --" Background="Transparent" BorderBrush="{x:Null}" Foreground="#FF474747">
+                            </ComboBox>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Mức lương mong muốn" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbResiredSalary" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Mức lương thực" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbSalary" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Width="624" Height="36" HorizontalAlignment="Center" Margin="0,28,0,0">
+                <TextBlock Text="Ghi chú" FontSize="14" FontFamily="Roboto" FontStyle="Normal" Foreground="#474747" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <Border BorderBrush="#474747" BorderThickness="1" CornerRadius="4" Width="404" HorizontalAlignment="Right">
+                    <TextBox x:Name="tbNote" Foreground="{StaticResource #474747}" FontSize="14" VerticalAlignment="Center" Padding="10,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" ></TextBox>
+                </Border>
+            </Grid>
+            <Grid Height="36" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,62,60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Margin="16,0,0,0" Grid.Column="1" Width="100" Height="36" Background="#27AE60" CornerRadius="8">
+                    <Grid>
+                        <TextBlock Text="Cập Nhật" FontSize="14" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Grid Cursor="Hand" Background="Transparent" MouseLeftButtonDown="ClickUpdate"></Grid>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="0" Width="100" Height="36" Background="{StaticResource #BDBDBD}" CornerRadius="8">
+                    <Grid>
+                        <TextBlock Text="Đóng" FontSize="14" Foreground="#ffffff" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="CancelPopup"></Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

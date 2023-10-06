@@ -1,0 +1,80 @@
+﻿<UserControl
+    x:Class="QuanLyChung365TruocDangNhap.GioiHanIpVaPhanMem.Popup.ucXoaNhanVienGioiHanIP"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.GioiHanIpVaPhanMem.Popup"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+        <Rectangle
+            Fill="Black"
+            MouseDown="ClosePopup"
+            Opacity="0.5" />
+        <Border
+            Width="520"
+            Height="250"
+            Padding="30"
+            Background="white"
+            CornerRadius="15">
+            <StackPanel>
+                <Image
+                    Width="56"
+                    Height="56"
+                    Source="{StaticResource iconCircleQuestionDrawingImage}" />
+                <TextBlock
+                    Margin="30,20"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    TextWrapping="Wrap">
+                    Bạn có muốn xóa nhân viên khỏi hệ thống giới hạn IP và phần mềm ?
+                </TextBlock>
+                <DockPanel Margin="0,0,0,0" HorizontalAlignment="Center">
+                    <Border
+                        Width="140"
+                        Height="40"
+                        Margin="0,0,10,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="White"
+                        BorderBrush="{StaticResource #CCCCCC}"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Cursor="Hand"
+                        MouseUp="ClosePopup">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="Roboto"
+                            FontSize="16"
+                            Foreground="#474747">
+                            Hủy
+                        </TextBlock>
+
+                    </Border>
+                    <Border
+                        Width="140"
+                        Height="40"
+                        Margin="10,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="#FFFF7A00"
+                        CornerRadius="8"
+                        Cursor="Hand">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="Roboto"
+                            FontSize="16"
+                            Foreground="White">
+                            Xóa
+                        </TextBlock>
+
+                    </Border>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

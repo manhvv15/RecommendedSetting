@@ -1,0 +1,118 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.HomePages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Pages.HomePages"
+      mc:Ignorable="d" 
+      SizeChanged="Page_SizeChanged"
+      x:Name="homePage"
+      d:DesignHeight="450" d:DesignWidth="988"
+      Title="HomePage">
+
+    <Page.Resources>
+        <DropShadowEffect x:Key="z-depth1" BlurRadius="10" ShadowDepth="3" Direction="270" Color="#000000" Opacity="0.2"/>
+    </Page.Resources>
+
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition MinWidth="167" MaxWidth="183"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Border Padding="0,0,20,0">
+                <Grid>
+                    <Grid MinHeight="219" VerticalAlignment="Top" Margin="0,180,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" Grid.Row="0" Grid.Column="0" Margin="0,0,10,9.5">
+                            <Border Effect="{DynamicResource z-depth1}" CornerRadius="8" Background="#FFFFFF"></Border>
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource employee_count}" FontSize="16" Foreground="#666666" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,14,0,0"></TextBlock>
+                            <TextBlock FontWeight="Bold" x:Name="txtTotalEmployee" Text="0" FontSize="30" Foreground="#4C5BD4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,12" ></TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="1" Margin="5,0,5,9.5">
+                            <Border Effect="{DynamicResource z-depth1}" CornerRadius="8" Background="#FFFFFF"></Border>
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource count_achievements_per_month}" FontSize="16" Foreground="#666666" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,14,20,70" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock FontWeight="Bold" x:Name="txtAchievements" Text="0" FontSize="30" Foreground="#1CA383" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,12" ></TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="2" Margin="10,0,0,9.5">
+                            <Border Effect="{DynamicResource z-depth1}" CornerRadius="8" Background="#FFFFFF"></Border>
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource count_violate_per_month}" FontSize="16" Foreground="#666666" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,14,20,0" TextWrapping="Wrap"></TextBlock>
+                            <TextBlock FontWeight="Bold" x:Name="txtViolation" Text="0" FontSize="30" Foreground="#FFCC6C" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,12" ></TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.Column="0" Margin="0,9.5,10,0">
+                            <Border Effect="{DynamicResource z-depth1}" CornerRadius="8" Background="#FFFFFF"></Border>
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource count_candidate}" FontSize="16" Foreground="{StaticResource #666666}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,14,0,0"></TextBlock>
+                            <TextBlock FontWeight="Bold" x:Name="txtCandidateTotal" Text="0" FontSize="30" Foreground="#4C5BD4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,12" ></TextBlock>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Grid.Column="1" Margin="5,9.5,5,0">
+                            <Border Effect="{DynamicResource z-depth1}" CornerRadius="8" Background="#FFFFFF"></Border>
+                            <TextBlock FontWeight="SemiBold" Text="{StaticResource count_candidate_over_interview}" TextWrapping="Wrap" FontSize="16" Foreground="#666666" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,14,10,70"></TextBlock>
+                            <TextBlock FontWeight="Bold" x:Name="txtTotalInterview" Text="0" FontSize="30" Foreground="#1CA383" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,12" ></TextBlock>
+                        </Grid>
+                        <Border Grid.Row="1" Grid.Column="2" Margin="10,9.5,0,0" Effect="{DynamicResource z-depth1}" CornerRadius="8" Background="#FFFFFF"></Border>
+                        <Grid Grid.Row="1" Grid.Column="2" Margin="10,9.5,0,0">
+                                <TextBlock FontWeight="SemiBold" Text="{StaticResource count_candidate_appointment_work}" FontSize="16" Foreground="#666666" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,14,20,0" TextWrapping="Wrap"></TextBlock>
+                                <TextBlock  FontWeight="SemiBold" x:Name="txtTotalOfferJob" Text="0" FontSize="30" Foreground="#FFCC6C" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,0,0,12" ></TextBlock>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid x:Name="gridHead" Height="109" VerticalAlignment="Top" Margin="0,50,20,0">
+            <Border CornerRadius="8" Effect="{DynamicResource z-depth1}" Background="#FFFFFF"></Border>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,24,0,0">
+                <TextBlock Text="Xin chào!" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#9ED16F"></TextBlock>
+                <!--<TextBlock x:Name="txtUsername" FontWeight="Bold" Text="Phạm Văn Minh" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="#FF4C5BD4" Margin="135,0,0,0"></TextBlock>-->
+            </Grid>
+            <TextBlock FontWeight="SemiBold" FontStyle="Normal" Text="{StaticResource congratulation_text}" Foreground="#666666" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="41,0,0,26" ></TextBlock>
+            <Grid Width="123" Height="147" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-38,50,0">
+                <ContentControl ContentTemplate="{StaticResource Woman}"></ContentControl>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" >
+            <Grid Margin="0,49,0,0" x:Name="column1">
+                <Grid Height="110" VerticalAlignment="Top" Margin="0,0,0,0" >
+                    <Border CornerRadius="8" Effect="{DynamicResource z-depth1}" Background="#FFFFFF"></Border>
+                    <TextBlock FontWeight="SemiBold" Text="Hà Nội, Việt Nam" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,16,0,0" FontSize="12" Foreground="#474747"></TextBlock>
+                    <Grid Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,15">
+                        <Image x:Name="imgWeather"></Image>
+                    </Grid>
+                    <TextBlock x:Name="txtTemp" Text="30" FontSize="44" Foreground="#474747" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,33,13"></TextBlock>
+                    <TextBlock Text="o" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,23,47"></TextBlock>
+                    <TextBlock Text="C" FontSize="14" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,41" FontWeight="SemiBold"></TextBlock>
+                </Grid>
+                <Grid Height="232" VerticalAlignment="Top" Margin="0,131,0,0">
+                    <Border CornerRadius="8">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#437AFF" Offset="0"/>
+                                <GradientStop Color="#67A4FE" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <Path Data="{StaticResource icon_calendar}" Fill="#FFFFFF" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,16,48,0"></Path>
+                    <TextBlock x:Name="txtMonth" Foreground="#FFFFFF" FontSize="14" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,11,12,0" LineHeight="16"></TextBlock>
+                    <Grid Width="84" Height="98" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,21,0,0">
+                        <ContentControl ContentTemplate="{StaticResource Man}"></ContentControl>
+                    </Grid>
+                    <TextBlock x:Name="txtClock" FontWeight="SemiBold" Text="8:00:00" Foreground="#FFFFFF" FontSize="40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,31"></TextBlock>
+                    <TextBlock FontWeight="SemiBold" x:Name="txtDate" Text="" Foreground="#FFFFFF" FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"></TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,193 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_Company_Child.Add_More_Company"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.PopUp_Company_Child"
+      mc:Ignorable="d" 
+      Height="675" Width="642"
+      Title="Add_More_Company" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="15 15 0 0" Background="{DynamicResource #4C5BD4}" BorderThickness="0">
+            <Grid>
+                <TextBlock FontSize="19" Foreground="{DynamicResource #FFFFFF}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Text" Value="{DynamicResource textThemCongTyCon}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Type}" Value="edit">
+                                    <Setter Property="Text" Value="{DynamicResource textChinhSuaCTCon}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <Border Margin="0 0 20 0" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent" Cursor="Hand" MouseLeftButtonDown="ExitPopUp_MouseLeftButtonDown">
+                    <Path Data="{DynamicResource iconClose}" Fill="{DynamicResource #FFFFFF}" Width="14" Height="14"></Path>
+                </Border>
+            </Grid>
+
+        </Border>
+        <Border Grid.Row="1" CornerRadius="0 0 15 15" Background="{DynamicResource #FFFFFF}" BorderThickness="0">
+            <StackPanel Margin="60 30 60 0" Orientation="Vertical">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Center">
+                        <TextBlock Text="{DynamicResource textLogoCongTy}" FontSize="16" Foreground="{DynamicResource #474747}"/>
+                        <Grid Margin="0 10 0 25"  Height="83" HorizontalAlignment="Center"  Background="Transparent"  MouseLeftButtonDown="ChooseImgLogo_MouseLeftButtonDown">
+                            <Border Background="White"  >
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity=".3" ></DropShadowEffect>
+                                </Border.Effect>
+                            </Border>
+                            <Image x:Name="ImgLogo"/>
+                        </Grid>
+                    </StackPanel>
+                    <TextBlock Margin="0 0 0 11" Grid.Row="1" Text="Tên công ty" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #666666}"/>
+                    <StackPanel Orientation="Vertical" Margin="0 0 20 0" Grid.Row="2">
+                        <Border  CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Height="44">
+                            <Grid>
+                                <TextBox  Margin="20 0 0 0" x:Name="tbNameCom" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" BorderThickness="0"/>
+                                <TextBlock  Margin="20 0 0 0" Text="{DynamicResource textNhapTenCongTy}" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" IsHitTestVisible="False">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=tbNameCom,Path=Text}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="tblNameComValidate" Style="{StaticResource tblValidate}"/>
+                    </StackPanel>
+                    <TextBlock Margin="0 25 0 11" Grid.Row="3" Text="{DynamicResource textSoDienThoai}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #666666}"/>
+                    <StackPanel Orientation="Vertical" Margin="0 0 20 0" Grid.Row="4">
+                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Height="44">
+                            <Grid>
+                                <TextBox  Margin="20 0 0 0" x:Name="tbPhone" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" BorderThickness="0" PreviewTextInput="tbPhone_PreviewTextInput"/>
+                                <TextBlock Margin="20 0 0 0" Text="{DynamicResource textNhapSDT}" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" IsHitTestVisible="False">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=tbPhone,Path=Text}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="tblPhoneValidate" Style="{StaticResource tblValidate}"/>
+                    </StackPanel>
+                    <TextBlock Margin="0 25 0 11" Grid.Row="5" Text="{DynamicResource textChonCongTyMe}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #666666}" Visibility="Collapsed"/>
+                    <StackPanel Orientation="Vertical" Margin="0 0 20 0" Grid.Row="6" Visibility="Collapsed">
+                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Height="44">
+                            <Grid>
+                                <ComboBox x:Name="cbbCom" ItemsSource="{Binding listCom}" DisplayMemberPath="com_name" Style="{StaticResource Combobox1}" BorderThickness="0" BorderBrush="{DynamicResource #D7DCE0}" ItemContainerStyle="{StaticResource ComboboxItem1}"/>
+                                <TextBlock Margin="15 0 0 0" Text="{DynamicResource textChonCongTyMe}" Foreground="{DynamicResource #677684}" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=cbbCom,Path=SelectedItem}" Value="{x:Null}">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="tblComValidate" Style="{StaticResource tblValidate}"/>
+                    </StackPanel>
+                    <TextBlock Margin="11 0 0 11" Grid.Row="1" Grid.Column="1" Text="{DynamicResource textEmailCongTy}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #666666}" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Vertical" Margin="10 0 0 0" Grid.Row="2" Grid.Column="1">
+                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Height="44">
+                            <Grid>
+                                <TextBox  Margin="20 0 0 0" x:Name="tbEmailCom" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" BorderThickness="0"/>
+                                <TextBlock Margin="20 0 0 0" Text="{DynamicResource textNhapEmailCongTy}" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" IsHitTestVisible="False">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=tbEmailCom,Path=Text}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="tblEmailComValidate" Style="{StaticResource tblValidate}"/>
+                    </StackPanel>
+                    <TextBlock Margin="11 25 0 11" Grid.Column="1" Grid.Row="3" Text="{DynamicResource textDiaChi}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #666666}" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Vertical" Margin="10 0 0 0" Grid.Row="4" Grid.Column="1">
+                        <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #DDDDDD}" Height="44">
+                            <Grid>
+                                <TextBox  Margin="20 0 0 0" x:Name="tbAddress" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" BorderThickness="0"/>
+                                <TextBlock Margin="20 0 0 0" Text="{DynamicResource textNhapDiaChi}" FontSize="16" Foreground="{DynamicResource #666666}" VerticalAlignment="Center" IsHitTestVisible="False">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=tbAddress,Path=Text}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <TextBlock x:Name="tblAddressValidate" Style="{StaticResource tblValidate}"/>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Margin="0 35 0 0" Text="{DynamicResource textPassGuiVeGmail}" HorizontalAlignment="Center" Foreground="red"/>
+                <StackPanel Margin="0 8 0 0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="{DynamicResource #4C5BD4}" Background="Transparent" Width="143" Height="43" Cursor="Hand" MouseLeftButtonDown="ExitPopUp_MouseLeftButtonDown">
+                        <TextBlock Text="{DynamicResource textHuy}" FontSize="16" Foreground="{DynamicResource #4C5BD4}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border Margin="20 0 0 0" CornerRadius="3" BorderThickness="0" Background="{DynamicResource #4C5BD4}" Width="143" Height="43" MouseLeftButtonUp="Add_Com_MouseLeftButtonUp" Cursor="Hand">
+                        <TextBlock FontSize="16" Foreground="{DynamicResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text" Value="{DynamicResource textThemCongTy}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Type}" Value="edit">
+                                            <Setter Property="Text" Value="{DynamicResource textCapNhat}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

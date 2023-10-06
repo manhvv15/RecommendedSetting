@@ -1,0 +1,274 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.ThietLapCongTy.Popups.PopupQuanLyNhanVien.ucThemMoiNhanVien"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ThietLapCongTy.Popups.PopupQuanLyNhanVien"
+             xmlns:comon="clr-namespace:QuanLyChung365TruocDangNhap.ThietLapCongTy.Comons"
+             mc:Ignorable="d" Background="WhiteSmoke" MaxWidth="1920">
+    <Grid Margin="20">
+        <StackPanel x:Name="stpThemMoiNhanVien" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" MinWidth="250">
+                    <TextBlock  Style="{DynamicResource TextBlocLableNV}">
+                                            <Run Text="Họ và tên "/>
+                                            <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Margin="0,5,0,0">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="textNhapHoTen" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,5,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập họ tên" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=textNhapHoTen, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <TextBlock x:Name="tb_ValidateHoVaTen" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" MinWidth="250" Margin="20 0 0 0">
+                    <TextBlock Style="{DynamicResource TextBlocLableNV}">
+                                            <Run Text="Email "/>
+                                            <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <Border  CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Margin="0,5,0,0">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="textEmail2" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,5,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập email" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=textEmail2, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <TextBlock x:Name="tb_ValidateEmail" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel  Grid.Column="0" MinWidth="250">
+                    <TextBlock  Style="{DynamicResource TextBlocLableNV}">
+                                <Run Text="Số Điện Thoại"/>
+                                <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <Border  CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Margin="0,5,0,0">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="textSoDT" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,5,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập số điện thoại" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=textSoDT, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <TextBlock x:Name="tb_ValidateSDT" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" MinWidth="250" Margin="20 0 0 0" Cursor="Hand" Background="Transparent">
+                    <TextBlock Style="{DynamicResource TextBlocLableNV}">
+                        <Run Text="Tỉnh Thành"/>
+                        <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <comon:ucComboboxSearch Margin="0 5 0 0" FontSize="16" Height="37" ItemsSource="{Binding list, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"  x:Name="cboTinhThanh" DisplayMemberPath="name" DisplayChar="-" BorderBrush="#666666" Foreground="{DynamicResource #474747}" CornerRadius="5" BorderThickness="1"/>
+                    <TextBlock x:Name="tb_ValidateTinhThanh" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" MinWidth="250" Cursor="Hand" Background="Transparent">
+                    <TextBlock Style="{DynamicResource TextBlocLableNV}">
+                        <Run Text="Quận Huyện"/>
+                        <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <comon:ucComboboxSearch x:Name="cboQuanHuyen" Margin="0 5 0 0" FontSize="16" Height="37" ItemsSource="{Binding list, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" DisplayMemberPath="name" DisplayChar="-" BorderBrush="#666666" Foreground="{DynamicResource #474747}" CornerRadius="5" BorderThickness="1"/>
+                    <TextBlock x:Name="tb_ValidateQuanHuyen" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" MinWidth="250" Margin="20 0 0 0">
+                    <TextBlock HorizontalAlignment="Left" FontWeight="Regular" Style="{DynamicResource TextBlockCalenda}">
+                                            <Run Text="Dịa chỉ chi tiết"/>
+                                            <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <Border  CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Margin="0,5,0,0">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="textDiaChi2" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,5,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập địa chỉ" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=textDiaChi2, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <TextBlock x:Name="tb_ValidateDiaChi" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" >
+                    <TextBlock  HorizontalAlignment="Left" FontWeight="Regular" Style="{DynamicResource TextBlockCalenda}">
+                        <Run Text="Giới Tính"/>
+                        <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <ComboBox x:Name="cboGioiTinh" Style="{DynamicResource Combobox1}" MinWidth="250" FontSize="16" BorderThickness="1" BorderBrush="#666666" Margin="0,5,0,0">
+                        <ComboBoxItem Content="Nam" FontSize="16" Foreground="#474747"></ComboBoxItem>
+                        <ComboBoxItem Content="Nữ" FontSize="16" Foreground="#474747"></ComboBoxItem>
+                        <ComboBoxItem Content="Khác" FontSize="16" Foreground="#474747"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock x:Name="tb_ValidateGioiTinh" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="20 0 0 0">
+                    <TextBlock  HorizontalAlignment="Left" FontSize="16" FontWeight="Regular" Style="{DynamicResource TextBlockCalenda}">
+                                            <Run Text="Ngày Sinh" Foreground="#474747"/>
+                                            <Run Text="*" Foreground="#FF5B4D"/>
+                    </TextBlock>
+                    <Border BorderThickness="1" CornerRadius="5" BorderBrush="{DynamicResource #666666}" Height="37" MinWidth="250" Margin="0,5,0,0">
+                        <comon:DatePicker TabIndex="1000" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="14" VerticalAlignment="Center" BorderThickness="0"/>
+                    </Border>
+                    <TextBlock x:Name="tb_ValidateNgaySinh" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" MinWidth="250">
+                    <TextBlock  Style="{DynamicResource TextBlocLableNV}">
+                                            <Run Text="Phone tài khoản"/>
+                                            <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <Border CornerRadius="5" BorderThickness="1" BorderBrush="{DynamicResource #666666}" Margin="0,5,0,0">
+                        <Grid Height="37">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37*"/>
+                                <ColumnDefinition Width="312*"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Background="Transparent" Height="40" VerticalAlignment="Center" x:Name="textPhoneTaiKhoan" FontSize="15" Foreground="{DynamicResource #474747}" BorderThickness="0" Margin="1,2,-3,-2" Padding="3,5,0,0" Grid.ColumnSpan="3"/>
+                            <TextBlock FontSize="15" Foreground="{DynamicResource #666666}" TextWrapping="Wrap" Text="Nhập số điện thoại" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,-10,11" Grid.ColumnSpan="3">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=textPhoneTaiKhoan, Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <TextBlock x:Name="tb_ValidatePhoneTaiKhoan" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" MinWidth="250" Margin="20 0 0 0" Cursor="Hand" Background="Transparent">
+                    <TextBlock Style="{DynamicResource TextBlocLableNV}">
+                        <Run Text="Loại Tổ chức"/>
+                        <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <comon:ucComboboxSearch Margin="0 5 0 0" FontSize="16" Height="37" ItemsSource="{Binding list, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"  x:Name="cboLoaiToChuc" DisplayMemberPath="name" DisplayChar="-" BorderBrush="#666666" Foreground="{DynamicResource #474747}" CornerRadius="5" BorderThickness="1"/>
+                    <TextBlock x:Name="tb_ValidateLoaiToChuc" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" MinWidth="250"  Cursor="Hand" Background="Transparent">
+                    <TextBlock Style="{DynamicResource TextBlocLableNV}">
+                        <Run Text="Tên tổ chức"/>
+                        <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <comon:ucComboboxSearch Margin="0 5 0 0" FontSize="16" Height="37" ItemsSource="{Binding list, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"  x:Name="cboTenToChuc" DisplayMemberPath="name" DisplayChar="-" BorderBrush="#666666" Foreground="{DynamicResource #474747}" CornerRadius="5" BorderThickness="1"/>
+                    <TextBlock x:Name="tb_ValidateTenToChuc" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" MinWidth="250" Margin="20 0 0 0" Cursor="Hand" Background="Transparent">
+                    <TextBlock Style="{DynamicResource TextBlocLableNV}">
+                        <Run Text="Vị trí"/>
+                        <Run Foreground="#FF5B4D" Text="*"/>
+                    </TextBlock>
+                    <comon:ucComboboxSearch Margin="0 5 0 0" FontSize="16" Height="37" ItemsSource="{Binding list, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"  x:Name="cboViTri" DisplayMemberPath="name" DisplayChar="-" BorderBrush="#666666" Foreground="{DynamicResource #474747}" CornerRadius="5" BorderThickness="1"/>
+                    <TextBlock x:Name="tb_ValidateViTri" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel>
+                <TextBlock  HorizontalAlignment="Left" FontSize="16" FontWeight="Regular" Style="{DynamicResource TextBlockCalenda}">
+                                            <Run Text="Ngày chính thức" Foreground="#474747"/>
+                                            <Run Text="*" Foreground="#FF5B4D"/>
+                </TextBlock>
+                <Border BorderThickness="1" CornerRadius="5" BorderBrush="{DynamicResource #666666}" Height="37" MinWidth="250" Margin="0,5,0,0">
+                    <comon:DatePicker TabIndex="1000" CornerRadius="5" Background="{DynamicResource #FFFFFF}" Foreground="{DynamicResource #474747}" FontSize="14" VerticalAlignment="Center" BorderThickness="0"/>
+                </Border>
+                <TextBlock x:Name="tb_ValidateNgayChinhThuc" Visibility="Collapsed" Style="{DynamicResource TextBlocLableNV}" Foreground="#FF5B4D"/>
+            </StackPanel>
+            <WrapPanel HorizontalAlignment="Center">
+                <Border x:Name="bodQuayLai" Cursor="Hand" MouseLeftButtonUp="bodQuayLai_MouseLeftButtonUp" MouseEnter="bodQuayLai_MouseEnter" MouseLeave="bodQuayLai_MouseLeave" Margin="0 20 30 0" HorizontalAlignment="Center" Style="{DynamicResource BorderButon}" BorderThickness="1" BorderBrush="#4C5DB4" Background="#FFFFFF" Width="150" Height="34">
+                    <TextBlock x:Name="tb_QuayLai" Text="Quay Lại" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Medium" Foreground="#474747"/>
+                </Border>
+                <Border x:Name="bodLuuThongTinNhanVien" Cursor="Hand" MouseLeftButtonUp="bodLuuThongTinNhanVien_MouseLeftButtonUp" MouseEnter="bodLuuThongTinNhanVien_MouseEnter" MouseLeave="bodLuuThongTinNhanVien_MouseLeave"  Margin="30 20 0 0" HorizontalAlignment="Center" Style="{DynamicResource BorderButon}" Width="150" Height="34">
+                    <TextBlock Text="Lưu thông tin" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Medium" Foreground="#FFFFFF"/>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

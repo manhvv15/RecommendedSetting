@@ -1,0 +1,87 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.popUp_MainWindow.dropDown"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.PopUp.popUp_MainWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="350" VerticalAlignment='top' HorizontalAlignment="Right" Loaded="Page_Loaded"
+      Title="dropDown">
+
+    <Grid Name="bd">
+        <Border Background="{DynamicResource #FFFFFF}" CornerRadius="5">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" ShadowDepth="0" Opacity=".3" BlurRadius="10"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="Foreground" Value="{DynamicResource #474747}"></Setter>
+                    <Setter Property="Margin" Value="0 0 15 0"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                </Style>
+                <Style TargetType="Path">
+                    <Setter Property="Margin" Value="20 10 10 10"></Setter>
+                    <Setter Property="Stretch" Value="Uniform"></Setter>
+                    <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                </Style>
+                <Style TargetType="Grid" x:Key="item">
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="Cursor" Value="Hand"></Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource #EEEEEE}"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="Grid" BasedOn="{StaticResource item}"/>
+            </StackPanel.Resources>
+            <StackPanel.OpacityMask>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Border Background="White" Width="{Binding ElementName=bd,Path=ActualWidth}" Height="{Binding ElementName=bd,Path=ActualHeight}" CornerRadius="5"></Border>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </StackPanel.OpacityMask>
+            <Grid MouseLeftButtonDown="ThongTinTK">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="15 0" VerticalAlignment="Bottom" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource #E9ECEF}" Grid.ColumnSpan="2"></Border>
+                <Path Data="{StaticResource iconUser1}" Fill="{DynamicResource #474747}"></Path>
+                <TextBlock Grid.Column="1" Text="{DynamicResource textThongTinTaiKhoan}"></TextBlock>
+            </Grid>
+            <Grid MouseLeftButtonDown="BaoLoi">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="15 0" VerticalAlignment="Bottom" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource #E9ECEF}" Grid.ColumnSpan="2"></Border>
+                <Path Data="{StaticResource iconBaoLoi}" Fill="{DynamicResource #474747}"></Path>
+                <TextBlock Grid.Column="1" Text="{DynamicResource textBaoLoi}"></TextBlock>
+            </Grid>
+            <Grid MouseLeftButtonDown="DanhGia">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="15 0" VerticalAlignment="Bottom" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource #E9ECEF}" Grid.ColumnSpan="2"></Border>
+                <Path Data="{StaticResource iconDanhGia}" Fill="{DynamicResource #474747}"></Path>
+                <TextBlock Grid.Column="1" Text="{DynamicResource textDanhGia}"></TextBlock>
+            </Grid>
+            <Grid MouseLeftButtonDown="DangXuat">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="15 0" VerticalAlignment="Bottom" BorderThickness="0 0 0 1" BorderBrush="{DynamicResource #E9ECEF}" Grid.ColumnSpan="2"></Border>
+                <Path Data="{StaticResource iconDangXuat}" Fill="{DynamicResource #474747}"></Path>
+                <TextBlock Grid.Column="1" Text="{DynamicResource textDangXuat}"></TextBlock>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

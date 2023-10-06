@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="QuanLyChung365TruocDangNhap.ThietLapCongTy.Them_Xoa_NhanVien.ucQuanLyNhanVien"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ThietLapCongTy.Them_Xoa_NhanVien"
+             mc:Ignorable="d" Background="WhiteSmoke">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Border x:Name="bod_TatCaNhanVien" MouseLeftButtonUp="TatCaNhanVien" Background="Transparent" Cursor="Hand" BorderThickness="0" BorderBrush="#4C5DB4">
+                <TextBlock FontSize="20" FontWeight="Regular" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Run Text="Toàn bộ nhân viên"/>
+                    <Run x:Name="tb_TatCaNhanVien" Foreground="#4C5DB4"/>
+                </TextBlock>
+            </Border>
+            <Border x:Name="bod_NhanVienChoDuyet" MouseLeftButtonUp="NhanVienChoDuyet" Background="Transparent" Cursor="Hand" BorderThickness="0" BorderBrush="#4C5DB4" Margin="20 0 0 0" HorizontalAlignment="Left">
+                <TextBlock FontSize="20" FontWeight="Regular" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Run Text="Nhân viên chờ duyệt"/>
+                    <Run x:Name="tb_NhanVienChoDuyet" Foreground="#4C5DB4"/>
+                </TextBlock>
+            </Border>
+        </DockPanel>
+        <Grid Grid.Row="1" x:Name="grHienThiNhanVien">
+            
+        </Grid>
+    </Grid>
+</UserControl>

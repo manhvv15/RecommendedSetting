@@ -1,0 +1,68 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages.Send_Error"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.ChamCong365.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="1146"
+      Title="Send_Error">
+
+    <Grid >
+        <Border CornerRadius="15" BorderThickness="0" Background="{DynamicResource #FFFFFF}">
+            
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid Width="206" Height="178">
+                    <Image x:Name="iconImg" Source="/Images/error.png" >
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=ImgErr,Path=Source}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=ImgErr,Path=Source}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                    <Image x:Name="ImgErr"/>
+
+                </Grid>
+                <StackPanel Margin="0 26 0 0" Orientation="Vertical">
+                <Border  CornerRadius="5" Width="467" Height="124" BorderThickness="1" BorderBrush="{DynamicResource #000000}">
+                    <Grid>
+                            <TextBox Margin="10" x:Name="tbInputErr" FontSize="16" Foreground="{DynamicResource #666C7C}" TextWrapping="Wrap" BorderThickness="0"></TextBox>
+                            <TextBlock Text="{DynamicResource textInputError }" FontSize="16" Foreground="{DynamicResource #666C7C}" VerticalAlignment="Center" HorizontalAlignment="Center" IsHitTestVisible="False">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=tbInputErr,Path=Text}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                </Border>
+                    <TextBlock x:Name="tblInputErrValidate" Style="{DynamicResource tblValidate}"/>
+                </StackPanel>
+            <StackPanel Margin="0 21 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical">   
+                <Border CornerRadius="3" BorderThickness="0" Background="{DynamicResource #F46A6A}" Width="220" Height="40" Cursor="Hand" MouseLeftButtonDown="ChooseImgErr_MouseLeftButtonDown">
+                        <TextBlock Text="{DynamicResource textChonAnhLoi}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock x:Name="tblImgValidate" Style="{StaticResource tblValidate}"/>
+                    </StackPanel>
+                    <Border Margin="27 0 0 0" CornerRadius="3" BorderThickness="0" Background="{DynamicResource #4C5BD4}" Width="220" Height="40" MouseLeftButtonDown="SendErr_MouseLeftButtonDown" Cursor="Hand">
+                        <TextBlock Text="{DynamicResource textGui}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,435 @@
+﻿<Page x:Class="QuanLyChung365TruocDangNhap.Hr.Pages.OrganizationalChart.RightToUse"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:local="clr-namespace:QuanLyChung365TruocDangNhap.Hr.Pages.OrganizationalChart"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="2200" d:DesignWidth="2000"
+      Title="RightToUse">
+    <Page.Resources>
+        <DropShadowEffect x:Key="z-depth1" BlurRadius="5" ShadowDepth="1" Color="#CCCCCC" />
+    </Page.Resources>
+    <Grid Margin="0,43,0,0" Background="#FAFAFA">
+        <Grid>
+            <Grid>
+                <!--start header page Ora chart-->
+                <ScrollViewer Height="50" VerticalAlignment="Top" VerticalScrollBarVisibility="Hidden">
+                    <ScrollViewer.Style>
+                        <Style TargetType="ScrollViewer"  BasedOn="{StaticResource aaa}">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="HorizontalScrollBarVisibility" Value="Auto"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ScrollViewer.Style>
+                    <Grid VerticalAlignment="Top">
+                        <Grid Height="1" Margin="0,30,0,0" Background="{StaticResource #474747}"></Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <!--x:Name="OrganisationalStructureDiagram"-->
+                                <TextBlock Cursor="Hand" Name="OrganisationalStructureDiagram" FontWeight="SemiBold" Grid.Column="0" Text="SƠ ĐỒ CƠ CẤU TỔ CHỨC" FontSize="14" Foreground="{StaticResource #474747}" Margin="30,0,30,13" MouseLeftButtonDown="NavigateToPage"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock x:Name="PositionChart" FontWeight="SemiBold" Cursor="Hand" Grid.Column="1" Text="SƠ ĐỒ CHỨC VỤ" FontSize="14" Foreground="{StaticResource #474747}" Margin="30,0,30,13" MouseLeftButtonDown="NavigateToPage"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <!--x:Name="RightUse"-->
+                                <TextBlock FontWeight="SemiBold" Cursor="Hand" Grid.Column="1" Text="QUYỀN SỬ DỤNG CON DẤU VÀ MẪU CHỮ KÝ" FontSize="14" Foreground="{StaticResource #4C5BD4}" Margin="30,0,30,13" MouseLeftButtonDown="NavigateToPage"></TextBlock>
+                                <Grid Height="4" VerticalAlignment="Bottom">
+                                    <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}"></Border>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="3">
+                                <TextBlock x:Name="LeadershipBiography" FontWeight="SemiBold" Cursor="Hand" Grid.Column="1" Text="TIỂU SỬ LÃNH ĐẠO" FontSize="14" Foreground="{StaticResource #474747}" Margin="30,0,30,13" MouseLeftButtonDown="NavigateToPage"></TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+                <!--end header page Ora chart-->
+            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,50,0,0" Name="scroll">
+                
+                <Grid  VerticalAlignment="Top">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Grid SizeChanged="Grid_SizeChanged">
+                                <!--list member company-->
+                                <Grid Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Left" >
+                                    <TextBlock Text="Danh sách thành viên được sử dụng con dấu công ty" Grid.Column="1" FontWeight="DemiBold"  FontSize="14" Foreground="{StaticResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <!--end list-->
+
+                                <!--star add new-->
+                                <Grid Cursor="Hand" Background="Transparent" MouseLeftButtonDown="ShowPopupAddNew" VerticalAlignment="Top" HorizontalAlignment="Right" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" Margin="0,0,9,0">
+                                        <Ellipse Width="15" Height="15" Fill="{StaticResource #4C5BD4}" HorizontalAlignment="Center" VerticalAlignment="Center"></Ellipse>
+                                        <Path Data="{StaticResource icon_plus}" Fill="{StaticResource #FFFFFF}" HorizontalAlignment="Center" VerticalAlignment="Center"></Path>
+                                    </Grid>
+                                    <TextBlock Grid.Column="1" FontWeight="DemiBold" Text="Thêm mới" FontSize="14" Foreground="{StaticResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </Grid>
+                                <!--end add new-->
+
+                                <!--input search,cbx company,button search-->
+                                <Grid Margin="0,50,0,0" Height="36" VerticalAlignment="Top">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="300*"></ColumnDefinition>
+                                        <ColumnDefinition Width="22*"></ColumnDefinition>
+                                        <ColumnDefinition Width="300*"></ColumnDefinition>
+                                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                                        <ColumnDefinition Width="211*"></ColumnDefinition>
+                                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Border Background="{StaticResource #FFFFFF}" CornerRadius="4" BorderThickness="0.5" BorderBrush="{StaticResource #474747}">
+                                            <TextBox x:Name="tbSearch" KeyUp="tbSearch_KeyUp" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập tên, ID nhân viên" BorderThickness="0" Foreground="{StaticResource #666666}" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"></TextBox>
+                                            <!---->
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="1"></Grid>
+                                    <Grid Grid.Column="2">
+                                        <Grid Margin="0,0,20,0"  MouseLeftButtonDown="ShowCombobox" Cursor="Hand">
+                                            <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" Background="#FFFFFF"></Border>
+                                            <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                                            <ComboBox  x:Name="cbxTenPhongBan" PreviewTextInput="cbxTenPhongBan_PreviewTextInput" IsTextSearchEnabled="False" IsEditable="True" materialDesign:HintAssist.Hint="Chọn phòng ban" DisplayMemberPath="Value" KeyUp="cbxTenPhongBan_KeyUp" SelectedValuePath="Key" Padding="10,0,10,0" VerticalAlignment="Center" Background="Transparent" BorderBrush="{x:Null}" Foreground="{StaticResource #474747}"></ComboBox>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="3"></Grid>
+                                    <Grid Grid.Column="4">
+                                        <Border CornerRadius="5" Background="{StaticResource #4C5BD4}"></Border>
+                                        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Path Data="{StaticResource icon_search}" Fill="{StaticResource #FFFFFF}"></Path>
+                                        </Grid>
+                                        <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="clickSearch"></Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="5"></Grid>
+                                </Grid>
+                                <!--end input search,cbx company,button search-->
+
+                                            <!--table 1-->
+
+                                            <Grid Margin="0,120,2,0" VerticalAlignment="Top">
+
+                                                <Border CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}" Effect="{DynamicResource z-depth1}" Height="50" VerticalAlignment="Top"></Border>
+                                                <Grid Height="50" VerticalAlignment="Top">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                                        <ColumnDefinition MinWidth="115"></ColumnDefinition>
+                                                        <ColumnDefinition MinWidth="220"></ColumnDefinition>
+                                                        <ColumnDefinition MinWidth="290"></ColumnDefinition>
+                                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Grid.Column="0">
+                                                        <TextBlock Text="STT"  FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                        <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                    </Grid>
+                                                    <Grid Grid.Column="1">
+                                                        <TextBlock Text="ID" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                        <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                    </Grid>
+                                                    <Grid Grid.Column="2">
+                                                        <TextBlock Text="Họ và Tên" FontSize="14" TextWrapping="Wrap" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                        <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                    </Grid>
+                                                    <Grid Grid.Column="3">
+                                                        <TextBlock Text="Chức vụ" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                        <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                    </Grid>
+                                                    <Grid Grid.Column="4">
+                                                        <TextBlock Text="Phòng ban"  FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                        <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                    </Grid>
+                                                    <Grid Grid.Column="5">
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Margin="0,50,0,0">
+                                                    <ItemsControl x:Name="icListStamp">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid Height="50">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                                                        <ColumnDefinition MinWidth="115"></ColumnDefinition>
+                                                                        <ColumnDefinition MinWidth="220"></ColumnDefinition>
+                                                                        <ColumnDefinition MinWidth="290"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid Grid.Column="0">
+                                                                        <TextBlock Text="{Binding Stt}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    </Grid>
+                                                                    <Grid Grid.Column="1">
+                                                                        <TextBlock Text="{Binding ep_id}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    </Grid>
+                                                                    <Grid Grid.Column="2">
+                                                                        <TextBlock Text="{Binding ep_name}" FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    </Grid>
+                                                                    <Grid Grid.Column="3">
+                                                                        <TextBlock Text="{Binding position_name}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    </Grid>
+                                                                    <Grid Grid.Column="4">
+                                                                        <TextBlock Text="{Binding dep_name}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                    </Grid>
+                                                                    <Grid Grid.Column="5">
+                                                                        <!--<Grid.Style>
+                                                                    <Style TargetType="Grid">
+                                                                        <Style.Triggers>
+                                                                            <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerDel}" Value="true">
+                                                                                <Setter Property="Visibility" Value="Visible" />
+                                                                            </DataTrigger>
+                                                                            <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerDel}" Value="false">
+                                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                            </DataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </Grid.Style>-->
+                                                                        <Path Margin="0,0,10,0" Data="{StaticResource icon_garbage_can}" Fill="{StaticResource #EB5757}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                                                        <Grid MouseLeftButtonDown="showPopupDelete" Cursor="Hand" Background="Transparent"></Grid>
+                                                                    </Grid>
+                                                                    <Grid Opacity="0.47" VerticalAlignment="Top" Grid.ColumnSpan="6" Height="1" Background="{StaticResource #666666}"></Grid>
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </Grid>
+
+                                            </Grid>
+
+                                            <!--end table 1-->
+                                    </Grid>
+
+                                    <Grid Margin="0,30,0,0">
+                                        <StackPanel>
+                                            <!--list member signature-->
+                                            <Grid Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Left" >
+                                                <TextBlock Text="Danh sách mẫu chữ ký" Grid.Column="1" FontWeight="DemiBold"  FontSize="14" Foreground="{StaticResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                            <!--end list-->
+                                            <!--input search,cbx company,button search 2-->
+                                            <Grid Margin="0,30,0,0" Height="36" VerticalAlignment="Top">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="300*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="22*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="300*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="211*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Grid.Column="0">
+                                                    <Border Background="{StaticResource #FFFFFF}" CornerRadius="4" BorderThickness="0.5" BorderBrush="{StaticResource #474747}">
+                                                        <TextBox x:Name="tbSearch1" KeyUp="tbSearch_KeyUp1" Padding="10,0,0,0" materialDesign:HintAssist.Hint="Nhập tên, ID nhân viên" BorderThickness="0" Foreground="{StaticResource #666666}" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"></TextBox>
+                                                        <!--x:Name="tbSearch"-->
+                                                    </Border>
+                                                </Grid>
+                                                <Grid Grid.Column="1"></Grid>
+                                                <Grid Grid.Column="2">
+                                                    <Grid Margin="0,0,20,0"  MouseLeftButtonDown="ShowCombobox1"  Cursor="Hand">
+                                                        <Border Cursor="Hand" CornerRadius="4" BorderThickness="0.5" BorderBrush="#474747" Padding="2,0,2,0" Background="#FFFFFF"></Border>
+                                                        <Path Cursor="Hand" Data="{StaticResource icon_explandmore}" Fill="{StaticResource #474747}" Opacity="0.24" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0"></Path>
+                                                        <ComboBox  x:Name="cbxTenPhongBan1" PreviewTextInput="cbxTenPhongBan_PreviewTextInput1" IsTextSearchEnabled="False" IsEditable="True" materialDesign:HintAssist.Hint="Chọn phòng ban" DisplayMemberPath="Value" KeyUp="cbxTenPhongBan_KeyUp1" SelectedValuePath="Key" Padding="10,0,10,0" VerticalAlignment="Center" Background="Transparent" BorderBrush="{x:Null}" Foreground="{StaticResource #474747}"></ComboBox>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="3"></Grid>
+                                                <Grid Grid.Column="4">
+                                                    <Border CornerRadius="5" Background="{StaticResource #4C5BD4}"></Border>
+                                                    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                        <Path Data="{StaticResource icon_search}" Fill="{StaticResource #FFFFFF}"></Path>
+                                                    </Grid>
+                                                    <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="clickSearch1"></Grid>
+                                                </Grid>
+                                                <Grid Grid.Column="5"></Grid>
+                                            </Grid>
+                                            <!--end input search,cbx company,button search 2-->
+
+                                            <!--table 2-->
+                                            <Grid Margin="2,30,2,0" VerticalAlignment="Top">
+                                                <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto" Name="scData">
+                                                    <ScrollViewer.Style>
+                                                        <Style TargetType="ScrollViewer"  BasedOn="{StaticResource aaa}">
+                                                            <Style.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True" >
+                                                                    <Setter Property="HorizontalScrollBarVisibility" Value="Auto"></Setter>
+                                                                </Trigger>
+                                                                <Trigger Property="IsMouseOver" Value="False">
+                                                                    <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"></Setter>
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </ScrollViewer.Style>
+                                                    <Grid>
+                                                    <Border PreviewMouseWheel="icListSampleSignature_PreviewMouseWheel" CornerRadius="8,8,0,0" Background="{StaticResource #4C5BD4}" Effect="{DynamicResource z-depth1}"  Height="50" VerticalAlignment="Top"></Border>
+                                                    <Grid Height="50" VerticalAlignment="Top" PreviewMouseWheel="icListSampleSignature_PreviewMouseWheel">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                                            <ColumnDefinition MinWidth="200"></ColumnDefinition>
+                                                             <ColumnDefinition MinWidth="230"></ColumnDefinition>
+                                                                <ColumnDefinition MinWidth="400"></ColumnDefinition>
+                                                            <ColumnDefinition Width="150"></ColumnDefinition>
+                                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Grid.Column="0">
+                                                            <TextBlock Text="STT" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                            <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Column="1">
+                                                            <TextBlock Text="ID" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                            <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Column="2">
+                                                            <TextBlock Text="Họ và Tên" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                            <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Column="3">
+                                                            <TextBlock Text="Chức vụ" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                            <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Column="4">
+                                                            <TextBlock Text="Phòng ban" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                            <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Column="5">
+                                                            <TextBlock Text="Mẫu chữ ký" FontSize="14" Foreground="{StaticResource #FFFFFF}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                            <Grid Width="0.5" Margin="0,4,0,4" Background="{StaticResource #FFFFFF}" HorizontalAlignment="Right"></Grid>
+                                                        </Grid>
+                                                        <Grid Grid.Column="6">
+                                                        </Grid>
+                                                    </Grid>
+                                                    <Grid Margin="0,50,0,0" Background="Transparent" PreviewMouseWheel="icListSampleSignature_PreviewMouseWheel">
+                                                        <ItemsControl x:Name="icListSampleSignature" PreviewMouseWheel="icListSampleSignature_PreviewMouseWheel">
+                                                            <ItemsControl.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid Height="50">
+                                                                        <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                                                                <ColumnDefinition Width="80"></ColumnDefinition>
+                                                                                <ColumnDefinition MinWidth="200"></ColumnDefinition>
+                                                                                <ColumnDefinition MinWidth="230"></ColumnDefinition>
+                                                                                <ColumnDefinition MinWidth="400"></ColumnDefinition>
+                                                                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                                                                <ColumnDefinition Width="80"></ColumnDefinition>
+                                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                                            </Grid.ColumnDefinitions>
+                                                                            <Grid Grid.Column="0">
+                                                                                <TextBlock Text="{Binding Stt}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                            </Grid>
+                                                                            <Grid Grid.Column="1">
+                                                                                <TextBlock Text="{Binding ep_id}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                            </Grid>
+                                                                            <Grid Grid.Column="2">
+                                                                                <TextBlock Text="{Binding ep_name}" FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                            </Grid>
+                                                                            <Grid Grid.Column="3">
+                                                                                <TextBlock Text="{Binding position_name}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                            </Grid>
+                                                                            <Grid Grid.Column="4">
+                                                                                <TextBlock Text="{Binding dep_name}"  FontSize="12" Foreground="{StaticResource #474747}" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                            </Grid>
+                                                                            <Grid Grid.Column="5">
+                                                                                <TextBlock Text="Tải chữ ký lên" Cursor="Hand" FontWeight="Bold"  FontSize="12" Foreground="{StaticResource #4C5BD4}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                                                            </Grid>
+                                                                            <Grid Grid.Column="6">
+                                                                                <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="15,0,0,0">
+                                                                                    <!--<Grid.Style>
+                                                                                        <Style TargetType="Grid">
+                                                                                            <Style.Triggers>
+                                                                                                <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerEdit}" Value="true">
+                                                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                                                </DataTrigger>
+                                                                                                <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerEdit}" Value="false">
+                                                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                                                </DataTrigger>
+                                                                                            </Style.Triggers>
+                                                                                        </Style>
+                                                                                    </Grid.Style>-->
+                                                                                    <Path Data="{StaticResource icon_edit}" Fill="{StaticResource #4C5BD4}"></Path>
+                                                                                    <Grid Cursor="Hand" Background="Transparent" MouseLeftButtonDown="ShopUpdatePopup"></Grid>
+                                                                                </Grid>
+                                                                                <Grid VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0">
+                                                                                    <!--<Grid.Style>
+                                                                    <Style TargetType="Grid">
+                                                                        <Style.Triggers>
+                                                                            <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerDel}" Value="true">
+                                                                                <Setter Property="Visibility" Value="Visible" />
+                                                                            </DataTrigger>
+                                                                            <DataTrigger Binding="{Binding ElementName=page, Path=DataContext.PerDel}" Value="false">
+                                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                            </DataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </Grid.Style>-->
+                                                                                    <Path Data="{StaticResource icon_garbage_can}" Fill="{StaticResource #EB5757}" VerticalAlignment="Center" HorizontalAlignment="Center"></Path>
+                                                                                    <Grid MouseLeftButtonDown="showPopupDelete" Cursor="Hand" Background="Transparent"></Grid>
+                                                                                </Grid>
+                                                                               
+                                                                            </Grid>
+                                                                            <Grid Opacity="0.47" VerticalAlignment="Top" Grid.ColumnSpan="7" Height="1" Background="{StaticResource #666666}"></Grid>
+                                                                    </Grid>
+                                                                </DataTemplate>
+                                                            </ItemsControl.ItemTemplate>
+                                                        </ItemsControl>
+                                                    </Grid>
+                                                </Grid>
+                                                </ScrollViewer>
+                                            </Grid>
+
+                                            <!--number page 1-->
+                                            <Grid HorizontalAlignment="Center" Margin="0,20,0,20">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid x:Name="btnPrev2" Grid.Column="0" Height="24" Width="20">
+                                                    <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                                    <TextBlock Text="&lt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                                    <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="PrevPage2"></Grid>
+                                                </Grid>
+
+                                                <Grid Grid.Column="1" Margin="21,0,24,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="Trang " FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                    <TextBlock Grid.Column="1" Text="{Binding Path=PageNow2}" FontSize="14" Foreground="#474747" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                                </Grid>
+
+                                                <Grid x:Name="btnNext2" Grid.Column="2" Height="24" Width="20">
+                                                    <Border CornerRadius="4" BorderBrush="#4C5BD4" BorderThickness="0.5"></Border>
+                                                    <TextBlock Text="&gt;" Foreground="#4C5BD4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,1,3"></TextBlock>
+                                                    <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="NextPage2"></Grid>
+                                                </Grid>
+                                            </Grid>
+
+                                            <!--end number page1
+                        end table 1-->
+                                        </StackPanel>
+
+                                    </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

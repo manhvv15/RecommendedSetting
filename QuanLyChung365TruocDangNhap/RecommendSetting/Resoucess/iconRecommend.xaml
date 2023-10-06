@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Geometry x:Key="Add_round_duotone_lineGeometry1Key">F1 M25,24z M0,0z M12.5,8L12.5,16</Geometry>
+    <Geometry x:Key="Add_round_duotone_lineGeometry2Key">F1 M25,24z M0,0z M16.5,12L8.5,12</Geometry>
+    <DrawingGroup x:Key="Add_round_duotone_lineDrawingGroupKey" ClipGeometry="M0,0 V24 H25 V0 H0 Z">
+        <GeometryDrawing>
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF4C5BD4" Thickness="1.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+            </GeometryDrawing.Pen>
+            <GeometryDrawing.Geometry>
+                <EllipseGeometry RadiusX="8.25" RadiusY="8.25" Center="12.5,12" />
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Add_round_duotone_lineGeometry1Key}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF4C5BD4" Thickness="1.5" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Add_round_duotone_lineGeometry2Key}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF4C5BD4" Thickness="1.5" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+    </DrawingGroup>
+    <DrawingImage x:Key="Add_round_duotone_lineDrawingImageKey" Drawing="{StaticResource Add_round_duotone_lineDrawingGroupKey}" />
+    <Geometry x:Key="edit_2Geometry1Key">F1 M20,20z M0,0z M17.5,18.3333L2.5,18.3333C2.15833,18.3333 1.875,18.0499 1.875,17.7083 1.875,17.3666 2.15833,17.0833 2.5,17.0833L17.5,17.0833C17.8417,17.0833 18.125,17.3666 18.125,17.7083 18.125,18.0499 17.8417,18.3333 17.5,18.3333z</Geometry>
+    <Geometry x:Key="edit_2Geometry2Key">F1 M20,20z M0,0z M15.85,2.90005C14.2333,1.28338,12.65,1.24172,10.9916,2.90005L9.98331,3.90838C9.89998,3.99172 9.86665,4.12505 9.89998,4.24172 10.5333,6.45005 12.3,8.21672 14.5083,8.85005 14.5416,8.85838 14.575,8.86672 14.6083,8.86672 14.7,8.86672 14.7833,8.83338 14.85,8.76672L15.85,7.75838C16.675,6.94172 17.075,6.15005 17.075,5.35005 17.0833,4.52505 16.6833,3.72505 15.85,2.90005z</Geometry>
+    <Geometry x:Key="edit_2Geometry3Key">F1 M20,20z M0,0z M13.0084,9.60841C12.7668,9.49175 12.5334,9.37508 12.3084,9.24175 12.1251,9.13341 11.9501,9.01675 11.7751,8.89175 11.6334,8.80008 11.4668,8.66675 11.3084,8.53341 11.2918,8.52508 11.2334,8.47508 11.1668,8.40841 10.8918,8.17508 10.5834,7.87508 10.3084,7.54175 10.2834,7.52508 10.2418,7.46675 10.1834,7.39175 10.1001,7.29175 9.95844,7.12508 9.83344,6.93341 9.73344,6.80841 9.61677,6.62508 9.50844,6.44175 9.3751,6.21675 9.25844,5.99175 9.14177,5.75841 8.9888,5.43063 8.55859,5.33326 8.30282,5.58903L3.61677,10.2751C3.50844,10.3834,3.40844,10.5917,3.38344,10.7334L2.93344,13.9251C2.8501,14.4917 3.00844,15.0251 3.35844,15.3834 3.65844,15.6751 4.0751,15.8334 4.5251,15.8334 4.6251,15.8334 4.7251,15.8251 4.8251,15.8084L8.0251,15.3584C8.1751,15.3334,8.38344,15.2334,8.48344,15.1251L13.1772,10.4313C13.4279,10.1806,13.3337,9.74936,13.0084,9.60841z</Geometry>
+    <DrawingGroup x:Key="edit_2DrawingGroupKey" ClipGeometry="M0,0 V20 H20 V0 H0 Z">
+        <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource edit_2Geometry1Key}" />
+        <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource edit_2Geometry2Key}" />
+        <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource edit_2Geometry3Key}" />
+    </DrawingGroup>
+    <DrawingImage x:Key="edit_2DrawingImageKey" Drawing="{StaticResource edit_2DrawingGroupKey}" />
+    <Geometry x:Key="refresh_svgrepo_comGeometry1Key">F1 M419.58,419.58z M0,0z M214.321,366.664C133.334,366.664,67.447,300.777,67.447,219.79L27.447,219.79C27.447,322.832 111.279,406.664 214.321,406.664 244.405,406.664 274.312,399.34 300.809,385.483 319.581,375.667 336.67,362.566 351.144,347.032L322.78,318.804C295.113,349.028,255.683,366.664,214.321,366.664z</Geometry>
+    <Geometry x:Key="refresh_svgrepo_comGeometry2Key">F1 M419.58,419.58z M0,0z M328.63,324.62L328.63,324.62 419.58,415.14 419.58,233.66z</Geometry>
+    <Geometry x:Key="refresh_svgrepo_comGeometry3Key">F1 M419.58,419.58z M0,0z M237.23,233.66L237.23,233.66 328.63,324.62 419.58,233.66z</Geometry>
+    <Geometry x:Key="refresh_svgrepo_comGeometry4Key">F1 M419.58,419.58z M0,0z M96.801,100.774C124.468,70.552 163.898,52.916 205.259,52.916 286.246,52.916 352.133,118.803 352.133,199.79L392.133,199.79C392.133,96.748 308.301,12.916 205.259,12.916 175.175,12.916 145.268,20.24 118.771,34.097 100,43.913 82.911,57.013 68.438,72.546L90.96,94.96 0,185.92 182.35,185.92 96.801,100.774z</Geometry>
+    <Geometry x:Key="refresh_svgrepo_comGeometry5Key">F1 M419.58,419.58z M0,0z M90.96,94.96L90.96,94.96 68.437,72.546 0,4.44 0,185.92z</Geometry>
+    <DrawingGroup x:Key="refresh_svgrepo_comDrawingGroupKey" ClipGeometry="M0,0 V419.58 H419.58 V0 H0 Z">
+        <DrawingGroup Opacity="1">
+            <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource refresh_svgrepo_comGeometry1Key}" />
+            <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource refresh_svgrepo_comGeometry2Key}" />
+            <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource refresh_svgrepo_comGeometry3Key}" />
+            <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource refresh_svgrepo_comGeometry4Key}" />
+            <GeometryDrawing Brush="#FFFFFF" Geometry="{StaticResource refresh_svgrepo_comGeometry5Key}" />
+        </DrawingGroup>
+    </DrawingGroup>
+    <DrawingImage x:Key="icon1DrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V44 H45 V0 H0 Z">
+                <DrawingGroup Opacity="1">
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,44,44" />
+                    </DrawingGroup.ClipGeometry>
+                    <GeometryDrawing Brush="#FF4C5BD4">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry RadiusX="22" RadiusY="22" Center="22.2422,22" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M45,44z M0,0z M16.5922,15.58C17.7122,15.12 18.9122,14.32 20.1922,13.18 20.8122,12.62 21.3922,12.14 21.9322,11.74 22.4722,11.34 23.1322,11.14 23.9122,11.14 24.7122,11.14 25.3922,11.28 25.9522,11.56 25.4722,15.36 25.2322,18.92 25.2322,22.24 25.2322,25.56 25.4122,28.42 25.7722,30.82 25.2122,31.06 24.5622,31.18 23.8222,31.18 23.0822,31.18 22.4822,30.94 22.0222,30.46 21.5622,29.98 21.3322,29.34 21.3322,28.54 21.3322,27.72 21.4922,26.01 21.8122,23.41 22.1322,20.81 22.3022,17.99 22.3222,14.95 22.1022,15.15 21.7322,15.55 21.2122,16.15 20.0522,17.49 19.1422,18.16 18.4822,18.16 17.8422,18.16 17.3622,17.92 17.0422,17.44 16.7422,16.96 16.5922,16.34 16.5922,15.58z" />
+                    <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M45,44z M0,0z M16.5922,15.58C17.7122,15.12 18.9122,14.32 20.1922,13.18 20.8122,12.62 21.3922,12.14 21.9322,11.74 22.4722,11.34 23.1322,11.14 23.9122,11.14 24.7122,11.14 25.3922,11.28 25.9522,11.56 25.4722,15.36 25.2322,18.92 25.2322,22.24 25.2322,25.56 25.4122,28.42 25.7722,30.82 25.2122,31.06 24.5622,31.18 23.8222,31.18 23.0822,31.18 22.4822,30.94 22.0222,30.46 21.5622,29.98 21.3322,29.34 21.3322,28.54 21.3322,27.72 21.4922,26.01 21.8122,23.41 22.1322,20.81 22.3022,17.99 22.3222,14.95 22.1022,15.15 21.7322,15.55 21.2122,16.15 20.0522,17.49 19.1422,18.16 18.4822,18.16 17.8422,18.16 17.3622,17.92 17.0422,17.44 16.7422,16.96 16.5922,16.34 16.5922,15.58z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="refresh_svgrepo_comDrawingImageKey" Drawing="{StaticResource refresh_svgrepo_comDrawingGroupKey}" />
+    <PathGeometry  x:Key="dauCong" Figures="M11.2487 6.79036H7.29036V10.7487C7.29036 10.9587 7.20696 11.16 7.05849 11.3085C6.91002 11.457 6.70866 11.5404 6.4987 11.5404C6.28873 11.5404 6.08737 11.457 5.9389 11.3085C5.79044 11.16 5.70703 10.9587 5.70703 10.7487V6.79036H1.7487C1.53873 6.79036 1.33737 6.70696 1.18891 6.55849C1.04044 6.41002 0.957031 6.20866 0.957031 5.9987C0.957031 5.78873 1.04044 5.58737 1.18891 5.43891C1.33737 5.29044 1.53873 5.20703 1.7487 5.20703H5.70703V1.2487C5.70703 1.03873 5.79044 0.837371 5.9389 0.688905C6.08737 0.540439 6.28873 0.457031 6.4987 0.457031C6.70866 0.457031 6.91002 0.540439 7.05849 0.688905C7.20696 0.837371 7.29036 1.03873 7.29036 1.2487V5.20703H11.2487C11.4587 5.20703 11.66 5.29044 11.8085 5.43891C11.957 5.58737 12.0404 5.78873 12.0404 5.9987C12.0404 6.20866 11.957 6.41002 11.8085 6.55849C11.66 6.70696 11.4587 6.79036 11.2487 6.79036Z"/>
+    <PathGeometry x:Key="muiTenXuong" Figures="M7.41281 10.423L13.0935 4.87319C13.4133 4.5595 13.4133 4.04957 13.0935 3.73588C12.7737 3.42138 12.2543 3.42138 11.9345 3.73588L6.83334 8.71946L1.7322 3.73587C1.4124 3.42138 0.892979 3.42138 0.573187 3.73587C0.253396 4.05037 0.253396 4.5595 0.573187 4.87319L6.25387 10.4222C6.56139 10.7254 7.10436 10.7262 7.41281 10.423Z"></PathGeometry>
+    <PathGeometry x:Key="timKiem" Figures="M7.29734 5.91153e-09C8.65762 -5.47358e-05 9.99084 0.380079 11.1465 1.0975C12.3022 1.81493 13.2344 2.84108 13.8379 4.06017C14.4414 5.27925 14.6921 6.64274 14.5618 7.99676C14.4315 9.35078 13.9254 10.6414 13.1005 11.7231L17.7156 16.3401C17.8901 16.5152 17.9914 16.7502 17.999 16.9973C18.0065 17.2444 17.9197 17.4851 17.7562 17.6705C17.5927 17.8559 17.3648 17.9722 17.1187 17.9956C16.8726 18.0191 16.6268 17.9479 16.4312 17.7967L16.3397 17.716L11.7227 13.1009C10.8012 13.8035 9.7257 14.2766 8.58509 14.481C7.44449 14.6854 6.2716 14.6153 5.16349 14.2764C4.05537 13.9375 3.04389 13.3396 2.21273 12.5322C1.38157 11.7248 0.754633 10.731 0.383795 9.63318C0.0129576 8.53535 -0.0911189 7.36499 0.0801776 6.21894C0.251474 5.07289 0.693219 3.98411 1.36886 3.04269C2.0445 2.10127 2.93461 1.33427 3.96554 0.805169C4.99646 0.276064 6.13857 6.11599e-05 7.29734 5.91153e-09ZM7.29734 1.94606C5.87799 1.94606 4.51678 2.5099 3.51314 3.51353C2.50951 4.51716 1.94568 5.87838 1.94568 7.29773C1.94568 8.71708 2.50951 10.0783 3.51314 11.0819C4.51678 12.0856 5.87799 12.6494 7.29734 12.6494C8.71669 12.6494 10.0779 12.0856 11.0815 11.0819C12.0852 10.0783 12.649 8.71708 12.649 7.29773C12.649 5.87838 12.0852 4.51716 11.0815 3.51353C10.0779 2.5099 8.71669 1.94606 7.29734 1.94606Z"/>
+    <PathGeometry  x:Key="lammoi" Figures="M17.5 18.3333H2.5C2.15833 18.3333 1.875 18.0499 1.875 17.7083C1.875 17.3666 2.15833 17.0833 2.5 17.0833H17.5C17.8417 17.0833 18.125 17.3666 18.125 17.7083C18.125 18.0499 17.8417 18.3333 17.5 18.3333Z"/>
+    <PathGeometry x:Key="xoaa" Figures=""/>
+</ResourceDictionary>
