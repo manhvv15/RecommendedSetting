@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static QRCoder.PayloadGenerator;
 
 namespace QuanLyChung365TruocDangNhap.RecommendSetting
 {
@@ -20,9 +21,12 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
     /// </summary>
     public partial class ucRecommended : UserControl
     {
+
+        
         public ucRecommended()
         {
             InitializeComponent();
+            
         }
 
         private void Border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -103,6 +107,16 @@ namespace QuanLyChung365TruocDangNhap.RecommendSetting
 
             stackDotXuat.Visibility = Visibility.Visible;
             stackKeHoach.Visibility =Visibility.Collapsed;
+        }
+
+        private void Border_MouseLeftButtonUp_4(object sender, MouseButtonEventArgs e)
+        {
+            //Uc.Children.Add(new PopupThemMoi(Uc, this));
+        }
+
+        private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            //MessageBox.Show("Hello");
         }
     }
 }

@@ -1374,6 +1374,9 @@
     <Compile Include="Popup\TruocDangNhap\QR.xaml.cs">
       <DependentUpon>QR.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecommendSetting\PopupThemMoi.xaml.cs">
+      <DependentUpon>PopupThemMoi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecommendSetting\ucRecommended.xaml.cs">
       <DependentUpon>ucRecommended.xaml</DependentUpon>
     </Compile>
@@ -2842,6 +2845,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Popup\TruocDangNhap\XacThucOTP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecommendSetting\PopupThemMoi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
